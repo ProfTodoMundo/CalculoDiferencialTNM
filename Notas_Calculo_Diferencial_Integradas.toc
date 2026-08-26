@@ -1,0 +1,48 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Presentación}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Información personal y redes sociales}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Programa de Estudios de Cálculo Diferencial}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Propósitos generales: Al terminar el curso, el alumno:}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Seriación: NO Asignaturas Previas:}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Requerimientos para cursar la asignatura}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Temario de asignatura}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Objetivo(s) general(es) de la asignatura:}{3}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Temas y subtemas:}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Funciones.}{4}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Límites y continuidad.}{4}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Derivadas.}{5}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Aplicaciones de la derivada.}{5}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Metodología de la enseñanza}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Modalidades de evaluación de la asignatura:}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Bibliografía:}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Pre-requisitos}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ecuaciones de la forma \(ax+b=cx+d\)}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Desigualdades}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Elementos básicos}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Solución de desigualdades de primer grado}{13}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Solución de desigualdades del tipo: \(ax+b>c\)}{13}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Solución de desigualdades del tipo: \(ax+b>c\), con coeficientes fraccionarios}{13}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Solución de desigualdades del tipo: \(ax+b<c\)}{14}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Solución de desigualdades del tipo: \(ax+b<c\) con coeficientes fraccionarios}{15}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Solución de desigualdades del tipo: \(ax+b \geq c\)}{16}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}Solución de desigualdades del tipo: \(ax+b \geq c\), con coeficientes fraccionarios}{16}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.7}Solución de desigualdades del tipo: \(ax+b \leq c\)}{17}{subsubsection.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.8}Solución de desigualdades del tipo: \(ax+b \leq c\) con coeficientes fraccionarios.}{18}{subsubsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.3}Solución de desigualdades con doble desigualdad.}{18}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Solución de desigualdades del tipo: \(c< ax+b <d\)}{18}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Solución de desigualdades del tipo: \(c< ax+b \leq d\)}{19}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Solución de desigualdades del tipo: \(c\leq ax+b <d\)}{20}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Solución de desigualdades del tipo: \(c\leq ax+b \leq d\)}{20}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Solución de desigualdades con valor absoluto}{21}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Solución de desigualdades del tipo: \(|ax+b| <d\)}{21}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Solución de desigualdades del tipo: \(|ax+b| \leq d\)}{22}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Solución de desigualdades del tipo: \(|ax+b| >d\)}{23}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Solución de desigualdades del tipo: \(|ax+b| \geq d\)}{23}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}Ejercicios adicionales}{24}{subsubsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.5}Solución de desigualdades de segundo grado}{27}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Solución de desigualdades del tipo \(ax^2+bx+c>0\)}{27}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Solución de desigualdades del tipo \(ax^2+bx+c\geq 0\)}{27}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Solución de desigualdades del tipo \(ax^2+bx+c<0\)}{28}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Solución de desigualdades del tipo \(ax^2+bx+c\leq 0\)}{29}{subsubsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.5}Ejercicios adicionales}{29}{subsubsection.4.5.5}%
+\contentsline {section}{\numberline {5}Tarea 1}{32}{section.5}%

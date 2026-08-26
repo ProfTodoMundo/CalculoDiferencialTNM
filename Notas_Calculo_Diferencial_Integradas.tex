@@ -1,0 +1,2554 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\geometry{letterpaper,margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newenvironment{Ejem}{\par\medskip\noindent\textbf{Ejemplo.}\ }{\par\medskip}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\title{Notas de Cálculo Diferencial}
+\author{Carlos Ernesto Martínez}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Presentación}\label{presentaciuxf3n}
+
+En esta página encontrarás ejercicios adicionales a los vistos en clase
+
+\subsection{Información personal y redes
+sociales}\label{informaciuxf3n-personal-y-redes-sociales}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://directorioprofesores.uacm.edu.mx/profesor.html?key=2003080144}{Página
+  personal}
+\item
+  \href{https://twitter.com/carlosmroder}{Twitter}
+\item
+  \href{https://www.linkedin.com/in/carlos-martinez-r/}{Linkedin}
+\end{itemize}
+
+Puedes descargar el archivo PDF de los apuntes
+\href{https://github.com/ProfTodoMundo/NotasCalculoDiferencial/blob/PrincipalCD/docs/ApuntesCalculo.pdf}{aquí}.
+
+\textbackslash begin\{center\}\textbackslash IfFileExists\{codigo\_qr.png\}\{\textbackslash includegraphics{[}width=0.45\textbackslash textwidth{]}\{codigo\_qr.png\}\}\{\textbackslash emph\{{[}Figura:
+Acceder al documento{]}\}\}\textbackslash end\{center\}
+
+\section{Programa de Estudios de Cálculo
+Diferencial}\label{programa-de-estudios-de-cuxe1lculo-diferencial}
+
+\subsection{Propósitos generales: Al terminar el curso, el
+alumno:}\label{propuxf3sitos-generales-al-terminar-el-curso-el-alumno}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Podrá plantear funciones, reales de variable real, a partir de modelos
+  sencillos provenientes de otras disciplinas científicas o
+  ingenieriles. Podrá decidir si son continuas o diferenciables,
+  manejando con soltura los conceptos de continuidad, límites y
+  derivada.
+\item
+  Conocerá y usará con soltura los métodos del cálculo diferencial,
+  pudiendo derivar, con la definición al principio y luego con técnicas
+  adecuadas, varios tipos de funciones: polinomiales, racionales,
+  radicales, trigonométricas y composiciones de ellas.
+\item
+  Podrá graficar con precisión varios tipos de funciones, indicando
+  puntos importantes en la gráfica incluyendo intervalos donde la
+  función es monótona o tiene cierta concavidad.
+\item
+  Conocerá los conceptos de máximo y mínimo (local y global) de
+  funciones definidas en intervalos de reales y podrá usar los criterios
+  de la primera y segunda derivada para decidir si un punto dado es
+  máximo, mínimo o punto de inflexión de una función.
+\item
+  Podrá plantear y resolver problemas de optimización (máximos y
+  mínimos) o razón de cambio partiendo de situaciones geométricas o de
+  modelos provenientes de otras disciplinas.
+\item
+  Podrá usar algún tipo de programa de cómputo adecuado para graficar
+  algunas funciones y visualizar aspectos geométricos de las mismas.
+\item
+  Podrá aproximar valores de funciones usando diferenciales y sabrá usar
+  la regla de L'Hôpital para calcular límites indeterminados.
+\end{enumerate}
+
+\subsubsection{Seriación: NO Asignaturas
+Previas:}\label{seriaciuxf3n-no-asignaturas-previas}
+
+\begin{itemize}
+\item
+  Paralela: Álgebra y Geometría Analítica
+\item
+  Posteriores: Álgebra Lineal, Cálculo Integral, Cálculo Vectorial,
+  Ecuaciones Diferenciales Ordinarias, Ecuaciones Diferenciales
+  Parciales, Métodos Numéricos, Estadística y Probabilidad.
+\end{itemize}
+
+\subsubsection{Requerimientos para cursar la
+asignatura}\label{requerimientos-para-cursar-la-asignatura}
+
+\textbf{Conocimientos:} Dominio de factorización, operaciones y
+simplificación de expresiones algebráicas, Teorema de Pitágoras,
+resolución de sistemas de ecuaciones lineales de 2x2, resolución de
+ecuaciones lineales y cuadráticas, proporciones.
+
+\textbf{Habilidades:} abstracción (poder pasar de español al lenguaje
+simbólico y viceversa) y poder resolver problemas sencillos de álgebra
+utilizando los conocimientos arriba mencionados.
+
+\textbf{Perfil deseable del profesor:} Licenciatura o posgrado en
+Matemáticas o carreras afines (Matemáticas aplicadas, Física, Actuaría,
+Ingeniería). Que esté dispuesto a trabajar en la educación centrada en
+el aprendizaje de los alumnos. Que tenga experiencia docente y habilidad
+para conducir los procesos de aprendizaje.
+
+\textbf{Academia responsable del programa:} Matemáticas.
+
+\textbf{Elaborado por: } Manuel Fernández Villanueva y José Juan
+Hernández.
+
+\subsection{Temario de asignatura}\label{temario-de-asignatura}
+
+Nombre de la asignatura: Cálculo Diferencial.
+
+\subsubsection{Objetivo(s) general(es) de la
+asignatura:}\label{objetivos-generales-de-la-asignatura}
+
+Al terminar el curso, el alumno:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Podrá plantear funciones, reales de variable real, a partir de modelos
+  sencillos provenientes de otras disciplinas científicas o
+  ingenieriles. Podrá decidir si son continuas o diferenciables,
+  manejando con soltura los conceptos de continuidad, límites y
+  derivada.
+\item
+  Conocerá y usará con soltura los métodos del cálculo diferencial,
+  pudiendo derivar, con la definición al principio y luego con técnicas
+  adecuadas, varios tipos de funciones: polinomiales, racionales,
+  radicales, trigonométricas y composiciones de ellas.
+\item
+  Podrá graficar con precisión varios tipos de funciones, indicando
+  puntos importantes en la gráfica incluyendo intervalos donde la
+  función es monótona o tiene cierta concavidad.
+\item
+  Conocerá los conceptos de máximo y mínimo (local y global) de
+  funciones definidas en intervalos de reales y podrá usar los criterios
+  de la primera y segunda derivada para decidir si un punto dado es
+  máximo, mínimo o punto de inflexión de una función.
+\item
+  Podrá plantear y resolver problemas de optimización (máximos y
+  mínimos) o razón de cambio partiendo de situaciones geométricas o de
+  modelos provenientes de otras disciplinas.
+\item
+  Podrá usar algún tipo de programa de cómputo adecuado para graficar
+  algunas funciones y visualizar aspectos geométricos de las mismas.
+\item
+  Podrá aproximar valores de funciones usando diferenciales y sabrá usar
+  la regla de L'Hôpital para calcular límites indeterminados.
+\end{enumerate}
+
+\subsection{Temas y subtemas:}\label{temas-y-subtemas}
+
+\subsubsection{Funciones.}\label{funciones.}
+
+1.1 La noción de función a partir de modelos sencillos tomados de varias
+disciplinas (Física, Biología, Química, Ingenierías, Economía). Ejemplos
+de funciones obtenidas como fórmulas al plantear problemas.
+
+1.2 Breve introducción a R. Desigualdades, intervalos, valor absoluto.
+
+1.3 Dominio e imagen. Gráfica de una función. Operaciones con funciones
+(suma, resta, producto y cociente).
+
+1.4 Algunos tipos especiales de funciones: lineales, cuadráticas,
+polinomios y racionales. Funciones que se definen con radicales.
+Funciones definidas por partes. Funciones exponenciales, logarítmicas y
+trigonométricas.
+
+1.5 Composición de funciones.
+
+1.6 Funciones inyectivas, suprayectivas y biyectivas. Funciones
+inversas.
+
+\subsubsection{Límites y continuidad.}\label{luxedmites-y-continuidad.}
+
+2.1 Movimiento rectilíneo. La gráfica posición-tiempo. La noción de
+velocidad media. La velocidad instantánea como motivación para el
+concepto de límite.
+
+2.2 Idea intuitiva y definición de límite.
+
+2.3 Operaciones con límites. Cálculo de límites.
+
+2.4 Límites laterales.
+
+2.5 Límites infinitos.
+
+2.6 Límites cuando la variable independiente tiende a infinito.
+
+2.7 Continuidad.
+
+\subsubsection{Derivadas.}\label{derivadas.}
+
+3.1 Razón de cambio. La velocidad como una razón de cambio. La velocidad
+instantánea como motivación para el concepto de derivada.
+
+3.2 Definición de derivada. Interpretación geométrica. Definición de
+tangente a una curva en un punto.
+
+3.3 Derivadas de las funciones elementales.
+
+3.4 Derivadas de sumas, restas, productos y cocientes.
+
+3.5 Aproximaciones lineales. Diferencial.
+
+3.5 Regla de la cadena. Derivada de las funciones inversas. Derivación
+implícita.
+
+3.6 La aceleración como razón de cambio de la velocidad. Derivadas de
+orden superior.
+
+\subsubsection{Aplicaciones de la
+derivada.}\label{aplicaciones-de-la-derivada.}
+
+4.1 La derivada y el crecimiento o decrecimiento de una función. 4.2
+Máximos y mínimos locales y globales. El criterio de la primera
+derivada. 4.3 Concavidad, puntos de inflexión y el criterio de la
+segunda derivada. 4.4 Problemas de optimizacion. 4.5 Razones de cambio
+relacionadas. Aplicaciones 4.6 Graficación. 4.7 La regla de L'Hôpital.
+
+\subsection{Metodología de la
+enseñanza}\label{metodologuxeda-de-la-enseuxf1anza}
+
+Los conceptos y métodos deberán motivarse ampliamente, de ser posible
+usando ejemplos sencillos provenientes de otras disciplinas, en
+particular de la mecánica del movimiento rectilíneo. Los teoremas que
+sean necesarios se discutirán ampliamente, bosquejando su demostración
+enfatizando las ideas involucradas (de ser posible, con gráficas o
+ejemplos de la Física manejados en forma intuitiva). Cuando el profesor
+lo considere adecuado, podrá auxiliarse de algún programa de cómputo
+para graficar funciones complicadas o para visualizar algunos conceptos
+(por ejemplo, la derivada como pendiente de la recta tangente a la
+gráfica de una función). El curso consiste de tres sesiones semanales en
+salón conducidas por el profesor y una sesión de laboratorio donde se
+formarán equipos de alumnos para discutir problemas o ejercicios de los
+temas vistos en las clases previas. Ocasionalmente el laboratorio podrá
+ser un laboratorio de cómputo.
+
+\subsection{Modalidades de evaluación de la
+asignatura:}\label{modalidades-de-evaluaciuxf3n-de-la-asignatura}
+
+Diagnóstica, formativa y para la certificación.
+
+\subsection{Bibliografía:}\label{bibliografuxeda}
+
+\begin{itemize}
+\item
+  Larson, Hostetler, Edwards, Cálculo I, Pirámide, 2002, 7ª .
+\item
+  Hughes-Hallett, Gleason et al., Cálculo aplicado, CECSA, 2003, 1ª.\\
+\item
+  Leithold, El cálculo, Oxford, 2003, 7ª.
+\item
+  Thomas, Finney, Cálculo. Una variable, Adison Wesley Longman, 1999,
+  9ª.
+\item
+  Stewart, Cálculo. Trascendentes tempranas, Thomson, 2002, 4ª.
+\item
+  Swokowski, Cálculo con Geometría Analítica, Iberoamérica, 1989, 2ª.
+\end{itemize}
+
+\section{Pre-requisitos}\label{pre-requisitos}
+
+\subsection{\texorpdfstring{Ecuaciones de la forma
+\(ax+b=cx+d\)}{Ecuaciones de la forma ax+b=cx+d}}\label{ecuaciones-de-la-forma-axbcxd}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Resuelve las siguientes ecuaciones
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(2x + 3 = 4x - 1\)
+  \item
+    \(-5x - 2 = 3x + 7\)
+  \item
+    \(8x + 6 = -2x - 4\)
+  \item
+    \(-4x + 9 = 2x + 1\)
+  \item
+    \(6x - 5 = -3x + 2\)
+  \item
+    \(-7x + 10 = 5x - 8\)
+  \item
+    \(9x - 12 = -6x + 15\)
+  \item
+    \(-3x + 4 = 7x + 2\)
+  \item
+    \(11x + 13 = -9x - 15\)
+  \item
+    \(-2x - 1 = 4x + 6\)
+  \item
+    \(12x - 8 = -10x + 14\)
+  \item
+    \(-6x + 7 = 8x - 9\)
+  \item
+    \(5x - 3 = -7x + 11\)
+  \item
+    \(-13x + 16 = 15x - 18\)
+  \item
+    \(14x + 20 = -16x - 22\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+  \(\frac{a}{b}x+\frac{c}{d}=\frac{e}{f}\)
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{2}{3}x - \frac{5}{4} = \frac{7}{6}\)
+  \item
+    \(-\frac{1}{2}x + \frac{3}{5} = -\frac{4}{7}\)
+  \item
+    \(\frac{7}{8}x + \frac{9}{10} = -\frac{11}{12}\)
+  \item
+    \(-\frac{3}{4}x - \frac{6}{7} = \frac{9}{10}\)
+  \item
+    \(\frac{4}{5}x - \frac{2}{3} = -\frac{1}{6}\)
+  \item
+    \(-\frac{5}{6}x + \frac{8}{9} = \frac{11}{12}\)
+  \item
+    \(\frac{6}{7}x + \frac{1}{2} = -\frac{4}{9}\)
+  \item
+    \(-\frac{9}{10}x - \frac{7}{8} = \frac{5}{6}\)
+  \item
+    \(\frac{11}{12}x + \frac{10}{11} = -\frac{9}{10}\)
+  \item
+    \(-\frac{2}{3}x - \frac{5}{6} = \frac{7}{8}\)
+  \item
+    \(\frac{3}{4}x - \frac{4}{5} = -\frac{1}{2}\)
+  \item
+    \(-\frac{5}{6}x + \frac{7}{8} = \frac{9}{10}\)
+  \item
+    \(\frac{6}{7}x + \frac{8}{9} = -\frac{10}{11}\)
+  \item
+    \(-\frac{4}{5}x - \frac{3}{4} = \frac{1}{2}\)
+  \item
+    \(\frac{9}{10}x + \frac{1}{3} = -\frac{5}{6}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+  \(\frac{a}{b}x+\frac{c}{d}=\frac{e}{f}x+\frac{g}{h}\)
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{3}{5}x - \frac{4}{7} = \frac{8}{9}x + \frac{2}{3}\)
+  \item
+    \(-\frac{7}{8}x + \frac{6}{11} = -\frac{5}{6}x - \frac{3}{4}\)
+  \item
+    \(\frac{9}{10}x + \frac{7}{12} = -\frac{4}{5}x + \frac{1}{3}\)
+  \item
+    \(-\frac{5}{6}x - \frac{2}{3} = \frac{3}{4}x - \frac{1}{2}\)
+  \item
+    \(\frac{4}{7}x - \frac{5}{8} = -\frac{6}{9}x + \frac{7}{10}\)
+  \item
+    \(-\frac{11}{12}x + \frac{8}{9} = \frac{7}{10}x - \frac{6}{7}\)
+  \item
+    \(\frac{2}{3}x + \frac{9}{11} = -\frac{1}{2}x + \frac{4}{5}\)
+  \item
+    \(-\frac{7}{8}x - \frac{6}{7} = \frac{5}{6}x - \frac{3}{5}\)
+  \item
+    \(\frac{5}{6}x + \frac{4}{5} = -\frac{3}{4}x + \frac{2}{3}\)
+  \item
+    \(-\frac{1}{2}x - \frac{3}{4} = \frac{5}{6}x - \frac{7}{8}\)
+  \item
+    \(\frac{9}{10}x - \frac{8}{9} = -\frac{7}{8}x + \frac{6}{7}\)
+  \item
+    \(-\frac{4}{5}x + \frac{3}{4} = \frac{2}{3}x - \frac{1}{2}\)
+  \item
+    \(\frac{1}{3}x + \frac{5}{7} = -\frac{9}{10}x + \frac{8}{9}\)
+  \item
+    \(-\frac{6}{7}x - \frac{4}{5} = \frac{2}{3}x - \frac{1}{2}\)
+  \item
+    \(\frac{7}{8}x + \frac{6}{11} = -\frac{5}{6}x + \frac{3}{4}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+  \(\frac{a}{b}+\left\{\frac{c}{d}[\frac{e}{f}(\frac{i}{j}+\frac{k}{l})+\frac{g}{h}(\frac{m}{n}+\frac{o}{p})+\frac{q}{r}] \right\}=\frac{s}{t}(\frac{u}{v}+\frac{w}{x})+\frac{y}{z}\)
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{3}{4}+\left\{\frac{2}{5}[\frac{5}{6}(\frac{2}{3}x+\frac{4}{5})+\frac{7}{8}(\frac{3}{4}x+\frac{5}{6})+\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})+\frac{1}{3}+\frac{4}{5}x\)
+  \item
+    \(\frac{5}{6}-\left\{-\frac{3}{4}[-\frac{4}{5}(-\frac{2}{3}x-\frac{5}{6})-\frac{6}{7}(-\frac{3}{4}x+\frac{7}{8})-\frac{1}{2}]\right\}=-\frac{8}{9}(-\frac{4}{5}x+\frac{9}{10})-\frac{1}{4}-\frac{5}{6}x\)
+  \item
+    \(-\frac{4}{5}+\left\{\frac{7}{8}[\frac{2}{3}(\frac{5}{6}x-\frac{3}{4})+\frac{4}{5}(\frac{6}{7}x+\frac{8}{9})-\frac{1}{2}]\right\}=\frac{3}{4}(\frac{4}{5}x+\frac{7}{8})-\frac{5}{6}-\frac{2}{3}x\)
+  \item
+    \(\frac{3}{4}-\left\{\frac{6}{7}[\frac{5}{6}(\frac{3}{4}x-\frac{4}{5})+\frac{7}{8}(\frac{2}{3}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})-\frac{1}{3}+\frac{4}{5}x\)
+  \item
+    \(-\frac{6}{7}+\left\{\frac{2}{3}[-\frac{4}{5}(\frac{5}{6}x+\frac{6}{7})-\frac{7}{8}(\frac{3}{4}x+\frac{4}{5})-\frac{1}{2}]\right\}=-\frac{8}{9}(\frac{2}{3}x-\frac{6}{7})-\frac{1}{4}-\frac{3}{5}x\)
+  \item
+    \(\frac{7}{8}-\left\{\frac{5}{6}[\frac{3}{4}(\frac{2}{3}x-\frac{5}{6})-\frac{6}{7}(-\frac{5}{6}x+\frac{3}{4})-\frac{1}{2}]\right\}=-\frac{4}{5}(\frac{3}{4}x+\frac{8}{9})-\frac{2}{3}+\frac{7}{8}x\)
+  \item
+    \(-\frac{4}{5}+\left\{\frac{7}{8}[\frac{5}{6}(\frac{3}{4}x-\frac{2}{3})+\frac{4}{5}(\frac{6}{7}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{3}{4}(\frac{2}{3}x+\frac{7}{8})-\frac{1}{6}-\frac{2}{5}x\)
+  \item
+    \(\frac{3}{4}-\left\{\frac{2}{3}[\frac{5}{6}(\frac{4}{5}x-\frac{7}{8})+\frac{7}{8}(\frac{5}{6}x+\frac{4}{5})-\frac{1}{2}]\right\}=\frac{9}{10}(\frac{5}{6}x+\frac{6}{7})+\frac{1}{4}-\frac{4}{5}x\)
+  \item
+    \(-\frac{6}{7}+\left\{\frac{4}{5}[\frac{2}{3}(\frac{5}{6}x+\frac{7}{8})+\frac{7}{8}(\frac{4}{5}x-\frac{2}{3})-\frac{1}{2}]\right\}=\frac{8}{9}(\frac{3}{4}x-\frac{6}{7})-\frac{1}{5}-\frac{5}{6}x\)
+  \item
+    \(\frac{7}{8}+\left\{-\frac{5}{6}[\frac{3}{4}(\frac{4}{5}x-\frac{6}{7})+\frac{6}{7}(\frac{5}{6}x+\frac{3}{4})-\frac{1}{2}]\right\}=-\frac{4}{5}(\frac{4}{5}x+\frac{5}{6})-\frac{2}{3}+\frac{7}{8}x\)
+  \item
+    \(-\frac{4}{5}-\left\{\frac{7}{8}[\frac{2}{3}(-\frac{5}{6}x-\frac{7}{8})+\frac{4}{5}(\frac{6}{7}x-\frac{5}{6})-\frac{1}{2}]\right\}=-\frac{3}{4}(\frac{5}{6}x-\frac{7}{8})-\frac{1}{7}-\frac{6}{7}x\)
+  \item
+    \(-\frac{3}{4}+\left\{-\frac{2}{3}[\frac{5}{6}(\frac{4}{5}x+\frac{7}{8})+\frac{7}{8}(\frac{5}{6}x-\frac{4}{5})-\frac{1}{2}]\right\}=\frac{9}{10}(-\frac{5}{6}x+\frac{4}{5})-\frac{1}{8}+\frac{7}{8}x\)
+  \item
+    \(-\frac{6}{7}-\left\{\frac{4}{5}[\frac{2}{3}(\frac{5}{6}x-\frac{2}{3})+\frac{7}{8}(\frac{4}{5}x+\frac{7}{8})-\frac{1}{2}]\right\}=-\frac{8}{9}(\frac{6}{7}x+\frac{4}{5})-\frac{1}{9}-\frac{8}{9}x\)
+  \item
+    \(-\frac{7}{8}+\left\{\frac{5}{6}[\frac{3}{4}(-\frac{4}{5}x-\frac{6}{7})-\frac{6}{7}(\frac{5}{6}x+\frac{4}{5})-\frac{1}{2}]\right\}=-\frac{4}{5}(\frac{4}{5}x+\frac{6}{7})+\frac{2}{3}-\frac{7}{8}x\)
+  \item
+    \(-\frac{4}{5}+\left\{\frac{7}{8}[-\frac{2}{3}(\frac{5}{6}x-\frac{7}{8})-\frac{4}{5}(\frac{6}{7}x+\frac{2}{3})-\frac{1}{2}]\right\}=-\frac{3}{4}(\frac{5}{6}x+\frac{7}{8})-\frac{1}{10}-\frac{2}{3}x\)
+  \end{enumerate}
+\item
+  Resuelve los ejercicios de la forma
+  \(\frac{\frac{a}{b}x+\frac{c}{d}}{\frac{e}{f}}+\frac{g}{h}=\frac{\frac{i}{j}x+\frac{k}{l}}{m}\)
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{-\frac{3}{4}x+\frac{5}{6}}{-\frac{7}{8}}+\frac{1}{2}=-\frac{\frac{9}{10}x+\frac{11}{12}}{13}\)
+  \item
+    \(-\frac{-\frac{2}{3}x+\frac{4}{5}}{-\frac{6}{7}}+\frac{1}{2}=-\frac{\frac{8}{9}x+\frac{10}{11}}{12}\)
+  \item
+    \(\frac{\frac{5}{6}x-\frac{7}{8}}{\frac{9}{10}}-\frac{3}{4}=-\frac{\frac{11}{12}x+\frac{13}{14}}{15}\)
+  \item
+    \(\frac{\frac{7}{8}x+\frac{9}{10}}{\frac{11}{12}}+\frac{5}{6}=-\frac{\frac{15}{16}x+\frac{17}{18}}{19}\)
+  \item
+    \(\frac{\frac{4}{5}x+\frac{6}{7}}{\frac{8}{9}}+\frac{2}{3}=\frac{\frac{10}{11}x+\frac{12}{13}}{14}\)
+  \item
+    \(\frac{\frac{6}{7}x-\frac{8}{9}}{\frac{10}{11}}+\frac{3}{4}=\frac{\frac{14}{15}x+\frac{16}{17}}{18}\)
+  \item
+    \(-\frac{\frac{1}{2}x+\frac{3}{4}}{\frac{5}{6}}-\frac{4}{5}=-\frac{\frac{7}{8}x-\frac{9}{10}}{11}\)
+  \item
+    \(\frac{-\frac{8}{9}x-\frac{10}{11}}{-\frac{12}{13}}+\frac{6}{7}=\frac{\frac{16}{17}x+\frac{18}{19}}{20}\)
+  \item
+    \(\frac{-\frac{2}{3}x+\frac{4}{5}}{\frac{6}{7}}-\frac{1}{2}=-\frac{\frac{8}{9}x+\frac{10}{11}}{12}\)
+  \item
+    \(-\frac{\frac{5}{6}x-\frac{7}{8}}{\frac{9}{10}}+\frac{3}{4}=-\frac{\frac{11}{12}x-\frac{13}{14}}{15}\)
+  \item
+    \(\frac{\frac{3}{4}x+\frac{5}{6}}{\frac{7}{8}}-\frac{2}{3}=-\frac{\frac{9}{10}x+\frac{11}{12}}{13}\)
+  \item
+    \(-\frac{-\frac{6}{7}x+\frac{8}{9}}{\frac{10}{11}}+\frac{4}{5}=-\frac{\frac{14}{15}x-\frac{16}{17}}{18}\)
+  \item
+    \(\frac{\frac{4}{5}x+\frac{6}{7}}{-\frac{8}{9}}-\frac{3}{4}=\frac{\frac{10}{11}x-\frac{12}{13}}{14}\)
+  \item
+    \(\frac{-\frac{1}{2}x-\frac{3}{4}}{\frac{5}{6}}+\frac{5}{6}=\frac{\frac{7}{8}x+\frac{9}{10}}{11}\)
+  \item
+    \(\frac{\frac{8}{9}x-\frac{10}{11}}{-\frac{12}{13}}-\frac{6}{7}=\frac{\frac{16}{17}x-\frac{18}{19}}{20}\)
+  \end{enumerate}
+\end{enumerate}
+
+\section{Desigualdades}\label{desigualdades}
+
+\subsection{Elementos básicos}\label{elementos-buxe1sicos}
+
+Una desigualdad es una inecuación, es decir, es una ecuación que se
+resuelve de igual manera que una ecuación de primer y con valor
+absoluto, con la diferencia de que en lugar de considerar el signo de
+igualdas se utilizan cualesquiera de los siguientes
+s\textquotesingle imbolos: \(>,<,\geq,\leq\). Más adelante se abordarán
+las desigualdades de segundo orden.
+
+Se tienen los siguientes tipos de desigualdades tanto de primer orden
+como de valor absoluto:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Desigualdades de primer grado
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(ax+b>c\)
+\item
+  \(ax+b\geq c\)
+\item
+  \(ax+b<c\)
+\item
+  \(ax+b\leq c\)
+\item
+  \(c<ax+b< d\)
+\item
+  \(c<ax+b\leq d\)
+\item
+  \(c\leq ax+b< d\)
+\item
+  \(c\leq ax+b\leq d\)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Desigualdades de valor absoluto
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(|ax+b|>c\)
+\item
+  \(|ax+b|\geq c\)
+\item
+  \(|ax+b|<c\)
+\item
+  \(|ax+b|\leq c\)
+\end{enumerate}
+
+Para resolver las desigualdades de primer orden se procede de la
+siguiente manera:
+
+\begin{Ejem}
+Supongamos se tiene la desigualdad $ax+b>0$, con $a\neq0$: 
+
+\begin{eqnarray*}
+ax+b&>&c\\
+ax+b-b&>&c-b\\
+ax&>&c-b\\
+\left(\frac{1}{a}\right)ax&>&\left(\frac{1}{a}\right)\left(c-b\right)\\
+\left(\frac{1}{a}\times a\right)x&>&\frac{c-b}{a}\\
+\left(\frac{a}{a}\right)x&>&\frac{c-b}{a}\\
+\left(1\right)x&>&\frac{c-b}{a}\\
+x&>&\frac{c-b}{a}
+\end{eqnarray*}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\end{Ejem}
+
+\begin{figure}
+\centering
+\IfFileExists{Desigualdad1.png}{\includegraphics[width=3.125in,height=\textheight]{Desigualdad1.png}}{\emph{[Figura no adjunta: Desigualdad1.png]}}
+\caption{Desigualdad \(ax+b>c\)}
+\end{figure}
+
+\begin{Ejem}
+Supongamos se tiene la desigualdad $ax+b\leq c$, con $a\neq0$: 
+
+\begin{eqnarray*}
+ax+b&\leq&c\\
+ax+b-b&\leq&c-b\\
+ax&\leq&c-b\\
+\left(\frac{1}{a}\right)ax&\leq&\left(\frac{1}{a}\right)\left(c-b\right)\\
+\left(\frac{1}{a}\times a\right)x&\leq&\frac{c-b}{a}\\
+\left(\frac{a}{a}\right)x&\leq&\frac{c-b}{a}\\
+\left(1\right)x&\leq&\frac{c-b}{a}\\
+x&\leq&\frac{c-b}{a}
+\end{eqnarray*}
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\end{Ejem}
+
+\begin{figure}
+\centering
+\IfFileExists{Desigualdad2.png}{\includegraphics[width=3.125in,height=\textheight]{Desigualdad2.png}}{\emph{[Figura no adjunta: Desigualdad2.png]}}
+\caption{Desigualdad \(ax+b\leq c\)}
+\end{figure}
+
+\begin{Ejem}
+Supongamos se tiene la desigualdad $c\leq ax+b\leq d$, con $a\neq0$: 
+
+\begin{eqnarray*}
+c&\leq& ax+b<d\\
+c-b&\leq& ax+b-b<d-b\\
+c-b&\leq& ax+0<d-b\\
+c-b&\leq& ax<d-b\\
+\left(\frac{1}{a}\right)c-b&\leq& \left(\frac{1}{a}\right)ax<\left(\frac{1}{a}\right)d-b\\
+\left(\frac{c-b}{a}\right)&\leq& \left(\frac{a}{a}\right)x<\left(\frac{d-b}{a}\right)\\
+\left(\frac{c-b}{a}\right)&\leq& x<\left(\frac{d-b}{a}\right)\\
+\end{eqnarray*}
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\end{Ejem}
+
+\begin{figure}
+\centering
+\IfFileExists{Desigualdad3.png}{\includegraphics[width=3.125in,height=\textheight]{Desigualdad3.png}}{\emph{[Figura no adjunta: Desigualdad3.png]}}
+\caption{Desigualdad \(c\leq ax+b\leq d\), con \(a\neq0\)}
+\end{figure}
+
+\begin{Ejem}
+Supongamos se tiene la desigualdad $|ax+b|\leq c$, con $a\neq0$, recordemos que $|a|=b$, sí y sólo si $a=b$ o $a=-b$, entonces
+
+\begin{eqnarray*}
+|ax+b|&\leq& c\\
+-c&\leq& ax+b \leq c\\
+-c-b&\leq& ax+b-b \leq c-b\\
+-c-b&\leq& ax+0<c-b\\
+-c-b&\leq& ax<c-b\\
+\left(\frac{1}{a}\right)c-b&\leq& \left(\frac{1}{a}\right)ax<\left(\frac{1}{a}\right)c-b\\
+\left(\frac{-c-b}{a}\right)&\leq& \left(\frac{a}{a}\right)x<\left(\frac{c-b}{a}\right)\\
+\left(\frac{-c-b}{a}\right)&\leq& x<\left(\frac{c-b}{a}\right)\\
+-\left(\frac{c+b}{a}\right)&\leq& x<\left(\frac{c-b}{a}\right)\\
+\end{eqnarray*}
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\end{Ejem}
+
+\begin{figure}
+\centering
+\IfFileExists{Desigualdad4.png}{\includegraphics[width=3.125in,height=\textheight]{Desigualdad4.png}}{\emph{[Figura no adjunta: Desigualdad4.png]}}
+\caption{Desigualdad \(|ax+b|\leq c\), con \(a\neq0\)}
+\end{figure}
+
+\begin{Ejem}
+Supongamos se tiene la desigualdad $|ax+b|\geq c$, con $a\neq0$, recordemos que $|a|\geq b$ sí y sólo sí, $a\geq b$ o $a\leq -b$, entonces tenemos dos casos
+
+\begin{itemize}
+\item[Caso 1:]
+\begin{eqnarray*}
+ax+b&\geq& c\\
+ax+b-b&\geq& c-b\\
+ax+0&\geq& c-b\\
+ax&\geq& c-b\\
+\left(\frac{1}{a}\right)ax&\geq&\left(\frac{1}{a}\right)c-b\\
+\left(\frac{a}{a}\right)ax&\geq&\left(\frac{1}{a}\right)c-b\\
+\left(1\right)x&\geq&\left(\frac{c-b}{a}\right)\\
+x&\geq&\left(\frac{c-b}{a}\right)
+\end{eqnarray*}
+
+
+\item[Caso 2:]
+\begin{eqnarray*}
+ax+b&\leq& -c\\
+ax+b-b&\leq& -c-b\\
+ax+0&\leq& -c-b\\
+ax&\leq& -c-b\\
+\left(\frac{1}{a}\right)ax&\leq&\left(\frac{1}{a}\right)\left(-c-b\right)\\
+\left(\frac{a}{a}\right)ax&\leq&\left(\frac{1}{a}\right)\left(-c-b\right)\\
+\left(1\right)x&\leq&-\left(\frac{c+b}{a}\right)\\
+x&\leq&-\left(\frac{c+b}{a}\right)\\
+\end{eqnarray*}
+
+\end{itemize}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\end{Ejem}
+
+\begin{figure}
+\centering
+\IfFileExists{Desigualdad5.png}{\includegraphics[width=3.125in,height=\textheight]{Desigualdad5.png}}{\emph{[Figura no adjunta: Desigualdad5.png]}}
+\caption{Desigualdad \(|ax+b|\leq c\), con \(a\neq0\)}
+\end{figure}
+
+\subsection{Solución de desigualdades de primer
+grado}\label{soluciuxf3n-de-desigualdades-de-primer-grado}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b>c\)}{Solución de desigualdades del tipo: ax+b\textgreater c}}\label{soluciuxf3n-de-desigualdades-del-tipo-axbc}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(2x+3>7\)
+\item
+  \(-5x+2>9\)
+\item
+  \(4x-1>3\)
+\item
+  \(-3x+5>8\)
+\item
+  \(2x+1>3x-2\)
+\item
+  \(3x-2>2x+4\)
+\item
+  \(4x+1>2x+5\)
+\item
+  \(-2x-3>4x-7\)
+\item
+  \(5x-2>3x+4\)
+\item
+  \(2x+4>6x-8\)
+\item
+  \(-4x+3>5x-2\)
+\item
+  \(3x-1>4x-3\)
+\item
+  \(2x-5>x-3\)
+\item
+  \(3x+2>2x-5\)
+\item
+  \(-2x+1>5x-8\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b>c\), con coeficientes
+fraccionarios}{Solución de desigualdades del tipo: ax+b\textgreater c, con coeficientes fraccionarios}}\label{soluciuxf3n-de-desigualdades-del-tipo-axbc-con-coeficientes-fraccionarios}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\frac{1}{2}x+\frac{3}{4}>1\)
+\item
+  \(-\frac{2}{3}x+\frac{4}{5}>3\)
+\item
+  \(\frac{3}{4}x-\frac{1}{2}>\frac{5}{6}\)
+\item
+  \(-\frac{2}{5}x+\frac{1}{3}>-\frac{1}{15}\)
+\item
+  \(\frac{2}{3}x+\frac{1}{4}>\frac{5}{6}x-\frac{1}{2}\)
+\item
+  \(\frac{1}{2}x-\frac{1}{3}>-\frac{2}{5}x+\frac{7}{15}\)
+\item
+  \(-\frac{3}{4}x+\frac{1}{2}>\frac{2}{3}x-\frac{1}{4}\)
+\item
+  \(\frac{1}{3}x-\frac{2}{5}>\frac{2}{7}x-\frac{1}{7}\)
+\item
+  \(\frac{2}{5}x+\frac{1}{6}\geq\frac{1}{3}x+\frac{5}{6}\)
+\item
+  \(\frac{3}{4}x+\frac{1}{5}>\frac{1}{2}x+\frac{3}{10}\)
+\item
+  \(-\frac{1}{2}x+\frac{1}{3}>-\frac{3}{4}x-\frac{1}{6}\)
+\item
+  \(\frac{1}{4}x-\frac{1}{2}>\frac{2}{3}x-\frac{4}{6}\)
+\item
+  \(\frac{2}{3}x-\frac{1}{4}>\frac{3}{4}x-\frac{2}{3}\)
+\item
+  \(-\frac{1}{2}x+\frac{3}{4}>\frac{3}{5}x+\frac{1}{10}\)
+\item
+  \(\frac{2}{5}x-\frac{1}{4}>-\frac{1}{2}x+\frac{3}{8}\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b<c\)}{Solución de desigualdades del tipo: ax+b\textless c}}\label{soluciuxf3n-de-desigualdades-del-tipo-axbc-1}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(2x+3<7\)
+\item
+  \(-5x+2<-9\)
+\item
+  \(4x-1<3\)
+\item
+  \(-3x+5<8\)
+\item
+  \(2x+1<3x-2\)
+\item
+  \(3x-2<2x+4\)
+\item
+  \(4x+1<2x+5\)
+\item
+  \(-2x-3<4x-7\)
+\item
+  \(5x-2<3x+4\)
+\item
+  \(2x+4<6x-8\)
+\item
+  \(-4x+3<5x-2\)
+\item
+  \(3x-1<4x-3\)
+\item
+  \(2x-5<x-3\)
+\item
+  \(3x+2<2x-5\)
+\item
+  \(-2x+1<5x-8\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b<c\) con coeficientes
+fraccionarios}{Solución de desigualdades del tipo: ax+b\textless c con coeficientes fraccionarios}}\label{soluciuxf3n-de-desigualdades-del-tipo-axbc-con-coeficientes-fraccionarios-1}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\frac{1}{2}x+\frac{3}{4}<\frac{5}{8}\)
+\item
+  \(-\frac{2}{3}x+\frac{4}{5}<\frac{1}{2}\)
+\item
+  \(\frac{3}{4}x-\frac{1}{2}<\frac{5}{6}\)
+\item
+  \(-\frac{2}{5}x+\frac{1}{3}<-\frac{1}{15}\)
+\item
+  \(\frac{2}{3}x+\frac{1}{4}<\frac{5}{6}x-\frac{1}{2}\)
+\item
+  \(\frac{1}{2}x-\frac{1}{3}<\frac{2}{5}x-\frac{7}{15}\)
+\item
+  \(-\frac{3}{4}x+\frac{1}{2}<\frac{2}{3}x-\frac{1}{4}\)
+\item
+  \(\frac{1}{3}x-\frac{2}{5}<\frac{2}{7}x-\frac{1}{7}\)
+\item
+  \(\frac{2}{5}x+\frac{1}{6}<\frac{1}{3}x+\frac{5}{6}\)
+\item
+  \(\frac{3}{4}x+\frac{1}{5}<\frac{1}{2}x+\frac{3}{10}\)
+\item
+  \(-\frac{1}{2}x+\frac{1}{3}<-\frac{3}{4}x-\frac{1}{6}\)
+\item
+  \(\frac{1}{4}x-\frac{1}{2}<\frac{2}{3}x-\frac{4}{6}\)
+\item
+  \(\frac{2}{3}x-\frac{1}{4}<\frac{3}{4}x-\frac{2}{3}\)
+\item
+  \(-\frac{1}{2}x+\frac{3}{4}<\frac{3}{5}x+\frac{1}{10}\)
+\item
+  \(\frac{2}{5}x-\frac{1}{4}<-\frac{1}{2}x+\frac{3}{8}\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b \geq c\)}{Solución de desigualdades del tipo: ax+b \textbackslash geq c}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-geq-c}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(2x + 3 \geq 5\)
+\item
+  \(-4x + 2 \geq -10\)
+\item
+  \(5x - 4 \geq 6\)
+\item
+  \(-3x + 7 \geq 4\)
+\item
+  \(2x - 3 \geq x + 2\)
+\item
+  \(3x + 2 \geq 2x - 1\)
+\item
+  \(4x - 1 \geq x + 5\)
+\item
+  \(-2x - 3 \geq -6x - 1\)
+\item
+  \(5x - 2 \geq 2x + 8\)
+\item
+  \(2x + 4 \geq 4x - 2\)
+\item
+  \(-4x + 3 \geq 3x - 2\)
+\item
+  \(3x - 1 \geq 2x + 1\)
+\item
+  \(2x - 5 \geq x - 1\)
+\item
+  \(3x + 2 \geq 2x - 4\)
+\item
+  \(-2x + 1 \geq -5x + 4\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b \geq c\), con coeficientes
+fraccionarios}{Solución de desigualdades del tipo: ax+b \textbackslash geq c, con coeficientes fraccionarios}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-geq-c-con-coeficientes-fraccionarios}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\frac{1}{2}x + \frac{3}{4} \geq \frac{5}{8}\)
+\item
+  \(-\frac{2}{3}x + \frac{4}{5} \geq \frac{1}{2}\)
+\item
+  \(\frac{3}{4}x - \frac{1}{2} \geq \frac{5}{6}\)
+\item
+  \(-\frac{2}{5}x + \frac{1}{3} \geq -\frac{1}{15}\)
+\item
+  \(\frac{2}{3}x + \frac{1}{4} \geq \frac{5}{6}x - \frac{1}{2}\)
+\item
+  \(\frac{1}{2}x - \frac{1}{3} \geq \frac{2}{5}x - \frac{7}{15}\)
+\item
+  \(-\frac{3}{4}x + \frac{1}{2} \geq \frac{2}{3}x - \frac{1}{4}\)
+\item
+  \(\frac{1}{3}x - \frac{2}{5} \geq \frac{2}{7}x - \frac{1}{7}\)
+\item
+  \(\frac{2}{5}x + \frac{1}{6} \geq \frac{1}{3}x + \frac{5}{6}\)
+\item
+  \(\frac{3}{4}x + \frac{1}{5} \geq \frac{1}{2}x + \frac{3}{10}\)
+\item
+  \(-\frac{1}{2}x + \frac{1}{3} \geq -\frac{3}{4}x - \frac{1}{6}\)
+\item
+  \(\frac{1}{4}x - \frac{1}{2} \geq \frac{2}{3}x - \frac{4}{6}\)
+\item
+  \(\frac{2}{3}x - \frac{1}{4} \geq \frac{3}{4}x - \frac{2}{3}\)
+\item
+  \(-\frac{1}{2}x + \frac{3}{4} \geq \frac{3}{5}x + \frac{1}{10}\)
+\item
+  \(\frac{2}{5}x - \frac{1}{4} \geq -\frac{1}{2}x + \frac{3}{8}\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b \leq c\)}{Solución de desigualdades del tipo: ax+b \textbackslash leq c}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-leq-c}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(2x + 3 \leq 7\)
+\item
+  \(-3x + 4 \leq 5\)
+\item
+  \(4x - 2 \leq 6\)
+\item
+  \(-5x + 3 \leq 2\)
+\item
+  \(2x + 1 \leq 5x - 2\)
+\item
+  \(3x - 1 \leq 5x + 2\)
+\item
+  \(-4x + 2 \leq 3x + 1\)
+\item
+  \(3x - 5 \leq 7x - 2\)
+\item
+  \(5x + 1 \leq 3x + 4\)
+\item
+  \(4x + 1 \leq 6x - 3\)
+\item
+  \(-2x + 3 \leq -4x - 1\)
+\item
+  \(x - 2 \leq 2x + 1\)
+\item
+  \(3x - 4 \leq 4x - 2\)
+\item
+  \(-2x + 4 \leq 5x + 1\)
+\item
+  \(2x - 1 \leq -3x + 4\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(ax+b \leq c\) con coeficientes
+fraccionarios.}{Solución de desigualdades del tipo: ax+b \textbackslash leq c con coeficientes fraccionarios.}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-leq-c-con-coeficientes-fraccionarios.}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\frac{1}{2}x + \frac{3}{4} \leq \frac{5}{8}\)
+\item
+  \(-\frac{2}{3}x + \frac{4}{5} \leq \frac{1}{2}\)
+\item
+  \(\frac{3}{4}x - \frac{1}{2} \leq \frac{5}{6}\)
+\item
+  \(-\frac{2}{5}x + \frac{1}{3} \leq -\frac{1}{15}\)
+\item
+  \(\frac{2}{3}x + \frac{1}{4} \leq \frac{5}{6}x - \frac{1}{2}\)
+\item
+  \(\frac{1}{2}x - \frac{1}{3} \leq \frac{2}{5}x - \frac{7}{15}\)
+\item
+  \(-\frac{3}{4}x + \frac{1}{2} \leq \frac{2}{3}x - \frac{1}{4}\)
+\item
+  \(\frac{1}{3}x - \frac{2}{5} \leq \frac{2}{7}x - \frac{1}{7}\)
+\item
+  \(\frac{2}{5}x + \frac{1}{6} \leq \frac{1}{3}x + \frac{5}{6}\)
+\item
+  \(\frac{3}{4}x + \frac{1}{5} \leq \frac{1}{2}x + \frac{3}{10}\)
+\item
+  \(-\frac{1}{2}x + \frac{1}{3} \leq -\frac{3}{4}x - \frac{1}{6}\)
+\item
+  \(\frac{1}{4}x - \frac{1}{2} \leq \frac{2}{3}x - \frac{4}{6}\)
+\item
+  \(\frac{2}{3}x - \frac{1}{4} \leq \frac{3}{4}x - \frac{2}{3}\)
+\item
+  \(-\frac{1}{2}x + \frac{3}{4} \leq \frac{3}{5}x + \frac{1}{10}\)
+\item
+  \(\frac{2}{5}x - \frac{1}{4} \leq -\frac{1}{2}x + \frac{3}{8}\)
+\end{enumerate}
+
+\subsection{Solución de desigualdades con doble
+desigualdad.}\label{soluciuxf3n-de-desigualdades-con-doble-desigualdad.}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(c< ax+b <d\)}{Solución de desigualdades del tipo: c\textless{} ax+b \textless d}}\label{soluciuxf3n-de-desigualdades-del-tipo-c-axb-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(2<x+3<5\)
+\item
+  \(-1<2x-1<1\)
+\item
+  \(-\frac{1}{2}<\frac{3}{4}x+\frac{1}{2}<\frac{1}{2}\)
+\item
+  \(-3< 2x+7<-1\)
+\item
+  \(1<\frac{1}{2}x-\frac{1}{4}<2\)
+\item
+  \(-5<-\frac{1}{3}x+\frac{5}{6}<1\)
+\item
+  \(-5<5x-1<8\)
+\item
+  \(-2< \frac{2}{3}x+1<12\)
+\item
+  \(2<-\frac{1}{2}x+\frac{3}{4}<3\)
+\item
+  \(-3< \frac{1}{2}x-\frac{1}{3}<18\)
+\item
+  \(-4< -3x+5<3\)
+\item
+  \(1<\frac{1}{2}x+\frac{1}{3}<2\)
+\item
+  \(-2< 4x-1<2\)
+\item
+  \(-\frac{3}{4}<\frac{1}{2}x-\frac{1}{4}<\frac{3}{4}\)
+\item
+  \(-1<s\frac{3}{2}x+1<2\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(c< ax+b \leq d\)}{Solución de desigualdades del tipo: c\textless{} ax+b \textbackslash leq d}}\label{soluciuxf3n-de-desigualdades-del-tipo-c-axb-leq-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(-2<3x+1\leq 5\)
+\item
+  \(-\frac{4}{5}< \frac{1}{2}x-\frac{3}{4}\leq2\)
+\item
+  \(-1<2x-1\leq 1\)
+\item
+  \(-3< \frac{1}{2}x+\frac{1}{3}\leq \frac{8}{5}\)
+\item
+  \(-\frac{3}{4}<\frac{1}{2}x+\frac{1}{4}\leq \frac{3}{4}\)
+\item
+  \(-2<\frac{3}{2}x-1\leq 1\)
+\item
+  \(-1<\frac{2}{3}x+1\leq \frac{8}{3}\)
+\item
+  \(1<\frac{1}{2}x+\frac{1}{3}\leq 2\)
+\item
+  \(-3< -2x+5\leq 3\)
+\item
+  \(-\frac{1}{2}<\frac{3}{4}x+\frac{1}{2}\leq \frac{1}{2}\)
+\item
+  \(-5<5x-1\leq 9\)
+\item
+  \(1<\frac{1}{2}x-\frac{1}{4}\leq 2\)
+\item
+  \(-3< 2x+7\leq -1\)
+\item
+  \(-1< -\frac{1}{2}x+\frac{1}{4}\leq 2\)
+\item
+  \(2<-\frac{1}{2}x+\frac{3}{4}\leq 3\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(c\leq ax+b <d\)}{Solución de desigualdades del tipo: c\textbackslash leq ax+b \textless d}}\label{soluciuxf3n-de-desigualdades-del-tipo-cleq-axb-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(-2\leq 3x+1<5\)
+\item
+  \(-\frac{4}{5}\leq \frac{1}{2}x-\frac{3}{4}<2\)
+\item
+  \(-1\leq 2x-1<1\)
+\item
+  \(-3\leq \frac{1}{2}x+\frac{1}{3}<\frac{7}{9}\)
+\item
+  \(-\frac{3}{4}\leq \frac{1}{2}x+\frac{1}{4}<\frac{3}{4}\)
+\item
+  \(-2\leq \frac{3}{2}x-1<1\)
+\item
+  \(-1\leq \frac{2}{3}x+1<\frac{9}{4}\)
+\item
+  \(1\leq \frac{1}{2}x+\frac{1}{3}<2\)
+\item
+  \(-\frac{4}{3}\leq -2x+5<3\)
+\item
+  \(-\frac{1}{2}\leq \frac{3}{4}x+\frac{1}{2}<\frac{1}{2}\)
+\item
+  \(-5\leq 5x-1<\frac{15}{6}\)
+\item
+  \(1\leq \frac{1}{2}x-\frac{1}{4}<2\)
+\item
+  \(-3\leq 2x+7<-1\)
+\item
+  \(-1\leq -\frac{1}{2}x+\frac{1}{4}<2\)
+\item
+  \(2\leq -\frac{1}{2}x+\frac{3}{4}<3\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(c\leq ax+b \leq d\)}{Solución de desigualdades del tipo: c\textbackslash leq ax+b \textbackslash leq d}}\label{soluciuxf3n-de-desigualdades-del-tipo-cleq-axb-leq-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(-1\leq x\leq 2\)
+\item
+  \(-\frac{3}{4}\leq \frac{1}{2}x+\frac{1}{4}\leq \frac{5}{8}\)
+\item
+  \(2\leq 3x-1\leq 7\)
+\item
+  \(-\frac{1}{3}\leq \frac{1}{6}x+\frac{1}{2}\leq \frac{1}{2}\)
+\item
+  \(-1\leq -x+3\leq 2\)
+\item
+  \(-2\leq \frac{1}{2}x+1\leq 3\)
+\item
+  \(2\leq \frac{3}{2}x+1\leq 5\)
+\item
+  \(-\frac{3}{4}\leq -\frac{1}{2}x+\frac{1}{4}\leq \frac{1}{4}\)
+\item
+  \(-4\leq 2x+1\leq 7\)
+\item
+  \(-\frac{1}{2}\leq -\frac{3}{4}x+\frac{1}{2}\leq 1\)
+\item
+  \(-\frac{5}{2}\leq \frac{1}{4}x+1\leq 1\)
+\item
+  \(1\leq -\frac{1}{2}x+\frac{3}{4}\leq 3\)
+\item
+  \(-\frac{5}{6}\leq \frac{1}{3}x+\frac{1}{2}\leq \frac{1}{2}\)
+\item
+  \(-1\leq \frac{1}{2}x-\frac{1}{4}\leq 3\)
+\item
+  \(-2\leq \frac{1}{4}x+\frac{1}{2}\leq 3\)
+\end{enumerate}
+
+\subsection{Solución de desigualdades con valor
+absoluto}\label{soluciuxf3n-de-desigualdades-con-valor-absoluto}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(|ax+b| <d\)}{Solución de desigualdades del tipo: \textbar ax+b\textbar{} \textless d}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(|2x+1|<5\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|<2\)
+\item
+  \(|3x-1|<7\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|<1\)
+\item
+  \(|x-2|<4\)
+\item
+  \(|\frac{1}{2}x+1|<3\)
+\item
+  \(|\frac{3}{2}x+1|<5\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|<\frac{3}{4}\)
+\item
+  \(|2x+1|<6\)
+\item
+  \(|\frac{3}{4}x-\frac{1}{2}|<1\)
+\item
+  \(|\frac{1}{4}x+1|<\frac{7}{2}\)
+\item
+  \(|-\frac{1}{2}x+\frac{3}{4}|<2\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|<\frac{5}{6}\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|<3\)
+\item
+  \(|\frac{1}{4}x+\frac{1}{2}|<\frac{7}{4}\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(|ax+b| \leq d\)}{Solución de desigualdades del tipo: \textbar ax+b\textbar{} \textbackslash leq d}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-leq-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(|3x-1|\leq 6\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|\leq 1\)
+\item
+  \(|2x+1|\leq 5\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|\leq \frac{4}{3}\)
+\item
+  \(|x-2|\leq 3\)
+\item
+  \(|\frac{1}{2}x+1|\leq 4\)
+\item
+  \(|\frac{3}{2}x+1|\leq 5\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|\leq \frac{5}{4}\)
+\item
+  \(|2x+1|\leq 7\)
+\item
+  \(|\frac{3}{4}x-\frac{1}{2}|\leq 2\)
+\item
+  \(|\frac{1}{4}x+1|\leq 3\)
+\item
+  \(|-\frac{1}{2}x+\frac{3}{4}|\leq 2\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|\leq 1\)
+\end{enumerate}
+
+14, \(|\frac{1}{2}x-\frac{1}{4}|\leq 2\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  \(|\frac{1}{4}x+\frac{1}{2}|\leq \frac{5}{4}\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(|ax+b| >d\)}{Solución de desigualdades del tipo: \textbar ax+b\textbar{} \textgreater d}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-d-1}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(|3x-1|>4\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|>\frac{1}{2}\)
+\item
+  \(|2x+1|>3\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|>\frac{5}{6}\)
+\item
+  \(|x-2|>1\)
+\item
+  \(|\frac{1}{2}x+1|>\frac{3}{4}\)
+\item
+  \(|\frac{3}{2}x+1|>\frac{7}{2}\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|>\frac{3}{4}\)
+\item
+  \(|2x+1|>\frac{9}{2}\)
+\item
+  \(|\frac{3}{4}x-\frac{1}{2}|>\frac{5}{4}\)
+\item
+  \(|\frac{1}{4}x+1|>1\)
+\item
+  \(|-\frac{1}{2}x+\frac{3}{4}|>\frac{1}{2}\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|>\frac{2}{3}\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|>\frac{5}{4}\)
+\item
+  \(|\frac{1}{4}x+\frac{1}{2}|>1\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo:
+\(|ax+b| \geq d\)}{Solución de desigualdades del tipo: \textbar ax+b\textbar{} \textbackslash geq d}}\label{soluciuxf3n-de-desigualdades-del-tipo-axb-geq-d}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(|3x-1|\geq 4\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|\geq\frac{1}{2}\)
+\item
+  \(|2x+1|\geq 3\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|\geq\frac{5}{6}\)
+\item
+  \(|x-2|\geq 1\)
+\item
+  \(|\frac{1}{2}x+1|\geq\frac{3}{4}\)
+\item
+  \(|\frac{3}{2}x+1|\geq\frac{7}{2}\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|\geq\frac{3}{4}\)
+\item
+  \(|2x+1|\geq\frac{9}{2}\)
+\item
+  \(|\frac{3}{4}x-\frac{1}{2}|\geq\frac{5}{4}\)
+\item
+  \(|\frac{1}{4}x+1|\geq 1\)
+\item
+  \(|-\frac{1}{2}x+\frac{3}{4}|\geq\frac{1}{2}\)
+\item
+  \(|\frac{1}{3}x+\frac{1}{2}|\geq\frac{2}{3}\)
+\item
+  \(|\frac{1}{2}x-\frac{1}{4}|\geq\frac{5}{4}\)
+\item
+  \(|\frac{1}{4}x+\frac{1}{2}|\geq 1\)
+\end{enumerate}
+
+\subsubsection{Ejercicios adicionales}\label{ejercicios-adicionales}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Resuelve los ejercicios siguientes, encuentra el intervalo solución y
+  proporciona su gráfica
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \(|-\frac{1}{3}x+\frac{2}{5}| \leq \frac{4}{5}\)
+  \item
+    \(|-\frac{2}{7}x-\frac{3}{4}| \leq \frac{2}{3}\)
+  \item
+    \(|\frac{5}{8}x-\frac{1}{6}| \leq \frac{7}{8}\)
+  \item
+    \(|\frac{3}{10}x+\frac{2}{9}| \leq \frac{1}{2}\)
+  \item
+    \(|-\frac{4}{11}x+\frac{5}{7}| \leq \frac{3}{4}\)
+  \item
+    \(|-\frac{2}{5}x-\frac{1}{3}| \leq \frac{2}{5}\)
+  \item
+    \(|\frac{1}{6}x+\frac{7}{9}| \leq \frac{1}{3}\)
+  \item
+    \(|\frac{7}{9}x-\frac{4}{11}| \leq \frac{5}{6}\)
+  \item
+    \(|-\frac{5}{8}x+\frac{3}{10}| \leq \frac{2}{7}\)
+  \item
+    \(|-\frac{1}{4}x-\frac{1}{8}| \leq \frac{3}{4}\)
+  \item
+    \(|\frac{3}{7}x+\frac{5}{6}| \leq \frac{1}{5}\)
+  \item
+    \(|-\frac{4}{9}x+\frac{2}{11}| \leq \frac{4}{9}\)
+  \item
+    \(|-\frac{2}{5}x-\frac{7}{8}| \leq \frac{2}{3}\)
+  \item
+    \(|\frac{5}{11}x+\frac{1}{7}| \leq \frac{5}{11}\)
+  \item
+    \(|\frac{3}{8}x-\frac{2}{9}| \leq \frac{3}{4}\)
+  \end{enumerate}
+\item
+  Realiza lo mismo para los siguientes ejercicios
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \(|-\frac{2}{5}x+\frac{3}{4}| \leq \frac{1}{2}\)
+  \item
+    \(|\frac{3}{7}x+\frac{1}{8}| \leq \frac{2}{7}\)
+  \item
+    \(|-{\frac{5}{6}x-\frac{4}{9}}| \leq \frac{5}{6}\)
+  \item
+    \(|-\frac{4}{9}x+\frac{2}{11}| \leq \frac{3}{4}\)
+  \item
+    \(|-\frac{1}{3}x-\frac{2}{7}| \leq \frac{3}{5}\)
+  \item
+    \(|\frac{3}{8}x-\frac{1}{6}| \leq \frac{2}{5}\)
+  \item
+    \(|-{\frac{2}{7}x+\frac{5}{8}}| \leq \frac{3}{7}\)
+  \item
+    \(|\frac{5}{11}x+\frac{1}{3}| \leq \frac{4}{11}\)
+  \item
+    \(|-\frac{4}{5}x-\frac{3}{10}| \leq \frac{1}{4}\)
+  \item
+    \(|-\frac{1}{4}x+\frac{7}{9}| \leq \frac{5}{8}\)
+  \item
+    \(|-{\frac{2}{9}x-\frac{1}{5}}| \leq \frac{2}{9}\)
+  \item
+    \(|-\frac{3}{10}x+\frac{2}{7}| \leq \frac{4}{9}\)
+  \item
+    \(|\frac{5}{8}x-\frac{1}{3}| \leq \frac{3}{8}\)
+  \item
+    \(|\frac{4}{11}x+\frac{5}{6}| \leq \frac{2}{5}\)
+  \item
+    \(|-\frac{2}{5}x-\frac{3}{8}| \leq \frac{5}{6}\)
+  \item
+    \(|\frac{1}{6}x-\frac{2}{9}| \leq \frac{1}{4}\)
+  \item
+    \(|-{\frac{5}{9}x+\frac{4}{11}}| \leq \frac{2}{3}\)
+  \item
+    \(|-\frac{3}{8}x+\frac{1}{5}| \leq \frac{3}{8}\)
+  \item
+    \(|-\frac{4}{7}x-\frac{3}{10}| \leq \frac{1}{7}\)
+  \item
+    \(|-\frac{2}{11}x+\frac{5}{8}| \leq \frac{3}{10}\)
+  \end{enumerate}
+\item
+  Finalmente realiza lo mismo para la siguiente lista:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \(|{-\frac{4}{9}x+\frac{5}{8}}| \geq \frac{1}{3}\)
+  \item
+    \(|{-\frac{1}{6}x-\frac{2}{7}}| > \frac{2}{5}\)
+  \item
+    \(|{\frac{7}{11}x+\frac{1}{8}}| \leq \frac{3}{7}\)
+  \item
+    \(|{-\frac{3}{8}x+\frac{4}{9}}| < \frac{5}{8}\)
+  \item
+    \(|{-\frac{5}{6}x+\frac{3}{10}}| \geq \frac{2}{3}\)
+  \item
+    \(|{-\frac{2}{7}x-\frac{1}{4}}| \leq \frac{5}{6}\)
+  \item
+    \(|{-\frac{1}{3}x+\frac{5}{9}}| > \frac{2}{7}\)
+  \item
+    \(|{\frac{4}{11}x-\frac{3}{8}}| \leq \frac{1}{5}\)
+  \item
+    \(|{-\frac{2}{9}x+\frac{1}{7}}| \geq \frac{3}{4}\)
+  \item
+    \(|{-\frac{5}{8}x+\frac{2}{11}}| < \frac{4}{9}\)
+  \item
+    \(|{\frac{1}{4}x+\frac{7}{9}}| \leq \frac{2}{7}\)
+  \item
+    \(|{-\frac{3}{10}x-\frac{5}{6}}| > \frac{1}{3}\)
+  \item
+    \(|{-\frac{4}{5}x+\frac{1}{6}}| \geq \frac{2}{5}\)
+  \item
+    \(|{-\frac{3}{7}x+\frac{4}{9}}| < \frac{3}{7}\)
+  \item
+    \(|{\frac{5}{11}x-\frac{2}{8}}| \leq \frac{4}{11}\)
+  \item
+    \(|{-\frac{2}{11}x-\frac{3}{8}}| > \frac{1}{6}\)
+  \item
+    \(|{-\frac{5}{9}x+\frac{2}{7}}| \geq \frac{3}{4}\)
+  \item
+    \(|{-\frac{3}{8}x-\frac{1}{6}}| < \frac{5}{11}\)
+  \item
+    \(|{\frac{4}{7}x+\frac{1}{5}}| \leq \frac{3}{10}\)
+  \item
+    \(|{-\frac{1}{5}x+\frac{6}{11}}| > \frac{2}{9}\)
+  \end{enumerate}
+\item
+  Un poco más de ejercicios finales
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \(|\frac{3x+2}{5}| \geq \frac{1}{4}\)
+  \item
+    \(|-\frac{6x-1}{2}| \leq \frac{3}{5}\)
+  \item
+    \(|\frac{-2x+9}{7}| > \frac{4}{9}\)
+  \item
+    \(|-\frac{-5x-3}{4}| \geq \frac{2}{7}\)
+  \item
+    \(|\frac{4x+7}{3}| < \frac{5}{6}\)
+  \item
+    \(|-\frac{9x-2}{8}| \leq \frac{7}{10}\)
+  \item
+    \(|\frac{-8x+3}{6}| > \frac{1}{5}\)
+  \item
+    \(|\frac{-7x-5}{9}| \geq \frac{2}{11}\)
+  \item
+    \(|-\frac{12x+4}{11}| < \frac{3}{8}\)
+  \item
+    \(|\frac{11x-6}{10}| \leq \frac{5}{9}\)
+  \item
+    \(|\frac{-15x+2}{13}| > \frac{4}{11}\)
+  \item
+    \(|-\frac{-14x-7}{8}| \geq \frac{3}{7}\)
+  \item
+    \(|\frac{17x+1}{9}| < \frac{2}{5}\)
+  \item
+    \(|-\frac{18x-9}{5}| \leq \frac{7}{12}\)
+  \item
+    \(|\frac{-21x+5}{4}| > \frac{1}{3}\)
+  \item
+    \(|-\frac{-23x-2}{7}| \geq \frac{4}{9}\)
+  \item
+    \(|\frac{25x+8}{6}| < \frac{2}{7}\)
+  \item
+    \(|-\frac{27x-3}{10}| \leq \frac{5}{11}\)
+  \item
+    \(|\frac{-29x+6}{11}| > \frac{3}{8}\)
+  \item
+    \(|-\frac{-31x-4}{9}| \geq \frac{1}{5}\)
+  \end{enumerate}
+\item
+  Ejercicios finales
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \(|\frac{2x+3}{4}-\frac{5}{6}| \geq \frac{7}{8}\)
+  \item
+    \(|-\frac{3x-1}{2}+\frac{4}{5}| \leq \frac{6}{7}\)
+  \item
+    \(|\frac{-7x+11}{9}-\frac{13}{14}| > \frac{15}{16}\)
+  \item
+    \(|\frac{-4x-9}{5}+\frac{2}{3}| \geq \frac{8}{9}\)
+  \item
+    \(|-\frac{5x+7}{8}-\frac{10}{11}| < \frac{12}{13}\)
+  \item
+    \(|\frac{6x-5}{4}+\frac{8}{7}| \leq \frac{9}{10}\)
+  \item
+    \(|\frac{-9x+2}{11}-\frac{13}{15}| > \frac{17}{18}\)
+  \item
+    \(|-\frac{-2x-1}{10}+\frac{14}{13}| \geq \frac{16}{17}\)
+  \item
+    \(|-\frac{8x+3}{6}-\frac{7}{9}| < \frac{5}{8}\)
+  \item
+    \(|\frac{11x-4}{7}+\frac{9}{12}| \leq \frac{13}{14}\)
+  \item
+    \(|-\frac{-14x+5}{15}-\frac{17}{18}| > \frac{19}{20}\)
+  \item
+    \(|\frac{-10x-7}{13}+\frac{12}{11}| \geq \frac{16}{15}\)
+  \item
+    \(|\frac{13x+9}{8}-\frac{14}{15}| < \frac{7}{9}\)
+  \item
+    \(|-\frac{15x-2}{11}+\frac{10}{9}| \leq \frac{4}{5}\)
+  \item
+    \(|\frac{-17x+6}{5}-\frac{8}{7}| > \frac{3}{4}\)
+  \item
+    \(|-\frac{-19x-8}{4}+\frac{12}{11}| \geq \frac{5}{6}\)
+  \item
+    \(|\frac{21x+4}{3}-\frac{10}{9}| < \frac{13}{14}\)
+  \item
+    \(|-\frac{23x-5}{2}+\frac{14}{15}| \leq \frac{16}{17}\)
+  \item
+    \(|\frac{-16x+7}{9}-\frac{11}{10}| > \frac{8}{9}\)
+  \item
+    \(|-\frac{-18x-3}{7}+\frac{9}{6}| \geq \frac{14}{13}\)
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Solución de desigualdades de segundo
+grado}\label{soluciuxf3n-de-desigualdades-de-segundo-grado}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo
+\(ax^2+bx+c>0\)}{Solución de desigualdades del tipo ax\^{}2+bx+c\textgreater0}}\label{soluciuxf3n-de-desigualdades-del-tipo-ax2bxc0}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(x^2-3x+2>0\)
+\item
+  \(2x^2-5x+2>0\)
+\item
+  \(3x^2+2x-1>0\)
+\item
+  \(x^2-\frac{3}{2}x+\frac{1}{2}>0\)
+\item
+  \(\frac{1}{2}x^2-2x+2>0\)
+\item
+  \(x^2+2x+1>0\)
+\item
+  \(\frac{1}{4}x^2-\frac{1}{2}x+1>0\)
+\item
+  \(\frac{1}{3}x^2-\frac{4}{3}x+1>0\)
+\item
+  \(4x^2-12x+9>0\)
+\item
+  \(\frac{3}{2}x^2-5x+2>0\)
+\item
+  \(2x^2-7x+6>0\)
+\item
+  \(\frac{1}{2}x^2+\frac{1}{2}x-1>0\)
+\item
+  \(\frac{1}{5}x^2-\frac{2}{5}x+\frac{1}{2}>0\)
+\item
+  \(x^2+\frac{1}{2}x-\frac{1}{2}>0\)
+\item
+  \(3x^2-10x+6>0\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo
+\(ax^2+bx+c\geq 0\)}{Solución de desigualdades del tipo ax\^{}2+bx+c\textbackslash geq 0}}\label{soluciuxf3n-de-desigualdades-del-tipo-ax2bxcgeq-0}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(x^2-4x+3\geq 0\)
+\item
+  \(2x^2-6x+4\geq 0\)
+\item
+  \(3x^2+2x+1\geq 0\)
+\item
+  \(x^2-\frac{3}{2}x+\frac{1}{2}\geq 0\)
+\item
+  \(\frac{1}{2}x^2-2x+2\geq 0\)
+\item
+  \(x^2+2x+1\geq 0\)
+\item
+  \(\frac{1}{4}x^2-\frac{1}{2}x+1\geq 0\)
+\item
+  \(\frac{1}{3}x^2-\frac{4}{3}x+1\geq 0\)
+\item
+  \(4x^2-12x+9\geq 0\)
+\item
+  \(\frac{3}{2}x^2-5x+2\geq 0\)
+\item
+  \(2x^2-7x+6\geq 0\)
+\item
+  \(\frac{1}{2}x^2+\frac{1}{2}x-1\geq 0\)
+\item
+  \(\frac{1}{5}x^2-\frac{2}{5}x+\frac{1}{2}\geq 0\)
+\item
+  \(x^2+\frac{1}{2}x-\frac{1}{2}\geq 0\)
+\item
+  \(3x^2-10x+6\geq 0\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo
+\(ax^2+bx+c<0\)}{Solución de desigualdades del tipo ax\^{}2+bx+c\textless0}}\label{soluciuxf3n-de-desigualdades-del-tipo-ax2bxc0-1}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(x^2-4x+3<0\)
+\item
+  \(2x^2-5x-3<0\)
+\item
+  \(\frac{1}{2}x^2-\frac{5}{2}x+1<0\)
+\item
+  \(3x^2-7x+2<0\)
+\item
+  \(-x^2+6x-9<0\)
+\item
+  \(\frac{1}{3}x^2+\frac{5}{3}x+1<0\)
+\item
+  \(2x^2+5x+2<0\)
+\item
+  \(-4x^2+16x-12<0\)
+\item
+  \(\frac{1}{4}x^2-\frac{5}{2}x+4<0\)
+\item
+  \(x^2-9<0\)
+\item
+  \(4x^2-12x+8<0\)
+\item
+  \(-2x^2+3x+1<0\)
+\item
+  \(3x^2-2x-1<0\)
+\item
+  \(-x^2+x+12<0\)
+\item
+  \(\frac{3}{2}x^2-\frac{5}{2}x-1<0\)
+\end{enumerate}
+
+\subsubsection{\texorpdfstring{Solución de desigualdades del tipo
+\(ax^2+bx+c\leq 0\)}{Solución de desigualdades del tipo ax\^{}2+bx+c\textbackslash leq 0}}\label{soluciuxf3n-de-desigualdades-del-tipo-ax2bxcleq-0}
+
+\textbf{Resuelve las siguientes desigualdades, proporcionando el
+conjunto solución, el intervalo solución así como la representación
+gráfica de la misma}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(x^2-2x+1\leq0\)
+\item
+  \(-3x^2+4x+1\leq0\)
+\item
+  \(\frac{1}{2}x^2-2x+2\leq0\)
+\item
+  \(2x^2-7x+3\leq0\)
+\item
+  \(-x^2+4x-4\leq0\)
+\item
+  \(\frac{1}{4}x^2+\frac{5}{2}x+5\leq0\)
+\item
+  \(3x^2+4x+1\leq0\)
+\item
+  \(-4x^2+4x+4\leq0\)
+\item
+  \(\frac{1}{3}x^2+\frac{5}{3}x+2\leq0\)
+\item
+  \(x^2-16\leq0\)
+\item
+  \(2x^2-8x+8\leq0\)
+\item
+  \(-x^2+3x+6\leq0\)
+\item
+  \(3x^2-2x-2\leq0\)
+\item
+  \(-2x^2+3x+3\leq0\)
+\item
+  \(\frac{1}{2}x^2-\frac{5}{2}x+2\leq0\)
+\end{enumerate}
+
+\subsubsection{Ejercicios adicionales}\label{ejercicios-adicionales-1}
+
+\textbf{a. Resuelve las siguientes desigualdades de segundo orden
+proporcionando su conjunto solución y su gráfica}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(3x^2 - 2x + 1 \geq 0\)
+\item
+  \(-2x^2 + 5x - 3 \leq 0\)
+\item
+  \(x^2 + 4x + 2 \geq 0\)
+\item
+  \(4x^2 - 6x + 3 \leq 0\)
+\item
+  \(-x^2 + 3x - 2 \geq 0\)
+\item
+  \(2x^2 - 7x + 4 \leq 0\)
+\item
+  \(-3x^2 + 2x + 5 \geq 0\)
+\item
+  \(x^2 - 4x + 5 \leq 0\)
+\item
+  \(-2x^2 + 3x - 1 \geq 0\)
+\item
+  \(5x^2 - 2x + 2 \leq 0\)
+\item
+  \(-x^2 + 6x - 5 \geq 0\)
+\item
+  \(3x^2 + 5x + 6 \leq 0\)
+\item
+  \(-4x^2 - 3x + 7 \geq 0\)
+\item
+  \(2x^2 + x - 3 \leq 0\)
+\item
+  \(-x^2 - 2x + 4 \geq 0\)
+\end{enumerate}
+
+\textbf{b. Resuelve las siguientes desigualdades de segundo orden
+proporcionando su conjunto solución y su gráfica}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(-\frac{2}{7}x^2 + \frac{6}{5}x - \frac{5}{6} \leq 0\)
+\item
+  \(\frac{7}{8}x^2 - \frac{3}{2}x + \frac{2}{5} \geq 0\)
+\item
+  \(-\frac{3}{4}x^2 + \frac{5}{6}x - \frac{1}{3} \leq 0\)
+\item
+  \(\frac{4}{5}x^2 - \frac{1}{7}x + \frac{3}{4} \geq 0\)
+\item
+  \(-\frac{1}{6}x^2 + \frac{2}{9}x - \frac{4}{11} \leq 0\)
+\item
+  \(\frac{5}{9}x^2 - \frac{3}{8}x + \frac{7}{10} \geq 0\)
+\item
+  \(-\frac{2}{11}x^2 + \frac{4}{5}x - \frac{1}{6} \leq 0\)
+\item
+  \(\frac{3}{4}x^2 - \frac{1}{3}x + \frac{5}{7} \geq 0\)
+\item
+  \(-\frac{4}{5}x^2 + \frac{2}{7}x - \frac{3}{8} \leq 0\)
+\item
+  \(\frac{1}{2}x^2 - \frac{5}{9}x + \frac{4}{7} \geq 0\)
+\item
+  \(-\frac{5}{6}x^2 + \frac{3}{4}x - \frac{2}{5} \leq 0\)
+\item
+  \(\frac{2}{7}x^2 - \frac{1}{3}x + \frac{5}{8} \geq 0\)
+\item
+  \(-\frac{3}{8}x^2 + \frac{2}{5}x - \frac{4}{7} \leq 0\)
+\item
+  \(\frac{4}{9}x^2 - \frac{3}{7}x + \frac{1}{5} \geq 0\)
+\item
+  \(-\frac{1}{5}x^2 + \frac{4}{11}x - \frac{2}{9} \leq 0\)
+\end{enumerate}
+
+\textbf{c.~Resuelve las siguientes desigualdades de segundo orden
+proporcionando su conjunto solución y su gráfica}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(-\frac{5}{11}x^2 + \frac{3}{8}x - \frac{2}{6} \leq 0\)
+\item
+  \(\frac{2}{5}x^2 - \frac{1}{6}x + \frac{4}{11} \geq 0\)
+\item
+  \(-\frac{3}{4}x^2 + \frac{2}{5}x - \frac{1}{7} \leq 0\)
+\item
+  \(\frac{4}{7}x^2 - \frac{3}{8}x + \frac{2}{9} \geq 0\)
+\item
+  \(-\frac{1}{9}x^2 + \frac{4}{11}x - \frac{3}{10} \leq 0\)
+\item
+  \(\frac{3}{2}x^2 - \frac{5}{4}x + \frac{1}{3} \geq 0\)
+\item
+  \(-\frac{1}{3}x^2 + \frac{4}{5}x - \frac{2}{7} \leq 0\)
+\item
+  \(\frac{2}{5}x^2 + \frac{3}{4}x + \frac{7}{8} \geq 0\)
+\item
+  \(-\frac{4}{9}x^2 + \frac{2}{7}x - \frac{3}{5} < 0\)
+\item
+  \(\frac{5}{6}x^2 - \frac{1}{3}x + \frac{4}{9} > 0\)
+\item
+  \(-\frac{2}{7}x^2 + \frac{6}{5}x - \frac{5}{6} \leq 0\)
+\item
+  \(\frac{7}{8}x^2 - \frac{3}{2}x + \frac{2}{5} \geq 0\)
+\item
+  \(-\frac{3}{4}x^2 + \frac{5}{6}x - \frac{1}{3} \leq 0\)
+\item
+  \(\frac{4}{5}x^2 - \frac{1}{7}x + \frac{3}{4} > 0\)
+\item
+  \(-\frac{1}{6}x^2 + \frac{2}{9}x - \frac{4}{11} \geq 0\)
+\end{enumerate}
+
+\textbf{d.~Resuelve las siguientes desigualdades de segundo orden
+proporcionando su conjunto solución y su gráfica}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(-\frac{5}{6}x^2 + \frac{3}{4}x - \frac{2}{5} \geq 0\)
+\item
+  \(\frac{2}{7}x^2 - \frac{1}{3}x + \frac{5}{8} \leq 0\)
+\item
+  \(-\frac{3}{8}x^2 + \frac{2}{5}x - \frac{4}{7} > 0\)
+\item
+  \(\frac{4}{9}x^2 - \frac{3}{7}x + \frac{1}{5} \geq 0\)
+\item
+  \(-\frac{1}{5}x^2 + \frac{4}{11}x - \frac{2}{9} < 0\)
+\item
+  \(\frac{5}{6}x^2 - \frac{1}{3}x + \frac{4}{9} \leq 0\)
+\item
+  \(-\frac{2}{9}x^2 + \frac{6}{7}x - \frac{5}{8} \geq 0\)
+\item
+  \(\frac{3}{8}x^2 - \frac{5}{6}x + \frac{2}{5} < 0\)
+\item
+  \(-\frac{4}{7}x^2 + \frac{2}{3}x - \frac{1}{4} \leq 0\)
+\item
+  \(\frac{1}{4}x^2 - \frac{5}{9}x + \frac{3}{7} \geq 0\)
+\item
+  \(-\frac{5}{11}x^2 + \frac{3}{8}x - \frac{2}{6} < 0\)
+\item
+  \(\frac{2}{5}x^2 - \frac{1}{6}x + \frac{4}{11} \leq 0\)
+\item
+  \(-\frac{3}{4}x^2 + \frac{2}{5}x - \frac{1}{7} \geq 0\)
+\item
+  \(\frac{4}{7}x^2 - \frac{3}{8}x + \frac{2}{9} < 0\)
+\item
+  \(-\frac{1}{9}x^2 + \frac{4}{11}x - \frac{3}{10} \geq 0\)
+\end{enumerate}
+
+\textbf{e. Resuelve las siguientes desigualdades de segundo orden
+proporcionando su conjunto solución y su gráfica}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\frac{5}{6}x^2 - \frac{1}{3}x + \frac{4}{9} \geq 0\)
+\item
+  \(-\frac{2}{9}x^2 + \frac{6}{7}x - \frac{5}{8} \leq 0\)
+\item
+  \(\frac{3}{8}x^2 - \frac{5}{6}x + \frac{2}{5} \geq 0\)
+\item
+  \(-\frac{4}{7}x^2 + \frac{2}{3}x - \frac{1}{4} \leq 0\)
+\item
+  \(\frac{1}{4}x^2 - \frac{5}{9}x + \frac{3}{7} \geq 0\)
+\item
+  \(\frac{5}{9}x^2 - \frac{3}{8}x + \frac{7}{10} \leq 0\)
+\item
+  \(-\frac{2}{11}x^2 + \frac{4}{5}x - \frac{1}{6} < 0\)
+\item
+  \(\frac{3}{4}x^2 - \frac{1}{3}x + \frac{5}{7} \geq 0\)
+\item
+  \(-\frac{4}{5}x^2 + \frac{2}{7}x - \frac{3}{8} \leq 0\)
+\item
+  \(\frac{1}{2}x^2 - \frac{5}{9}x + \frac{4}{7} < 0\)
+\item
+  \(\frac{3}{2}x^2 - \frac{5}{4}x + \frac{1}{3} \geq 0\)
+\item
+  \(-\frac{1}{3}x^2 + \frac{4}{5}x - \frac{2}{7} \leq 0\)
+\item
+  \(\frac{2}{5}x^2 + \frac{3}{4}x + \frac{7}{8} \geq 0\)
+\item
+  \(-\frac{4}{9}x^2 + \frac{2}{7}x - \frac{3}{5} \leq 0\)
+\item
+  \(\frac{5}{6}x^2 - \frac{1}{3}x + \frac{4}{9} \geq 0\)
+\end{enumerate}
+
+\section{Tarea 1}\label{tarea-1}
+
+\textbf{A partir de los ejercicios anteriores se extraen varios para
+generar la primera tarea, de la cuál se tomarán varios ejercicios para
+la primera evaluación parcial.}
+
+Puedes descargar el archivo PDF de la tarea
+\href{https://github.com/ProfTodoMundo/NotasCalculoDiferencial/blob/PrincipalCD/docs/Tarea1.pdf}{aquí}.
+
+\textbackslash begin\{center\}\textbackslash IfFileExists\{codigo\_qr\_tarea.png\}\{\textbackslash includegraphics{[}width=0.45\textbackslash textwidth{]}\{codigo\_qr\_tarea.png\}\}\{\textbackslash emph\{{[}Figura:
+Acceder al documento{]}\}\}\textbackslash end\{center\}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Resuelve las siguientes ecuaciones
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(2x + 3 = 4x - 1\)
+  \item
+    \(8x + 6 = -2x - 4\)
+  \item
+    \(6x - 5 = -3x + 2\)
+  \item
+    \(-3x + 4 = 7x + 2\)
+  \item
+    \(12x - 8 = -10x + 14\)
+  \item
+    \(-6x + 7 = 8x - 9\)
+  \item
+    \(-13x + 16 = 15x - 18\)
+  \item
+    \(14x + 20 = -16x - 22\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{2}{3}x - \frac{5}{4} = \frac{7}{6}\)
+  \item
+    \(\frac{4}{5}x - \frac{2}{3} = -\frac{1}{6}\)
+  \item
+    \(\frac{11}{12}x + \frac{10}{11} = -\frac{9}{10}\)
+  \item
+    \(\frac{3}{4}x - \frac{4}{5} = -\frac{1}{2}\)
+  \item
+    \(\frac{6}{7}x + \frac{8}{9} = -\frac{10}{11}\)
+  \item
+    \(\frac{9}{10}x + \frac{1}{3} = -\frac{5}{6}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \setcounter{enumii}{2}
+  \item
+    \(\frac{9}{10}x + \frac{7}{12} = -\frac{4}{5}x + \frac{1}{3}\)
+  \item
+    \(-\frac{11}{12}x + \frac{8}{9} = \frac{7}{10}x - \frac{6}{7}\)
+  \item
+    \(-\frac{7}{8}x - \frac{6}{7} = \frac{5}{6}x - \frac{3}{5}\)
+  \item
+    \(\frac{5}{6}x + \frac{4}{5} = -\frac{3}{4}x + \frac{2}{3}\)
+  \item
+    \(-\frac{4}{5}x + \frac{3}{4} = \frac{2}{3}x - \frac{1}{2}\)
+  \item
+    \(\frac{1}{3}x + \frac{5}{7} = -\frac{9}{10}x + \frac{8}{9}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes ecuaciones de la forma
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(\frac{3}{4}+\left\{\frac{2}{5}[\frac{5}{6}(\frac{2}{3}x+\frac{4}{5})+\frac{7}{8}(\frac{3}{4}x+\frac{5}{6})+\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})+\frac{1}{3}+\frac{4}{5}x\)
+  \item
+    \(\frac{3}{4}-\left\{\frac{6}{7}[\frac{5}{6}(\frac{3}{4}x-\frac{4}{5})+\frac{7}{8}(\frac{2}{3}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})-\frac{1}{3}+\frac{4}{5}x\)
+  \item
+    \(-\frac{4}{5}+\left\{\frac{7}{8}[\frac{5}{6}(\frac{3}{4}x-\frac{2}{3})+\frac{4}{5}(\frac{6}{7}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{3}{4}(\frac{2}{3}x+\frac{7}{8})-\frac{1}{6}-\frac{2}{5}x\)
+  \item
+    \(\frac{7}{8}+\left\{-\frac{5}{6}[\frac{3}{4}(\frac{4}{5}x-\frac{6}{7})+\frac{6}{7}(\frac{5}{6}x+\frac{3}{4})-\frac{1}{2}]\right\}=-\frac{4}{5}(\frac{4}{5}x+\frac{5}{6})-\frac{2}{3}+\frac{7}{8}x\)
+  \item
+    \(-\frac{6}{7}-\left\{\frac{4}{5}[\frac{2}{3}(\frac{5}{6}x-\frac{2}{3})+\frac{7}{8}(\frac{4}{5}x+\frac{7}{8})-\frac{1}{2}]\right\}=-\frac{8}{9}(\frac{6}{7}x+\frac{4}{5})-\frac{1}{9}-\frac{8}{9}x\)
+  \item
+    \(-\frac{4}{5}+\left\{\frac{7}{8}[-\frac{2}{3}(\frac{5}{6}x-\frac{7}{8})-\frac{4}{5}(\frac{6}{7}x+\frac{2}{3})-\frac{1}{2}]\right\}=-\frac{3}{4}(\frac{5}{6}x+\frac{7}{8})-\frac{1}{10}-\frac{2}{3}x\)
+  \end{enumerate}
+\item
+  Resuelve los ejercicios de la forma
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \setcounter{enumii}{2}
+  \item
+    \(\frac{\frac{5}{6}x-\frac{7}{8}}{\frac{9}{10}}-\frac{3}{4}=-\frac{\frac{11}{12}x+\frac{13}{14}}{15}\)
+  \item
+    \(\frac{\frac{6}{7}x-\frac{8}{9}}{\frac{10}{11}}+\frac{3}{4}=\frac{\frac{14}{15}x+\frac{16}{17}}{18}\)
+  \item
+    \(\frac{-\frac{2}{3}x+\frac{4}{5}}{\frac{6}{7}}-\frac{1}{2}=-\frac{\frac{8}{9}x+\frac{10}{11}}{12}\)
+  \item
+    \(-\frac{-\frac{6}{7}x+\frac{8}{9}}{\frac{10}{11}}+\frac{4}{5}=-\frac{\frac{14}{15}x-\frac{16}{17}}{18}\)
+  \item
+    \(\frac{\frac{8}{9}x-\frac{10}{11}}{-\frac{12}{13}}-\frac{6}{7}=\frac{\frac{16}{17}x-\frac{18}{19}}{20}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(2x+3>7\)
+  \item
+    \(3x-2>2x+4\)
+  \item
+    \(5x-2>3x+4\)
+  \item
+    \(3x-1>4x-3\)
+  \item
+    \(3x+2>2x-5\)
+  \item
+    \(-2x+1>5x-8\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(\frac{1}{2}x+\frac{3}{4}>1\)
+  \item
+    \(\frac{2}{3}x+\frac{1}{4}>\frac{5}{6}x-\frac{1}{2}\)
+  \item
+    \(\frac{1}{3}x-\frac{2}{5}>\frac{2}{7}x-\frac{1}{7}\)
+  \item
+    \(-\frac{1}{2}x+\frac{1}{3}>-\frac{3}{4}x-\frac{1}{6}\)
+  \item
+    \(-\frac{1}{2}x+\frac{3}{4}>\frac{3}{5}x+\frac{1}{10}\)
+  \item
+    \(\frac{2}{5}x-\frac{1}{4}>-\frac{1}{2}x+\frac{3}{8}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(2x+3<7\)
+  \item
+    \(2x+1<3x-2\)
+  \item
+    \(5x-2<3x+4\)
+  \item
+    \(2x+4<6x-8\)
+  \item
+    \(2x-5<x-3\)
+  \item
+    \(-2x+1<5x-8\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(\frac{1}{2}x+\frac{3}{4}<\frac{5}{8}\)
+  \item
+    \(-\frac{2}{3}x+\frac{4}{5}<\frac{1}{2}\)
+  \item
+    \(-\frac{2}{5}x+\frac{1}{3}<-\frac{1}{15}\)
+  \item
+    \(\frac{1}{3}x-\frac{2}{5}<\frac{2}{7}x-\frac{1}{7}\)
+  \item
+    \(-\frac{1}{2}x+\frac{3}{4}<\frac{3}{5}x+\frac{1}{10}\)
+  \item
+    \(\frac{2}{5}x-\frac{1}{4}<-\frac{1}{2}x+\frac{3}{8}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(2x + 3 \geq 5\)
+  \item
+    \(2x - 3 \geq x + 2\)
+  \item
+    \(4x - 1 \geq x + 5\)
+  \item
+    \(2x + 4 \geq 4x - 2\)
+  \item
+    \(2x - 5 \geq x - 1\)
+  \item
+    \(-2x + 1 \geq -5x + 4\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(\frac{1}{2}x + \frac{3}{4} \geq \frac{5}{8}\)
+  \item
+    \(\frac{2}{3}x + \frac{1}{4} \geq \frac{5}{6}x - \frac{1}{2}\)
+  \item
+    \(\frac{1}{3}x - \frac{2}{5} \geq \frac{2}{7}x - \frac{1}{7}\)
+  \item
+    \(-\frac{1}{2}x + \frac{1}{3} \geq -\frac{3}{4}x - \frac{1}{6}\)
+  \item
+    \(\frac{1}{4}x - \frac{1}{2} \geq \frac{2}{3}x - \frac{4}{6}\)
+  \item
+    \(\frac{2}{5}x - \frac{1}{4} \geq -\frac{1}{2}x + \frac{3}{8}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{1}
+  \item
+    \(-3x + 4 \leq 5\)
+  \item
+    \(-5x + 3 \leq 2\)
+  \item
+    \(2x + 1 \leq 5x - 2\)
+  \item
+    \(3x - 1 \leq 5x + 2\)
+  \item
+    \(-2x + 3 \leq -4x - 1\)
+  \item
+    \(-2x + 4 \leq 5x + 1\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(\frac{1}{2}x + \frac{3}{4} \leq \frac{5}{8}\)
+  \item
+    \(-\frac{2}{5}x + \frac{1}{3} \leq -\frac{1}{15}\)
+  \item
+    \(\frac{1}{2}x - \frac{1}{3} \leq \frac{2}{5}x - \frac{7}{15}\)
+  \item
+    \(-\frac{3}{4}x + \frac{1}{2} \leq \frac{2}{3}x - \frac{1}{4}\)
+  \item
+    \(-\frac{1}{2}x + \frac{3}{4} \leq \frac{3}{5}x + \frac{1}{10}\)
+  \item
+    \(\frac{2}{5}x - \frac{1}{4} \leq -\frac{1}{2}x + \frac{3}{8}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(2<x+3<5\)
+  \item
+    \(-1<2x-1<1\)
+  \item
+    \(-\frac{1}{2}<\frac{3}{4}x+\frac{1}{2}<\frac{1}{2}\)
+  \item
+    \(-4< -3x+5<3\)
+  \item
+    \(1<\frac{1}{2}x+\frac{1}{3}<2\)
+  \item
+    \(-\frac{3}{4}<\frac{1}{2}x-\frac{1}{4}<\frac{3}{4}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(-2<3x+1\leq 5\)
+  \item
+    \(-\frac{4}{5}< \frac{1}{2}x-\frac{3}{4}\leq2\)
+  \item
+    \(1<\frac{1}{2}x+\frac{1}{3}\leq 2\)
+  \item
+    \(-3< -2x+5\leq 3\)
+  \item
+    \(1<\frac{1}{2}x-\frac{1}{4}\leq 2\)
+  \item
+    \(2<-\frac{1}{2}x+\frac{3}{4}\leq 3\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{1}
+  \item
+    \(-\frac{4}{5}\leq \frac{1}{2}x-\frac{3}{4}<2\)
+  \item
+    \(-2\leq \frac{3}{2}x-1<1\)
+  \item
+    \(-\frac{1}{2}\leq \frac{3}{4}x+\frac{1}{2}<\frac{1}{2}\)
+  \item
+    \(1\leq \frac{1}{2}x-\frac{1}{4}<2\)
+  \item
+    \(-3\leq 2x+7<-1\)
+  \item
+    \(2\leq -\frac{1}{2}x+\frac{3}{4}<3\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(-1\leq x\leq 2\)
+  \item
+    \(-\frac{1}{3}\leq \frac{1}{6}x+\frac{1}{2}\leq \frac{1}{2}\)
+  \item
+    \(-\frac{3}{4}\leq -\frac{1}{2}x+\frac{1}{4}\leq \frac{1}{4}\)
+  \item
+    \(1\leq -\frac{1}{2}x+\frac{3}{4}\leq 3\)
+  \item
+    \(-1\leq \frac{1}{2}x-\frac{1}{4}\leq 3\)
+  \item
+    \(-2\leq \frac{1}{4}x+\frac{1}{2}\leq 3\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{2}
+  \item
+    \(|3x-1|<7\)
+  \item
+    \(|x-2|<4\)
+  \item
+    \(|\frac{3}{2}x+1|<5\)
+  \item
+    \(|2x+1|<6\)
+  \item
+    \(|\frac{1}{4}x+1|<\frac{7}{2}\)
+  \item
+    \(|\frac{1}{3}x+\frac{1}{2}|<\frac{5}{6}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma**
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{3}
+  \item
+    \(|\frac{1}{3}x+\frac{1}{2}|\leq \frac{4}{3}\)
+  \item
+    \(|\frac{1}{2}x-\frac{1}{4}|\leq \frac{5}{4}\)
+  \item
+    \(|2x+1|\leq 7\)
+  \item
+    \(|-\frac{1}{2}x+\frac{3}{4}|\leq 2\)
+  \item
+    \(|\frac{1}{3}x+\frac{1}{2}|\leq 1\)
+  \item
+    \(|\frac{1}{4}x+\frac{1}{2}|\leq \frac{5}{4}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma**
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(|3x-1|>4\)
+  \item
+    \(|\frac{1}{2}x-\frac{1}{4}|>\frac{1}{2}\)
+  \item
+    \(|\frac{1}{2}x+1|>\frac{3}{4}\)
+  \item
+    \(|\frac{3}{2}x+1|>\frac{7}{2}\)
+  \item
+    \(|\frac{1}{4}x+1|>1\)
+  \item
+    \(|-\frac{1}{2}x+\frac{3}{4}|>\frac{1}{2}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma**
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(|3x-1|\geq 4\)
+  \item
+    \(|\frac{1}{2}x-\frac{1}{4}|\geq\frac{1}{2}\)
+  \item
+    \(|x-2|\geq 1\)
+  \item
+    \(|\frac{1}{2}x+1|\geq\frac{3}{4}\)
+  \item
+    \(|\frac{1}{4}x+1|\geq 1\)
+  \item
+    \(|\frac{1}{4}x+\frac{1}{2}|\geq 1\)
+  \end{enumerate}
+\item
+  Resuelve los ejercicios siguientes, encuentra el intervalo solución y
+  proporciona su gráfica
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(|-\frac{1}{3}x+\frac{2}{5}| \leq \frac{4}{5}\)
+  \item
+    \(|-\frac{2}{5}x-\frac{1}{3}| \leq \frac{2}{5}\)
+  \item
+    \(|-\frac{1}{4}x-\frac{1}{8}| \leq \frac{3}{4}\)
+  \item
+    \(|-\frac{2}{5}x-\frac{7}{8}| \leq \frac{2}{3}\)
+  \item
+    \(|\frac{5}{11}x+\frac{1}{7}| \leq \frac{5}{11}\)
+  \item
+    \(|\frac{3}{8}x-\frac{2}{9}| \leq \frac{3}{4}\)
+  \end{enumerate}
+\item
+  Realiza lo mismo para los siguientes ejercicios
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(|-\frac{2}{5}x+\frac{3}{4}| \leq \frac{1}{2}\)
+  \item
+    \(|\frac{3}{8}x-\frac{1}{6}| \leq \frac{2}{5}\)
+  \item
+    \(|-\frac{1}{4}x+\frac{7}{9}| \leq \frac{5}{8}\)
+  \item
+    \(|\frac{5}{8}x-\frac{1}{3}| \leq \frac{3}{8}\)
+  \item
+    \(|\frac{1}{6}x-\frac{2}{9}| \leq \frac{1}{4}\)
+  \item
+    \(|-\frac{4}{7}x-\frac{3}{10}| \leq \frac{1}{7}\)
+  \end{enumerate}
+\item
+  Finalmente realiza lo mismo para la siguiente lista:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    \(|{-\frac{4}{9}x+\frac{5}{8}}| \geq \frac{1}{3}\)
+  \item
+    \(|{-\frac{5}{6}x+\frac{3}{10}}| \geq \frac{2}{3}\)
+  \item
+    \(|{\frac{4}{11}x-\frac{3}{8}}| \leq \frac{1}{5}\)
+  \item
+    \(|{\frac{1}{4}x+\frac{7}{9}}| \leq \frac{2}{7}\)
+  \item
+    \(|{\frac{5}{11}x-\frac{2}{8}}| \leq \frac{4}{11}\)
+  \item
+    \(|{-\frac{1}{5}x+\frac{6}{11}}| > \frac{2}{9}\)
+  \end{enumerate}
+\item
+  Un poco más de ejercicios finales
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \setcounter{enumii}{2}
+  \item
+    \(|\frac{-2x+9}{7}| > \frac{4}{9}\)
+  \item
+    \(|\frac{-8x+3}{6}| > \frac{1}{5}\)
+  \item
+    \(|\frac{11x-6}{10}| \leq \frac{5}{9}\)
+  \item
+    \(|-\frac{18x-9}{5}| \leq \frac{7}{12}\)
+  \item
+    \(|\frac{25x+8}{6}| < \frac{2}{7}\)
+  \item
+    \(|-\frac{-31x-4}{9}| \geq \frac{1}{5}\)
+  \end{enumerate}
+\item
+  Ejercicios finales
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \setcounter{enumii}{3}
+  \item
+    \(|\frac{-4x-9}{5}+\frac{2}{3}| \geq \frac{8}{9}\)
+  \item
+    \(|-\frac{-2x-1}{10}+\frac{14}{13}| \geq \frac{16}{17}\)
+  \item
+    \(|\frac{-10x-7}{13}+\frac{12}{11}| \geq \frac{16}{15}\)
+  \item
+    \(|\frac{-17x+6}{5}-\frac{8}{7}| > \frac{3}{4}\)
+  \item
+    \(|-\frac{23x-5}{2}+\frac{14}{15}| \leq \frac{16}{17}\)
+  \item
+    \(|\frac{-16x+7}{9}-\frac{11}{10}| > \frac{8}{9}\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(x^2-3x+2>0\)
+  \item
+    \(x^2+2x+1>0\)
+  \item
+    \(2x^2-7x+6>0\)
+  \item
+    \(\frac{1}{5}x^2-\frac{2}{5}x+\frac{1}{2}>0\)
+  \item
+    \(x^2+\frac{1}{2}x-\frac{1}{2}>0\)
+  \item
+    \(3x^2-10x+6>0\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(x^2-4x+3\geq 0\)
+  \item
+    \(x^2+2x+1\geq 0\)
+  \item
+    \(4x^2-12x+9\geq 0\)
+  \item
+    \(\frac{1}{2}x^2+\frac{1}{2}x-1\geq 0\)
+  \item
+    \(x^2+\frac{1}{2}x-\frac{1}{2}\geq 0\)
+  \item
+    \(3x^2-10x+6\geq 0\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(x^2-4x+3<0\)
+  \item
+    \(2x^2-5x-3<0\)
+  \item
+    \(-x^2+6x-9<0\)
+  \item
+    \(-4x^2+16x-12<0\)
+  \item
+    \(-x^2+x+12<0\)
+  \item
+    \(\frac{3}{2}x^2-\frac{5}{2}x-1<0\)
+  \end{enumerate}
+\item
+  Resuelve las siguientes desigualdades, proporcionando el conjunto
+  solución, el intervalo solución así como la representación gráfica de
+  la misma
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \(x^2-2x+1\leq0\)
+  \item
+    \(-x^2+4x-4\leq0\)
+  \item
+    \(\frac{1}{3}x^2+\frac{5}{3}x+2\leq0\)
+  \item
+    \(-x^2+3x+6\leq0\)
+  \item
+    \(3x^2-2x-2\leq0\)
+  \item
+    \(\frac{1}{2}x^2-\frac{5}{2}x+2\leq0\)
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}

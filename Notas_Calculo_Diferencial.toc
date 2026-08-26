@@ -1,0 +1,36 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Ecuación general de segundo grado}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Factorización}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Factorización simple}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Factorización por binomios conjugados}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Ejercicios varios}{3}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Factorización por trinomio cuadrado perfecto}{3}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Método de factorización simple}{4}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Método de Binomio Conjugado}{4}{subsubsection.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.7}Método de trinomio cuadrado perfecto}{4}{subsubsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.2}Método de Fórmula general}{5}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Desigualdades}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Solución de desigualdades de primer grado}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Solución de desigualdades del tipo: \(ax+b>c\)}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Solución de desigualdades del tipo: \(ax+b>c\), con coeficientes fraccionarios}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Solución de desigualdades del tipo: \(ax+b<c\)}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Solución de desigualdades del tipo: \(ax+b<c\) con coeficientes fraccionarios}{7}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Solución de desigualdades del tipo: \(ax+b \geq c\)}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Solución de desigualdades del tipo: \(ax+b \geq c\), con coeficientes fraccionarios}{7}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Solución de desigualdades del tipo: \(ax+b \leq c\)}{8}{subsubsection.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}Solución de desigualdades del tipo: \(ax+b \leq c\) con coeficientes fraccionarios.}{8}{subsubsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.2}Solución de desigualdades con doble desigualdad.}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Solución de desigualdades del tipo: \(c< ax+b <d\)}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Solución de desigualdades del tipo: \(c< ax+b \leq d\)}{9}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Solución de desigualdades del tipo: \(c\leq ax+b <d\)}{9}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Solución de desigualdades del tipo: \(c\leq ax+b \leq d\)}{10}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Solución de desigualdades con valor absoluto}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Solución de desigualdades del tipo: \(|ax+b| <d\)}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Solución de desigualdades del tipo: \(|ax+b| \leq d\)}{11}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Solución de desigualdades del tipo: \(|ax+b| >d\)}{11}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Solución de desigualdades del tipo: \(|ax+b| \geq d\)}{11}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Solución de desigualdades de segundo grado}{12}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Solución de desigualdades del tipo \(ax^2+bx+c>0\)}{12}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Solución de desigualdades del tipo \(ax^2+bx+c\geq 0\)}{12}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Solución de desigualdades del tipo \(ax^2+bx+c<0\)}{13}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Solución de desigualdades del tipo \(ax^2+bx+c\leq 0\)}{13}{subsubsection.2.4.4}%

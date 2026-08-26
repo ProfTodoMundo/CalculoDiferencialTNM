@@ -1,0 +1,530 @@
+---
+title: "Cálculo Diferencial: Tarea 1"
+author: "Carlos Ernesto Martinez"
+date: "17-Agosto-2023"
+documentclass: article
+output:
+  pdf_document:
+    toc: no  # Cambiado a "no" para eliminar la tabla de contenidos
+    number_sections: no
+header-includes:
+  - \usepackage{multicol}
+  - \usepackage{fancyhdr}
+  - \usepackage[document]{ragged2e}
+  - \pagestyle{fancy}
+  - \fancyhf{}
+  - \fancyfoot[C]{\thepage}
+  - \fancyfoot[L]{\ifodd\value{page}\textit{\small Notas para el curso de Cálculo Diferencial}\else\textit{\small Carlos E Martínez-Rodríguez}\fi}
+  - \fancyfoot[R]{\ifodd\value{page}\textit{\small Carlos E Martínez-Rodríguez}\else\textit{\small Notas para el curso de Cálculo Diferencial}\fi}
+  - \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+  - \fancyhead[LE,RO]{\nouppercase{\rightmark}}
+  - \fancyhead[LO,RE]{\nouppercase{\leftmark}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+
+# Tarea 1
+
+
+1. Resuelve las siguientes ecuaciones
+
+\begin{multicols}{2}
+    i. $2x + 3 = 4x - 1$
+
+    iii. $8x + 6 = -2x - 4$
+
+    v. $6x - 5 = -3x + 2$
+
+    viii. $-3x + 4 = 7x + 2$
+
+    xi. $12x - 8 = -10x + 14$
+
+    xii.  $-6x + 7 = 8x - 9$
+
+    xiv. $-13x + 16 = 15x - 18$
+
+    xv. $14x + 20 = -16x - 22$
+\end{multicols}
+
+2. Resuelve las siguientes ecuaciones de la forma
+
+\begin{multicols}{2}
+    i. $\frac{2}{3}x - \frac{5}{4} = \frac{7}{6}$
+    
+    v. $\frac{4}{5}x - \frac{2}{3} = -\frac{1}{6}$
+
+    ix. $\frac{11}{12}x + \frac{10}{11} = -\frac{9}{10}$
+
+    xi. $\frac{3}{4}x - \frac{4}{5} = -\frac{1}{2}$
+
+    xiii. $\frac{6}{7}x + \frac{8}{9} = -\frac{10}{11}$
+
+    xv. $\frac{9}{10}x + \frac{1}{3} = -\frac{5}{6}$
+\end{multicols}
+
+3. Resuelve las siguientes ecuaciones de la forma
+
+\begin{multicols}{2}
+    iii. $\frac{9}{10}x + \frac{7}{12} = -\frac{4}{5}x + \frac{1}{3}$
+
+    vi. $-\frac{11}{12}x + \frac{8}{9} = \frac{7}{10}x - \frac{6}{7}$
+
+    viii. $-\frac{7}{8}x - \frac{6}{7} = \frac{5}{6}x - \frac{3}{5}$
+
+    ix. $\frac{5}{6}x + \frac{4}{5} = -\frac{3}{4}x + \frac{2}{3}$
+
+    xii. $-\frac{4}{5}x + \frac{3}{4} = \frac{2}{3}x - \frac{1}{2}$
+
+    xiii. $\frac{1}{3}x + \frac{5}{7} = -\frac{9}{10}x + \frac{8}{9}$
+
+\end{multicols}
+
+4. Resuelve las siguientes ecuaciones de la forma
+
+    i. $\frac{3}{4}+\left\{\frac{2}{5}[\frac{5}{6}(\frac{2}{3}x+\frac{4}{5})+\frac{7}{8}(\frac{3}{4}x+\frac{5}{6})+\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})+\frac{1}{3}+\frac{4}{5}x$
+    
+    iv. $\frac{3}{4}-\left\{\frac{6}{7}[\frac{5}{6}(\frac{3}{4}x-\frac{4}{5})+\frac{7}{8}(\frac{2}{3}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{9}{10}(\frac{4}{5}x+\frac{6}{7})-\frac{1}{3}+\frac{4}{5}x$
+    
+    vii. $-\frac{4}{5}+\left\{\frac{7}{8}[\frac{5}{6}(\frac{3}{4}x-\frac{2}{3})+\frac{4}{5}(\frac{6}{7}x-\frac{5}{6})-\frac{1}{2}]\right\}=\frac{3}{4}(\frac{2}{3}x+\frac{7}{8})-\frac{1}{6}-\frac{2}{5}x$
+
+    x. $\frac{7}{8}+\left\{-\frac{5}{6}[\frac{3}{4}(\frac{4}{5}x-\frac{6}{7})+\frac{6}{7}(\frac{5}{6}x+\frac{3}{4})-\frac{1}{2}]\right\}=-\frac{4}{5}(\frac{4}{5}x+\frac{5}{6})-\frac{2}{3}+\frac{7}{8}x$
+
+    xiii. $-\frac{6}{7}-\left\{\frac{4}{5}[\frac{2}{3}(\frac{5}{6}x-\frac{2}{3})+\frac{7}{8}(\frac{4}{5}x+\frac{7}{8})-\frac{1}{2}]\right\}=-\frac{8}{9}(\frac{6}{7}x+\frac{4}{5})-\frac{1}{9}-\frac{8}{9}x$
+
+    xv. $-\frac{4}{5}+\left\{\frac{7}{8}[-\frac{2}{3}(\frac{5}{6}x-\frac{7}{8})-\frac{4}{5}(\frac{6}{7}x+\frac{2}{3})-\frac{1}{2}]\right\}=-\frac{3}{4}(\frac{5}{6}x+\frac{7}{8})-\frac{1}{10}-\frac{2}{3}x$
+
+
+5. Resuelve los ejercicios de la forma 
+
+ \begin{multicols}{2}
+    iii. $\frac{\frac{5}{6}x-\frac{7}{8}}{\frac{9}{10}}-\frac{3}{4}=-\frac{\frac{11}{12}x+\frac{13}{14}}{15}$
+
+    vi. $\frac{\frac{6}{7}x-\frac{8}{9}}{\frac{10}{11}}+\frac{3}{4}=\frac{\frac{14}{15}x+\frac{16}{17}}{18}$
+
+    ix. $\frac{-\frac{2}{3}x+\frac{4}{5}}{\frac{6}{7}}-\frac{1}{2}=-\frac{\frac{8}{9}x+\frac{10}{11}}{12}$
+
+    xii. $-\frac{-\frac{6}{7}x+\frac{8}{9}}{\frac{10}{11}}+\frac{4}{5}=-\frac{\frac{14}{15}x-\frac{16}{17}}{18}$
+
+    xv. $\frac{\frac{8}{9}x-\frac{10}{11}}{-\frac{12}{13}}-\frac{6}{7}=\frac{\frac{16}{17}x-\frac{18}{19}}{20}$
+\end{multicols}
+
+
+6. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $2x+3>7$
+
+6. $3x-2>2x+4$
+
+9. $5x-2>3x+4$
+
+12. $3x-1>4x-3$
+
+14. $3x+2>2x-5$
+
+15. $-2x+1>5x-8$
+\end{multicols}
+
+7. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $\frac{1}{2}x+\frac{3}{4}>1$
+
+5. $\frac{2}{3}x+\frac{1}{4}>\frac{5}{6}x-\frac{1}{2}$
+
+8. $\frac{1}{3}x-\frac{2}{5}>\frac{2}{7}x-\frac{1}{7}$
+
+11. $-\frac{1}{2}x+\frac{1}{3}>-\frac{3}{4}x-\frac{1}{6}$
+
+14. $-\frac{1}{2}x+\frac{3}{4}>\frac{3}{5}x+\frac{1}{10}$
+
+15. $\frac{2}{5}x-\frac{1}{4}>-\frac{1}{2}x+\frac{3}{8}$
+\end{multicols}
+
+8. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $2x+3<7$
+
+5. $2x+1<3x-2$
+
+9. $5x-2<3x+4$
+
+10. $2x+4<6x-8$
+
+13. $2x-5<x-3$
+
+15. $-2x+1<5x-8$
+\end{multicols}
+
+9. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $\frac{1}{2}x+\frac{3}{4}<\frac{5}{8}$
+
+2. $-\frac{2}{3}x+\frac{4}{5}<\frac{1}{2}$
+
+4. $-\frac{2}{5}x+\frac{1}{3}<-\frac{1}{15}$
+
+8. $\frac{1}{3}x-\frac{2}{5}<\frac{2}{7}x-\frac{1}{7}$
+
+14. $-\frac{1}{2}x+\frac{3}{4}<\frac{3}{5}x+\frac{1}{10}$
+
+15. $\frac{2}{5}x-\frac{1}{4}<-\frac{1}{2}x+\frac{3}{8}$
+\end{multicols}
+
+10. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $2x + 3 \geq 5$
+
+5. $2x - 3 \geq x + 2$
+
+7. $4x - 1 \geq x + 5$
+
+10. $2x + 4 \geq 4x - 2$
+
+13. $2x - 5 \geq x - 1$
+
+15. $-2x + 1 \geq -5x + 4$
+\end{multicols}
+
+11. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $\frac{1}{2}x + \frac{3}{4} \geq \frac{5}{8}$
+
+5. $\frac{2}{3}x + \frac{1}{4} \geq \frac{5}{6}x - \frac{1}{2}$
+
+8. $\frac{1}{3}x - \frac{2}{5} \geq \frac{2}{7}x - \frac{1}{7}$
+
+11. $-\frac{1}{2}x + \frac{1}{3} \geq -\frac{3}{4}x - \frac{1}{6}$
+
+12. $\frac{1}{4}x - \frac{1}{2} \geq \frac{2}{3}x - \frac{4}{6}$
+
+15. $\frac{2}{5}x - \frac{1}{4} \geq -\frac{1}{2}x + \frac{3}{8}$
+\end{multicols}
+
+12. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+2. $-3x + 4 \leq 5$
+
+4. $-5x + 3 \leq 2$
+
+5. $2x + 1 \leq 5x - 2$
+
+6. $3x - 1 \leq 5x + 2$
+
+11. $-2x + 3 \leq -4x - 1$
+
+14. $-2x + 4 \leq 5x + 1$
+
+\end{multicols}
+
+13. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $\frac{1}{2}x + \frac{3}{4} \leq \frac{5}{8}$
+
+4. $-\frac{2}{5}x + \frac{1}{3} \leq -\frac{1}{15}$
+
+6. $\frac{1}{2}x - \frac{1}{3} \leq \frac{2}{5}x - \frac{7}{15}$
+
+7. $-\frac{3}{4}x + \frac{1}{2} \leq \frac{2}{3}x - \frac{1}{4}$
+
+14. $-\frac{1}{2}x + \frac{3}{4} \leq \frac{3}{5}x + \frac{1}{10}$
+
+15. $\frac{2}{5}x - \frac{1}{4} \leq -\frac{1}{2}x + \frac{3}{8}$
+\end{multicols}
+
+14. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $2<x+3<5$
+
+2. $-1<2x-1<1$
+
+3. $-\frac{1}{2}<\frac{3}{4}x+\frac{1}{2}<\frac{1}{2}$
+
+11. $-4< -3x+5<3$
+
+12. $1<\frac{1}{2}x+\frac{1}{3}<2$
+
+14. $-\frac{3}{4}<\frac{1}{2}x-\frac{1}{4}<\frac{3}{4}$
+
+\end{multicols}
+
+
+
+15. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $-2<3x+1\leq 5$
+
+2. $-\frac{4}{5}< \frac{1}{2}x-\frac{3}{4}\leq2$
+
+8. $1<\frac{1}{2}x+\frac{1}{3}\leq 2$
+
+9. $-3< -2x+5\leq 3$
+
+12. $1<\frac{1}{2}x-\frac{1}{4}\leq 2$
+
+15. $2<-\frac{1}{2}x+\frac{3}{4}\leq 3$
+\end{multicols}
+
+16. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+
+2. $-\frac{4}{5}\leq \frac{1}{2}x-\frac{3}{4}<2$
+
+6. $-2\leq \frac{3}{2}x-1<1$
+
+10. $-\frac{1}{2}\leq \frac{3}{4}x+\frac{1}{2}<\frac{1}{2}$
+
+12. $1\leq \frac{1}{2}x-\frac{1}{4}<2$
+
+13. $-3\leq 2x+7<-1$
+
+15. $2\leq -\frac{1}{2}x+\frac{3}{4}<3$
+\end{multicols}
+
+17. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $-1\leq x\leq 2$
+
+4. $-\frac{1}{3}\leq \frac{1}{6}x+\frac{1}{2}\leq \frac{1}{2}$
+
+8. $-\frac{3}{4}\leq -\frac{1}{2}x+\frac{1}{4}\leq \frac{1}{4}$
+
+12. $1\leq -\frac{1}{2}x+\frac{3}{4}\leq 3$
+
+14. $-1\leq \frac{1}{2}x-\frac{1}{4}\leq 3$
+
+15. $-2\leq \frac{1}{4}x+\frac{1}{2}\leq 3$
+\end{multicols}
+
+18. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+
+3. $|3x-1|<7$
+
+5. $|x-2|<4$
+
+7. $|\frac{3}{2}x+1|<5$
+
+9. $|2x+1|<6$
+
+11. $|\frac{1}{4}x+1|<\frac{7}{2}$
+
+13. $|\frac{1}{3}x+\frac{1}{2}|<\frac{5}{6}$
+\end{multicols}
+
+19. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma**
+
+\begin{multicols}{3}
+
+4. $|\frac{1}{3}x+\frac{1}{2}|\leq \frac{4}{3}$
+
+8. $|\frac{1}{2}x-\frac{1}{4}|\leq \frac{5}{4}$
+
+9. $|2x+1|\leq 7$
+
+12. $|-\frac{1}{2}x+\frac{3}{4}|\leq 2$
+
+13. $|\frac{1}{3}x+\frac{1}{2}|\leq 1$
+
+15. $|\frac{1}{4}x+\frac{1}{2}|\leq \frac{5}{4}$
+\end{multicols}
+
+20. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma**
+
+\begin{multicols}{3}
+1. $|3x-1|>4$
+
+2. $|\frac{1}{2}x-\frac{1}{4}|>\frac{1}{2}$
+
+6. $|\frac{1}{2}x+1|>\frac{3}{4}$
+
+7. $|\frac{3}{2}x+1|>\frac{7}{2}$
+
+11. $|\frac{1}{4}x+1|>1$
+
+12. $|-\frac{1}{2}x+\frac{3}{4}|>\frac{1}{2}$
+
+\end{multicols}
+
+21. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma**
+
+\begin{multicols}{3}
+1. $|3x-1|\geq 4$
+
+2. $|\frac{1}{2}x-\frac{1}{4}|\geq\frac{1}{2}$
+
+5. $|x-2|\geq 1$
+
+6. $|\frac{1}{2}x+1|\geq\frac{3}{4}$
+
+11. $|\frac{1}{4}x+1|\geq 1$
+
+15. $|\frac{1}{4}x+\frac{1}{2}|\geq 1$
+\end{multicols}
+
+22. Resuelve los ejercicios siguientes, encuentra el intervalo solución y proporciona su gráfica
+
+\begin{multicols}{2}
+    i. $|-\frac{1}{3}x+\frac{2}{5}| \leq \frac{4}{5}$
+    
+    vi. $|-\frac{2}{5}x-\frac{1}{3}| \leq \frac{2}{5}$
+
+    x. $|-\frac{1}{4}x-\frac{1}{8}| \leq \frac{3}{4}$
+    
+    xiii. $|-\frac{2}{5}x-\frac{7}{8}| \leq \frac{2}{3}$
+    
+    xiv. $|\frac{5}{11}x+\frac{1}{7}| \leq \frac{5}{11}$
+    
+    xv. $|\frac{3}{8}x-\frac{2}{9}| \leq \frac{3}{4}$
+\end{multicols}
+
+23. Realiza lo mismo para los siguientes ejercicios
+
+\begin{multicols}{2}
+    i. $|-\frac{2}{5}x+\frac{3}{4}| \leq \frac{1}{2}$
+  
+    vi. $|\frac{3}{8}x-\frac{1}{6}| \leq \frac{2}{5}$
+    
+    x. $|-\frac{1}{4}x+\frac{7}{9}| \leq \frac{5}{8}$
+    
+    xiii. $|\frac{5}{8}x-\frac{1}{3}| \leq \frac{3}{8}$
+    
+    xvi. $|\frac{1}{6}x-\frac{2}{9}| \leq \frac{1}{4}$
+    
+    xix. $|-\frac{4}{7}x-\frac{3}{10}| \leq \frac{1}{7}$
+    
+\end{multicols}
+
+24. Finalmente realiza lo mismo para la siguiente lista:
+
+\begin{multicols}{2}
+    i. $|{-\frac{4}{9}x+\frac{5}{8}}| \geq \frac{1}{3}$
+    
+    v. $|{-\frac{5}{6}x+\frac{3}{10}}| \geq \frac{2}{3}$
+
+    viii. $|{\frac{4}{11}x-\frac{3}{8}}| \leq \frac{1}{5}$
+    
+    xi. $|{\frac{1}{4}x+\frac{7}{9}}| \leq \frac{2}{7}$
+    
+    xv. $|{\frac{5}{11}x-\frac{2}{8}}| \leq \frac{4}{11}$
+    
+    xx. $|{-\frac{1}{5}x+\frac{6}{11}}| > \frac{2}{9}$
+\end{multicols}
+
+25. Un poco más de ejercicios finales
+
+\begin{multicols}{2}
+    iii. $|\frac{-2x+9}{7}| > \frac{4}{9}$
+ 
+    vii. $|\frac{-8x+3}{6}| > \frac{1}{5}$
+    
+    x. $|\frac{11x-6}{10}| \leq \frac{5}{9}$
+    
+    xiv. $|-\frac{18x-9}{5}| \leq \frac{7}{12}$
+ 
+    xvii. $|\frac{25x+8}{6}| < \frac{2}{7}$
+ 
+    xx. $|-\frac{-31x-4}{9}| \geq \frac{1}{5}$
+\end{multicols}
+
+26. Ejercicios finales
+
+\begin{multicols}{2}
+    iv. $|\frac{-4x-9}{5}+\frac{2}{3}| \geq \frac{8}{9}$
+    
+    viii. $|-\frac{-2x-1}{10}+\frac{14}{13}| \geq \frac{16}{17}$
+
+    xii. $|\frac{-10x-7}{13}+\frac{12}{11}| \geq \frac{16}{15}$
+    
+    xv. $|\frac{-17x+6}{5}-\frac{8}{7}| > \frac{3}{4}$
+    
+    xviii. $|-\frac{23x-5}{2}+\frac{14}{15}| \leq \frac{16}{17}$
+    
+    xix. $|\frac{-16x+7}{9}-\frac{11}{10}| > \frac{8}{9}$
+    
+\end{multicols}
+
+
+27. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $x^2-3x+2>0$
+
+6. $x^2+2x+1>0$
+
+11. $2x^2-7x+6>0$
+
+13. $\frac{1}{5}x^2-\frac{2}{5}x+\frac{1}{2}>0$
+
+14. $x^2+\frac{1}{2}x-\frac{1}{2}>0$
+
+15. $3x^2-10x+6>0$
+\end{multicols}
+
+28. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $x^2-4x+3\geq 0$
+
+
+6. $x^2+2x+1\geq 0$
+
+9. $4x^2-12x+9\geq 0$
+
+12. $\frac{1}{2}x^2+\frac{1}{2}x-1\geq 0$
+
+14. $x^2+\frac{1}{2}x-\frac{1}{2}\geq 0$
+
+15. $3x^2-10x+6\geq 0$
+\end{multicols}
+
+29. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $x^2-4x+3<0$
+
+2. $2x^2-5x-3<0$
+
+5. $-x^2+6x-9<0$
+
+8. $-4x^2+16x-12<0$
+
+14. $-x^2+x+12<0$
+
+15. $\frac{3}{2}x^2-\frac{5}{2}x-1<0$
+\end{multicols}
+
+30. Resuelve las siguientes desigualdades, proporcionando el conjunto solución, el intervalo solución así como la representación gráfica de la misma
+
+\begin{multicols}{3}
+1. $x^2-2x+1\leq0$
+
+5. $-x^2+4x-4\leq0$
+
+9. $\frac{1}{3}x^2+\frac{5}{3}x+2\leq0$
+
+12. $-x^2+3x+6\leq0$
+
+13. $3x^2-2x-2\leq0$
+
+15. $\frac{1}{2}x^2-\frac{5}{2}x+2\leq0$
+\end{multicols}
+
+
+
