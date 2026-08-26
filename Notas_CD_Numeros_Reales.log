@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.10)  25 AUG 2026 22:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.10)  25 AUG 2026 23:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Notas_Calculo_Diferencial_Base.tex
-(./Notas_Calculo_Diferencial_Base.tex
+**Notas_CD_Numeros_Reales.tex
+(./Notas_CD_Numeros_Reales.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -419,11 +419,11 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box100
 )
-(./Notas_Calculo_Diferencial_Base.aux
+(./Notas_CD_Numeros_Reales.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
-\openout1 = `Notas_Calculo_Diferencial_Base.aux'.
+\openout1 = `Notas_CD_Numeros_Reales.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
@@ -504,9 +504,9 @@ e
 ))
 Package hyperref Info: Link coloring ON on input line 47.
 
-(./Notas_Calculo_Diferencial_Base.out) (./Notas_Calculo_Diferencial_Base.out)
+(./Notas_CD_Numeros_Reales.out) (./Notas_CD_Numeros_Reales.out)
 \@outlinefile=\write3
-\openout3 = `Notas_Calculo_Diferencial_Base.out'.
+\openout3 = `Notas_CD_Numeros_Reales.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
@@ -520,7 +520,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./Notas_Calculo_Diferencial_Base.toc
+(./Notas_CD_Numeros_Reales.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [1
@@ -528,7 +528,7 @@ LaTeX Info: Redefining \% on input line 1.
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2])
 \tf@toc=\write4
-\openout4 = `Notas_Calculo_Diferencial_Base.toc'.
+\openout4 = `Notas_CD_Numeros_Reales.toc'.
 
  [3]
 <QR_Notas_Calculo_Diferencial.png, id=292, 590.205pt x 590.205pt>
@@ -735,7 +735,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Overfull \vbox (0.07362pt too high) has occurred while \output is active []
 
 
-[52] [53] [54] [55] (./Notas_Calculo_Diferencial_Base.aux
+[52] [53] [54] [55] (./Notas_CD_Numeros_Reales.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -743,8 +743,8 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `Notas_Calculo_Diferencial_Base.out' has not 
-changed.
+Package rerunfilecheck Info: File `Notas_CD_Numeros_Reales.out' has not changed
+.
 (rerunfilecheck)             Checksum: 2FDC2DEE30CE2DE7F7939529A1BF649D;12906.
  )
 (\end occurred inside a group at level 1)
@@ -753,12 +753,12 @@ changed.
 ### bottom level 
 Here is how much of TeX's memory you used:
  13681 strings out of 474116
- 204609 string characters out of 5743681
+ 204441 string characters out of 5743681
  1994187 words of memory out of 5000000
  34955 multiletter control sequences out of 15000+600000
  574708 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,79p,543b,771s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,536b,771s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
@@ -779,7 +779,7 @@ sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr
 /local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/l
 ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Notas_Calculo_Diferencial_Base.pdf (55 pages, 464453 bytes).
+Output written on Notas_CD_Numeros_Reales.pdf (55 pages, 464453 bytes).
 PDF statistics:
  1636 PDF objects out of 1728 (max. 8388607)
  1513 compressed objects within 16 object streams
