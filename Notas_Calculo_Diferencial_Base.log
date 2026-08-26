@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.10)  25 AUG 2026 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.10)  25 AUG 2026 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,192 +536,192 @@ s1.enc}]
 <Desigualdad1.png, id=464, 1132.23pt x 347.2975pt>
 File: Desigualdad1.png Graphic file (type png)
 <use Desigualdad1.png>
-Package pdftex.def Info: Desigualdad1.png  used on input line 771.
+Package pdftex.def Info: Desigualdad1.png  used on input line 773.
 (pdftex.def)             Requested size: 225.83731pt x 652.7922pt.
 
 
-LaTeX Warning: Float too large for page by 26.91875pt on input line 773.
+LaTeX Warning: Float too large for page by 26.91875pt on input line 775.
 
 <Desigualdad2.png, id=466, 1132.23pt x 347.2975pt>
 File: Desigualdad2.png Graphic file (type png)
 <use Desigualdad2.png>
-Package pdftex.def Info: Desigualdad2.png  used on input line 796.
+Package pdftex.def Info: Desigualdad2.png  used on input line 798.
 (pdftex.def)             Requested size: 225.83731pt x 652.7922pt.
 
-LaTeX Warning: Float too large for page by 26.91875pt on input line 798.
+LaTeX Warning: Float too large for page by 26.91875pt on input line 800.
 
 [14] [15 <./Desigualdad1.png>] [16 <./Desigualdad2.png>]
 <Desigualdad3.png, id=488, 1132.23pt x 347.2975pt>
 File: Desigualdad3.png Graphic file (type png)
 <use Desigualdad3.png>
-Package pdftex.def Info: Desigualdad3.png  used on input line 820.
+Package pdftex.def Info: Desigualdad3.png  used on input line 822.
 (pdftex.def)             Requested size: 225.83731pt x 652.7922pt.
 
 
-LaTeX Warning: Float too large for page by 26.9193pt on input line 822.
+LaTeX Warning: Float too large for page by 26.9193pt on input line 824.
 
 <Desigualdad4.png, id=489, 1132.23pt x 347.2975pt>
 File: Desigualdad4.png Graphic file (type png)
 <use Desigualdad4.png>
-Package pdftex.def Info: Desigualdad4.png  used on input line 846.
+Package pdftex.def Info: Desigualdad4.png  used on input line 848.
 (pdftex.def)             Requested size: 225.83731pt x 652.7922pt.
 
-LaTeX Warning: Float too large for page by 27.58598pt on input line 848.
+LaTeX Warning: Float too large for page by 27.58598pt on input line 850.
 
 [17] [18 <./Desigualdad3.png>] [19 <./Desigualdad4.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 890.
+(hyperref)                removing `math shift' on input line 892.
 
 [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 928.
+(hyperref)                removing `math shift' on input line 930.
 
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1007.
+(hyperref)                removing `math shift' on input line 1009.
 
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1044.
+(hyperref)                removing `math shift' on input line 1046.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\geq' on input line 1044.
+(hyperref)                removing `\geq' on input line 1046.
 
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1082.
+(hyperref)                removing `math shift' on input line 1084.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\geq' on input line 1082.
+(hyperref)                removing `\geq' on input line 1084.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1119.
+(hyperref)                removing `math shift' on input line 1121.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1119.
+(hyperref)                removing `\leq' on input line 1121.
 
 [24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1157.
+(hyperref)                removing `math shift' on input line 1159.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1157.
+(hyperref)                removing `\leq' on input line 1159.
 
 [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1196.
+(hyperref)                removing `math shift' on input line 1198.
 
 [26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1233.
+(hyperref)                removing `math shift' on input line 1235.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1233.
+(hyperref)                removing `\leq' on input line 1235.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1271.
+(hyperref)                removing `math shift' on input line 1273.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1271.
+(hyperref)                removing `\leq' on input line 1273.
 
 [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1309.
+(hyperref)                removing `math shift' on input line 1311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1309.
+(hyperref)                removing `\leq' on input line 1311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1309.
+(hyperref)                removing `\leq' on input line 1311.
 
 [28]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1348.
+(hyperref)                removing `math shift' on input line 1350.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1386.
+(hyperref)                removing `math shift' on input line 1388.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1386.
+(hyperref)                removing `\leq' on input line 1388.
 
 [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1420.
+(hyperref)                removing `math shift' on input line 1422.
 
 [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1457.
+(hyperref)                removing `math shift' on input line 1459.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\geq' on input line 1457.
+(hyperref)                removing `\geq' on input line 1459.
 
 [31] [32] [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1729.
+(hyperref)                removing `math shift' on input line 1731.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1729.
+(hyperref)                removing `superscript' on input line 1731.
 
 [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1766.
+(hyperref)                removing `math shift' on input line 1768.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1766.
+(hyperref)                removing `superscript' on input line 1768.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\geq' on input line 1766.
+(hyperref)                removing `\geq' on input line 1768.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1804.
+(hyperref)                removing `math shift' on input line 1806.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1804.
+(hyperref)                removing `superscript' on input line 1806.
 
 [35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1842.
+(hyperref)                removing `math shift' on input line 1844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1842.
+(hyperref)                removing `superscript' on input line 1844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1842.
+(hyperref)                removing `\leq' on input line 1844.
 
 [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
 [51] [52]
@@ -745,7 +745,7 @@ changed.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 1082 ({)
+### simple group (level 1) entered at line 1084 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  13672 strings out of 474116
@@ -774,7 +774,7 @@ fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb
 sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr
 /local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/l
 ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Notas_Calculo_Diferencial_Base.pdf (55 pages, 445427 bytes).
+Output written on Notas_Calculo_Diferencial_Base.pdf (55 pages, 446601 bytes).
 PDF statistics:
  1630 PDF objects out of 1728 (max. 8388607)
  1510 compressed objects within 16 object streams
