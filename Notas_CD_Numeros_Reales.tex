@@ -15,6 +15,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 
 % Formato de párrafos
 \setlength{\parindent}{0pt}
@@ -39,9 +40,25 @@
   citecolor=blue
 }
 
+% Pie de página
+\pagestyle{fancy}
+\fancyhf{} % limpia encabezados y pies
+
+\fancyhead[L]{Tecnológico Nacional de México}
+\fancyhead[R]{Cálculo Diferencial}
+
+\fancyfoot[L]{Carlos Ernesto Martínez}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{mrdgzcarlose@gmail.com}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
 % Datos del documento
-\title{Notas para el curso de Cálculo Diferencial: El Conjunto de los N\'umeros Reales}
-\author{Carlos Ernesto Martínez}
+\title{
+    Notas para el curso de Cálculo Diferencial\\[0.5em]
+    \large Unidad 1: El Conjunto de los Números Reales
+}\author{Carlos Ernesto Martínez}
 \date{}
 
 \begin{document}
@@ -52,7 +69,7 @@
 
 
 \begin{center}
-    \includegraphics[width=0.22\textwidth]{QR_Notas_Calculo_Diferencial.png}
+    \includegraphics[width=0.22\textwidth]{QR_Notas_CD_Numeros_Reales.png}
 
     \small
     Escanea el código QR para acceder a las notas de esta unidad.

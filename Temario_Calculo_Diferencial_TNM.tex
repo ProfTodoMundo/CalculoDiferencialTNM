@@ -1,9 +1,14 @@
 \documentclass[12pt]{article}
 
+% Codificación e idioma
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,mexico]{babel}
+
+% Matemáticas
 \usepackage{amsmath,amssymb}
+
+% Formato y utilidades
 \usepackage{geometry}
 \usepackage{enumitem}
 \usepackage{booktabs}
@@ -12,16 +17,47 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
 
+% Márgenes
 \geometry{letterpaper,margin=2.5cm}
+
+% Listas
 \setlist[itemize]{leftmargin=1.5em}
 \setlist[enumerate]{leftmargin=1.8em}
 
-\title{\textbf{Cálculo Diferencial}\\[0.3cm]
-\large Tecnológico Nacional de México}
-\author{Carlos E Mart\'inez Rodr\'iguez}
-\date{}
+% Enlaces
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
 
+% Pie de página
+\pagestyle{fancy}
+\fancyhf{}
+
+
+% ---------- Encabezado ----------
+\fancyhead[L]{Tecnológico Nacional de México}
+\fancyhead[R]{Cálculo Diferencial}
+
+\fancyfoot[L]{Carlos Ernesto Martínez Rodr\'iguez}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{mrdgzcarlose@gmail.com}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Título y subtítulo
+\title{
+    \textbf{Cálculo Diferencial}\\[0.5em]
+    \large\textit{Tecnológico Nacional de México}
+}
+
+\author{Carlos E. Martínez Rodríguez}
+\date{}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -180,7 +216,7 @@ Las actividades de enseñanza y aprendizaje contemplan la participación activa 
 \section{El conjunto de los n\'umeros reales}
 
 \begin{center}
-    \includegraphics[width=0.22\textwidth]{QR_Notas_Calculo_Diferencial.png}
+    \includegraphics[width=0.22\textwidth]{QR_Notas_CD_Numeros_Reales.png}
 
     \small
     Escanea el código QR para acceder a las notas del curso.
