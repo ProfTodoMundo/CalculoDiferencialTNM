@@ -1,0 +1,2810 @@
+\documentclass[12pt]{article}
+% =========================================================
+% UNIDAD 2: FUNCIONES
+% =========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+% =========================================================
+\pgfplotsset{compat=1.18}
+\geometry{letterpaper,margin=2.4cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.7em}
+\setlist[enumerate]{leftmargin=2em}
+% =========================================================
+\definecolor{azul}{RGB}{25,70,125}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=azul,
+    urlcolor=azul,
+    citecolor=azul
+}
+% =========================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Tecnológico Nacional de México}
+\fancyhead[R]{Cálculo Diferencial}
+\fancyfoot[L]{Carlos Ernesto Martínez Rodríguez}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Unidad 2: Funciones}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+% =========================================================
+\newtheorem{definicion}{Definición}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}{Proposición}[section]
+\newtheorem{corolario}{Corolario}[section]
+\theoremstyle{remark}
+\newtheorem{observacion}{Observación}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{nota}{Nota}[section]
+% =========================================================
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\id}{\operatorname{id}}
+% =========================================================
+\title{\textbf{Notas para el curso de Cálculo Diferencial}\\[0.35cm]
+\Large Unidad 2: Funciones}
+\author{Carlos Ernesto Martínez Rodríguez}
+\date{}
+% =========================================================
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% =========================================================
+\section*{Propósito de la unidad}
+\addcontentsline{toc}{section}{Propósito de la unidad}
+
+El concepto de función constituye uno de los lenguajes fundamentales del Cálculo. Los límites, la continuidad, la derivación y sus aplicaciones se formulan sobre funciones; por ello, antes de estudiar dichos conceptos es necesario comprender con precisión qué es una función, cuáles son los conjuntos que intervienen en su definición, cómo se representa, cómo se opera con ella y cómo puede emplearse para construir modelos matemáticos. El objetivo de esta unidad es analizar la definición de función real, identificar distintos tipos de funciones y sus representaciones gráficas.
+
+% =========================================================
+\section{Relaciones y funciones}
+% =========================================================
+
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\subsection*{Producto cartesiano}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+
+\begin{definicion}[Producto cartesiano]
+Sean $A$ y $B$ dos conjuntos. El \emph{producto cartesiano} de $A$ y $B$ es
+\[
+A\times B=\{(a,b):a\in A,\ b\in B\}.
+\]
+Sus elementos son pares ordenados.
+\end{definicion}
+
+El calificativo ordenado es importante, pues en general $(a,b)\neq(b,a)$.
+Dos pares ordenados son iguales si y sólo si coinciden sus componentes:
+\[
+(a,b)=(c,d)
+\quad\Longleftrightarrow\quad
+a=c\ \text{y}\ b=d.
+\]
+
+\begin{ejemplo}
+Si
+\[
+A=\{1,2\},\qquad B=\{a,b,c\},
+\]
+entonces
+\[
+A\times B=
+\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}.
+\]
+Por tanto, $|A\times B|=6=|A||B|$.
+\end{ejemplo}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\subsection*{Relaciones}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\begin{definicion}[Relación]
+Una relación de $A$ en $B$ es cualquier subconjunto $R\subseteq A\times B$.
+\end{definicion}
+
+Una relación permite asociar elementos de $A$ con elementos de $B$. No se
+exige que todos los elementos de $A$ estén relacionados, ni que un elemento de $A$ tenga una única pareja.
+
+\begin{ejemplo}
+Sean
+\[
+A=\{1,2,3\},\qquad B=\{a,b,c\}.
+\]
+El conjunto
+\[
+R=\{(1,a),(1,b),(3,c)\}
+\]
+es una relación de $A$ en $B$. Observe que $1$ está relacionado con dos
+elementos de $B$ y que $2$ no está relacionado con ninguno.
+\end{ejemplo}
+
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\subsection{Definición formal de función}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\begin{definicion}[Función]
+Sean $A$ y $B$ conjuntos no vacíos. Una \emph{función} $f$ de $A$ en $B$,
+denotada por
+\[
+f:A\longrightarrow B,
+\]
+es una relación $f\subseteq A\times B$ que satisface:
+
+\begin{itemize}
+    \item para todo $x\in A$ existe algún $y\in B$ tal que $(x,y)\in f$;
+    \item el elemento $y$ es único.
+\end{itemize}
+
+Equivalentemente,
+\[
+\forall x\in A\;\exists!\,y\in B
+\quad\text{tal que}\quad y=f(x).
+\]
+\end{definicion}
+
+El símbolo $\exists!$ significa \textit{existe uno y sólo uno}. Así, una función satisface dos requisitos:
+
+\begin{itemize}
+    \item \textbf{existencia:} todo elemento del dominio debe tener imagen;
+    \item \textbf{unicidad:} cada elemento del dominio debe tener una sola imagen.
+\end{itemize}
+
+Es importante notar que distintos elementos del dominio sí pueden tener la misma imagen. Lo prohibido es que un mismo elemento del dominio tenga dos imágenes diferentes.
+
+\begin{ejemplo}
+La correspondencia
+\[
+f:\R\to\R,\qquad f(x)=x^2
+\]
+es una función. Por ejemplo,
+\[
+f(2)=4,\qquad f(-2)=4.
+\]
+Que dos elementos diferentes tengan la misma imagen no contradice la
+definición.
+\end{ejemplo}
+
+\begin{ejemplo}[Una relación que no es función]
+Considere
+\[
+R=\{(1,2),(1,3),(2,5)\}.
+\]
+No puede ser una función cuyo dominio contenga a $1$, pues el mismo elemento $1$ estaría asociado con dos valores diferentes:
+\[
+1\mapsto2,\qquad 1\mapsto3.
+\]
+La unicidad falla.
+\end{ejemplo}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\subsection{Dominio, codominio e imagen}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\begin{definicion}
+Sea $f:A\to B$. Entonces:
+
+\begin{itemize}
+    \item el conjunto $A$ se llama \emph{dominio} de $f$;
+    \item el conjunto $B$ se llama \emph{codominio} de $f$;
+    \item si $x\in A$, el elemento $f(x)\in B$ se llama \emph{imagen} de $x$;
+    \item el conjunto $f(A)=\{f(x):x\in A\}$ se llama \emph{imagen}, \emph{recorrido} o \emph{rango} de $f$.
+\end{itemize}
+\end{definicion}
+
+Siempre se cumple $f(A)\subseteq B$, pero no necesariamente $f(A)=B$.
+
+\begin{ejemplo}
+Sea
+\[
+f:\R\to\R,\qquad f(x)=x^2.
+\]
+Su dominio es $\R$, su codominio es $\R$, pero su imagen es
+\[
+f(\R)=[0,\infty).
+\]
+Por tanto,
+\[
+f(\R)\neq\R.
+\]
+\end{ejemplo}
+
+\begin{observacion}
+Dominio, codominio e imagen son conceptos diferentes. El codominio forma parte de la definición de la función; la imagen es el conjunto de valores que la función realmente alcanza.
+\end{observacion}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\subsection{Imagen inversa}
+%<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>
+\begin{definicion}[Imagen inversa de un conjunto]
+Sea $f:A\to B$ y sea $C\subseteq B$. La Imagen inversa (preimagen) de $C$ bajo $f$ se define por
+\[
+f^{-1}(C)=\{x\in A:f(x)\in C\}.
+\]
+\end{definicion}
+
+Aquí el símbolo $f^{-1}(C)$ no presupone que exista una función inversa.
+
+\begin{ejemplo}
+Sea $f(x)=x^2$ y $C=[1,4]$. Entonces
+\[
+f^{-1}(C)=\{x\in\R:1\leq x^2\leq4\}
+=[-2,-1]\cup[1,2].
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Funciones reales de variable real}
+% =========================================================
+
+En Cálculo Diferencial trabajaremos principalmente con funciones cuyos
+argumentos y valores son números reales.
+
+\begin{definicion}
+Una función real de variable real es una función
+\[
+f:A\to\R,
+\]
+donde $A\subseteq\R$.
+\end{definicion}
+
+Cuando una función se presenta solamente mediante una expresión algebraica y
+no se especifica explícitamente su dominio, adoptaremos como dominio el
+\emph{dominio natural}: el conjunto más grande de números reales para los que
+la expresión tiene sentido.
+
+% =========================================================
+\section{Evaluación de funciones}
+
+Evaluar una función consiste en determinar la imagen de un elemento particular
+del dominio.
+
+\begin{ejemplo}
+Sea
+\[
+f(x)=3x^2-2x+5.
+\]
+Entonces
+\[
+f(2)=3(2)^2-2(2)+5=12-4+5=13.
+\]
+Asimismo,
+\[
+f(-1)=3(-1)^2-2(-1)+5=3+2+5=10.
+\]
+\end{ejemplo}
+
+La sustitución debe hacerse sobre \emph{todas} las apariciones de la variable.
+
+\begin{ejemplo}
+Para
+\[
+f(x)=2x^2-3x+1,
+\]
+se tiene
+\[
+f(a)=2a^2-3a+1,
+\]
+y
+\begin{align*}
+f(a+h)
+ &=2(a+h)^2-3(a+h)+1\\
+ &=2(a^2+2ah+h^2)-3a-3h+1\\
+ &=2a^2+4ah+2h^2-3a-3h+1.
+\end{align*}
+\end{ejemplo}
+
+La expresión $f(x+h)$ aparecerá de manera fundamental en la definición de
+derivada. Conviene distinguirla de $f(x)+h$.
+
+\begin{ejemplo}
+Si $f(x)=x^2$, entonces
+\[
+f(x+h)=(x+h)^2=x^2+2xh+h^2,
+\]
+mientras que
+\[
+f(x)+h=x^2+h.
+\]
+En general,
+\[
+f(x+h)\neq f(x)+h.
+\]
+\end{ejemplo}
+
+\subsection{Cociente incremental como preparación para la derivada}
+
+Aunque la derivada se estudiará posteriormente, resulta útil practicar desde
+ahora la simplificación
+\[
+\frac{f(x+h)-f(x)}{h},\qquad h\neq0.
+\]
+
+\begin{ejemplo}
+Sea $f(x)=x^2+3x$. Entonces
+\[
+f(x+h)=(x+h)^2+3(x+h)
+=x^2+2xh+h^2+3x+3h.
+\]
+Por tanto,
+\begin{align*}
+f(x+h)-f(x)
+&=x^2+2xh+h^2+3x+3h-(x^2+3x)\\
+&=2xh+h^2+3h\\
+&=h(2x+h+3).
+\end{align*}
+Para $h\neq0$,
+\[
+\frac{f(x+h)-f(x)}{h}=2x+h+3.
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Determinación del dominio}
+
+\subsection{Funciones polinomiales}
+
+Todo polinomio
+\[
+p(x)=a_nx^n+\cdots+a_1x+a_0
+\]
+está definido para todo número real. Por tanto,
+\[
+\Dom(p)=\R.
+\]
+
+\subsection{Funciones racionales}
+
+Una función racional tiene la forma
+\[
+f(x)=\frac{p(x)}{q(x)},
+\]
+donde $p$ y $q$ son polinomios y $q$ no es el polinomio cero.
+
+Como la división entre cero no está definida,
+\[
+\Dom(f)=\{x\in\R:q(x)\neq0\}.
+\]
+
+\begin{ejemplo}
+Determine el dominio de
+\[
+f(x)=\frac{x+1}{x^2-5x+6}.
+\]
+Factorizando,
+\[
+x^2-5x+6=(x-2)(x-3).
+\]
+El denominador se anula para $x=2$ y $x=3$. Por tanto,
+\[
+\Dom(f)=\R\setminus\{2,3\}
+=(-\infty,2)\cup(2,3)\cup(3,\infty).
+\]
+\end{ejemplo}
+
+\subsection{Radicales de índice par}
+
+Para que $\sqrt{g(x)}$ sea real se requiere
+\[
+g(x)\geq0.
+\]
+
+\begin{ejemplo}
+Determine el dominio de
+\[
+f(x)=\sqrt{5-2x}.
+\]
+Se exige
+\[
+5-2x\geq0.
+\]
+Entonces
+\[
+-2x\geq-5
+\]
+y al dividir entre $-2$ se invierte la desigualdad:
+\[
+x\leq\frac52.
+\]
+Así,
+\[
+\Dom(f)=\left(-\infty,\frac52\right].
+\]
+\end{ejemplo}
+
+\subsection{Funciones logarítmicas}
+
+Para el logaritmo real se requiere argumento estrictamente positivo:
+\[
+\log_a(g(x))
+\quad\Longrightarrow\quad
+g(x)>0,
+\]
+donde $a>0$ y $a\neq1$.
+
+\begin{ejemplo}
+Determine el dominio de
+\[
+f(x)=\ln(x^2-4).
+\]
+Debemos resolver
+\[
+x^2-4>0.
+\]
+Factorizando,
+\[
+(x-2)(x+2)>0,
+\]
+por lo que
+\[
+x<-2\quad\text{o}\quad x>2.
+\]
+Así,
+\[
+\Dom(f)=(-\infty,-2)\cup(2,\infty).
+\]
+\end{ejemplo}
+
+\subsection{Restricciones simultáneas}
+
+Cuando una expresión contiene varias operaciones restrictivas, todas las
+condiciones deben cumplirse simultáneamente.
+
+\begin{ejemplo}
+Determine el dominio de
+\[
+f(x)=\frac{\sqrt{x-1}}{x-3}.
+\]
+Se requiere
+\[
+x-1\geq0
+\quad\text{y}\quad
+x-3\neq0.
+\]
+La primera condición produce $x\geq1$ y la segunda excluye $x=3$. Por tanto,
+\[
+\Dom(f)=[1,3)\cup(3,\infty).
+\]
+\end{ejemplo}
+
+\begin{ejemplo}
+Determine el dominio de
+\[
+f(x)=\sqrt{\frac{x-1}{x+2}}.
+\]
+Se requiere
+\[
+\frac{x-1}{x+2}\geq0,
+\qquad x\neq-2.
+\]
+Los puntos críticos son $-2$ y $1$. Mediante una tabla de signos:
+\[
+\frac{x-1}{x+2}\geq0
+\quad\Longleftrightarrow\quad
+x\in(-\infty,-2)\cup[1,\infty).
+\]
+Por tanto,
+\[
+\Dom(f)=(-\infty,-2)\cup[1,\infty).
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Gráfica de una función}
+
+\begin{definicion}[Gráfica]
+Sea $f:A\to\R$, con $A\subseteq\R$. La gráfica de $f$ es el conjunto
+\[
+G_f=\{(x,f(x)):x\in A\}\subseteq\R^2.
+\]
+\end{definicion}
+
+La gráfica no es simplemente un dibujo: matemáticamente es un conjunto de
+pares ordenados.
+
+\subsection{Prueba de la recta vertical}
+
+Una curva del plano representa la gráfica de una función $y=f(x)$ si toda
+recta vertical $x=a$ intersecta la curva en, a lo más, un punto.
+
+La justificación proviene directamente de la unicidad de la definición de
+función: para cada $x$ puede existir como máximo un valor $y=f(x)$.
+
+\subsection{Intersecciones con los ejes}
+
+Para encontrar la intersección con el eje $y$, si $0$ pertenece al dominio, se
+calcula
+\[
+f(0).
+\]
+
+Las intersecciones con el eje $x$ son las soluciones de
+\[
+f(x)=0.
+\]
+
+\begin{ejemplo}
+Sea
+\[
+f(x)=x^2-5x+6.
+\]
+La intersección con el eje $y$ es
+\[
+f(0)=6,
+\]
+por lo que se obtiene $(0,6)$.
+
+Para el eje $x$:
+\[
+x^2-5x+6=0,
+\]
+\[
+(x-2)(x-3)=0.
+\]
+Así, las intersecciones son
+\[
+(2,0),\qquad(3,0).
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Funciones pares e impares}
+
+\begin{definicion}[Función par]
+Una función $f$ cuyo dominio es simétrico respecto de $0$ es \emph{par} si
+\[
+f(-x)=f(x)
+\]
+para todo $x$ de su dominio.
+\end{definicion}
+
+Geométricamente, una función par tiene simetría respecto del eje $y$.
+
+\begin{definicion}[Función impar]
+Una función $f$ cuyo dominio es simétrico respecto de $0$ es \emph{impar} si
+\[
+f(-x)=-f(x)
+\]
+para todo $x$ de su dominio.
+\end{definicion}
+
+Geométricamente, una función impar tiene simetría respecto del origen.
+
+\begin{ejemplo}
+Para
+\[
+f(x)=x^4+2x^2,
+\]
+\[
+f(-x)=(-x)^4+2(-x)^2=x^4+2x^2=f(x).
+\]
+Por tanto, $f$ es par.
+\end{ejemplo}
+
+\begin{ejemplo}
+Para
+\[
+g(x)=x^3-4x,
+\]
+\[
+g(-x)=(-x)^3-4(-x)=-x^3+4x=-g(x).
+\]
+Por tanto, $g$ es impar.
+\end{ejemplo}
+
+\begin{observacion}
+Una función no tiene por qué ser par o impar. Por ejemplo,
+\[
+h(x)=x^2+x
+\]
+no satisface ninguna de las dos identidades.
+\end{observacion}
+
+% =========================================================
+\section{Crecimiento y decrecimiento}
+
+\begin{definicion}
+Sea $f:A\to\R$ y sea $I\subseteq A$ un intervalo.
+
+\begin{enumerate}
+    \item $f$ es \emph{creciente} en $I$ si
+    \[
+    x_1<x_2\quad\Longrightarrow\quad f(x_1)\leq f(x_2).
+    \]
+    \item $f$ es \emph{estrictamente creciente} si
+    \[
+    x_1<x_2\quad\Longrightarrow\quad f(x_1)<f(x_2).
+    \]
+    \item $f$ es \emph{decreciente} si
+    \[
+    x_1<x_2\quad\Longrightarrow\quad f(x_1)\geq f(x_2).
+    \]
+\end{enumerate}
+\end{definicion}
+
+En unidades posteriores la derivada proporcionará una herramienta sistemática
+para determinar intervalos de crecimiento y decrecimiento. En esta etapa se
+trabajará con argumentos algebraicos y gráficos.
+
+% =========================================================
+\section{Funciones elementales}
+
+\subsection{Función constante}
+
+\[
+f(x)=c,\qquad c\in\R.
+\]
+Su gráfica es una recta horizontal y
+\[
+\Ima(f)=\{c\}.
+\]
+
+\subsection{Función identidad}
+
+\[
+\id_{\R}(x)=x.
+\]
+Su gráfica es la recta $y=x$.
+
+\subsection{Función afín}
+
+\[
+f(x)=mx+b.
+\]
+El parámetro $m$ determina la pendiente y $b$ la intersección con el eje
+vertical.
+
+Si $m>0$, la función es estrictamente creciente; si $m<0$, es estrictamente
+decreciente; si $m=0$, es constante.
+
+\subsection{Función cuadrática}
+
+Una función cuadrática tiene la forma
+\[
+f(x)=ax^2+bx+c,\qquad a\neq0.
+\]
+Su gráfica es una parábola.
+
+Completando el cuadrado:
+\[
+f(x)
+=a\left(x+\frac{b}{2a}\right)^2
++\left(c-\frac{b^2}{4a}\right).
+\]
+El vértice tiene coordenadas
+\[
+\left(
+-\frac{b}{2a},
+f\left(-\frac{b}{2a}\right)
+\right).
+\]
+
+\subsection{Funciones polinomiales}
+
+\[
+p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
+\qquad a_n\neq0.
+\]
+El entero $n$ es el grado del polinomio.
+
+\subsection{Funciones racionales}
+
+\[
+f(x)=\frac{p(x)}{q(x)},\qquad q(x)\neq0.
+\]
+
+\subsection{Función valor absoluto}
+
+\[
+f(x)=|x|=
+\begin{cases}
+x,&x\geq0,\\
+-x,&x<0.
+\end{cases}
+\]
+
+\subsection{Funciones potencia y radicales}
+
+Las funciones
+\[
+f(x)=x^\alpha
+\]
+presentan distintos dominios y comportamientos según el exponente $\alpha$.
+
+En particular,
+\[
+f(x)=\sqrt{x}=x^{1/2}
+\]
+tiene dominio $[0,\infty)$.
+
+\subsection{Funciones exponenciales}
+
+Para $a>0$, $a\neq1$,
+\[
+f(x)=a^x.
+\]
+Se tiene
+\[
+\Dom(f)=\R,\qquad \Ima(f)=(0,\infty).
+\]
+
+Si $a>1$, $f$ es creciente; si $0<a<1$, es decreciente.
+
+\subsection{Funciones logarítmicas}
+
+La función logarítmica de base $a$ es
+\[
+f(x)=\log_a x,
+\qquad a>0,\ a\neq1,
+\]
+con
+\[
+\Dom(f)=(0,\infty),\qquad\Ima(f)=\R.
+\]
+
+\subsection{Funciones trigonométricas}
+
+Entre las funciones fundamentales se encuentran
+\[
+\sin x,\qquad\cos x,\qquad\tan x.
+\]
+Las funciones seno y coseno tienen dominio $\R$ y rango $[-1,1]$. La tangente
+no está definida cuando
+\[
+\cos x=0,
+\]
+es decir,
+\[
+x=\frac{\pi}{2}+k\pi,\qquad k\in\mathbb Z.
+\]
+
+% =========================================================
+\section{Funciones definidas por partes}
+
+\begin{definicion}
+Una función definida por partes utiliza diferentes reglas de correspondencia en
+diferentes subconjuntos de su dominio.
+\end{definicion}
+
+\begin{ejemplo}
+Considere
+\[
+f(x)=
+\begin{cases}
+x+2,&x<0,\\
+x^2,&0\leq x\leq2,\\
+4,&x>2.
+\end{cases}
+\]
+Entonces
+\[
+f(-3)=-1,\qquad f(1)=1,\qquad f(5)=4.
+\]
+En los puntos frontera debe observarse cuidadosamente qué desigualdad contiene
+la igualdad.
+\end{ejemplo}
+
+% =========================================================
+\section{Transformaciones de gráficas}
+
+Sea conocida la gráfica de $y=f(x)$.
+
+\subsection{Traslaciones verticales}
+
+\[
+g(x)=f(x)+k.
+\]
+Si $k>0$, la gráfica se desplaza $k$ unidades hacia arriba; si $k<0$, se
+desplaza $|k|$ unidades hacia abajo.
+
+\subsection{Traslaciones horizontales}
+
+\[
+g(x)=f(x-h).
+\]
+Si $h>0$, la gráfica se desplaza $h$ unidades hacia la derecha.
+
+\begin{observacion}
+El signo en las traslaciones horizontales suele producir confusión:
+\[
+f(x-h)\quad\text{desplaza hacia la derecha},
+\qquad
+f(x+h)\quad\text{hacia la izquierda}.
+\]
+\end{observacion}
+
+\subsection{Reflexiones}
+
+\[
+g(x)=-f(x)
+\]
+refleja la gráfica respecto del eje $x$, mientras que
+\[
+g(x)=f(-x)
+\]
+la refleja respecto del eje $y$.
+
+\subsection{Escalamientos}
+
+Si
+\[
+g(x)=af(x),
+\]
+las ordenadas se multiplican por $a$.
+
+Si
+\[
+g(x)=f(bx),
+\]
+el escalamiento ocurre en dirección horizontal.
+
+\begin{ejemplo}
+Partiendo de $f(x)=x^2$, la función
+\[
+g(x)=2(x-3)^2+1
+\]
+puede obtenerse mediante:
+\begin{enumerate}
+    \item traslado de $3$ unidades a la derecha;
+    \item estiramiento vertical por factor $2$;
+    \item traslado de $1$ unidad hacia arriba.
+\end{enumerate}
+Su vértice es $(3,1)$.
+\end{ejemplo}
+
+% =========================================================
+\section{Operaciones con funciones}
+
+Sean
+\[
+f:A\to\R,\qquad g:B\to\R.
+\]
+
+\begin{definicion}
+Se definen:
+\[
+(f+g)(x)=f(x)+g(x),
+\]
+\[
+(f-g)(x)=f(x)-g(x),
+\]
+\[
+(fg)(x)=f(x)g(x),
+\]
+y, siempre que $g(x)\neq0$,
+\[
+\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}.
+\]
+\end{definicion}
+
+Para suma, diferencia y producto:
+\[
+\Dom(f\pm g)=\Dom(fg)=A\cap B.
+\]
+Para el cociente:
+\[
+\Dom\left(\frac fg\right)
+=\{x\in A\cap B:g(x)\neq0\}.
+\]
+
+\begin{ejemplo}
+Sean
+\[
+f(x)=\sqrt{x-1},
+\qquad
+g(x)=\frac{1}{x-3}.
+\]
+Entonces
+\[
+\Dom(f)=[1,\infty),
+\qquad
+\Dom(g)=\R\setminus\{3\}.
+\]
+Por tanto,
+\[
+\Dom(f+g)=[1,3)\cup(3,\infty).
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Composición de funciones}
+
+\begin{definicion}[Composición]
+Sean
+\[
+g:A\to B,\qquad f:B\to C.
+\]
+La composición de $f$ con $g$ es la función
+\[
+f\circ g:A\to C
+\]
+definida por
+\[
+(f\circ g)(x)=f(g(x)).
+\]
+\end{definicion}
+
+Primero actúa $g$ y después actúa $f$:
+\[
+x\xmapsto{g}g(x)\xmapsto{f}f(g(x)).
+\]
+
+\begin{ejemplo}
+Sean
+\[
+f(x)=x^2+1,\qquad g(x)=3x-2.
+\]
+Entonces
+\[
+(f\circ g)(x)
+=f(3x-2)
+=(3x-2)^2+1
+=9x^2-12x+5.
+\]
+En cambio,
+\[
+(g\circ f)(x)
+=g(x^2+1)
+=3(x^2+1)-2
+=3x^2+1.
+\]
+Por tanto,
+\[
+f\circ g\neq g\circ f.
+\]
+\end{ejemplo}
+
+\subsection{Dominio de una composición}
+
+Para que $f(g(x))$ tenga sentido deben cumplirse dos condiciones:
+\[
+x\in\Dom(g)
+\]
+y
+\[
+g(x)\in\Dom(f).
+\]
+Por tanto,
+\[
+\Dom(f\circ g)
+=
+\{x\in\Dom(g):g(x)\in\Dom(f)\}.
+\]
+
+\begin{ejemplo}
+Sean
+\[
+f(x)=\sqrt{x},\qquad g(x)=x^2-4.
+\]
+Entonces
+\[
+(f\circ g)(x)=\sqrt{x^2-4}.
+\]
+Se requiere
+\[
+x^2-4\geq0,
+\]
+por lo que
+\[
+x\leq-2\quad\text{o}\quad x\geq2.
+\]
+Así,
+\[
+\Dom(f\circ g)=(-\infty,-2]\cup[2,\infty).
+\]
+\end{ejemplo}
+
+\begin{proposicion}[Asociatividad de la composición]
+Cuando las composiciones involucradas están bien definidas,
+\[
+(f\circ g)\circ h=f\circ(g\circ h).
+\]
+\end{proposicion}
+
+\begin{proof}
+Para todo $x$ del dominio correspondiente,
+\[
+((f\circ g)\circ h)(x)
+=(f\circ g)(h(x))
+=f(g(h(x))).
+\]
+Por otra parte,
+\[
+(f\circ(g\circ h))(x)
+=f((g\circ h)(x))
+=f(g(h(x))).
+\]
+Ambas funciones coinciden punto a punto.
+\end{proof}
+
+% =========================================================
+\section{Funciones inyectivas, suprayectivas y biyectivas}
+
+\begin{definicion}[Inyectividad]
+Una función $f:A\to B$ es inyectiva si
+\[
+f(x_1)=f(x_2)\quad\Longrightarrow\quad x_1=x_2.
+\]
+Equivalentemente,
+\[
+x_1\neq x_2\quad\Longrightarrow\quad f(x_1)\neq f(x_2).
+\]
+\end{definicion}
+
+\begin{definicion}[Suprayectividad]
+Una función $f:A\to B$ es suprayectiva si
+\[
+f(A)=B.
+\]
+Equivalentemente,
+\[
+\forall y\in B\;\exists x\in A
+\quad\text{tal que}\quad
+f(x)=y.
+\]
+\end{definicion}
+
+\begin{definicion}[Biyectividad]
+Una función es biyectiva si es simultáneamente inyectiva y suprayectiva.
+\end{definicion}
+
+\begin{ejemplo}
+La función
+\[
+f:\R\to\R,\qquad f(x)=2x-5
+\]
+es biyectiva.
+
+Para probar inyectividad, supongamos
+\[
+f(x_1)=f(x_2).
+\]
+Entonces
+\[
+2x_1-5=2x_2-5,
+\]
+de donde $x_1=x_2$.
+
+Para probar suprayectividad, sea $y\in\R$. Queremos resolver
+\[
+y=2x-5.
+\]
+Se obtiene
+\[
+x=\frac{y+5}{2}\in\R.
+\]
+Por tanto, todo $y\in\R$ tiene una preimagen.
+\end{ejemplo}
+
+\begin{ejemplo}
+La función
+\[
+f:\R\to\R,\qquad f(x)=x^2
+\]
+no es inyectiva, pues
+\[
+f(1)=f(-1)=1.
+\]
+Tampoco es suprayectiva sobre $\R$, pues ningún número negativo pertenece a su
+imagen.
+\end{ejemplo}
+
+% =========================================================
+\section{Función inversa}
+
+\begin{definicion}
+Sea $f:A\to B$ una función biyectiva. La función inversa
+\[
+f^{-1}:B\to A
+\]
+es la función que asigna a cada $y\in B$ el único $x\in A$ tal que
+\[
+f(x)=y.
+\]
+\end{definicion}
+
+Por definición,
+\[
+f^{-1}(f(x))=x,\qquad x\in A,
+\]
+y
+\[
+f(f^{-1}(y))=y,\qquad y\in B.
+\]
+En términos de composición,
+\[
+f^{-1}\circ f=\id_A,
+\qquad
+f\circ f^{-1}=\id_B.
+\]
+
+\begin{teorema}
+Una función $f:A\to B$ admite una función inversa
+\[
+f^{-1}:B\to A
+\]
+si y sólo si $f$ es biyectiva.
+\end{teorema}
+
+\begin{proof}
+Supongamos primero que existe $f^{-1}$. Si
+\[
+f(x_1)=f(x_2),
+\]
+aplicando $f^{-1}$ a ambos lados,
+\[
+f^{-1}(f(x_1))=f^{-1}(f(x_2)),
+\]
+por lo que $x_1=x_2$. Así, $f$ es inyectiva.
+
+Además, para cada $y\in B$, tomando $x=f^{-1}(y)$ se obtiene
+\[
+f(x)=f(f^{-1}(y))=y.
+\]
+Luego $f$ es suprayectiva y, por tanto, biyectiva.
+
+Recíprocamente, si $f$ es biyectiva, para cada $y\in B$ existe un único
+$x\in A$ tal que $f(x)=y$. Definiendo
+\[
+f^{-1}(y)=x
+\]
+se obtiene una función bien definida de $B$ en $A$.
+\end{proof}
+
+\subsection{Cálculo algebraico de una inversa}
+
+\begin{ejemplo}
+Sea
+\[
+f(x)=3x-7.
+\]
+Escribimos
+\[
+y=3x-7.
+\]
+Despejamos $x$:
+\[
+x=\frac{y+7}{3}.
+\]
+Intercambiando la variable de entrada,
+\[
+f^{-1}(x)=\frac{x+7}{3}.
+\]
+
+Verificación:
+\[
+f(f^{-1}(x))
+=3\left(\frac{x+7}{3}\right)-7=x.
+\]
+\end{ejemplo}
+
+\begin{observacion}
+La notación $f^{-1}(x)$ no significa
+\[
+\frac{1}{f(x)}.
+\]
+El recíproco de $f$ es $1/f$; la función inversa es otra noción.
+\end{observacion}
+
+% =========================================================
+\section{Modelación mediante funciones}
+
+Una de las finalidades centrales de las funciones es describir la dependencia
+entre cantidades.
+
+\subsection{Proceso general de modelación}
+
+Un procedimiento elemental de modelación puede organizarse así:
+
+\begin{enumerate}
+    \item identificar las cantidades involucradas;
+    \item elegir la variable independiente;
+    \item expresar las demás cantidades en función de ella;
+    \item establecer una relación matemática;
+    \item determinar el dominio matemático;
+    \item imponer las restricciones del problema real;
+    \item interpretar el resultado en el contexto original.
+\end{enumerate}
+
+\begin{observacion}
+El dominio físicamente admisible puede ser menor que el dominio algebraico de
+la fórmula. Esta distinción es fundamental en problemas aplicados.
+\end{observacion}
+
+\subsection{Modelo geométrico}
+
+\begin{ejemplo}[Rectángulo de perímetro fijo]
+Un rectángulo tiene perímetro $40$ m. Exprese su área como función de la
+longitud de uno de sus lados.
+
+Sean $x$ y $y$ las longitudes de los lados. Como
+\[
+2x+2y=40,
+\]
+se obtiene
+\[
+y=20-x.
+\]
+El área es
+\[
+A=xy,
+\]
+de modo que
+\[
+A(x)=x(20-x)=20x-x^2.
+\]
+
+Algebraicamente la expresión está definida para todo $x\in\R$, pero las
+longitudes deben ser positivas:
+\[
+x>0,\qquad20-x>0.
+\]
+Por tanto, el dominio físicamente admisible es
+\[
+0<x<20.
+\]
+\end{ejemplo}
+
+\subsection{Modelo de costo}
+
+\begin{ejemplo}
+Una empresa tiene un costo fijo de \$5000 y un costo variable de \$120 por
+unidad producida. Si $x$ representa el número de unidades, el costo total es
+\[
+C(x)=5000+120x.
+\]
+En un modelo continuo elemental puede considerarse $x\geq0$, aunque si $x$
+representa unidades indivisibles, el dominio natural del problema es
+\[
+x\in\{0,1,2,\ldots\}.
+\]
+\end{ejemplo}
+
+\subsection{Ingreso y utilidad}
+
+Si el precio por unidad es $p(x)$ y se venden $x$ unidades, el ingreso es
+\[
+R(x)=xp(x).
+\]
+Si $C(x)$ es el costo, la utilidad se modela mediante
+\[
+U(x)=R(x)-C(x).
+\]
+
+\begin{ejemplo}
+Suponga que el precio de venta depende de la cantidad según
+\[
+p(x)=500-2x
+\]
+y que
+\[
+C(x)=5000+100x.
+\]
+Entonces
+\[
+R(x)=x(500-2x)=500x-2x^2,
+\]
+y
+\[
+U(x)=R(x)-C(x)
+=-2x^2+400x-5000.
+\]
+La función cuadrática obtenida será posteriormente susceptible de análisis
+mediante derivadas para estudiar problemas de optimización.
+\end{ejemplo}
+
+\subsection{Modelo de distancia}
+
+\begin{ejemplo}
+Si un vehículo se mueve a velocidad constante de $72$ km/h, la distancia
+recorrida después de $t$ horas es
+\[
+d(t)=72t,\qquad t\geq0.
+\]
+La variable independiente es el tiempo y la dependiente es la distancia.
+\end{ejemplo}
+
+\subsection{Proporcionalidad inversa}
+
+\begin{ejemplo}
+Para recorrer una distancia fija $D$, el tiempo necesario a velocidad constante
+$v>0$ es
+\[
+T(v)=\frac{D}{v}.
+\]
+El tiempo es inversamente proporcional a la velocidad.
+\end{ejemplo}
+
+\subsection{Modelo exponencial elemental}
+
+Una cantidad que cambia por un porcentaje fijo durante intervalos iguales puede
+modelarse, en una primera aproximación, mediante
+\[
+P(t)=P_0a^t.
+\]
+
+\begin{ejemplo}
+Una población inicial de $2000$ organismos aumenta $5\%$ por periodo. Entonces
+\[
+P(t)=2000(1.05)^t.
+\]
+Aquí $P_0=2000$ representa la condición inicial y $1.05$ el factor de
+crecimiento por periodo.
+\end{ejemplo}
+
+% =========================================================
+
+% =========================================================
+\section{Laboratorio gráfico: funciones elementales y código en R}
+
+Esta sección tiene un doble propósito. En primer lugar, permite reconocer
+visualmente las familias de funciones que aparecerán de manera recurrente en
+Cálculo Diferencial. En segundo lugar, introduce una perspectiva computacional:
+la gráfica de una función puede aproximarse numéricamente evaluando la función
+sobre una malla suficientemente fina de puntos de su dominio.
+
+Para estudiantes de Ciencia de Datos y Sistemas Computacionales resulta útil
+interpretar una función como una regla que transforma entradas en salidas. Si
+\[
+x_1,x_2,\ldots,x_n
+\]
+es una colección de entradas, entonces la evaluación vectorizada produce
+\[
+f(x_1),f(x_2),\ldots,f(x_n).
+\]
+En \texttt{R}, la instrucción \texttt{seq()} permite construir la malla y
+\texttt{plot()} representar los pares
+\[
+(x_i,f(x_i)).
+\]
+
+\begin{nota}
+Las gráficas generadas numéricamente no sustituyen al análisis matemático.
+Una computadora dibuja una colección finita de puntos; propiedades como
+dominio, rango, discontinuidades, asíntotas o monotonía deben justificarse
+matemáticamente. La visualización es una herramienta de exploración y
+verificación.
+\end{nota}
+
+\subsection{Plantilla general en R}
+
+Para una función real $f$, una plantilla básica es:
+
+\begin{verbatim}
+f <- function(x) {
+  # regla de correspondencia
+}
+
+x <- seq(a, b, length.out = 1000)
+y <- f(x)
+
+plot(x, y, type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Grafica de f")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+El argumento \texttt{type = "l"} une mediante segmentos los puntos calculados.
+Aumentar \texttt{length.out} hace más fina la discretización.
+
+% ---------------------------------------------------------
+\subsection{Función constante}
+
+Sea
+\[
+f(x)=2.
+\]
+Su dominio es $\R$ y su imagen es $\{2\}$. La gráfica es la recta horizontal
+$y=2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+width=.72\textwidth,height=6cm,
+axis lines=middle,xmin=-5,xmax=5,ymin=-1,ymax=4,
+xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-5:5,samples=2,thick] {2};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) rep(2, length(x))
+x <- seq(-5, 5, length.out = 500)
+plot(x, f(x), type = "l", xlab = "x", ylab = "f(x)",
+     main = "Funcion constante: f(x) = 2")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función identidad}
+
+\[
+f(x)=x.
+\]
+Se tiene
+\[
+\Dom(f)=\R,\qquad \Ima(f)=\R.
+\]
+Es una función impar, estrictamente creciente y biyectiva de $\R$ en $\R$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-5,xmax=5,ymin=-5,ymax=5,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-5:5,samples=2,thick] {x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) x
+x <- seq(-5, 5, length.out = 500)
+plot(x, f(x), type = "l", asp = 1,
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion identidad: f(x) = x")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función afín}
+
+Consideremos
+\[
+f(x)=2x-1.
+\]
+La pendiente es $m=2$ y la ordenada al origen es $b=-1$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-4,xmax=4,ymin=-7,ymax=7,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-4:4,samples=2,thick] {2*x-1};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) 2*x - 1
+x <- seq(-4, 4, length.out = 500)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion afin: f(x) = 2x - 1")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función cuadrática}
+
+Sea
+\[
+f(x)=x^2-4.
+\]
+Su dominio es $\R$. Como $x^2\geq0$,
+\[
+f(x)\geq-4,
+\]
+de modo que
+\[
+\Ima(f)=[-4,\infty).
+\]
+Es par y su vértice es $(0,-4)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6.5cm,axis lines=middle,
+xmin=-4,xmax=4,ymin=-5,ymax=12,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-4:4,samples=150,thick] {x^2-4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) x^2 - 4
+x <- seq(-4, 4, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion cuadratica: f(x) = x^2 - 4")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función cúbica}
+
+\[
+f(x)=x^3.
+\]
+Su dominio y su imagen son $\R$. Es impar y estrictamente creciente.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6.5cm,axis lines=middle,
+xmin=-3,xmax=3,ymin=-10,ymax=10,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-2.2:2.2,samples=150,thick] {x^3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) x^3
+x <- seq(-2.2, 2.2, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion cubica: f(x) = x^3")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función valor absoluto}
+
+\[
+f(x)=|x|=
+\begin{cases}
+-x,&x<0,\\
+x,&x\geq0.
+\end{cases}
+\]
+Su dominio es $\R$, su imagen $[0,\infty)$ y es una función par.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-5,xmax=5,ymin=-1,ymax=6,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-5:5,samples=150,thick] {abs(x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) abs(x)
+x <- seq(-5, 5, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Valor absoluto: f(x) = |x|")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función raíz cuadrada}
+
+\[
+f(x)=\sqrt{x}.
+\]
+La condición $x\geq0$ produce
+\[
+\Dom(f)=[0,\infty),\qquad \Ima(f)=[0,\infty).
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-1,xmax=10,ymin=-1,ymax=4,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=0:10,samples=150,thick] {sqrt(x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) sqrt(x)
+x <- seq(0, 10, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Raiz cuadrada: f(x) = sqrt(x)")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función recíproca}
+
+\[
+f(x)=\frac{1}{x}.
+\]
+Su dominio y rango son
+\[
+\R\setminus\{0\}.
+\]
+La función es impar. Los ejes coordenados son asíntotas:
+\[
+x=0,\qquad y=0.
+\]
+
+No debe generarse una única secuencia que atraviese $x=0$ y unirla con líneas,
+pues ello puede producir una representación visual engañosa. Deben graficarse
+las dos ramas por separado.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6.5cm,axis lines=middle,
+xmin=-5,xmax=5,ymin=-5,ymax=5,xlabel={$x$},ylabel={$f(x)$},grid=both,
+restrict y to domain=-5:5]
+\addplot[domain=-5:-0.2,samples=150,thick] {1/x};
+\addplot[domain=0.2:5,samples=150,thick] {1/x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) 1/x
+
+x1 <- seq(-5, -0.05, length.out = 1000)
+x2 <- seq(0.05, 5, length.out = 1000)
+
+plot(x1, f(x1), type = "l",
+     xlim = c(-5, 5), ylim = c(-5, 5),
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion reciproca: f(x) = 1/x")
+lines(x2, f(x2))
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función racional con traslación}
+
+Sea
+\[
+f(x)=\frac{x+1}{x-2}.
+\]
+Puede reescribirse como
+\[
+f(x)=1+\frac{3}{x-2}.
+\]
+Esta forma permite reconocer las asíntotas
+\[
+x=2,\qquad y=1.
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6.5cm,axis lines=middle,
+xmin=-5,xmax=7,ymin=-6,ymax=7,xlabel={$x$},ylabel={$f(x)$},grid=both,
+restrict y to domain=-6:7]
+\addplot[domain=-5:1.9,samples=180,thick] {(x+1)/(x-2)};
+\addplot[domain=2.1:7,samples=180,thick] {(x+1)/(x-2)};
+\addplot[dashed] coordinates {(2,-6) (2,7)};
+\addplot[dashed] coordinates {(-5,1) (7,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) (x + 1)/(x - 2)
+
+x1 <- seq(-5, 1.95, length.out = 1000)
+x2 <- seq(2.05, 7, length.out = 1000)
+
+plot(x1, f(x1), type = "l",
+     xlim = c(-5, 7), ylim = c(-6, 7),
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion racional")
+lines(x2, f(x2))
+abline(v = 2, h = 1, lty = 2)
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función exponencial}
+
+Sea
+\[
+f(x)=2^x.
+\]
+Entonces
+\[
+\Dom(f)=\R,\qquad \Ima(f)=(0,\infty).
+\]
+Además,
+\[
+f(0)=1.
+\]
+La función es estrictamente creciente.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-4,xmax=4,ymin=-1,ymax=10,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-4:3.2,samples=180,thick] {2^x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) 2^x
+x <- seq(-4, 3.2, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion exponencial: f(x) = 2^x")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función logaritmo natural}
+
+\[
+f(x)=\ln x.
+\]
+Su dominio e imagen son
+\[
+\Dom(f)=(0,\infty),
+\qquad
+\Ima(f)=\R.
+\]
+Además,
+\[
+\ln(1)=0.
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=6cm,axis lines=middle,
+xmin=-1,xmax=10,ymin=-4,ymax=4,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=0.03:10,samples=200,thick] {ln(x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) log(x)
+x <- seq(0.03, 10, length.out = 1000)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Logaritmo natural: f(x) = ln(x)")
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+\begin{nota}
+En \texttt{R}, \texttt{log(x)} representa el logaritmo natural. Para una base
+$b$ puede utilizarse \texttt{log(x, base = b)}.
+\end{nota}
+
+% ---------------------------------------------------------
+\subsection{Funciones seno y coseno}
+
+\[
+f(x)=\sin x,\qquad g(x)=\cos x.
+\]
+Ambas tienen dominio $\R$, imagen $[-1,1]$ y periodo $2\pi$. El seno es impar y
+el coseno es par.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.82\textwidth,height=6cm,axis lines=middle,
+xmin=-6.4,xmax=6.4,ymin=-1.5,ymax=1.5,xlabel={$x$},ylabel={$y$},grid=both,
+legend style={at={(0.5,-0.18)},anchor=north,legend columns=2}]
+\addplot[domain=-2*pi:2*pi,samples=250,thick] {sin(deg(x))};
+\addlegendentry{$\sin x$}
+\addplot[domain=-2*pi:2*pi,samples=250,thick,dashed] {cos(deg(x))};
+\addlegendentry{$\cos x$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+x <- seq(-2*pi, 2*pi, length.out = 1500)
+
+plot(x, sin(x), type = "l",
+     ylim = c(-1.5, 1.5),
+     xlab = "x", ylab = "y",
+     main = "Funciones seno y coseno")
+lines(x, cos(x), lty = 2)
+abline(h = 0, v = 0, lty = 3)
+legend("topright",
+       legend = c("sin(x)", "cos(x)"),
+       lty = c(1, 2))
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función tangente}
+
+\[
+f(x)=\tan x=\frac{\sin x}{\cos x}.
+\]
+No está definida cuando
+\[
+x=\frac{\pi}{2}+k\pi,\qquad k\in\mathbb Z.
+\]
+Por ello, nuevamente deben evitarse uniones artificiales a través de las
+asíntotas verticales.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.82\textwidth,height=6.5cm,axis lines=middle,
+xmin=-4.7,xmax=4.7,ymin=-5,ymax=5,xlabel={$x$},ylabel={$f(x)$},grid=both,
+restrict y to domain=-5:5]
+\addplot[domain=-4.6:-1.62,samples=150,thick] {tan(deg(x))};
+\addplot[domain=-1.52:1.52,samples=150,thick] {tan(deg(x))};
+\addplot[domain=1.62:4.6,samples=150,thick] {tan(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) tan(x)
+
+# Se grafican intervalos separados por las asintotas.
+eps <- 0.03
+intervalos <- list(
+  c(-3*pi/2 + eps, -pi/2 - eps),
+  c(-pi/2 + eps,   pi/2 - eps),
+  c( pi/2 + eps, 3*pi/2 - eps)
+)
+
+plot(NA, xlim = c(-3*pi/2, 3*pi/2), ylim = c(-5, 5),
+     xlab = "x", ylab = "tan(x)",
+     main = "Funcion tangente")
+
+for (I in intervalos) {
+  x <- seq(I[1], I[2], length.out = 500)
+  lines(x, f(x))
+}
+
+abline(v = c(-3*pi/2, -pi/2, pi/2, 3*pi/2), lty = 2)
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función definida por partes}
+
+Considere
+\[
+f(x)=
+\begin{cases}
+-x-1,&x<0,\\
+x^2,&0\leq x\leq2,\\
+4,&x>2.
+\end{cases}
+\]
+
+La definición por partes se implementa en R mediante \texttt{ifelse}. Para más
+de dos casos pueden anidarse condiciones.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.75\textwidth,height=6.5cm,axis lines=middle,
+xmin=-4,xmax=5,ymin=-2,ymax=6,xlabel={$x$},ylabel={$f(x)$},grid=both]
+\addplot[domain=-4:-0.02,samples=80,thick] {-x-1};
+\addplot[domain=0:2,samples=80,thick] {x^2};
+\addplot[domain=2.02:5,samples=2,thick] {4};
+\addplot[only marks,mark=o] coordinates {(0,-1)};
+\addplot[only marks,mark=*] coordinates {(0,0) (2,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) {
+  ifelse(x < 0,
+         -x - 1,
+         ifelse(x <= 2, x^2, 4))
+}
+
+x <- seq(-4, 5, length.out = 1500)
+plot(x, f(x), type = "l",
+     xlab = "x", ylab = "f(x)",
+     main = "Funcion definida por partes")
+points(0, -1, pch = 1)  # punto abierto
+points(0,  0, pch = 19) # punto cerrado
+points(2,  4, pch = 19)
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Transformaciones de una función madre}
+
+Partamos de
+\[
+f(x)=x^2
+\]
+y consideremos
+\[
+g(x)=2(x-3)^2+1.
+\]
+La comparación gráfica permite visualizar simultáneamente la traslación
+horizontal, el escalamiento vertical y la traslación vertical.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.78\textwidth,height=6.5cm,axis lines=middle,
+xmin=-4,xmax=7,ymin=-1,ymax=15,xlabel={$x$},ylabel={$y$},grid=both,
+legend style={at={(0.5,-0.18)},anchor=north,legend columns=2}]
+\addplot[domain=-3.5:3.5,samples=150,thick,dashed] {x^2};
+\addlegendentry{$f(x)=x^2$}
+\addplot[domain=0.4:5.6,samples=150,thick] {2*(x-3)^2+1};
+\addlegendentry{$g(x)=2(x-3)^2+1$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) x^2
+g <- function(x) 2*(x - 3)^2 + 1
+
+x <- seq(-4, 7, length.out = 1500)
+
+plot(x, f(x), type = "l",
+     ylim = c(-1, 15),
+     xlab = "x", ylab = "y",
+     main = "Transformacion de f(x) = x^2")
+lines(x, g(x), lty = 2)
+legend("topright",
+       legend = c("f(x) = x^2", "g(x) = 2(x-3)^2 + 1"),
+       lty = c(1, 2))
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Composición: visualización computacional}
+
+Sean
+\[
+f(x)=x^2+1,\qquad g(x)=2x-3.
+\]
+Entonces
+\[
+(f\circ g)(x)=(2x-3)^2+1
+\]
+y
+\[
+(g\circ f)(x)=2(x^2+1)-3=2x^2-1.
+\]
+La comparación gráfica refuerza que la composición no es conmutativa.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.78\textwidth,height=6.5cm,axis lines=middle,
+xmin=-2,xmax=4,ymin=-3,ymax=18,xlabel={$x$},ylabel={$y$},grid=both,
+legend style={at={(0.5,-0.18)},anchor=north,legend columns=2}]
+\addplot[domain=-1.5:4,samples=180,thick] {(2*x-3)^2+1};
+\addlegendentry{$f\circ g$}
+\addplot[domain=-1.5:3,samples=180,thick,dashed] {2*x^2-1};
+\addlegendentry{$g\circ f$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f <- function(x) x^2 + 1
+g <- function(x) 2*x - 3
+
+fog <- function(x) f(g(x))
+gof <- function(x) g(f(x))
+
+x <- seq(-1.5, 4, length.out = 1200)
+
+plot(x, fog(x), type = "l",
+     ylim = c(-3, 18),
+     xlab = "x", ylab = "y",
+     main = "La composicion no es conmutativa")
+lines(x, gof(x), lty = 2)
+legend("topright",
+       legend = c("(f o g)(x)", "(g o f)(x)"),
+       lty = c(1, 2))
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Función e inversa: simetría respecto de $y=x$}
+
+Sea
+\[
+f(x)=2x-3.
+\]
+Su inversa es
+\[
+f^{-1}(x)=\frac{x+3}{2}.
+\]
+Las gráficas de $f$ y $f^{-1}$ son reflejos una de la otra respecto de la
+recta
+\[
+y=x.
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.72\textwidth,height=7cm,axis lines=middle,
+xmin=-5,xmax=5,ymin=-5,ymax=5,xlabel={$x$},ylabel={$y$},grid=both,
+legend style={at={(0.5,-0.18)},anchor=north,legend columns=3}]
+\addplot[domain=-4:4,samples=2,thick] {2*x-3};
+\addlegendentry{$f$}
+\addplot[domain=-5:5,samples=2,thick,dashed] {(x+3)/2};
+\addlegendentry{$f^{-1}$}
+\addplot[domain=-5:5,samples=2,dotted] {x};
+\addlegendentry{$y=x$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{verbatim}
+f    <- function(x) 2*x - 3
+finv <- function(x) (x + 3)/2
+
+x <- seq(-5, 5, length.out = 500)
+
+plot(x, f(x), type = "l",
+     xlim = c(-5, 5), ylim = c(-5, 5), asp = 1,
+     xlab = "x", ylab = "y",
+     main = "Funcion e inversa")
+lines(x, finv(x), lty = 2)
+abline(a = 0, b = 1, lty = 3)
+legend("topleft",
+       legend = c("f", "f^{-1}", "y = x"),
+       lty = c(1, 2, 3))
+grid()
+\end{verbatim}
+
+% ---------------------------------------------------------
+\subsection{Ejercicio computacional guiado}
+
+Considere
+\[
+f(x)=\frac{\sqrt{x+2}}{x-1}.
+\]
+
+\begin{enumerate}
+    \item Determine analíticamente el dominio.
+    \item Identifique el punto excluido debido al denominador.
+    \item Construya en R dos mallas, una a cada lado de $x=1$.
+    \item Grafique ambas ramas sin unirlas.
+    \item Compare la gráfica obtenida con el dominio calculado.
+    \item Experimente con valores cada vez más próximos a $x=1$.
+    \item Explique numéricamente qué observa, sin utilizar todavía la definición
+    formal de límite.
+\end{enumerate}
+
+Código inicial:
+
+\begin{verbatim}
+f <- function(x) sqrt(x + 2)/(x - 1)
+
+x1 <- seq(-2, 0.99, length.out = 1000)
+x2 <- seq(1.01, 8, length.out = 1000)
+
+plot(x1, f(x1), type = "l",
+     xlim = c(-2, 8), ylim = c(-20, 20),
+     xlab = "x", ylab = "f(x)",
+     main = "Exploracion de una funcion racional-radical")
+lines(x2, f(x2))
+abline(v = 1, lty = 2)
+abline(h = 0, v = 0, lty = 3)
+grid()
+\end{verbatim}
+
+\subsection{Actividad para Ciencia de Datos y Sistemas Computacionales}
+
+Construya un pequeño catálogo computacional de funciones. Para cada función,
+genere una tabla con $n=1001$ puntos y las columnas
+\[
+x,\qquad f(x),
+\]
+y obtenga su gráfica.
+
+En R:
+
+\begin{verbatim}
+f <- function(x) x^2 - 4
+x <- seq(-5, 5, length.out = 1001)
+
+datos <- data.frame(
+  x = x,
+  fx = f(x)
+)
+
+head(datos)
+summary(datos)
+
+plot(datos$x, datos$fx, type = "l",
+     xlab = "x", ylab = "f(x)")
+grid()
+\end{verbatim}
+
+Discuta las siguientes preguntas:
+
+\begin{enumerate}
+    \item ¿Una tabla finita permite conocer exactamente la imagen de una
+    función definida sobre un intervalo?
+    \item ¿Qué información matemática se pierde al discretizar el dominio?
+    \item ¿Qué ocurre cerca de una discontinuidad si la malla es demasiado
+    gruesa?
+    \item ¿Cómo influye \texttt{length.out} en la apariencia de la gráfica?
+    \item ¿Puede una gráfica numérica constituir una demostración?
+    \item ¿Qué ventajas aporta, entonces, el análisis computacional?
+\end{enumerate}
+
+La respuesta a la quinta pregunta es particularmente importante: una
+visualización puede sugerir una propiedad y aportar evidencia numérica, pero
+no sustituye una demostración cuando se requiere una afirmación válida para
+todos los elementos de un conjunto infinito.
+
+
+\section{Ejemplos integradores}
+
+\begin{ejemplo}[Análisis de una función racional]
+Considere
+\[
+f(x)=\frac{x+1}{x-2}.
+\]
+
+\textbf{Dominio.}
+\[
+\Dom(f)=\R\setminus\{2\}.
+\]
+
+\textbf{Intersección con el eje $x$.}
+\[
+f(x)=0
+\Longleftrightarrow x+1=0
+\Longleftrightarrow x=-1.
+\]
+
+\textbf{Intersección con el eje $y$.}
+\[
+f(0)=\frac{1}{-2}=-\frac12.
+\]
+
+\textbf{Imagen.}
+Sea
+\[
+y=\frac{x+1}{x-2}.
+\]
+Despejando $x$:
+\[
+yx-2y=x+1,
+\]
+\[
+x(y-1)=2y+1.
+\]
+Si $y\neq1$,
+\[
+x=\frac{2y+1}{y-1}.
+\]
+Por tanto, todos los reales excepto $y=1$ son alcanzados:
+\[
+\Ima(f)=\R\setminus\{1\}.
+\]
+\end{ejemplo}
+
+\begin{ejemplo}[Composición y restricciones]
+Sean
+\[
+f(x)=\frac{1}{x-1},
+\qquad
+g(x)=\sqrt{x+2}.
+\]
+Entonces
+\[
+(f\circ g)(x)
+=\frac{1}{\sqrt{x+2}-1}.
+\]
+Se requiere
+\[
+x+2\geq0
+\]
+y, además,
+\[
+\sqrt{x+2}\neq1.
+\]
+La primera condición da $x\geq-2$ y la segunda
+\[
+x+2\neq1\Longleftrightarrow x\neq-1.
+\]
+Así,
+\[
+\Dom(f\circ g)=[-2,-1)\cup(-1,\infty).
+\]
+\end{ejemplo}
+
+% =========================================================
+\section{Errores frecuentes}
+
+\begin{enumerate}
+    \item Confundir codominio con imagen.
+    \item Pensar que una función no puede asignar el mismo valor a dos entradas.
+    \item Confundir $f(x+h)$ con $f(x)+h$.
+    \item Cancelar factores sin conservar las restricciones del dominio original.
+    \item Usar $\sqrt{g(x)}$ sin imponer $g(x)\geq0$.
+    \item Usar $\ln(g(x))$ imponiendo $g(x)\geq0$ en vez de $g(x)>0$.
+    \item Suponer que $\Dom(f\circ g)$ es simplemente
+    $\Dom(f)\cap\Dom(g)$.
+    \item Confundir $f^{-1}(x)$ con $1/f(x)$.
+    \item Despejar una ``inversa'' sin verificar que la función sea uno a uno en
+    el dominio considerado.
+    \item Ignorar las restricciones físicas al construir un modelo.
+\end{enumerate}
+
+% =========================================================
+\section{Ejercicios}
+
+\subsection{Concepto de función}
+
+Determine cuáles de las siguientes relaciones definen una función de $A$ en
+$B$. Justifique formalmente su respuesta.
+
+\begin{enumerate}
+    \item $A=\{1,2,3\}$, $B=\{a,b\}$,
+    \[
+    R=\{(1,a),(2,a),(3,b)\}.
+    \]
+    \item
+    \[
+    R=\{(1,a),(1,b),(2,a),(3,b)\}.
+    \]
+    \item La relación en $\R$ dada por
+    \[
+    y^2=x.
+    \]
+    \item La relación
+    \[
+    y=x^3-2x+1.
+    \]
+\end{enumerate}
+
+\subsection{Evaluación}
+
+Sea
+\[
+f(x)=2x^2-5x+3.
+\]
+Calcule:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(0)$.
+    \item $f(2)$.
+    \item $f(-3)$.
+    \item $f(a)$.
+    \item $f(a+1)$.
+    \item $f(x+h)$.
+    \item $f(x+h)-f(x)$.
+    \item $\dfrac{f(x+h)-f(x)}{h}$, $h\neq0$.
+\end{enumerate}
+\end{multicols}
+
+\subsection{Dominio}
+
+Determine el dominio de cada función y expréselo en notación de intervalos.
+
+\begin{enumerate}
+    \item $f(x)=3x^4-2x+7$.
+    \item $f(x)=\dfrac{x+3}{x-5}$.
+    \item $f(x)=\dfrac{x^2-1}{x^2-9}$.
+    \item $f(x)=\sqrt{7-2x}$.
+    \item $f(x)=\sqrt{x^2-9}$.
+    \item $f(x)=\dfrac{1}{\sqrt{x-2}}$.
+    \item $f(x)=\ln(x+4)$.
+    \item $f(x)=\ln(9-x^2)$.
+    \item $f(x)=\sqrt{\dfrac{x-2}{x+1}}$.
+    \item $f(x)=\dfrac{\sqrt{2x+1}}{x^2-4}$.
+    \item $f(x)=\ln\left(\dfrac{x-1}{x+3}\right)$.
+    \item $f(x)=\sqrt{\ln x}$.
+\end{enumerate}
+
+\subsection{Simetría}
+
+Determine algebraicamente si cada función es par, impar o ninguna.
+
+\begin{enumerate}
+    \item $f(x)=x^6+3x^2-1$.
+    \item $f(x)=x^5-4x^3+x$.
+    \item $f(x)=x^3+x^2$.
+    \item $f(x)=\dfrac{x}{x^2+1}$.
+    \item $f(x)=\dfrac{1}{x^2+4}$.
+\end{enumerate}
+
+\subsection{Operaciones}
+
+Sean
+\[
+f(x)=\sqrt{x+1},
+\qquad
+g(x)=\frac{1}{x-2}.
+\]
+Obtenga las siguientes funciones y determine cuidadosamente sus dominios:
+\[
+f+g,\qquad f-g,\qquad fg,\qquad\frac fg,\qquad\frac gf.
+\]
+
+\subsection{Composición}
+
+Para cada par, calcule $f\circ g$ y $g\circ f$ y determine sus dominios.
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=x^2+1,\qquad g(x)=2x-3.
+    \]
+    \item
+    \[
+    f(x)=\sqrt{x},\qquad g(x)=x-4.
+    \]
+    \item
+    \[
+    f(x)=\frac1x,\qquad g(x)=x+2.
+    \]
+    \item
+    \[
+    f(x)=\ln x,\qquad g(x)=x^2-1.
+    \]
+\end{enumerate}
+
+\subsection{Inyectividad e inversas}
+
+\begin{enumerate}
+    \item Demuestre que
+    \[
+    f:\R\to\R,\qquad f(x)=5x+2
+    \]
+    es biyectiva y determine $f^{-1}$.
+
+    \item Determine por qué
+    \[
+    f:\R\to\R,\qquad f(x)=x^2
+    \]
+    no tiene inversa.
+
+    \item Considere ahora
+    \[
+    f:[0,\infty)\to[0,\infty),\qquad f(x)=x^2.
+    \]
+    Demuestre que es biyectiva y obtenga su inversa.
+
+    \item Determine la inversa de
+    \[
+    f(x)=\frac{2x-1}{x+3},
+    \]
+    indicando apropiadamente dominio y codominio.
+\end{enumerate}
+
+\subsection{Modelación}
+
+En cada problema:
+\begin{enumerate}[label=\alph*)]
+    \item identifique las variables;
+    \item elija una variable independiente;
+    \item construya la función solicitada;
+    \item determine el dominio físicamente admisible.
+\end{enumerate}
+
+\begin{enumerate}
+    \item Un rectángulo tiene perímetro $60$ cm. Exprese su área como función
+    de uno de sus lados.
+
+    \item Se dispone de $100$ m de cerca para construir un corral rectangular
+    junto a un muro, por lo que sólo deben cercarse tres lados. Exprese el área
+    como función del ancho perpendicular al muro.
+
+    \item Una caja sin tapa se construye cortando cuadrados de lado $x$ en las
+    esquinas de una lámina rectangular de $30$ cm por $20$ cm y doblando los
+    bordes. Exprese el volumen como función de $x$.
+
+    \item Una compañía cobra \$80 de tarifa fija y \$12 por kilómetro recorrido.
+    Construya la función de costo.
+
+    \item El precio de un artículo se modela por
+    \[
+    p(x)=600-3x,
+    \]
+    donde $x$ es la cantidad vendida. Determine la función de ingreso.
+
+    \item Si en el problema anterior el costo es
+    \[
+    C(x)=5000+120x,
+    \]
+    determine la función de utilidad.
+
+    \item Una población inicial de $5000$ individuos crece $3\%$ por año.
+    Construya un modelo exponencial discreto.
+
+    \item Un automóvil debe recorrer $300$ km. Exprese el tiempo de viaje como
+    función de la velocidad promedio.
+\end{enumerate}
+
+
+
+\section*{Ejercicios 1.1}
+
+\textit{En los ejercicios 1 a 4, determine si el conjunto es una función. Si es una función determine su dominio.}
+
+\begin{enumerate}
+\item
+\begin{enumerate}[label=(\alph*)]
+\item $\{(x,y)\mid y=\sqrt{x-4}\}$
+\item $\{(x,y)\mid y=\sqrt{x^2-4}\}$
+\item $\{(x,y)\mid y=\sqrt{4-x^2}\}$
+\item $\{(x,y)\mid x^2+y^2=4\}$
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=(\alph*)]
+\item $\{(x,y)\mid y=\sqrt{x+1}\}$
+\item $\{(x,y)\mid y=\sqrt{x^2-1}\}$
+\item $\{(x,y)\mid y=\sqrt{1-x^2}\}$
+\item $\{(x,y)\mid x^2+y^2=1\}$
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=(\alph*)]
+\item $\{(x,y)\mid y=x^2\}$
+\item $\{(x,y)\mid x=y^2\}$
+\item $\{(x,y)\mid y=x^3\}$
+\item $\{(x,y)\mid x=y^3\}$
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=(\alph*)]
+\item $\{(x,y)\mid y=(x-1)^2+2\}$
+\item $\{(x,y)\mid x=(y-2)^2+1\}$
+\item $\{(x,y)\mid y=(x+2)^3-1\}$
+\item $\{(x,y)\mid x=(y+1)^3-2\}$
+\end{enumerate}
+
+\item Dada $f(x)=2x-1$, determine
+\begin{enumerate}[label=(\alph*)]
+\item $f(3)$; \item $f(-2)$; \item $f(0)$; \item $f(a+1)$; \item $f(x+1)$;
+\item $f(2x)$; \item $2f(x)$; \item $f(x+h)$; \item $f(x)+f(h)$;
+\item $\dfrac{f(x+h)-f(x)}{h}$, $h\ne0$.
+\end{enumerate}
+
+\item Dada $f(x)=\dfrac{3}{x}$, calcule
+\begin{enumerate}[label=(\alph*)]
+\item $f(1)$; \item $f(-3)$; \item $f(6)$; \item $f\!\left(\dfrac13\right)$;
+\item $f\!\left(\dfrac3a\right)$; \item $f\!\left(\dfrac3x\right)$;
+\item $\dfrac{f(3)}{f(x)}$; \item $f(x-3)$; \item $f(x)-f(3)$;
+\item $\dfrac{f(x+h)-f(x)}{h}$, $h\ne0$.
+\end{enumerate}
+
+\item Dada $f(x)=2x^2+5x-3$, determine
+\begin{enumerate}[label=(\alph*)]
+\item $f(-2)$; \item $f(-1)$; \item $f(0)$; \item $f(3)$; \item $f(h+1)$;
+\item $f(2x^2)$; \item $f(x^2-3)$; \item $f(x+h)$; \item $f(x)+f(h)$;
+\item $\dfrac{f(x+h)-f(x)}{h}$, $h\ne0$.
+\end{enumerate}
+
+\item Dada $g(x)=3x^2-4$, calcule
+\begin{enumerate}[label=(\alph*)]
+\item $g(-4)$; \item $g\!\left(\dfrac12\right)$; \item $g(x^2)$; \item $g(3x^2-4)$;
+\item $g(x-h)$; \item $g(x)-g(h)$;
+\item $\dfrac{g(x+h)-g(x)}{h}$, $h\ne0$.
+\end{enumerate}
+
+\item Dada $F(x)=\sqrt{x+9}$, encuentre
+\begin{enumerate}[label=(\alph*)]
+\item $F(x+9)$; \item $F(x^2-9)$; \item $F(x^4-9)$; \item $F(x^2+6x)$;
+\item $F(x^4-6x^2)$; \item $\dfrac{F(x+h)-F(x)}{h}$, $h\ne0$.
+\end{enumerate}
+
+\item Dada $G(x)=\sqrt{4-x}$, determine
+\begin{enumerate}[label=(\alph*)]
+\item $G(4-x)$; \item $G(4-x^2)$; \item $G(4-x^4)$; \item $G(4x-x^2)$;
+\item $G(-x^4-4x^2)$; \item $\dfrac{G(x+h)-G(x)}{h}$, $h\ne0$.
+\end{enumerate}
+\end{enumerate}
+
+\textit{En los ejercicios 11 a 46, dibuje a mano la gráfica de la función y determine su dominio y su contradominio.}
+
+\begin{enumerate}[resume]
+\item $f(x)=3x-1$
+\item $g(x)=4-x$
+\item $F(x)=2x^2$
+\item $G(x)=x^2+2$
+\item $g(x)=5-x^2$
+\item $f(x)=(x-1)^2$
+\item $G(x)=\sqrt{x-1}$
+\item $F(x)=\sqrt{9-x}$
+\item $f(x)=\sqrt{x^2-4}$
+\item $g(x)=\sqrt{4-x^2}$
+\item $g(x)=\sqrt{9-x^2}$
+\item $f(x)=\sqrt{x^2-1}$
+\item $h(x)=|x-3|$
+\item $H(x)=|5-x|$
+\item $F(x)=|3x+2|$
+\item $G(x)=\dfrac{x^2-4}{x-2}$
+\item $H(x)=\dfrac{x^2-25}{x+5}$
+\item $f(x)=\dfrac{2x^2+7x+3}{x+3}$
+\item $f(x)=\dfrac{x^2-4x+3}{x-1}$
+\item $g(x)=\dfrac{(x^2-4)(x-3)}{x^2-x-6}$
+\item $f(x)=\begin{cases}-2,&x\le3,\\2,&3<x.\end{cases}$
+\item $g(x)=\begin{cases}-4,&x<-2,\\-1,&-2\le x\le2,\\3,&2<x.\end{cases}$
+\item $g(x)=\begin{cases}2x-1,&x\ne2,\\0,&x=2.\end{cases}$
+\item $f(x)=\begin{cases}3x+2,&x\ne1,\\8,&x=1.\end{cases}$
+\item $F(x)=\begin{cases}x^2-4,&x\ne3,\\-2,&x=3.\end{cases}$
+\item $G(x)=\begin{cases}9-x^2,&x\ne-3,\\4,&x=-3.\end{cases}$
+\item $G(x)=\begin{cases}1-x^2,&x<0,\\3x+1,&0\le x.\end{cases}$
+\item $F(x)=\begin{cases}x^2-4,&x<3,\\2x-1,&3\le x.\end{cases}$
+\item $g(x)=\begin{cases}6x+7,&x\le-2,\\4-x,&-2<x.\end{cases}$
+\item $f(x)=\begin{cases}x-2,&x\le0,\\x^2+1,&0<x.\end{cases}$
+\item $h(x)=\begin{cases}x+3,&x<-5,\\\sqrt{25-x^2},&-5\le x\le5,\\3-x,&5<x.\end{cases}$
+\item $H(x)=\begin{cases}\dfrac{x+2}{\sqrt{16-x^2}},&x\le-4,\\2-x,&-4<x<4,\\2-x,&4\le x.\end{cases}$
+\item $F(x)=\dfrac{x^3-2x^2}{x-2}$
+\item $G(x)=\dfrac{x^3+3x^2}{x+3}$
+\item $f(x)=\lfloor x-4\rfloor$
+\item $g(x)=\lfloor x+2\rfloor$
+\end{enumerate}
+
+\begin{enumerate}[start=47]
+\item
+\begin{enumerate}[label=(\alph*)]
+\item Dibuje la gráfica de la función escalón (o salto) unitario denotada por $U$ y definida por
+\[
+U(x)=\begin{cases}0,&x<0,\\1,&0\le x.\end{cases}
+\]
+Defina cada una de las siguientes funciones a trozos y dibuje sus gráficas:
+\item $U(x-1)$; \item $U(x)-1$; \item $U(x)-U(x-1)$.
+\end{enumerate}
+
+\item Defina cada una de las siguientes funciones a trozos y dibuje sus gráficas, donde $U$ es la función escalón unitario definida en el ejercicio 47:
+\begin{enumerate}[label=(\alph*)]
+\item $x\,U(x)$; \item $(x+1)U(x+1)$; \item $(x+1)U(x+1)-xU(x)$.
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=(\alph*)]
+\item Dibuje la gráfica de la función signo denotada por $\operatorname{sgn}$ y definida por
+\[
+\operatorname{sgn}x=\begin{cases}-1,&x<0,\\0,&x=0,\\1,&0<x.\end{cases}
+\]
+$\operatorname{sgn}(x)$ se lee ``signo de $x$''. Defina cada una de las siguientes funciones a trozos y dibuje sus gráficas:
+\item $x\,\operatorname{sgn}(x)$; \item $2-x\,\operatorname{sgn}(x)$; \item $x-2\,\operatorname{sgn}(x)$.
+\end{enumerate}
+
+\item Defina cada una de las siguientes funciones a trozos, donde $\operatorname{sgn}$ es la función signo definida en el ejercicio 49:
+\begin{enumerate}[label=(\alph*)]
+\item $\operatorname{sgn}(x+1)$; \item $\operatorname{sgn}(x-1)$; \item $\operatorname{sgn}(x+1)-\operatorname{sgn}(x-1)$.
+\end{enumerate}
+
+\item La gráfica de la función $f$ de la figura se parece a la letra W. Defina $f(x)$ a trozos.
+\item La gráfica de la función $f$ de la figura se parece a la letra M. Defina $f(x)$ a trozos.
+\item En la figura, la gráfica se parece a la letra X y es la gráfica de dos funciones $f_1$ y $f_2$ trazadas en el rectángulo de inspección de $[-1,1]$ por $[-1,1]$. Defina $f_1(x)$ y $f_2(x)$.
+\item Existen tres funciones $f_1$, $f_2$ y $f_3$ cuyas gráficas trazadas simultáneamente en el rectángulo de inspección de $[-1,1]$ por $[-1,1]$ se parecen a la letra Z. Defina $f_1(x)$, $f_2(x)$ y $f_3(x)$.
+\end{enumerate}
+
+\textit{En los ejercicios 55 a 58, haga lo siguiente: (a) defina la función a trozos sin emplear las barras de valor absoluto; (b) dibuje la gráfica de la función definida en el inciso (a); (c) apoye sus respuestas a los incisos (a) y (b) trazando la gráfica de la función.}
+
+\begin{enumerate}[start=55]
+\item $f(x)=|x^2-1|$
+\item $g(x)=|4-x^2|$
+\item $g(x)=|x|\,|5-x|$
+\item $f(x)=|x|\,|x-3|$
+\end{enumerate}
+
+\newpage
+\section*{Ejercicios 1.2}
+
+\textit{En los ejercicios 1 a 10, defina las siguientes funciones y determine el dominio de la función resultante: (a) $f+g$; (b) $f-g$; (c) $f\cdot g$; (d) $f/g$; (e) $g/f$.}
+
+\begin{enumerate}
+\item $f(x)=x-5$; $g(x)=x^2-1$
+\item $f(x)=\sqrt{x}$; $g(x)=x^2+1$
+\item $f(x)=\dfrac{x+1}{x-1}$; $g(x)=\dfrac1x$
+\item $f(x)=\sqrt{x}$; $g(x)=4-x^2$
+\item $f(x)=\sqrt{x}$; $g(x)=x^2-1$
+\item $f(x)=|x|$; $g(x)=|x-3|$
+\item $f(x)=x^2+1$; $g(x)=3x-2$
+\item $f(x)=\sqrt{x-4}$; $g(x)=x^2-4$
+\item $f(x)=\dfrac1{x+1}$; $g(x)=\dfrac{x}{x-2}$
+\item $f(x)=x^2$; $g(x)=\dfrac1{\sqrt{x}}$
+\end{enumerate}
+
+\textit{En los ejercicios 11 a 14, para las funciones $f$ y $g$ y el número $c$, obtenga $(f\circ g)(c)$ mediante dos métodos: (a) calcule $g(c)$ y utilice este número para determinar $f(g(c))$; (b) determine $(f\circ g)(x)$ y emplee este valor para calcular $(f\circ g)(c)$.}
+
+\begin{enumerate}[start=11]
+\item $f(x)=3x^2-4x$; $g(x)=2x-5$; $c=4$
+\item $f(x)=\sqrt{x^2-36}$; $g(x)=x^2-3x$; $c=5$
+\item $f(x)=\dfrac1{x-1}$; $g(x)=\dfrac2{x^2+1}$; $c=\dfrac12$
+\item $f(x)=\dfrac{2\sqrt{x}+3}{x}$; $g(x)=\dfrac{2x+5}{x^4}$; $c=-2$
+\end{enumerate}
+
+\textit{En los ejercicios 15 a 24, defina las siguientes funciones y determine el dominio de la función compuesta: (a) $f\circ g$; (b) $g\circ f$; (c) $f\circ f$; (d) $g\circ g$.}
+
+\begin{enumerate}[start=15]
+\item $f(x)=x-2$; $g(x)=x+7$
+\item $f(x)=3-2x$; $g(x)=6-3x$
+\item Las funciones del ejercicio 1.
+\item Las funciones del ejercicio 2.
+\item $f(x)=\sqrt{x+2}$; $g(x)=x^2-2$
+\item $f(x)=x^2-1$; $g(x)=\dfrac1x$
+\item $f(x)=\dfrac1x$; $g(x)=\sqrt{x}$
+\item $f(x)=\sqrt{x}$; $g(x)=-\dfrac1x$
+\item $f(x)=|x|$; $g(x)=|x+2|$
+\item $f(x)=\sqrt{x^2-1}$; $g(x)=\sqrt{x-1}$
+\end{enumerate}
+
+\textit{En los ejercicios 25 y 26 defina las siguientes funciones y determine el dominio de las funciones resultantes: (a) $f(x^2)$; (b) $[f(x)]^2$; (c) $f\circ f(x)$; (d) $f\circ f(-x)$.}
+
+\begin{enumerate}[start=25]
+\item $f(x)=\sqrt{x}$
+\item $f(x)=\dfrac1{x-1}$
+\end{enumerate}
+
+\textit{En los ejercicios 27 a 32, exprese $h$ como composición de las dos funciones $f$ y $g$ en dos formas.}
+
+\begin{enumerate}[start=27]
+\item $h(x)=\sqrt{x^2-4}$
+\item $h(x)=(9+x^2)^{-2}$
+\item $h(x)=\left(\dfrac1{x-2}\right)^3$
+\item $h(x)=\dfrac4{\sqrt[3]{x^3+3}}$
+\item $h(x)=(x^2+4x-5)^4$
+\item $h(x)=\sqrt{|x|+4}$
+\end{enumerate}
+
+\textit{En los ejercicios 33 a 38, trace en la graficadora la gráfica de la función y a partir de la gráfica conjeture si la función es par, impar o de ninguno de estos dos tipos. Después confirme su conjetura analíticamente.}
+
+\begin{enumerate}[start=33]
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=2x^4-3x^2+1$ \item $g(x)=5x^5+1$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=x^2+2x+2$ \item $g(x)=x^6-1$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=5x^3-7x$ \item $g(x)=|x|$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=4x^5+3x^3$ \item $g(x)=x^3+1$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=\sqrt[3]{x}$ \item $g(x)=5x^4-4$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $f(x)=\dfrac{|x|}{x}$ \item $g(x)=2|x|+3$\end{enumerate}
+\end{enumerate}
+
+\textit{En los ejercicios 39 y 40, determine analíticamente si la función es par, impar o de ninguno de estos dos tipos.}
+
+\begin{enumerate}[start=39]
+\item \begin{enumerate}[label=(\alph*)]\item $f(y)=\dfrac{y^3-y}{y^2+1}$ \item $g(r)=\dfrac{r^2-1}{r^2+1}$ \item $f(x)=\dfrac{|x|}{x^2+1}$\end{enumerate}
+\item \begin{enumerate}[label=(\alph*)]\item $h(x)=\dfrac{x^2-5}{2x^3+x}$ \item $g(z)=\dfrac{z-1}{z+1}$ \item $f(x)=\begin{cases}-1,&x<0,\\1,&0\le x.\end{cases}$\end{enumerate}
+\end{enumerate}
+
+\textit{En los ejercicios 41 a 44, haga lo siguiente: (a) defina $f(x)$, sin las barras de valor absoluto, en los intervalos indicados. (b) Apoye la respuesta del inciso (a), gráficamente trazando la gráfica de $f$ en la graficadora a partir de la ecuación dada. (c) A partir de la gráfica del inciso (b), establezca si la función es par, impar o de ninguno de estos dos tipos. (d) Confirme la respuesta del inciso (c) analíticamente a partir de la ecuación dada.}
+
+\begin{enumerate}[start=41]
+\item $f(x)=\dfrac{|x|}{x}$; $(-\infty,0)$, $(0,+\infty)$
+\item $f(x)=x|x|$; $(-\infty,0)$, $[0,+\infty)$
+\item $f(x)=|x-2|-|x+2|$; $(-\infty,-2)$, $[-2,2)$, $[2,+\infty)$
+\item $f(x)=\dfrac{|x+1|-|x-1|}{x}$; $(-\infty,-1)$, $[-1,0)$, $(0,1]$, $(1,+\infty)$
+\end{enumerate}
+
+\begin{enumerate}[start=45]
+\item ¿Es conmutativa la composición de dos funciones? Es decir, si $f$ y $g$ son dos funciones cualesquiera, ¿son iguales $(f\circ g)(x)$ y $(g\circ f)(x)$? Justifique su respuesta proporcionando un ejemplo.
+\end{enumerate}
+
+Si $f$ y $g$ son dos funciones tales que $(f\circ g)(x)=x$ y $(g\circ f)(x)=x$, entonces se dice que $f$ y $g$ son inversas una de la otra. En los ejercicios 46 a 50, demuestre que $f$ y $g$ son inversas una de la otra.
+
+\begin{enumerate}[start=46]
+\item $f(x)=2x-3$ y $g(x)=\dfrac{x+3}{2}$
+\item $f(x)=\dfrac1{x+1}$ y $g(x)=\dfrac{1-x}{x}$
+\item $f(x)=x^2$, $x\ge0$, y $g(x)=\sqrt{x}$
+\item $f(x)=x^2$, $x\le0$, y $g(x)=-\sqrt{x}$
+\item $f(x)=(x-1)^3$ y $g(x)=1+\sqrt[3]{x}$
+\item La función escalón unitario $U$ y la función signo $\operatorname{sgn}$ se definieron en los ejercicios 47 y 49, respectivamente, de la sección 1.1. (a) Defina $\operatorname{sgn}(U(x))$ y dibuje la gráfica. (b) Defina $U(\operatorname{sgn}(x))$ y dibuje la gráfica.
+\item Demuestre que si $f$ y $g$ son funciones impares, entonces $(f+g)$ y $(f-g)$ también son funciones impares, mientras que $fg$ y $f/g$ son funciones pares.
+\item Determine si la función compuesta $f\circ g$ es par o impar en cada uno de los casos siguientes: (a) $f$ y $g$ son impares; (b) $f$ es par y $g$ es impar; (c) $g$ es par.
+\item Encuentre fórmulas para $(f\circ g)(x)$ si
+\[
+f(x)=\begin{cases}0,&x<0,\\2x,&0\le x\le1,\\0,&1<x,\end{cases}
+\qquad
+y\qquad
+g(x)=\begin{cases}1,&x<0,\\\frac12x,&0\le x\le1,\\1,&1<x.\end{cases}
+\]
+Dibuje las gráficas de $f$, $g$ y $f\circ g$.
+\item Encuentre fórmulas para $(g\circ f)(x)$ a partir de las funciones del ejercicio 54. Dibuje la gráfica de $g\circ f$.
+\item Si $f(x)=x^2+2x+2$, encuentre dos funciones $g$ para las cuales $(f\circ g)(x)=x^2-4x+5$.
+\item Si $f(x)=x^2$, encuentre dos funciones $g$ para las cuales $(f\circ g)(x)=4x^2-12x+9$.
+\item Demuestre que si $f$ y $g$ son dos funciones lineales, entonces $f\circ g$ es una función lineal.
+\item Existe una función cuyo dominio es el conjunto de todos los números reales que es a la vez par e impar. ¿Cuál es esa función? Demuestre que es única esta función.
+\item Suponga que $f(x)=\dfrac1x$, $g(x)=-\dfrac1x$ y $h(x)=-x$. Demuestre que $(f\circ g)(x)=(g\circ f)(x)$ y explique por qué $f\circ g$ ni $g\circ f$ son la misma que $h$.
+\item Trace en la graficadora las gráficas de las dos funciones $F$ y $G$ definidas por
+\[
+F(x)=\frac{\sqrt{x+1}}{\sqrt{x-4}}
+\qquad\text{y}\qquad
+G(x)=\sqrt{\frac{x+1}{x-4}}.
+\]
+Observe que $F$ es la misma función que $f/g$ del ejemplo 1(d). Explique por qué las gráficas de $F$ y $G$ no son las mismas y, consecuentemente, las funciones no son iguales.
+\end{enumerate}
+
+% =========================================================
+\section{Problemas de profundización}
+
+\begin{enumerate}
+    \item Sean $f,g:\R\to\R$. Demuestre que si $f$ y $g$ son pares, entonces
+    $f+g$ y $fg$ son pares.
+
+    \item Demuestre que si $f$ y $g$ son impares, entonces $f+g$ es impar,
+    mientras que $fg$ es par.
+
+    \item Demuestre que la composición de dos funciones inyectivas es
+    inyectiva.
+
+    \item Demuestre que la composición de dos funciones suprayectivas es
+    suprayectiva, suponiendo compatibles los dominios y codominios.
+
+    \item Si $f$ y $g$ son biyectivas, demuestre que
+    \[
+    (f\circ g)^{-1}=g^{-1}\circ f^{-1}.
+    \]
+
+    \item Sea
+    \[
+    f(x)=\frac{ax+b}{cx+d},
+    \qquad ad-bc\neq0.
+    \]
+    Determine su dominio y despeje formalmente $x$ en términos de $y$ para
+    obtener la función inversa, especificando las restricciones necesarias.
+
+    \item Determine la imagen de
+    \[
+    f(x)=x^2-4x+7
+    \]
+    completando el cuadrado.
+
+    \item Determine la imagen de
+    \[
+    f(x)=\frac{2x+1}{x-3}
+    \]
+    despejando $x$ en términos de $y$.
+\end{enumerate}
+
+% =========================================================
+\section{Resumen conceptual}
+
+Al finalizar esta unidad el estudiante debe distinguir con claridad los
+siguientes objetos:
+
+\[
+\boxed{
+f:A\to B,\qquad x\mapsto f(x)
+}
+\]
+
+\begin{itemize}
+    \item $A$: dominio;
+    \item $B$: codominio;
+    \item $f(A)$: imagen;
+    \item $G_f=\{(x,f(x)):x\in A\}$: gráfica;
+    \item $(f\circ g)(x)=f(g(x))$: composición;
+    \item $f^{-1}$: inversa, cuando $f$ es biyectiva.
+\end{itemize}
+
+La función debe entenderse simultáneamente desde cuatro perspectivas:
+\begin{enumerate}
+    \item \textbf{conjuntista}: como una correspondencia con existencia y
+    unicidad;
+    \item \textbf{algebraica}: mediante una regla de correspondencia;
+    \item \textbf{geométrica}: mediante su gráfica;
+    \item \textbf{aplicada}: como un modelo de dependencia entre cantidades.
+\end{enumerate}
+
+Esta visión prepara el terreno para la siguiente unidad. En efecto, el concepto
+de límite estudiará el comportamiento de $f(x)$ cuando $x$ se aproxima a un
+valor determinado, y la continuidad relacionará dicho comportamiento con el
+valor de la propia función.
+
+% =========================================================
+\section*{Bibliografía básica}
+\addcontentsline{toc}{section}{Bibliografía básica}
+
+\begin{itemize}
+    \item Larson, Hostetler y Edwards, \emph{Cálculo I}, 7a ed.
+    \item Leithold, \emph{El Cálculo}, 7a ed.
+    \item Stewart, \emph{Cálculo. Trascendentes tempranas}, 4a ed.
+    \item Thomas y Finney, \emph{Cálculo. Una variable}, 9a ed.
+    \item Swokowski, \emph{Cálculo con Geometría Analítica}, 2a ed.
+\end{itemize}
+
+\end{document}

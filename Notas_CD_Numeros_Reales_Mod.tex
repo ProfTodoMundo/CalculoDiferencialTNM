@@ -1,38 +1,74 @@
 \documentclass[12pt]{article}
 
+%===========================================================
 % Codificación e idioma
+%===========================================================
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-nodecimaldot]{babel}
 
+%===========================================================
 % Matemáticas
-\usepackage{amsmath,amssymb,amsfonts}
+%===========================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
 
+%===========================================================
 % Formato y utilidades
+%===========================================================
 \usepackage[letterpaper,margin=2.5cm]{geometry}
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{hyperref}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
 
+%===========================================================
 % Formato de párrafos
+%===========================================================
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.6em}
 
+%===========================================================
 % Compatibilidad con listas provenientes de Pandoc
+%===========================================================
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}
   \setlength{\parskip}{0pt}
 }
 
-% Entorno para ejemplos
-\newenvironment{Ejem}
-{\par\medskip\noindent\textbf{Ejemplo.}\ }
-{\par\medskip}
+%===========================================================
+% Entornos matemáticos
+%===========================================================
 
+% Teoremas, proposiciones y corolarios:
+% cuerpo en cursiva
+\theoremstyle{plain}
+
+\newtheorem{Teo}{Teorema}[section]
+\newtheorem{Prop}[Teo]{Proposición}
+\newtheorem{Coro}[Teo]{Corolario}
+\newtheorem{Axioma}[Teo]{Axioma}
+
+% Definiciones y ejemplos:
+% cuerpo en letra normal
+\theoremstyle{definition}
+
+\newtheorem{Def}[Teo]{Definición}
+\newtheorem{Ejem}[Teo]{Ejemplo}
+
+% Observaciones y notas
+\theoremstyle{remark}
+
+\newtheorem*{Obs}{Observación}
+\newtheorem*{Nota}{Nota}
+
+%===========================================================
 % Enlaces
+%===========================================================
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -40,9 +76,11 @@
   citecolor=blue
 }
 
-% Pie de página
+%===========================================================
+% Encabezado y pie de página
+%===========================================================
 \pagestyle{fancy}
-\fancyhf{} % limpia encabezados y pies
+\fancyhf{}
 
 \fancyhead[L]{Tecnológico Nacional de México}
 \fancyhead[R]{Cálculo Diferencial}
@@ -54,13 +92,19 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+% Evita advertencias de fancyhdr con encabezados de 12 pt
+\setlength{\headheight}{15pt}
+
+%===========================================================
 % Datos del documento
+%===========================================================
 \title{
     Notas para el curso de Cálculo Diferencial\\[0.5em]
     \large Unidad 1: El Conjunto de los Números Reales
-}\author{Carlos Ernesto Martínez}
-\date{}
+}
 
+\author{Carlos Ernesto Martínez}
+\date{}
 \begin{document}
 
 \maketitle
@@ -790,10 +834,11 @@ $\blacksquare$
 
 \end{Ejem}
 
-\begin{figure}
-\centering
-\includegraphics[width=3.125in,height=\textheight]{Desigualdad1.png}
-\caption{Desigualdad \(ax+b>c\)}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Desigualdad1.png}
+    \caption{Desigualdad \(ax+b>c\)}
+    \label{fig:desigualdad1}
 \end{figure}
 
 \begin{Ejem}
@@ -817,7 +862,7 @@ $\blacksquare$
 
 \begin{figure}
 \centering
-\includegraphics[width=3.125in,height=\textheight]{Desigualdad2.png}
+\includegraphics[width=0.45\textwidth]{Desigualdad2.png}
 \caption{Desigualdad \(ax+b\leq c\)}
 \end{figure}
 
@@ -841,7 +886,7 @@ $\blacksquare$
 
 \begin{figure}
 \centering
-\includegraphics[width=3.125in,height=\textheight]{Desigualdad3.png}
+\includegraphics[width=0.45\textwidth]{Desigualdad3.png}
 \caption{Desigualdad \(c\leq ax+b\leq d\), con \(a\neq0\)}
 \end{figure}
 
@@ -867,7 +912,7 @@ $\blacksquare$
 
 \begin{figure}
 \centering
-\includegraphics[width=3.125in,height=\textheight]{Desigualdad4.png}
+\includegraphics[width=0.45\textwidth]{Desigualdad4.png}
 \caption{Desigualdad \(|ax+b|\leq c\), con \(a\neq0\)}
 \end{figure}
 
@@ -2646,20 +2691,21 @@ proporcionando su conjunto solución y su gráfica}
   \end{enumerate}
 \end{enumerate}
 
+% =====================================================
+\part{Ap\'endice: Completitud de los números reales}
+% =====================================================
+% =====================================================
+\setcounter{section}{1}
+% =====================================================
 
 % ============================================================
-\section{Completitud de los números reales}
+%\section{Completitud de los números reales}
 % ============================================================
 
-La completitud constituye una de las propiedades fundamentales de
-$\mathbb{R}$ y es la que permite desarrollar rigurosamente gran parte del
-Cálculo.
-
-Antes de formularla necesitamos introducir los conceptos de cota superior,
-cota inferior, supremo e ínfimo.
+La completitud constituye una de las propiedades fundamentales de $\mathbb{R}$ y es la que permite desarrollar rigurosamente gran parte del Cálculo. Antes de formularla necesitamos introducir los conceptos de cota superior, cota inferior, supremo e ínfimo.
 
 % ============================================================
-\subsection{Conjuntos acotados}
+\subsection*{Conjuntos acotados}
 % ============================================================
 
 Sea
@@ -2673,9 +2719,7 @@ Un número $M\in\mathbb{R}$ se denomina \emph{cota superior} de $A$ si
 \[
 x\leq M
 \]
-para todo $x\in A$.
-
-Equivalentemente,
+para todo $x\in A$. Equivalentemente,
 \[
 M\text{ es cota superior de }A
 \quad\Longleftrightarrow\quad
@@ -2695,9 +2739,7 @@ El número $1$ es una cota superior de $A$, pues
 \[
 x<1
 \]
-para todo $x\in A$.
-
-Sin embargo, $2$, $3$ y $100$ también son cotas superiores de $A$.
+para todo $x\in A$. Sin embargo, $2$, $3$ y $100$ también son cotas superiores de $A$.
 \end{Ejem}
 
 De manera análoga:
@@ -2707,29 +2749,22 @@ Un número $m\in\mathbb{R}$ se denomina \emph{cota inferior} de $A$ si
 \[
 m\leq x
 \]
-para todo $x\in A$.
-
-Si $A$ posee una cota inferior, decimos que está
-\emph{acotado inferiormente}.
-
-Finalmente, un conjunto se denomina \emph{acotado} si está acotado tanto
+para todo $x\in A$. Si $A$ posee una cota inferior, decimos que está
+\emph{acotado inferiormente}. Finalmente, un conjunto se denomina \emph{acotado} si está acotado tanto
 superior como inferiormente.
 
 % ============================================================
-\subsection{Máximo y mínimo}
+\subsection*{Máximo y mínimo}
 % ============================================================
 
-Es importante distinguir entre una cota y un elemento perteneciente al
-conjunto.
+Es importante distinguir entre una cota y un elemento perteneciente al conjunto.
 
 \textbf{Definición.}
 Un elemento $M\in A$ se denomina \emph{máximo} de $A$ si
 \[
 x\leq M
 \]
-para todo $x\in A$.
-
-En tal caso escribimos
+para todo $x\in A$. En tal caso escribimos
 \[
 M=\max A.
 \]
@@ -2766,15 +2801,13 @@ entonces
 \]
 
 % ============================================================
-\subsection{Supremo}
+\subsection*{Supremo}
 % ============================================================
 
-La existencia de una cota superior no implica que exista un máximo.
-Esto conduce al concepto de supremo.
+La existencia de una cota superior no implica que exista un máximo. Esto conduce al concepto de supremo.
 
 \textbf{Definición.}
-Sea $A\subseteq\mathbb{R}$ un conjunto no vacío y acotado superiormente.
-Un número $s\in\mathbb{R}$ se denomina \emph{supremo} de $A$ si:
+Sea $A\subseteq\mathbb{R}$ un conjunto no vacío y acotado superiormente. Un número $s\in\mathbb{R}$ se denomina \emph{supremo} de $A$ si:
 
 \begin{enumerate}
     \item $s$ es una cota superior de $A$, es decir,
@@ -2826,14 +2859,13 @@ Si el supremo pertenece al conjunto, entonces coincide con su máximo:
 \]
 
 % ============================================================
-\subsection{Ínfimo}
+\subsection*{Ínfimo}
 % ============================================================
 
 El concepto dual al supremo es el ínfimo.
 
 \textbf{Definición.}
-Sea $A\subseteq\mathbb{R}$ un conjunto no vacío y acotado inferiormente.
-Un número $r\in\mathbb{R}$ se denomina \emph{ínfimo} de $A$ si:
+Sea $A\subseteq\mathbb{R}$ un conjunto no vacío y acotado inferiormente. Un número $r\in\mathbb{R}$ se denomina \emph{ínfimo} de $A$ si:
 
 \begin{enumerate}
     \item $r$ es una cota inferior de $A$;
@@ -2866,16 +2898,14 @@ entonces
 aunque ninguno de estos dos números pertenece a $A$.
 
 % ============================================================
-\subsection{Axioma de completitud}
+\subsection*{Axioma de completitud}
 % ============================================================
 
-Ya podemos introducir la propiedad que distingue fundamentalmente a
-$\mathbb{R}$ de $\mathbb{Q}$.
+Ya podemos introducir la propiedad que distingue fundamentalmente a $\mathbb{R}$ de $\mathbb{Q}$.
 
 \textbf{Axioma de completitud o propiedad del supremo.}
 
-Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado superiormente
-posee un supremo en $\mathbb{R}$.
+Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado superiormente posee un supremo en $\mathbb{R}$.
 
 En símbolos, si
 \[
@@ -2907,11 +2937,10 @@ A\text{ acotado superiormente}
 Esta propiedad recibe el nombre de \emph{completitud de los números reales}.
 
 % ============================================================
-\subsection{¿Por qué los racionales no son completos?}
+\subsection*{¿Por qué los racionales no son completos?}
 % ============================================================
 
-La diferencia fundamental entre $\mathbb{Q}$ y $\mathbb{R}$ puede
-observarse considerando el conjunto
+La diferencia fundamental entre $\mathbb{Q}$ y $\mathbb{R}$ puede observarse considerando el conjunto
 \[
 A=\{x\in\mathbb{Q}:x^2<2\}.
 \]
@@ -2950,195 +2979,213 @@ mientras que
 \[
 \boxed{\mathbb{R}\text{ es un campo ordenado completo}.}
 \]
-\section{Ap\'endice: Ecuación general de segundo grado}
 
-\subsection{Factorización}
+% =====================================================
+\part{Ap\'endice: Ejercicios de Factorizaci\'on}
+% =====================================================
+% =====================================================
+\setcounter{section}{2}
+% =====================================================
+
+% =====================================================
+\subsection*{Factorización}
+% =====================================================
+
 \textbf{Realiza las siguientes factorizaciones}
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x^2 + 5x + 6$
 
-\begin{multicols}{2}
-1. $x^2 + 5x + 6$
+\item $3x^2 - 7x - 6$
 
-2. $3x^2 - 7x - 6$
+\item $2x^2 + 5x - 3$
 
-3. $2x^2 + 5x - 3$
+\item $4x^2 - 4x - 3$
 
-4. $4x^2 - 4x - 3$
+\item $5x^2 + 13x + 6$
 
-5. $5x^2 + 13x + 6$
+\item $3x^2 + 14x + 8$
 
-6. $3x^2 + 14x + 8$
+\item $x^2 + 10x + 21$
 
-7. $x^2 + 10x + 21$
+\item $2x^2 - 5x - 12$
 
-8. $2x^2 - 5x - 12$
+\item $6x^2 - 11x - 10$
 
-9. $6x^2 - 11x - 10$
+\item $8x^2 + 12x + 4$
 
-10. $8x^2 + 12x + 4$
+\item $9x^2 - 30x + 25$
 
-11. $9x^2 - 30x + 25$
+\item $4x^3 - 12x^2 - 8x$
 
-12. $4x^3 - 12x^2 - 8x$
+\item $3x^3 + 12x^2 + 12x$
 
+\item $2x^3 + 2x^2 - 8x$
 
-13. $3x^3 + 12x^2 + 12x$
+\item $5x^3 - 125$
 
-14. $2x^3 + 2x^2 - 8x$
+\item $27x^3 + 1$
 
-15. $5x^3 - 125$
+\item $x^3 + 8y^3$
 
-16. $27x^3 + 1$
+\item $4x^3 - 25y^3$
 
-17. $x^3 + 8y^3$
+\item $3x^2 - 27y^2$
 
-18. $4x^3 - 25y^3$
-
-19. $3x^2 - 27y^2$
 \end{multicols}
+\end{enumerate}
+% =====================================================
+\subsubsection*{Factorización simple}
+% =====================================================
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x^2 + 4x + 4$
 
-\subsubsection{Factorización simple}\label{factorizaciuxf3n-simple}
-\begin{multicols}{2}
-1. $x^2 + 4x + 4$
+\item $2x^2 + 5x + 2$
 
-2. $2x^2 + 5x + 2$
+\item $3x^2 - 7x + 2$
 
-3. $3x^2 - 7x + 2$
+\item $4x^2 + 12x + 9$
 
-4. $4x^2 + 12x + 9$
+\item $x^2 + 8x + 16$
 
-5. $x^2 + 8x + 16$
+\item $2x^2 - 3x - 2$
 
-6. $2x^2 - 3x - 2$
+\item $3x^2 + 10x + 8$
 
-7. $3x^2 + 10x + 8$
+\item $4x^2 - 16x + 16$
 
-8. $4x^2 - 16x + 16$
+\item $x^2 - 6x + 9$
 
-9. $x^2 - 6x + 9$
+\item $2x^2 + x - 6$
 
-10. $2x^2 + x - 6$
+\item $3x^2 - 2x - 1$
 
-11. $3x^2 - 2x - 1$
+\item $4x^2 - 8x - 3$
 
-12. $4x^2 - 8x - 3$
+\item $x^2 - 5x + 6$
 
-13. $x^2 - 5x + 6$
+\item $2x^2 - 5x - 3$
 
-14. $2x^2 - 5x - 3$
-
-15. $3x^2 + 4x - 4$
+\item $3x^2 + 4x - 4$
 \end{multicols}
+\end{enumerate}
+% =====================================================
+\subsubsection*{Factorización por binomios conjugados}
+% =====================================================
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x^2 - 2x + 1$
 
-\subsubsection{Factorización por binomios conjugados}\label{factorizaciuxf3n-por-binomios-conjugados}
-\begin{multicols}{2}
-1. $x^2 - 2x + 1$
+\item $4x^2 - 9$
 
-2. $4x^2 - 9$
+\item $9x^2 - 25$
 
-3. $9x^2 - 25$
+\item $16x^2 - 25$
 
-4. $16x^2 - 25$
+\item $x^2 + 4x + 4$
 
-5. $x^2 + 4x + 4$
+\item $2x^2 - 8x + 8$
 
-6. $2x^2 - 8x + 8$
+\item $3x^2 + 6x + 3$
 
-7. $3x^2 + 6x + 3$
+\item $4x^2 + 20x + 25$
 
-8. $4x^2 + 20x + 25$
+\item $x^2 + 6x + 9$
 
-9. $x^2 + 6x + 9$
+\item $2x^2 - 2x - 4$
 
-10. $2x^2 - 2x - 4$
+\item $3x^2 + 2x - 1$
 
-11. $3x^2 + 2x - 1$
+\item $x^2 - 6x + 13$
 
-12. $x^2 - 6x + 13$
+\item $4x^2 - 4x + 1$
 
-13. $4x^2 - 4x + 1$
+\item $2x^2 + 5x - 3$
 
-14. $2x^2 + 5x - 3$
-
-15. $5x^2 + 7x + 2$
+\item $5x^2 + 7x + 2$
 \end{multicols}
+\end{enumerate}
+% =====================================================
+\subsubsection*{Ejercicios varios}
+% =====================================================
+\begin{enumerate}
+\begin{multicols}{3}
+\item  $x^2 + 6x + 9$
 
-\subsubsection{Ejercicios varios}\label{ejercicios-varios}
-\begin{multicols}{2}
-1. $x^2 + 6x + 9$
+\item  $x^2 - 4x + 4$
 
-2. $x^2 - 4x + 4$
+\item  $4x^2 - 12x + 9$
 
-3. $4x^2 - 12x + 9$
+\item  $3x^2 - 18x + 27$
 
-4. $3x^2 - 18x + 27$
+\item  $x^2 - 8x + 16$
+\item  $x^2 + 2x + 1$
 
-5. $x^2 - 8x + 16$
+\item $2x^2 + 5x - 3$
 
-6. $x^2 + 2x + 1$
+\item $3x^2 - 2x - 1$
 
-7. $2x^2 + 5x - 3$
+\item $2x^2 - 3x - 9$
 
-8. $3x^2 - 2x - 1$
+\item $4x^2 - 16x + 15$
 
-9. $2x^2 - 3x - 9$
+\item $3x^2 + 4x - 2$
 
-10. $4x^2 - 16x + 15$
+\item $5x^2 - 4x - 1$
 
-11. $3x^2 + 4x - 2$
+\item $2x^2 + 7x + 3$
 
-12. $5x^2 - 4x - 1$
+\item $4x^2 + 7x + 2$
 
-13. $2x^2 + 7x + 3$
+\item  $x^2 + 4x - 5$
 
-14. $4x^2 + 7x + 2$
+\item  $x^2 - 2x + 1$
 
-15. $x^2 + 4x - 5$
+\item  $4x^2 - 16x + 16$
 
-16. $x^2 - 2x + 1$
+\item $x^2 + 8x + 16$
 
-17. $4x^2 - 16x + 16$
+\item  $2x^2 - 6x + 2$
 
-18. $x^2 + 8x + 16$
+\item  $9x^2 - 12x + 4$
 
-19. $2x^2 - 6x + 2$
+\item  $x^2 - 2x + 4$
 
-20. $9x^2 - 12x + 4$
+\item  $2x^2 - 4x - 2$
 
-21. $x^2 - 2x + 4$
+\item  $x^2 - 6x - 10$
 
-22. $2x^2 - 4x - 2$
+\item  $3x^2 + 4x - 10$
 
-23. $x^2 - 6x - 10$
+\item  $5x^2 - 10x - 7$
 
-24. $3x^2 + 4x - 10$
+\item  $-x^2 + 4x + 9$
 
-25. $5x^2 - 10x - 7$
+\item  $-4x^2 - 20x + 25$
 
-26. $-x^2 + 4x + 9$
+\item  $x^2 - 10x - 29$
 
-27. $-4x^2 - 20x + 25$
+\item  $-2x^2 + 8x + 13$
 
-28. $x^2 - 10x - 29$
+\item $3x^2 - 2x - 1$
 
-29. $-2x^2 + 8x + 13$
+\item  $(1/2)x^2 - 5/2x + 25/16$
 
-30. $3x^2 - 2x - 1$
+\item  $(3/4)x^2 + (1/2)x - 1/16$
 
-31. $(1/2)x^2 - 5/2x + 25/16$
+\item  $-(2/3)x^2 - 8/3x + 32/27$
 
-32. $(3/4)x^2 + (1/2)x - 1/16$
+\item  $(1/2)x^2 + 5/2x + 25/16$
 
-33. $-(2/3)x^2 - 8/3x + 32/27$
-
-34. $(1/2)x^2 + 5/2x + 25/16$
-
-35. $(5/3)x^2 + (2/3)x + 1/9$
+\item  $(5/3)x^2 + (2/3)x + 1/9$
 \end{multicols}
+\end{enumerate}
 
-\subsubsection{Factorización por trinomio cuadrado perfecto}
-
-\label{factorizaciuxf3n-por-trinomio-cuadrado-perfecto}
-\begin{multicols}{2}
+% =====================================================
+\subsubsection*{Factorización por trinomio cuadrado perfecto}
+% =====================================================
+\begin{multicols}{3}
 1. $x^2 + 6x + 9$
 
 2. $9x^2 - 30x + 25$
@@ -3179,9 +3226,10 @@ mientras que
 
 \end{multicols}
 
-
-\subsubsection{Método de factorización simple}\label{muxe9todo-de-factorizaciuxf3n-simple}
-\begin{multicols}{2}
+% =====================================================
+\subsubsection*{Método de factorización simple}
+% =====================================================
+\begin{multicols}{3}
 1. $x^2 + 5x + 6 = 0$
 
 2. $2x^2 - 7x - 15 = 0$
@@ -3212,10 +3260,10 @@ mientras que
 
 15. $6x^2 + 5x - 6 = 0$
 \end{multicols}
-
-\subsubsection{Método de Binomio Conjugado}\label{muxe9todo-de-binomio-conjugado}
-
-\begin{multicols}{2}
+% =====================================================
+\subsubsection*{Método de Binomio Conjugado}
+% =====================================================
+\begin{multicols}{3}
 1. $x^2 + 2x + 1 = 0$
 
 2. $2x^2 + 6x + 4 = 0$
@@ -3246,10 +3294,11 @@ mientras que
 
 15. $6x^2 - 5x + 1 = 0$
 \end{multicols}
+% =====================================================
+\subsubsection*{Método de trinomio cuadrado perfecto}
+% =====================================================
 
-\subsubsection{Método de trinomio cuadrado perfecto}\label{muxe9todo-de-trinomio-cuadrado-perfecto}
-
-\begin{multicols}{2}
+\begin{multicols}{3}
 1. $x^2 - 10x + 21 = 0$
 
 2. $x^2 + 6x + 9 = 0$
@@ -3280,10 +3329,11 @@ mientras que
 
 15. $x^2 + 10x + 21 = 0$
 \end{multicols}
+% =====================================================
+\subsection*{Método de Fórmula general}
+% =====================================================
 
-\subsection{Método de Fórmula
-general}\label{muxe9todo-de-fuxf3rmula-general}
-\begin{multicols}{2}
+\begin{multicols}{3}
 1. $x^2 - 2x - 3 = 0$
 
 2. $x^2 + 4x + 3 = 0$
@@ -3315,10 +3365,19 @@ general}\label{muxe9todo-de-fuxf3rmula-general}
 15. $2x^2 + 3x - 2 = 0$
 \end{multicols}
 
-\section{Solucion de algunos ejercicios}
+% =====================================================
+\part{Ap\'endice: Solucion de algunos ejercicios}
+% =====================================================
+% =====================================================
+\setcounter{section}{3}
+% =====================================================
 
+%===========================================================
+%\section{Ap\'endice: Solucion de algunos ejercicios}
+%===========================================================
+%===========================================================
 \subsubsection*{Solución de desigualdades cuadráticas}
-
+%===========================================================
 En los siguientes ejercicios se determinarán las raíces de cada expresión
 cuadrática y, a partir de su signo, se obtendrá el conjunto solución,
 su representación mediante intervalos y su representación gráfica sobre
@@ -3333,7 +3392,7 @@ Utilizaremos la siguiente convención:
 
 %===========================================================
 \subsubsection*{Desigualdades del tipo \(ax^2+bx+c>0\)}
-
+%===========================================================
 \begin{enumerate}
 
 %-----------------------------------------------------------
@@ -3671,7 +3730,7 @@ S=
 
 %===========================================================
 \subsubsection*{Desigualdades del tipo \(ax^2+bx+c\geq 0\)}
-
+%===========================================================
 En este caso, los puntos donde la expresión es igual a cero también
 pertenecen al conjunto solución.
 
@@ -3967,7 +4026,7 @@ S=
 
 %===========================================================
 \subsubsection*{Desigualdades del tipo \(ax^2+bx+c<0\)}
-
+%===========================================================
 \begin{enumerate}
 
 %-----------------------------------------------------------
@@ -4273,7 +4332,7 @@ Representación gráfica:
 
 %===========================================================
 \subsubsection*{Desigualdades del tipo \(ax^2+bx+c\leq0\)}
-
+%===========================================================
 \begin{enumerate}
 
 %-----------------------------------------------------------
@@ -4624,7 +4683,7 @@ Representación gráfica:
 
 %===========================================================
 \subsubsection*{Observación}
-
+%===========================================================
 La inclusión o exclusión de las raíces depende del tipo de desigualdad.
 
 Para desigualdades estrictas,
@@ -4646,11 +4705,18 @@ los puntos donde el polinomio vale cero sí pertenecen al conjunto
 solución, siempre que formen parte de la región donde se satisface la
 desigualdad, y se representan mediante puntos cerrados.
 
+% =====================================================
+\part{Ap\'endice: Ecuaciones de segundo grado en dos variables}
+% =====================================================
+% =====================================================
+\setcounter{section}{4}
+% =====================================================
+
 %===========================================================
-\section{Ecuaciones de segundo grado en dos variables}
+%\section{Ap\'endice: Ecuaciones de segundo grado en dos variables}
 %===========================================================
 
-\subsection{Introducción}
+\subsection*{Introducción}
 
 En geometría analítica aparecen con frecuencia ecuaciones de la forma
 
@@ -4682,7 +4748,7 @@ La herramienta algebraica principal será el procedimiento de
 \textbf{completar cuadrados}.
 
 %===========================================================
-\subsection{Observación inicial}
+\subsection*{Observación inicial}
 %===========================================================
 
 La ecuación general de segundo grado en dos variables es, en realidad,
@@ -4705,7 +4771,7 @@ los ejes coordenados, por lo que no es necesario realizar una rotación
 de ejes.
 
 %===========================================================
-\subsection{Idea general de clasificación}
+\subsection*{Idea general de clasificación}
 %===========================================================
 
 La clasificación depende principalmente de los coeficientes de
@@ -4737,7 +4803,7 @@ Sin embargo, para conocer completamente la curva necesitamos transformar
 la ecuación a su forma canónica.
 
 %===========================================================
-\section{La recta}
+\section*{La recta}
 %===========================================================
 
 Si
@@ -4777,7 +4843,7 @@ representa una recta siempre que
 \]
 
 %-----------------------------------------------------------
-\subsection{Ejemplo 1}
+\subsection*{Ejemplo 1}
 
 Considere
 
@@ -4828,7 +4894,7 @@ y ordenada al origen
 \]
 
 %===========================================================
-\section{La circunferencia}
+\section*{La circunferencia}
 %===========================================================
 
 Una circunferencia con centro
@@ -4888,7 +4954,7 @@ x^2+y^2+\frac{C}{A}x+\frac{D}{A}y+\frac{E}{A}=0.
 \]
 
 %===========================================================
-\subsection{Método de completar cuadrados}
+\subsection*{Método de completar cuadrados}
 %===========================================================
 
 Recordemos la identidad
@@ -4912,7 +4978,7 @@ x^2+bx+\left(\frac{b}{2}\right)^2
 Esta identidad es la base del procedimiento.
 
 %-----------------------------------------------------------
-\subsection{Ejemplo 2}
+\subsection*{Ejemplo 2}
 
 Determine la curva representada por
 
@@ -5048,7 +5114,7 @@ r=5.
 La ecuación representa una circunferencia.
 
 %===========================================================
-\section{La elipse}
+\section*{La elipse}
 %===========================================================
 
 Una elipse con centro
@@ -5106,7 +5172,7 @@ A\neq B.
 \]
 
 %-----------------------------------------------------------
-\subsection{Ejemplo 3}
+\subsection*{Ejemplo 3}
 
 Determine la curva representada por
 
@@ -5298,7 +5364,7 @@ Así,
 \]
 
 %===========================================================
-\section{La hipérbola}
+\section*{La hipérbola}
 %===========================================================
 
 La forma canónica de una hipérbola horizontal es
@@ -5342,7 +5408,7 @@ AB<0.
 \]
 
 %-----------------------------------------------------------
-\subsection{Ejemplo 4}
+\subsection*{Ejemplo 4}
 
 Determine la curva representada por
 
@@ -5508,7 +5574,7 @@ Así,
 \]
 
 %===========================================================
-\section{Comparación entre circunferencia, elipse e hipérbola}
+\section*{Comparación entre circunferencia, elipse e hipérbola}
 %===========================================================
 
 Las tres ecuaciones pueden compararse fácilmente:
@@ -5561,7 +5627,7 @@ AB<0 & \text{Hipérbola}
 \]
 
 %===========================================================
-\section{Algoritmo general para estudiar la ecuación}
+\section*{Algoritmo general para estudiar la ecuación}
 %===========================================================
 
 Dada una ecuación
@@ -5571,9 +5637,9 @@ Ax^2+By^2+Cx+Dy+E=0,
 \]
 
 podemos seguir siempre el mismo procedimiento.
-
+%===========================================================
 \subsection*{Paso 1. Observar los términos cuadráticos}
-
+%===========================================================
 Identificar los coeficientes
 
 \[
@@ -5592,17 +5658,17 @@ AB>0,\ A\neq B & \text{Elipse}\\
 AB<0 & \text{Hipérbola}
 \end{array}
 \]
-
+%===========================================================
 \subsection*{Paso 2. Agrupar variables}
-
+%===========================================================
 Escribir
 
 \[
 (Ax^2+Cx)+(By^2+Dy)=-E.
 \]
-
+%===========================================================
 \subsection*{Paso 3. Factorizar los coeficientes cuadráticos}
-
+%===========================================================
 Escribir
 
 \[
@@ -5616,9 +5682,9 @@ y^2+\frac{D}{B}y
 =
 -E.
 \]
-
+%===========================================================
 \subsection*{Paso 4. Completar cuadrados}
-
+%===========================================================
 Utilizar
 
 \[
@@ -5660,9 +5726,9 @@ y+\frac{D}{2B}
 \frac{D}{2B}
 \right)^2.
 \]
-
+%===========================================================
 \subsection*{Paso 5. Simplificar}
-
+%===========================================================
 Después de completar cuadrados, reorganizar hasta obtener una expresión
 del tipo
 
@@ -5681,9 +5747,9 @@ Si \(K\neq0\), dividir toda la ecuación entre \(K\) para obtener
 =
 1.
 \]
-
+%===========================================================
 \subsection*{Paso 7. Identificar la curva}
-
+%===========================================================
 Finalmente se determina:
 
 \begin{itemize}
@@ -5695,7 +5761,7 @@ Finalmente se determina:
 \end{itemize}
 
 %===========================================================
-\section{Ejemplo comparativo}
+\section*{Ejemplo comparativo}
 %===========================================================
 
 Compare las siguientes ecuaciones:
@@ -5755,7 +5821,7 @@ Esta observación permite clasificar rápidamente la curva antes de
 realizar el procedimiento de completar cuadrados.
 
 %===========================================================
-\section{Ejercicios para trabajar en clase}
+\section*{Ejercicios para trabajar en clase}
 %===========================================================
 
 Determine qué curva representa cada ecuación y transfórmela a su forma
@@ -5806,7 +5872,7 @@ x^2+y^2+6x-8y+9=0.
 \end{enumerate}
 
 %===========================================================
-\section{Errores frecuentes}
+\section*{Errores frecuentes}
 %===========================================================
 
 \begin{enumerate}
@@ -5903,7 +5969,7 @@ En general corresponde a una elipse.
 \end{enumerate}
 
 %===========================================================
-\section{Resumen}
+\section*{Resumen}
 %===========================================================
 
 Para estudiar
@@ -5950,5 +6016,6 @@ AB<0 & \text{Hipérbola}
 El procedimiento de completar cuadrados permite pasar de la ecuación
 general a la forma canónica y, a partir de ella, identificar de manera
 directa las características geométricas de la curva.
+
 
 \end{document}

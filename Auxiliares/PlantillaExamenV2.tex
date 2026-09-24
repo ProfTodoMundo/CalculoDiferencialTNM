@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+
+% ======================================================
+% Codificación e idioma
+% ======================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[spanish,es-nodecimaldot]{babel}
+
+% =====================================================
+% Matemáticas
+% =====================================================
+
+\usepackage{amsmath,amssymb,amsfonts}
+
+% =====================================================
+% Formato y utilidades
+% =====================================================
+
+\usepackage[letterpaper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+% =====================================================
+% Hipervínculos
+% =====================================================
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+% =====================================================
+% Formato de párrafos
+% =====================================================
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% =====================================================
+% Datos editables del examen
+% =====================================================
+
+\newcommand{\institucion}{Tecnológico Nacional de México}
+\newcommand{\materia}{Cálculo Diferencial}
+\newcommand{\nombreexamen}{Primer Examen Parcial}
+\newcommand{\unidad}{Unidad 1: Números Reales}
+\newcommand{\docente}{Carlos Ernesto Martínez}
+\newcommand{\fechaexamen}{}
+\newcommand{\duracion}{60 minutos}
+\newcommand{\puntajetotal}{100 puntos}
+
+% =====================================================
+% Encabezado y pie de página
+% =====================================================
+
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\institucion}
+\fancyhead[R]{\materia}
+
+\fancyfoot[L]{\docente}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+\fancyfoot[R]{\nombreexamen}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% =====================================================
+% Contador y ambiente para problemas
+% =====================================================
+
+\newcounter{problema}
+
+\newenvironment{problema}[1]
+{
+  \refstepcounter{problema}
+  \par\medskip
+  \noindent
+  \textbf{Problema \theproblema.}
+  \textbf{[#1 puntos]}
+  \par\smallskip
+}
+{
+  \par\medskip
+}
+
+% =====================================================
+% Comando para espacio de respuesta
+% =====================================================
+
+\newcommand{\espaciorespuesta}[1]{
+  \vspace{#1}
+}
+
+% =====================================================
+% Documento
+% =====================================================
+
+\begin{document}
+
+% =====================================================
+% Encabezado principal
+% =====================================================
+
+\begin{center}
+    {\Large\textbf{\institucion}}\\[0.3em]
+    {\large\textbf{\materia}}\\[0.3em]
+    {\large\textbf{\nombreexamen}}\\[0.3em]
+    {\normalsize\unidad}
+\end{center}
+
+\vspace{0.05em}
+
+% =====================================================
+% Datos del estudiante
+% =====================================================
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X >{\bfseries}l X}
+Nombre: & \hrulefill &
+No. de control: & \hrulefill \\[1.2em]
+
+Grupo: & \hrulefill &
+Fecha: & \hrulefill \\[0.05em]
+
+\end{tabularx}
+
+\vspace{0.05em}
+
+% =====================================================
+% Información general
+% =====================================================
+
+% =====================================================
+% Instrucciones
+% =====================================================
+
+\subsection*{Instrucciones}
+Lea cuidadosamente cada problema antes de responder. Muestre de manera clara y ordenada todo el procedimiento. Justifique sus resultados cuando se solicite. Las respuestas sin procedimiento no serán consideradas par la calificaci\'on. Simplifique sus respuestas siempre que sea posible. No se permite el uso de apuntes, sí se permite uso de formulario, mostrar al inicio del examen. Sí se permite uso de calculadora, mostrar al inicio del examen.
+
+% =====================================================
+% REACTIVOS
+% =====================================================
+\textbf{Primera Parte:} Resuelve las siguientes desigualdades, proporcionando el conjunto  solución, así como la representación gráfica de  la misma. \textbf{A lo m\'as se pueden resolver dos ejercicios de este tipo}.
+
+\begin{multicols}{2}
+\begin{problema}{10}
+$5x-2<3x+4$
+\end{problema}
+
+\begin{problema}{10}
+$-2x + 1 \geq -5x + 4$
+\end{problema}
+
+\begin{problema}{}
+$-\frac{2}{5}x+\frac{1}{3}<-\frac{1}{15}$
+\end{problema}
+
+\begin{problema}{10}
+$\frac{1}{2}x + \frac{3}{4} \leq \frac{3}{5}x + \frac{1}{10}$
+\end{problema}
+
+\end{multicols}
+
+
+\textbf{Segunda Parte:} Resuelve las siguientes desigualdades, proporcionando el conjunto  solución, así como la representación gráfica de  la misma, además de proporcionar el intervalo soluci\'on. \textbf{A lo m\'as se pueden resolver dos ejercicios de este tipo}.
+
+\begin{multicols}{2}
+
+\begin{problema}{15}
+$-3<\frac{3}{4}x+\frac{1}{2}<4$
+\end{problema}
+
+\begin{problema}{15}
+$2<-\frac{1}{2}x+\frac{3}{4}\leq 3$
+\end{problema}
+
+
+\begin{problema}{15}
+$-\frac{3}{4}<\frac{1}{2}x-\frac{1}{4}<\frac{3}{4}$
+\end{problema}
+
+\end{multicols}
+
+
+\textbf{Tercera Parte:} Resuelve las siguientes desigualdades, proporcionando el conjunto  solución, así como la representación gráfica de  la misma, además de proporcionar el intervalo soluci\'on. \textbf{Es obligatorio resolver al menos dos ejercicios de este tipo}.
+
+\begin{multicols}{2}
+\begin{problema}{15}
+$|3x-7|\geq4$
+\end{problema}
+
+\begin{problema}{15}
+$|2x+1|\leq 7$
+\end{problema}
+
+\begin{problema}{15}
+$|\frac{3}{8}x-\frac{5}{6}| \leq \frac{3}{4}$
+\end{problema}
+
+\begin{problema}{15}
+$|\frac{1}{2}x-\frac{1}{4}|\geq\frac{1}{2}$
+\end{problema}
+
+\end{multicols}
+
+\textbf{Cuarta Parte:} Resuelve las siguientes desigualdades, proporcionando el conjunto  solución, así como la representación gráfica de  la misma, además de proporcionar el intervalo soluci\'on. \textbf{Es obligatorio resolver al menos dos ejercicios de este tipo}.
+
+\begin{multicols}{2}
+
+\begin{problema}{20}
+$x^2-4x+3<0$
+\end{problema}
+
+\begin{problema}{20}
+$-4x^2+16x-12<0$
+\end{problema}
+
+\begin{problema}{20}
+$4x^2-12x+9\geq 0$
+\end{problema}
+
+
+\begin{problema}{20}
+$\frac{1}{3}x^2+\frac{5}{3}x+2\leq0$
+\end{problema}
+\end{multicols}
+\espaciorespuesta{6cm}
+
+% =====================================================
+% Tabla de calificación
+% =====================================================
+
+\begin{center}
+\textbf{Calificación final:}\qquad
+\rule{3cm}{0.4pt}
+\end{center}
+
+\end{document}
