@@ -1,0 +1,917 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Propósito de la unidad}{2}{Propósito de la unidad}{0}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\slideentry {1}{0}{2}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@sectionpages {2}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\sectionentry {2}{Relaciones y funciones}{4}{Relaciones y funciones}{0}}
+\headcommand {\slideentry {2}{0}{1}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{5}{Producto cartesiano}}
+\headcommand {\slideentry {2}{1}{1}{5/5}{Producto cartesiano}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {2}{1}{1}{5/6}{Producto cartesiano}{0}}
+\headcommand {\beamer@framepages {5}{6}}
+\headcommand {\beamer@subsectionpages {5}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Relaciones}}
+\headcommand {\slideentry {2}{2}{1}{7/7}{Relaciones}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{8}{Definición formal de función}}
+\headcommand {\slideentry {2}{3}{1}{8/8}{Definición formal de función}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{3}{1}{8/9}{Definición formal de función}{0}}
+\headcommand {\beamer@framepages {8}{9}}
+\headcommand {\slideentry {2}{3}{1}{8/10}{Definición formal de función}{0}}
+\headcommand {\beamer@framepages {8}{10}}
+\headcommand {\slideentry {2}{3}{2}{11/11}{Definición formal de función}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{3}{3}{12/12}{Definición formal de función}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionpages {8}{12}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{13}{Dominio, codominio e imagen}}
+\headcommand {\slideentry {2}{4}{1}{13/13}{Dominio, codominio e imagen}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{4}{1}{13/14}{Dominio, codominio e imagen}{0}}
+\headcommand {\beamer@framepages {13}{14}}
+\headcommand {\slideentry {2}{4}{2}{15/15}{Dominio, codominio e imagen}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsectionpages {13}{15}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{16}{Imagen inversa}}
+\headcommand {\slideentry {2}{5}{1}{16/16}{Imagen inversa}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{5}{2}{17/17}{Imagen inversa}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@sectionpages {4}{17}}
+\headcommand {\beamer@subsectionpages {16}{17}}
+\headcommand {\sectionentry {3}{Funciones reales de variable real}{18}{Funciones reales de variable real}{0}}
+\headcommand {\slideentry {3}{0}{1}{18/18}{}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {3}{0}{2}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {3}{0}{2}{19/20}{}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\slideentry {3}{0}{2}{19/21}{}{0}}
+\headcommand {\beamer@framepages {19}{21}}
+\headcommand {\slideentry {3}{0}{3}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsectionpages {18}{22}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{23}{Cociente incremental como preparación para la derivada}}
+\headcommand {\slideentry {3}{1}{1}{23/23}{Cociente incremental como preparación para la derivada}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {3}{1}{1}{23/24}{Cociente incremental como preparación para la derivada}{0}}
+\headcommand {\beamer@framepages {23}{24}}
+\headcommand {\beamer@sectionpages {18}{24}}
+\headcommand {\beamer@subsectionpages {23}{24}}
+\headcommand {\sectionentry {4}{Funciones logarítmica y exponencial}{25}{Funciones logarítmica y exponencial}{0}}
+\headcommand {\beamer@subsectionpages {25}{24}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{25}{Función logarítmica}}
+\headcommand {\slideentry {4}{1}{1}{25/25}{Función logarítmica}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {4}{1}{1}{25/26}{Función logarítmica}{0}}
+\headcommand {\beamer@framepages {25}{26}}
+\headcommand {\beamer@subsectionpages {25}{26}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{27}{La función exponencial como inversa del logaritmo}}
+\headcommand {\slideentry {4}{2}{1}{27/27}{La función exponencial como inversa del logaritmo}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {4}{2}{1}{27/28}{La función exponencial como inversa del logaritmo}{0}}
+\headcommand {\beamer@framepages {27}{28}}
+\headcommand {\beamer@sectionpages {25}{28}}
+\headcommand {\beamer@subsectionpages {27}{28}}
+\headcommand {\sectionentry {5}{Determinación del dominio}{29}{Determinación del dominio}{0}}
+\headcommand {\beamer@subsectionpages {29}{28}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{29}{Funciones polinomiales}}
+\headcommand {\slideentry {5}{1}{1}{29/29}{Funciones polinomiales}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\beamer@subsectionpages {29}{29}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{30}{Funciones racionales}}
+\headcommand {\slideentry {5}{2}{1}{30/30}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {5}{2}{1}{30/31}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {30}{31}}
+\headcommand {\beamer@subsectionpages {30}{31}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{32}{Radicales de índice par}}
+\headcommand {\slideentry {5}{3}{1}{32/32}{Radicales de índice par}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {5}{3}{1}{32/33}{Radicales de índice par}{0}}
+\headcommand {\beamer@framepages {32}{33}}
+\headcommand {\beamer@subsectionpages {32}{33}}
+\headcommand {\beamer@subsectionentry {0}{5}{4}{34}{Funciones logarítmicas}}
+\headcommand {\slideentry {5}{4}{1}{34/34}{Funciones logarítmicas}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {5}{4}{1}{34/35}{Funciones logarítmicas}{0}}
+\headcommand {\beamer@framepages {34}{35}}
+\headcommand {\slideentry {5}{4}{2}{36/36}{Funciones logarítmicas}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {5}{4}{3}{37/37}{Funciones logarítmicas}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\beamer@subsectionpages {34}{37}}
+\headcommand {\beamer@subsectionentry {0}{5}{5}{38}{Restricciones simultáneas}}
+\headcommand {\slideentry {5}{5}{1}{38/38}{Restricciones simultáneas}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {5}{5}{1}{38/39}{Restricciones simultáneas}{0}}
+\headcommand {\beamer@framepages {38}{39}}
+\headcommand {\slideentry {5}{5}{2}{40/40}{Restricciones simultáneas}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\beamer@sectionpages {29}{40}}
+\headcommand {\beamer@subsectionpages {38}{40}}
+\headcommand {\sectionentry {6}{Gráfica de una función}{41}{Gráfica de una función}{0}}
+\headcommand {\slideentry {6}{0}{1}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@subsectionpages {41}{41}}
+\headcommand {\beamer@subsectionentry {0}{6}{1}{42}{Prueba de la recta vertical}}
+\headcommand {\slideentry {6}{1}{1}{42/42}{Prueba de la recta vertical}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\beamer@subsectionpages {42}{42}}
+\headcommand {\beamer@subsectionentry {0}{6}{2}{43}{Intersecciones con los ejes}}
+\headcommand {\slideentry {6}{2}{1}{43/43}{Intersecciones con los ejes}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {6}{2}{1}{43/44}{Intersecciones con los ejes}{0}}
+\headcommand {\beamer@framepages {43}{44}}
+\headcommand {\beamer@sectionpages {41}{44}}
+\headcommand {\beamer@subsectionpages {43}{44}}
+\headcommand {\sectionentry {7}{Funciones pares e impares}{45}{Funciones pares e impares}{0}}
+\headcommand {\slideentry {7}{0}{1}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {7}{0}{1}{45/46}{}{0}}
+\headcommand {\beamer@framepages {45}{46}}
+\headcommand {\slideentry {7}{0}{1}{45/47}{}{0}}
+\headcommand {\beamer@framepages {45}{47}}
+\headcommand {\beamer@sectionpages {45}{47}}
+\headcommand {\beamer@subsectionpages {45}{47}}
+\headcommand {\sectionentry {8}{Crecimiento y decrecimiento}{48}{Crecimiento y decrecimiento}{0}}
+\headcommand {\slideentry {8}{0}{1}{48/48}{}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@sectionpages {48}{48}}
+\headcommand {\beamer@subsectionpages {48}{48}}
+\headcommand {\sectionentry {9}{Funciones elementales}{49}{Funciones elementales}{0}}
+\headcommand {\beamer@subsectionpages {49}{48}}
+\headcommand {\beamer@subsectionentry {0}{9}{1}{49}{Función constante}}
+\headcommand {\slideentry {9}{1}{1}{49/49}{Función constante}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\beamer@subsectionpages {49}{49}}
+\headcommand {\beamer@subsectionentry {0}{9}{2}{50}{Función identidad}}
+\headcommand {\slideentry {9}{2}{1}{50/50}{Función identidad}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\beamer@subsectionpages {50}{50}}
+\headcommand {\beamer@subsectionentry {0}{9}{3}{51}{Función afín}}
+\headcommand {\slideentry {9}{3}{1}{51/51}{Función afín}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsectionpages {51}{51}}
+\headcommand {\beamer@subsectionentry {0}{9}{4}{52}{Función cuadrática}}
+\headcommand {\slideentry {9}{4}{1}{52/52}{Función cuadrática}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\beamer@subsectionpages {52}{52}}
+\headcommand {\beamer@subsectionentry {0}{9}{5}{53}{Funciones polinomiales}}
+\headcommand {\slideentry {9}{5}{1}{53/53}{Funciones polinomiales}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\beamer@subsectionpages {53}{53}}
+\headcommand {\beamer@subsectionentry {0}{9}{6}{54}{Funciones racionales}}
+\headcommand {\slideentry {9}{6}{1}{54/54}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsectionpages {54}{54}}
+\headcommand {\beamer@subsectionentry {0}{9}{7}{55}{Función valor absoluto}}
+\headcommand {\slideentry {9}{7}{1}{55/55}{Función valor absoluto}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\beamer@subsectionpages {55}{55}}
+\headcommand {\beamer@subsectionentry {0}{9}{8}{56}{Funciones potencia y radicales}}
+\headcommand {\slideentry {9}{8}{1}{56/56}{Funciones potencia y radicales}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\beamer@subsectionpages {56}{56}}
+\headcommand {\beamer@subsectionentry {0}{9}{9}{57}{Funciones exponenciales}}
+\headcommand {\slideentry {9}{9}{1}{57/57}{Funciones exponenciales}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\beamer@subsectionpages {57}{57}}
+\headcommand {\beamer@subsectionentry {0}{9}{10}{58}{Funciones logarítmicas}}
+\headcommand {\slideentry {9}{10}{1}{58/58}{Funciones logarítmicas}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\beamer@subsectionpages {58}{58}}
+\headcommand {\beamer@subsectionentry {0}{9}{11}{59}{Funciones trigonométricas}}
+\headcommand {\slideentry {9}{11}{1}{59/59}{Funciones trigonométricas}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\beamer@subsectionpages {59}{59}}
+\headcommand {\beamer@subsectionentry {0}{9}{12}{60}{Galería gráfica de las funciones elementales}}
+\headcommand {\slideentry {9}{12}{1}{60/60}{Galería gráfica de las funciones elementales}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {9}{12}{1}{60/61}{Galería gráfica de las funciones elementales}{0}}
+\headcommand {\beamer@framepages {60}{61}}
+\headcommand {\slideentry {9}{12}{1}{60/62}{Galería gráfica de las funciones elementales}{0}}
+\headcommand {\beamer@framepages {60}{62}}
+\headcommand {\beamer@sectionpages {49}{62}}
+\headcommand {\beamer@subsectionpages {60}{62}}
+\headcommand {\sectionentry {10}{Funciones definidas por partes}{63}{Funciones definidas por partes}{0}}
+\headcommand {\slideentry {10}{0}{1}{63/63}{}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\beamer@sectionpages {63}{63}}
+\headcommand {\beamer@subsectionpages {63}{63}}
+\headcommand {\sectionentry {11}{Transformaciones de gráficas}{64}{Transformaciones de gráficas}{0}}
+\headcommand {\slideentry {11}{0}{1}{64/64}{}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\beamer@subsectionpages {64}{64}}
+\headcommand {\beamer@subsectionentry {0}{11}{1}{65}{Traslaciones verticales}}
+\headcommand {\slideentry {11}{1}{1}{65/65}{Traslaciones verticales}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\beamer@subsectionpages {65}{65}}
+\headcommand {\beamer@subsectionentry {0}{11}{2}{66}{Traslaciones horizontales}}
+\headcommand {\slideentry {11}{2}{1}{66/66}{Traslaciones horizontales}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@subsectionpages {66}{66}}
+\headcommand {\beamer@subsectionentry {0}{11}{3}{67}{Reflexiones}}
+\headcommand {\slideentry {11}{3}{1}{67/67}{Reflexiones}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\beamer@subsectionpages {67}{67}}
+\headcommand {\beamer@subsectionentry {0}{11}{4}{68}{Escalamientos}}
+\headcommand {\slideentry {11}{4}{1}{68/68}{Escalamientos}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\slideentry {11}{4}{1}{68/69}{Escalamientos}{0}}
+\headcommand {\beamer@framepages {68}{69}}
+\headcommand {\beamer@sectionpages {64}{69}}
+\headcommand {\beamer@subsectionpages {68}{69}}
+\headcommand {\sectionentry {12}{Operaciones con funciones}{70}{Operaciones con funciones}{0}}
+\headcommand {\slideentry {12}{0}{1}{70/70}{}{0}}
+\headcommand {\beamer@framepages {70}{70}}
+\headcommand {\slideentry {12}{0}{1}{70/71}{}{0}}
+\headcommand {\beamer@framepages {70}{71}}
+\headcommand {\beamer@sectionpages {70}{71}}
+\headcommand {\beamer@subsectionpages {70}{71}}
+\headcommand {\sectionentry {13}{Composición de funciones}{72}{Composición de funciones}{0}}
+\headcommand {\slideentry {13}{0}{1}{72/72}{}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\slideentry {13}{0}{1}{72/73}{}{0}}
+\headcommand {\beamer@framepages {72}{73}}
+\headcommand {\beamer@subsectionpages {72}{73}}
+\headcommand {\beamer@subsectionentry {0}{13}{1}{74}{Dominio de una composición}}
+\headcommand {\slideentry {13}{1}{1}{74/74}{Dominio de una composición}{0}}
+\headcommand {\beamer@framepages {74}{74}}
+\headcommand {\slideentry {13}{1}{1}{74/75}{Dominio de una composición}{0}}
+\headcommand {\beamer@framepages {74}{75}}
+\headcommand {\slideentry {13}{1}{1}{74/76}{Dominio de una composición}{0}}
+\headcommand {\beamer@framepages {74}{76}}
+\headcommand {\beamer@sectionpages {72}{76}}
+\headcommand {\beamer@subsectionpages {74}{76}}
+\headcommand {\sectionentry {14}{Funciones inyectivas, suprayectivas y biyectivas}{77}{Funciones inyectivas, suprayectivas y biyectivas}{0}}
+\headcommand {\slideentry {14}{0}{1}{77/77}{}{0}}
+\headcommand {\beamer@framepages {77}{77}}
+\headcommand {\slideentry {14}{0}{1}{77/78}{}{0}}
+\headcommand {\beamer@framepages {77}{78}}
+\headcommand {\slideentry {14}{0}{1}{77/79}{}{0}}
+\headcommand {\beamer@framepages {77}{79}}
+\headcommand {\beamer@sectionpages {77}{79}}
+\headcommand {\beamer@subsectionpages {77}{79}}
+\headcommand {\sectionentry {15}{Función inversa}{80}{Función inversa}{0}}
+\headcommand {\slideentry {15}{0}{1}{80/80}{}{0}}
+\headcommand {\beamer@framepages {80}{80}}
+\headcommand {\slideentry {15}{0}{1}{80/81}{}{0}}
+\headcommand {\beamer@framepages {80}{81}}
+\headcommand {\slideentry {15}{0}{1}{80/82}{}{0}}
+\headcommand {\beamer@framepages {80}{82}}
+\headcommand {\beamer@subsectionpages {80}{82}}
+\headcommand {\beamer@subsectionentry {0}{15}{1}{83}{Cálculo algebraico de una inversa}}
+\headcommand {\slideentry {15}{1}{1}{83/83}{Cálculo algebraico de una inversa}{0}}
+\headcommand {\beamer@framepages {83}{83}}
+\headcommand {\slideentry {15}{1}{1}{83/84}{Cálculo algebraico de una inversa}{0}}
+\headcommand {\beamer@framepages {83}{84}}
+\headcommand {\beamer@sectionpages {80}{84}}
+\headcommand {\beamer@subsectionpages {83}{84}}
+\headcommand {\sectionentry {16}{Modelación mediante funciones}{85}{Modelación mediante funciones}{0}}
+\headcommand {\slideentry {16}{0}{1}{85/85}{}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\beamer@subsectionpages {85}{85}}
+\headcommand {\beamer@subsectionentry {0}{16}{1}{86}{Proceso general de modelación}}
+\headcommand {\slideentry {16}{1}{1}{86/86}{Proceso general de modelación}{0}}
+\headcommand {\beamer@framepages {86}{86}}
+\headcommand {\beamer@subsectionpages {86}{86}}
+\headcommand {\beamer@subsectionentry {0}{16}{2}{87}{Modelo geométrico}}
+\headcommand {\slideentry {16}{2}{1}{87/87}{Modelo geométrico}{0}}
+\headcommand {\beamer@framepages {87}{87}}
+\headcommand {\slideentry {16}{2}{1}{87/88}{Modelo geométrico}{0}}
+\headcommand {\beamer@framepages {87}{88}}
+\headcommand {\beamer@subsectionpages {87}{88}}
+\headcommand {\beamer@subsectionentry {0}{16}{3}{89}{Modelo de costo}}
+\headcommand {\slideentry {16}{3}{1}{89/89}{Modelo de costo}{0}}
+\headcommand {\beamer@framepages {89}{89}}
+\headcommand {\beamer@subsectionpages {89}{89}}
+\headcommand {\beamer@subsectionentry {0}{16}{4}{90}{Ingreso y utilidad}}
+\headcommand {\slideentry {16}{4}{1}{90/90}{Ingreso y utilidad}{0}}
+\headcommand {\beamer@framepages {90}{90}}
+\headcommand {\slideentry {16}{4}{1}{90/91}{Ingreso y utilidad}{0}}
+\headcommand {\beamer@framepages {90}{91}}
+\headcommand {\beamer@subsectionpages {90}{91}}
+\headcommand {\beamer@subsectionentry {0}{16}{5}{92}{Modelo de distancia}}
+\headcommand {\slideentry {16}{5}{1}{92/92}{Modelo de distancia}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\beamer@subsectionpages {92}{92}}
+\headcommand {\beamer@subsectionentry {0}{16}{6}{93}{Proporcionalidad inversa}}
+\headcommand {\slideentry {16}{6}{1}{93/93}{Proporcionalidad inversa}{0}}
+\headcommand {\beamer@framepages {93}{93}}
+\headcommand {\beamer@subsectionpages {93}{93}}
+\headcommand {\beamer@subsectionentry {0}{16}{7}{94}{Modelo exponencial elemental}}
+\headcommand {\slideentry {16}{7}{1}{94/94}{Modelo exponencial elemental}{0}}
+\headcommand {\beamer@framepages {94}{94}}
+\headcommand {\beamer@sectionpages {85}{94}}
+\headcommand {\beamer@subsectionpages {94}{94}}
+\headcommand {\sectionentry {17}{Laboratorio gráfico: funciones elementales y código en R}{95}{Laboratorio gráfico: funciones elementales y código en R}{0}}
+\headcommand {\slideentry {17}{0}{1}{95/95}{}{0}}
+\headcommand {\beamer@framepages {95}{95}}
+\headcommand {\slideentry {17}{0}{1}{95/96}{}{0}}
+\headcommand {\beamer@framepages {95}{96}}
+\headcommand {\beamer@subsectionpages {95}{96}}
+\headcommand {\beamer@subsectionentry {0}{17}{1}{97}{Plantilla general en R}}
+\headcommand {\slideentry {17}{1}{1}{97/97}{Plantilla general en R}{0}}
+\headcommand {\beamer@framepages {97}{97}}
+\headcommand {\beamer@subsectionpages {97}{97}}
+\headcommand {\beamer@subsectionentry {0}{17}{2}{98}{Función constante}}
+\headcommand {\slideentry {17}{2}{1}{98/98}{Función constante}{0}}
+\headcommand {\beamer@framepages {98}{98}}
+\headcommand {\slideentry {17}{2}{1}{98/99}{Función constante}{0}}
+\headcommand {\beamer@framepages {98}{99}}
+\headcommand {\beamer@subsectionpages {98}{99}}
+\headcommand {\beamer@subsectionentry {0}{17}{3}{100}{Función identidad}}
+\headcommand {\slideentry {17}{3}{1}{100/100}{Función identidad}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {17}{3}{1}{100/101}{Función identidad}{0}}
+\headcommand {\beamer@framepages {100}{101}}
+\headcommand {\beamer@subsectionpages {100}{101}}
+\headcommand {\beamer@subsectionentry {0}{17}{4}{102}{Función afín}}
+\headcommand {\slideentry {17}{4}{1}{102/102}{Función afín}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\slideentry {17}{4}{1}{102/103}{Función afín}{0}}
+\headcommand {\beamer@framepages {102}{103}}
+\headcommand {\beamer@subsectionpages {102}{103}}
+\headcommand {\beamer@subsectionentry {0}{17}{5}{104}{Función cuadrática}}
+\headcommand {\slideentry {17}{5}{1}{104/104}{Función cuadrática}{0}}
+\headcommand {\beamer@framepages {104}{104}}
+\headcommand {\slideentry {17}{5}{1}{104/105}{Función cuadrática}{0}}
+\headcommand {\beamer@framepages {104}{105}}
+\headcommand {\slideentry {17}{5}{1}{104/106}{Función cuadrática}{0}}
+\headcommand {\beamer@framepages {104}{106}}
+\headcommand {\beamer@subsectionpages {104}{106}}
+\headcommand {\beamer@subsectionentry {0}{17}{6}{107}{Función cúbica}}
+\headcommand {\slideentry {17}{6}{1}{107/107}{Función cúbica}{0}}
+\headcommand {\beamer@framepages {107}{107}}
+\headcommand {\slideentry {17}{6}{1}{107/108}{Función cúbica}{0}}
+\headcommand {\beamer@framepages {107}{108}}
+\headcommand {\beamer@subsectionpages {107}{108}}
+\headcommand {\beamer@subsectionentry {0}{17}{7}{109}{Función valor absoluto}}
+\headcommand {\slideentry {17}{7}{1}{109/109}{Función valor absoluto}{0}}
+\headcommand {\beamer@framepages {109}{109}}
+\headcommand {\slideentry {17}{7}{1}{109/110}{Función valor absoluto}{0}}
+\headcommand {\beamer@framepages {109}{110}}
+\headcommand {\beamer@subsectionpages {109}{110}}
+\headcommand {\beamer@subsectionentry {0}{17}{8}{111}{Función raíz cuadrada}}
+\headcommand {\slideentry {17}{8}{1}{111/111}{Función raíz cuadrada}{0}}
+\headcommand {\beamer@framepages {111}{111}}
+\headcommand {\slideentry {17}{8}{1}{111/112}{Función raíz cuadrada}{0}}
+\headcommand {\beamer@framepages {111}{112}}
+\headcommand {\beamer@subsectionpages {111}{112}}
+\headcommand {\beamer@subsectionentry {0}{17}{9}{113}{Función recíproca}}
+\headcommand {\slideentry {17}{9}{1}{113/113}{Función recíproca}{0}}
+\headcommand {\beamer@framepages {113}{113}}
+\headcommand {\slideentry {17}{9}{1}{113/114}{Función recíproca}{0}}
+\headcommand {\beamer@framepages {113}{114}}
+\headcommand {\slideentry {17}{9}{1}{113/115}{Función recíproca}{0}}
+\headcommand {\beamer@framepages {113}{115}}
+\headcommand {\beamer@subsectionpages {113}{115}}
+\headcommand {\beamer@subsectionentry {0}{17}{10}{116}{Función racional con traslación}}
+\headcommand {\slideentry {17}{10}{1}{116/116}{Función racional con traslación}{0}}
+\headcommand {\beamer@framepages {116}{116}}
+\headcommand {\slideentry {17}{10}{1}{116/117}{Función racional con traslación}{0}}
+\headcommand {\beamer@framepages {116}{117}}
+\headcommand {\slideentry {17}{10}{1}{116/118}{Función racional con traslación}{0}}
+\headcommand {\beamer@framepages {116}{118}}
+\headcommand {\beamer@subsectionpages {116}{118}}
+\headcommand {\beamer@subsectionentry {0}{17}{11}{119}{Función exponencial}}
+\headcommand {\slideentry {17}{11}{1}{119/119}{Función exponencial}{0}}
+\headcommand {\beamer@framepages {119}{119}}
+\headcommand {\slideentry {17}{11}{1}{119/120}{Función exponencial}{0}}
+\headcommand {\beamer@framepages {119}{120}}
+\headcommand {\slideentry {17}{11}{1}{119/121}{Función exponencial}{0}}
+\headcommand {\beamer@framepages {119}{121}}
+\headcommand {\beamer@subsectionpages {119}{121}}
+\headcommand {\beamer@subsectionentry {0}{17}{12}{122}{Función logaritmo natural}}
+\headcommand {\slideentry {17}{12}{1}{122/122}{Función logaritmo natural}{0}}
+\headcommand {\beamer@framepages {122}{122}}
+\headcommand {\slideentry {17}{12}{1}{122/123}{Función logaritmo natural}{0}}
+\headcommand {\beamer@framepages {122}{123}}
+\headcommand {\slideentry {17}{12}{1}{122/124}{Función logaritmo natural}{0}}
+\headcommand {\beamer@framepages {122}{124}}
+\headcommand {\beamer@subsectionpages {122}{124}}
+\headcommand {\beamer@subsectionentry {0}{17}{13}{125}{Funciones seno y coseno}}
+\headcommand {\slideentry {17}{13}{1}{125/125}{Funciones seno y coseno}{0}}
+\headcommand {\beamer@framepages {125}{125}}
+\headcommand {\slideentry {17}{13}{1}{125/126}{Funciones seno y coseno}{0}}
+\headcommand {\beamer@framepages {125}{126}}
+\headcommand {\slideentry {17}{13}{1}{125/127}{Funciones seno y coseno}{0}}
+\headcommand {\beamer@framepages {125}{127}}
+\headcommand {\beamer@subsectionpages {125}{127}}
+\headcommand {\beamer@subsectionentry {0}{17}{14}{128}{Función tangente}}
+\headcommand {\slideentry {17}{14}{1}{128/128}{Función tangente}{0}}
+\headcommand {\beamer@framepages {128}{128}}
+\headcommand {\slideentry {17}{14}{1}{128/129}{Función tangente}{0}}
+\headcommand {\beamer@framepages {128}{129}}
+\headcommand {\slideentry {17}{14}{1}{128/130}{Función tangente}{0}}
+\headcommand {\beamer@framepages {128}{130}}
+\headcommand {\slideentry {17}{14}{1}{128/131}{Función tangente}{0}}
+\headcommand {\beamer@framepages {128}{131}}
+\headcommand {\beamer@subsectionpages {128}{131}}
+\headcommand {\beamer@subsectionentry {0}{17}{15}{132}{Función definida por partes}}
+\headcommand {\slideentry {17}{15}{1}{132/132}{Función definida por partes}{0}}
+\headcommand {\beamer@framepages {132}{132}}
+\headcommand {\slideentry {17}{15}{1}{132/133}{Función definida por partes}{0}}
+\headcommand {\beamer@framepages {132}{133}}
+\headcommand {\slideentry {17}{15}{1}{132/134}{Función definida por partes}{0}}
+\headcommand {\beamer@framepages {132}{134}}
+\headcommand {\beamer@subsectionpages {132}{134}}
+\headcommand {\beamer@subsectionentry {0}{17}{16}{135}{Transformaciones de una función madre}}
+\headcommand {\slideentry {17}{16}{1}{135/135}{Transformaciones de una función madre}{0}}
+\headcommand {\beamer@framepages {135}{135}}
+\headcommand {\slideentry {17}{16}{1}{135/136}{Transformaciones de una función madre}{0}}
+\headcommand {\beamer@framepages {135}{136}}
+\headcommand {\slideentry {17}{16}{1}{135/137}{Transformaciones de una función madre}{0}}
+\headcommand {\beamer@framepages {135}{137}}
+\headcommand {\beamer@subsectionpages {135}{137}}
+\headcommand {\beamer@subsectionentry {0}{17}{17}{138}{Composición: visualización computacional}}
+\headcommand {\slideentry {17}{17}{1}{138/138}{Composición: visualización computacional}{0}}
+\headcommand {\beamer@framepages {138}{138}}
+\headcommand {\slideentry {17}{17}{1}{138/139}{Composición: visualización computacional}{0}}
+\headcommand {\beamer@framepages {138}{139}}
+\headcommand {\slideentry {17}{17}{1}{138/140}{Composición: visualización computacional}{0}}
+\headcommand {\beamer@framepages {138}{140}}
+\headcommand {\slideentry {17}{17}{1}{138/141}{Composición: visualización computacional}{0}}
+\headcommand {\beamer@framepages {138}{141}}
+\headcommand {\beamer@subsectionpages {138}{141}}
+\headcommand {\beamer@subsectionentry {0}{17}{18}{142}{Función e inversa: simetría respecto de $y=x$}}
+\headcommand {\slideentry {17}{18}{1}{142/142}{Función e inversa: simetría respecto de $y=x$}{0}}
+\headcommand {\beamer@framepages {142}{142}}
+\headcommand {\slideentry {17}{18}{1}{142/143}{Función e inversa: simetría respecto de $y=x$}{0}}
+\headcommand {\beamer@framepages {142}{143}}
+\headcommand {\slideentry {17}{18}{1}{142/144}{Función e inversa: simetría respecto de $y=x$}{0}}
+\headcommand {\beamer@framepages {142}{144}}
+\headcommand {\beamer@subsectionpages {142}{144}}
+\headcommand {\beamer@subsectionentry {0}{17}{19}{145}{Ejercicio computacional guiado}}
+\headcommand {\slideentry {17}{19}{1}{145/145}{Ejercicio computacional guiado}{0}}
+\headcommand {\beamer@framepages {145}{145}}
+\headcommand {\slideentry {17}{19}{1}{145/146}{Ejercicio computacional guiado}{0}}
+\headcommand {\beamer@framepages {145}{146}}
+\headcommand {\beamer@subsectionpages {145}{146}}
+\headcommand {\beamer@subsectionentry {0}{17}{20}{147}{Actividad para Ciencia de Datos y Sistemas Computacionales}}
+\headcommand {\slideentry {17}{20}{1}{147/147}{Actividad para Ciencia de Datos y Sistemas Computacionales}{0}}
+\headcommand {\beamer@framepages {147}{147}}
+\headcommand {\slideentry {17}{20}{1}{147/148}{Actividad para Ciencia de Datos y Sistemas Computacionales}{0}}
+\headcommand {\beamer@framepages {147}{148}}
+\headcommand {\beamer@sectionpages {95}{148}}
+\headcommand {\beamer@subsectionpages {147}{148}}
+\headcommand {\sectionentry {18}{Banco de ejemplos para elegir en clase}{149}{Banco de ejemplos para elegir en clase}{0}}
+\headcommand {\slideentry {18}{0}{1}{149/149}{}{0}}
+\headcommand {\beamer@framepages {149}{149}}
+\headcommand {\beamer@subsectionpages {149}{149}}
+\headcommand {\beamer@subsectionentry {0}{18}{1}{150}{Funciones lineales y afines}}
+\headcommand {\slideentry {18}{1}{1}{150/150}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {150}{150}}
+\headcommand {\slideentry {18}{1}{1}{150/151}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {150}{151}}
+\headcommand {\slideentry {18}{1}{2}{152/152}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {152}{152}}
+\headcommand {\slideentry {18}{1}{2}{152/153}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {152}{153}}
+\headcommand {\slideentry {18}{1}{3}{154/154}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {154}{154}}
+\headcommand {\slideentry {18}{1}{3}{154/155}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {154}{155}}
+\headcommand {\slideentry {18}{1}{4}{156/156}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {156}{156}}
+\headcommand {\slideentry {18}{1}{4}{156/157}{Funciones lineales y afines}{0}}
+\headcommand {\beamer@framepages {156}{157}}
+\headcommand {\beamer@subsectionpages {150}{157}}
+\headcommand {\beamer@subsectionentry {0}{18}{2}{158}{Funciones cuadráticas y polinomiales}}
+\headcommand {\slideentry {18}{2}{1}{158/158}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {158}{158}}
+\headcommand {\slideentry {18}{2}{1}{158/159}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {158}{159}}
+\headcommand {\slideentry {18}{2}{2}{160/160}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {160}{160}}
+\headcommand {\slideentry {18}{2}{2}{160/161}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {160}{161}}
+\headcommand {\slideentry {18}{2}{3}{162/162}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {162}{162}}
+\headcommand {\slideentry {18}{2}{3}{162/163}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {162}{163}}
+\headcommand {\slideentry {18}{2}{4}{164/164}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {164}{164}}
+\headcommand {\slideentry {18}{2}{4}{164/165}{Funciones cuadráticas y polinomiales}{0}}
+\headcommand {\beamer@framepages {164}{165}}
+\headcommand {\beamer@subsectionpages {158}{165}}
+\headcommand {\beamer@subsectionentry {0}{18}{3}{166}{Funciones racionales}}
+\headcommand {\slideentry {18}{3}{1}{166/166}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {166}{166}}
+\headcommand {\slideentry {18}{3}{1}{166/167}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {166}{167}}
+\headcommand {\slideentry {18}{3}{2}{168/168}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {168}{168}}
+\headcommand {\slideentry {18}{3}{2}{168/169}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {168}{169}}
+\headcommand {\slideentry {18}{3}{3}{170/170}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {170}{170}}
+\headcommand {\slideentry {18}{3}{3}{170/171}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {170}{171}}
+\headcommand {\slideentry {18}{3}{4}{172/172}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {172}{172}}
+\headcommand {\slideentry {18}{3}{4}{172/173}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {172}{173}}
+\headcommand {\slideentry {18}{3}{5}{174/174}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {174}{174}}
+\headcommand {\slideentry {18}{3}{5}{174/175}{Funciones racionales}{0}}
+\headcommand {\beamer@framepages {174}{175}}
+\headcommand {\beamer@subsectionpages {166}{175}}
+\headcommand {\beamer@subsectionentry {0}{18}{4}{176}{Funciones radicales}}
+\headcommand {\slideentry {18}{4}{1}{176/176}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {176}{176}}
+\headcommand {\slideentry {18}{4}{1}{176/177}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {176}{177}}
+\headcommand {\slideentry {18}{4}{2}{178/178}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {178}{178}}
+\headcommand {\slideentry {18}{4}{2}{178/179}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {178}{179}}
+\headcommand {\slideentry {18}{4}{3}{180/180}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {180}{180}}
+\headcommand {\slideentry {18}{4}{3}{180/181}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {180}{181}}
+\headcommand {\slideentry {18}{4}{4}{182/182}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {182}{182}}
+\headcommand {\slideentry {18}{4}{4}{182/183}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {182}{183}}
+\headcommand {\slideentry {18}{4}{5}{184/184}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {184}{184}}
+\headcommand {\slideentry {18}{4}{5}{184/185}{Funciones radicales}{0}}
+\headcommand {\beamer@framepages {184}{185}}
+\headcommand {\beamer@subsectionpages {176}{185}}
+\headcommand {\beamer@subsectionentry {0}{18}{5}{186}{Valor absoluto y funciones definidas por partes}}
+\headcommand {\slideentry {18}{5}{1}{186/186}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {186}{186}}
+\headcommand {\slideentry {18}{5}{1}{186/187}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {186}{187}}
+\headcommand {\slideentry {18}{5}{2}{188/188}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {188}{188}}
+\headcommand {\slideentry {18}{5}{2}{188/189}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {188}{189}}
+\headcommand {\slideentry {18}{5}{3}{190/190}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {190}{190}}
+\headcommand {\slideentry {18}{5}{3}{190/191}{Valor absoluto y funciones definidas por partes}{0}}
+\headcommand {\beamer@framepages {190}{191}}
+\headcommand {\beamer@subsectionpages {186}{191}}
+\headcommand {\beamer@subsectionentry {0}{18}{6}{192}{Funciones exponenciales y logarítmicas}}
+\headcommand {\slideentry {18}{6}{1}{192/192}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {192}{192}}
+\headcommand {\slideentry {18}{6}{1}{192/193}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {192}{193}}
+\headcommand {\slideentry {18}{6}{2}{194/194}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {194}{194}}
+\headcommand {\slideentry {18}{6}{2}{194/195}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {194}{195}}
+\headcommand {\slideentry {18}{6}{3}{196/196}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {196}{196}}
+\headcommand {\slideentry {18}{6}{3}{196/197}{Funciones exponenciales y logarítmicas}{0}}
+\headcommand {\beamer@framepages {196}{197}}
+\headcommand {\beamer@subsectionpages {192}{197}}
+\headcommand {\beamer@subsectionentry {0}{18}{7}{198}{Transformaciones de gráficas}}
+\headcommand {\slideentry {18}{7}{1}{198/198}{Transformaciones de gráficas}{0}}
+\headcommand {\beamer@framepages {198}{198}}
+\headcommand {\slideentry {18}{7}{1}{198/199}{Transformaciones de gráficas}{0}}
+\headcommand {\beamer@framepages {198}{199}}
+\headcommand {\slideentry {18}{7}{2}{200/200}{Transformaciones de gráficas}{0}}
+\headcommand {\beamer@framepages {200}{200}}
+\headcommand {\slideentry {18}{7}{2}{200/201}{Transformaciones de gráficas}{0}}
+\headcommand {\beamer@framepages {200}{201}}
+\headcommand {\beamer@subsectionpages {198}{201}}
+\headcommand {\beamer@subsectionentry {0}{18}{8}{202}{Composición e inversas}}
+\headcommand {\slideentry {18}{8}{1}{202/202}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {202}{202}}
+\headcommand {\slideentry {18}{8}{1}{202/203}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {202}{203}}
+\headcommand {\slideentry {18}{8}{2}{204/204}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {204}{204}}
+\headcommand {\slideentry {18}{8}{2}{204/205}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {204}{205}}
+\headcommand {\slideentry {18}{8}{3}{206/206}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {206}{206}}
+\headcommand {\slideentry {18}{8}{3}{206/207}{Composición e inversas}{0}}
+\headcommand {\beamer@framepages {206}{207}}
+\headcommand {\beamer@subsectionpages {202}{207}}
+\headcommand {\beamer@subsectionentry {0}{18}{9}{208}{Guía rápida de selección}}
+\headcommand {\slideentry {18}{9}{1}{208/208}{Guía rápida de selección}{0}}
+\headcommand {\beamer@framepages {208}{208}}
+\headcommand {\beamer@sectionpages {149}{208}}
+\headcommand {\beamer@subsectionpages {208}{208}}
+\headcommand {\sectionentry {19}{Ejemplos integradores}{209}{Ejemplos integradores}{0}}
+\headcommand {\slideentry {19}{0}{1}{209/209}{}{0}}
+\headcommand {\beamer@framepages {209}{209}}
+\headcommand {\slideentry {19}{0}{1}{209/210}{}{0}}
+\headcommand {\beamer@framepages {209}{210}}
+\headcommand {\beamer@sectionpages {209}{210}}
+\headcommand {\beamer@subsectionpages {209}{210}}
+\headcommand {\sectionentry {20}{Errores frecuentes}{211}{Errores frecuentes}{0}}
+\headcommand {\slideentry {20}{0}{1}{211/211}{}{0}}
+\headcommand {\beamer@framepages {211}{211}}
+\headcommand {\beamer@sectionpages {211}{211}}
+\headcommand {\beamer@subsectionpages {211}{211}}
+\headcommand {\sectionentry {21}{Ejercicios}{212}{Ejercicios}{0}}
+\headcommand {\beamer@subsectionpages {212}{211}}
+\headcommand {\beamer@subsectionentry {0}{21}{1}{212}{Concepto de función}}
+\headcommand {\slideentry {21}{1}{1}{212/212}{Concepto de función}{0}}
+\headcommand {\beamer@framepages {212}{212}}
+\headcommand {\beamer@subsectionpages {212}{212}}
+\headcommand {\beamer@subsectionentry {0}{21}{2}{213}{Evaluación}}
+\headcommand {\slideentry {21}{2}{1}{213/213}{Evaluación}{0}}
+\headcommand {\beamer@framepages {213}{213}}
+\headcommand {\beamer@subsectionpages {213}{213}}
+\headcommand {\beamer@subsectionentry {0}{21}{3}{214}{Dominio}}
+\headcommand {\slideentry {21}{3}{1}{214/214}{Dominio}{0}}
+\headcommand {\beamer@framepages {214}{214}}
+\headcommand {\slideentry {21}{3}{1}{214/215}{Dominio}{0}}
+\headcommand {\beamer@framepages {214}{215}}
+\headcommand {\beamer@subsectionpages {214}{215}}
+\headcommand {\beamer@subsectionentry {0}{21}{4}{216}{Simetría}}
+\headcommand {\slideentry {21}{4}{1}{216/216}{Simetría}{0}}
+\headcommand {\beamer@framepages {216}{216}}
+\headcommand {\beamer@subsectionpages {216}{216}}
+\headcommand {\beamer@subsectionentry {0}{21}{5}{217}{Operaciones}}
+\headcommand {\slideentry {21}{5}{1}{217/217}{Operaciones}{0}}
+\headcommand {\beamer@framepages {217}{217}}
+\headcommand {\beamer@subsectionpages {217}{217}}
+\headcommand {\beamer@subsectionentry {0}{21}{6}{218}{Composición}}
+\headcommand {\slideentry {21}{6}{1}{218/218}{Composición}{0}}
+\headcommand {\beamer@framepages {218}{218}}
+\headcommand {\beamer@subsectionpages {218}{218}}
+\headcommand {\beamer@subsectionentry {0}{21}{7}{219}{Inyectividad e inversas}}
+\headcommand {\slideentry {21}{7}{1}{219/219}{Inyectividad e inversas}{0}}
+\headcommand {\beamer@framepages {219}{219}}
+\headcommand {\beamer@subsectionpages {219}{219}}
+\headcommand {\beamer@subsectionentry {0}{21}{8}{220}{Modelación}}
+\headcommand {\slideentry {21}{8}{1}{220/220}{Modelación}{0}}
+\headcommand {\beamer@framepages {220}{220}}
+\headcommand {\slideentry {21}{8}{1}{220/221}{Modelación}{0}}
+\headcommand {\beamer@framepages {220}{221}}
+\headcommand {\beamer@sectionpages {212}{221}}
+\headcommand {\beamer@subsectionpages {220}{221}}
+\headcommand {\sectionentry {22}{Ejercicios 1.1}{222}{Ejercicios 1.1}{0}}
+\headcommand {\slideentry {22}{0}{1}{222/222}{}{0}}
+\headcommand {\beamer@framepages {222}{222}}
+\headcommand {\slideentry {22}{0}{1}{222/223}{}{0}}
+\headcommand {\beamer@framepages {222}{223}}
+\headcommand {\slideentry {22}{0}{1}{222/224}{}{0}}
+\headcommand {\beamer@framepages {222}{224}}
+\headcommand {\slideentry {22}{0}{1}{222/225}{}{0}}
+\headcommand {\beamer@framepages {222}{225}}
+\headcommand {\slideentry {22}{0}{1}{222/226}{}{0}}
+\headcommand {\beamer@framepages {222}{226}}
+\headcommand {\slideentry {22}{0}{1}{222/227}{}{0}}
+\headcommand {\beamer@framepages {222}{227}}
+\headcommand {\slideentry {22}{0}{1}{222/228}{}{0}}
+\headcommand {\beamer@framepages {222}{228}}
+\headcommand {\slideentry {22}{0}{1}{222/229}{}{0}}
+\headcommand {\beamer@framepages {222}{229}}
+\headcommand {\slideentry {22}{0}{1}{222/230}{}{0}}
+\headcommand {\beamer@framepages {222}{230}}
+\headcommand {\slideentry {22}{0}{1}{222/231}{}{0}}
+\headcommand {\beamer@framepages {222}{231}}
+\headcommand {\slideentry {22}{0}{1}{222/232}{}{0}}
+\headcommand {\beamer@framepages {222}{232}}
+\headcommand {\slideentry {22}{0}{1}{222/233}{}{0}}
+\headcommand {\beamer@framepages {222}{233}}
+\headcommand {\beamer@sectionpages {222}{233}}
+\headcommand {\beamer@subsectionpages {222}{233}}
+\headcommand {\sectionentry {23}{Ejercicios 1.2}{234}{Ejercicios 1.2}{0}}
+\headcommand {\slideentry {23}{0}{1}{234/234}{}{0}}
+\headcommand {\beamer@framepages {234}{234}}
+\headcommand {\slideentry {23}{0}{1}{234/235}{}{0}}
+\headcommand {\beamer@framepages {234}{235}}
+\headcommand {\slideentry {23}{0}{1}{234/236}{}{0}}
+\headcommand {\beamer@framepages {234}{236}}
+\headcommand {\slideentry {23}{0}{1}{234/237}{}{0}}
+\headcommand {\beamer@framepages {234}{237}}
+\headcommand {\slideentry {23}{0}{1}{234/238}{}{0}}
+\headcommand {\beamer@framepages {234}{238}}
+\headcommand {\slideentry {23}{0}{1}{234/239}{}{0}}
+\headcommand {\beamer@framepages {234}{239}}
+\headcommand {\slideentry {23}{0}{1}{234/240}{}{0}}
+\headcommand {\beamer@framepages {234}{240}}
+\headcommand {\slideentry {23}{0}{1}{234/241}{}{0}}
+\headcommand {\beamer@framepages {234}{241}}
+\headcommand {\slideentry {23}{0}{1}{234/242}{}{0}}
+\headcommand {\beamer@framepages {234}{242}}
+\headcommand {\beamer@sectionpages {234}{242}}
+\headcommand {\beamer@subsectionpages {234}{242}}
+\headcommand {\sectionentry {24}{Problemas de profundización}{243}{Problemas de profundización}{0}}
+\headcommand {\slideentry {24}{0}{1}{243/243}{}{0}}
+\headcommand {\beamer@framepages {243}{243}}
+\headcommand {\slideentry {24}{0}{1}{243/244}{}{0}}
+\headcommand {\beamer@framepages {243}{244}}
+\headcommand {\gdef \insertmainframenumber {244}}
+\headcommand {\partentry {Ap\'{e}ndice}{1}}
+\headcommand {\beamer@partpages {1}{244}}
+\headcommand {\beamer@sectionpages {243}{244}}
+\headcommand {\beamer@subsectionpages {243}{244}}
+\headcommand {\beamer@appendixpages {245}}
+\headcommand {\beamer@sectionpages {245}{244}}
+\headcommand {\beamer@subsectionpages {245}{244}}
+\headcommand {\sectionentry {25}{Apéndice: inyectividad, biyectividad y función inversa}{245}{Apéndice: inyectividad, biyectividad y función inversa}{1}}
+\headcommand {\slideentry {25}{0}{1}{245/245}{}{1}}
+\headcommand {\beamer@framepages {245}{245}}
+\headcommand {\slideentry {25}{0}{2}{246/246}{}{1}}
+\headcommand {\beamer@framepages {246}{246}}
+\headcommand {\slideentry {25}{0}{3}{247/247}{}{1}}
+\headcommand {\beamer@framepages {247}{247}}
+\headcommand {\slideentry {25}{0}{4}{248/248}{}{1}}
+\headcommand {\beamer@framepages {248}{248}}
+\headcommand {\slideentry {25}{0}{5}{249/249}{}{1}}
+\headcommand {\beamer@framepages {249}{249}}
+\headcommand {\slideentry {25}{0}{6}{250/250}{}{1}}
+\headcommand {\beamer@framepages {250}{250}}
+\headcommand {\slideentry {25}{0}{7}{251/251}{}{1}}
+\headcommand {\beamer@framepages {251}{251}}
+\headcommand {\slideentry {25}{0}{8}{252/252}{}{1}}
+\headcommand {\beamer@framepages {252}{252}}
+\headcommand {\slideentry {25}{0}{9}{253/253}{}{1}}
+\headcommand {\beamer@framepages {253}{253}}
+\headcommand {\slideentry {25}{0}{10}{254/254}{}{1}}
+\headcommand {\beamer@framepages {254}{254}}
+\headcommand {\slideentry {25}{0}{11}{255/255}{}{1}}
+\headcommand {\beamer@framepages {255}{255}}
+\headcommand {\slideentry {25}{0}{12}{256/256}{}{1}}
+\headcommand {\beamer@framepages {256}{256}}
+\headcommand {\slideentry {25}{0}{13}{257/257}{}{1}}
+\headcommand {\beamer@framepages {257}{257}}
+\headcommand {\slideentry {25}{0}{14}{258/258}{}{1}}
+\headcommand {\beamer@framepages {258}{258}}
+\headcommand {\slideentry {25}{0}{15}{259/259}{}{1}}
+\headcommand {\beamer@framepages {259}{259}}
+\headcommand {\slideentry {25}{0}{16}{260/260}{}{1}}
+\headcommand {\beamer@framepages {260}{260}}
+\headcommand {\slideentry {25}{0}{17}{261/261}{}{1}}
+\headcommand {\beamer@framepages {261}{261}}
+\headcommand {\beamer@sectionpages {245}{261}}
+\headcommand {\beamer@subsectionpages {245}{261}}
+\headcommand {\sectionentry {26}{Banco proyectable: inyectividad, biyectividad e inversas}{262}{Banco proyectable: inyectividad, biyectividad e inversas}{1}}
+\headcommand {\beamer@subsectionpages {262}{261}}
+\headcommand {\beamer@subsectionentry {1}{26}{1}{262}{Nivel I: reconocer inyectividad}}
+\headcommand {\slideentry {26}{1}{1}{262/262}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {262}{262}}
+\headcommand {\slideentry {26}{1}{2}{263/263}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {263}{263}}
+\headcommand {\slideentry {26}{1}{3}{264/264}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {264}{264}}
+\headcommand {\slideentry {26}{1}{4}{265/265}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {265}{265}}
+\headcommand {\slideentry {26}{1}{5}{266/266}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {266}{266}}
+\headcommand {\slideentry {26}{1}{6}{267/267}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {267}{267}}
+\headcommand {\slideentry {26}{1}{7}{268/268}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {268}{268}}
+\headcommand {\slideentry {26}{1}{8}{269/269}{Nivel I: reconocer inyectividad}{1}}
+\headcommand {\beamer@framepages {269}{269}}
+\headcommand {\beamer@subsectionpages {262}{269}}
+\headcommand {\beamer@subsectionentry {1}{26}{2}{270}{Nivel II: demostrar inyectividad}}
+\headcommand {\slideentry {26}{2}{1}{270/270}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {270}{270}}
+\headcommand {\slideentry {26}{2}{2}{271/271}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {271}{271}}
+\headcommand {\slideentry {26}{2}{3}{272/272}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {272}{272}}
+\headcommand {\slideentry {26}{2}{4}{273/273}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {273}{273}}
+\headcommand {\slideentry {26}{2}{5}{274/274}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {274}{274}}
+\headcommand {\slideentry {26}{2}{6}{275/275}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {275}{275}}
+\headcommand {\slideentry {26}{2}{7}{276/276}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {276}{276}}
+\headcommand {\slideentry {26}{2}{8}{277/277}{Nivel II: demostrar inyectividad}{1}}
+\headcommand {\beamer@framepages {277}{277}}
+\headcommand {\beamer@subsectionpages {270}{277}}
+\headcommand {\beamer@subsectionentry {1}{26}{3}{278}{Nivel III: clasificar}}
+\headcommand {\slideentry {26}{3}{1}{278/278}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {278}{278}}
+\headcommand {\slideentry {26}{3}{2}{279/279}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {279}{279}}
+\headcommand {\slideentry {26}{3}{3}{280/280}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {280}{280}}
+\headcommand {\slideentry {26}{3}{4}{281/281}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {281}{281}}
+\headcommand {\slideentry {26}{3}{5}{282/282}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {282}{282}}
+\headcommand {\slideentry {26}{3}{6}{283/283}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {283}{283}}
+\headcommand {\slideentry {26}{3}{7}{284/284}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {284}{284}}
+\headcommand {\slideentry {26}{3}{8}{285/285}{Nivel III: clasificar}{1}}
+\headcommand {\beamer@framepages {285}{285}}
+\headcommand {\beamer@subsectionpages {278}{285}}
+\headcommand {\beamer@subsectionentry {1}{26}{4}{286}{Nivel IV: encontrar la inversa}}
+\headcommand {\slideentry {26}{4}{1}{286/286}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {286}{286}}
+\headcommand {\slideentry {26}{4}{2}{287/287}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {287}{287}}
+\headcommand {\slideentry {26}{4}{3}{288/288}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {288}{288}}
+\headcommand {\slideentry {26}{4}{4}{289/289}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {289}{289}}
+\headcommand {\slideentry {26}{4}{5}{290/290}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {290}{290}}
+\headcommand {\slideentry {26}{4}{6}{291/291}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {291}{291}}
+\headcommand {\slideentry {26}{4}{7}{292/292}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {292}{292}}
+\headcommand {\slideentry {26}{4}{8}{293/293}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {293}{293}}
+\headcommand {\slideentry {26}{4}{9}{294/294}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {294}{294}}
+\headcommand {\slideentry {26}{4}{10}{295/295}{Nivel IV: encontrar la inversa}{1}}
+\headcommand {\beamer@framepages {295}{295}}
+\headcommand {\beamer@subsectionpages {286}{295}}
+\headcommand {\beamer@subsectionentry {1}{26}{5}{296}{Nivel V: funciones racionales}}
+\headcommand {\slideentry {26}{5}{1}{296/296}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {296}{296}}
+\headcommand {\slideentry {26}{5}{2}{297/297}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {297}{297}}
+\headcommand {\slideentry {26}{5}{3}{298/298}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {298}{298}}
+\headcommand {\slideentry {26}{5}{4}{299/299}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {299}{299}}
+\headcommand {\slideentry {26}{5}{5}{300/300}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {300}{300}}
+\headcommand {\slideentry {26}{5}{6}{301/301}{Nivel V: funciones racionales}{1}}
+\headcommand {\beamer@framepages {301}{301}}
+\headcommand {\beamer@subsectionpages {296}{301}}
+\headcommand {\beamer@subsectionentry {1}{26}{6}{302}{Nivel VI: restringir el dominio}}
+\headcommand {\slideentry {26}{6}{1}{302/302}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {302}{302}}
+\headcommand {\slideentry {26}{6}{2}{303/303}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {303}{303}}
+\headcommand {\slideentry {26}{6}{3}{304/304}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {304}{304}}
+\headcommand {\slideentry {26}{6}{4}{305/305}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {305}{305}}
+\headcommand {\slideentry {26}{6}{5}{306/306}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {306}{306}}
+\headcommand {\slideentry {26}{6}{6}{307/307}{Nivel VI: restringir el dominio}{1}}
+\headcommand {\beamer@framepages {307}{307}}
+\headcommand {\beamer@subsectionpages {302}{307}}
+\headcommand {\beamer@subsectionentry {1}{26}{7}{308}{Nivel VII: inversa y verificación}}
+\headcommand {\slideentry {26}{7}{1}{308/308}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {308}{308}}
+\headcommand {\slideentry {26}{7}{2}{309/309}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {309}{309}}
+\headcommand {\slideentry {26}{7}{3}{310/310}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {310}{310}}
+\headcommand {\slideentry {26}{7}{4}{311/311}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {311}{311}}
+\headcommand {\slideentry {26}{7}{5}{312/312}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {312}{312}}
+\headcommand {\slideentry {26}{7}{6}{313/313}{Nivel VII: inversa y verificación}{1}}
+\headcommand {\beamer@framepages {313}{313}}
+\headcommand {\beamer@subsectionpages {308}{313}}
+\headcommand {\beamer@subsectionentry {1}{26}{8}{314}{Preguntas para discusión}}
+\headcommand {\slideentry {26}{8}{1}{314/314}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {314}{314}}
+\headcommand {\slideentry {26}{8}{2}{315/315}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {315}{315}}
+\headcommand {\slideentry {26}{8}{3}{316/316}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {316}{316}}
+\headcommand {\slideentry {26}{8}{4}{317/317}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {317}{317}}
+\headcommand {\slideentry {26}{8}{5}{318/318}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {318}{318}}
+\headcommand {\slideentry {26}{8}{6}{319/319}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {319}{319}}
+\headcommand {\slideentry {26}{8}{7}{320/320}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {320}{320}}
+\headcommand {\slideentry {26}{8}{8}{321/321}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {321}{321}}
+\headcommand {\slideentry {26}{8}{9}{322/322}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {322}{322}}
+\headcommand {\slideentry {26}{8}{10}{323/323}{Preguntas para discusión}{1}}
+\headcommand {\beamer@framepages {323}{323}}
+\headcommand {\beamer@sectionpages {262}{323}}
+\headcommand {\beamer@subsectionpages {314}{323}}
+\headcommand {\sectionentry {27}{Resumen conceptual}{324}{Resumen conceptual}{1}}
+\headcommand {\slideentry {27}{0}{1}{324/324}{}{1}}
+\headcommand {\beamer@framepages {324}{324}}
+\headcommand {\slideentry {27}{0}{1}{324/325}{}{1}}
+\headcommand {\beamer@framepages {324}{325}}
+\headcommand {\beamer@sectionpages {324}{325}}
+\headcommand {\beamer@subsectionpages {324}{325}}
+\headcommand {\sectionentry {28}{Bibliografía básica}{326}{Bibliografía básica}{1}}
+\headcommand {\slideentry {28}{0}{1}{326/326}{}{1}}
+\headcommand {\beamer@framepages {326}{326}}
+\headcommand {\beamer@partpages {245}{326}}
+\headcommand {\beamer@subsectionpages {326}{326}}
+\headcommand {\beamer@sectionpages {326}{326}}
+\headcommand {\beamer@documentpages {326}}
+\headcommand {\gdef \inserttotalframenumber {326}}

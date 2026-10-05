@@ -4216,7 +4216,1399 @@ Esta visión prepara el terreno para la siguiente unidad. En efecto, el concepto
 de límite estudiará el comportamiento de $f(x)$ cuando $x$ se aproxima a un
 valor determinado, y la continuidad relacionará dicho comportamiento con el
 valor de la propia función.
+%=========================================================
+\appendix
+\section{Funciones inyectivas, biyectivas y función inversa}
+\label{ap:inyectivas-biyectivas-inversa}
+%=========================================================
 
+\subsection{Motivación}
+
+Hasta este punto hemos estudiado una función como una correspondencia
+\[
+f:A\longrightarrow B
+\]
+que asigna a cada elemento \(x\in A\) un único elemento \(f(x)\in B\).
+
+Sin embargo, no todas las funciones se comportan de la misma manera.
+En particular, surgen preguntas naturales:
+
+\begin{itemize}
+    \item ¿Pueden dos valores diferentes del dominio tener la misma imagen?
+    \item ¿Todos los elementos del codominio son alcanzados por la función?
+    \item Si conocemos \(y=f(x)\), ¿podemos recuperar de manera única el valor de \(x\)?
+\end{itemize}
+
+Estas preguntas conducen a los conceptos de
+\textbf{inyectividad}, \textbf{suprayectividad}, \textbf{biyectividad}
+y \textbf{función inversa}.
+
+%=========================================================
+\subsection{Dominio, codominio e imagen}
+%=========================================================
+
+Sea
+\[
+f:A\longrightarrow B.
+\]
+
+Recordemos que:
+
+\begin{itemize}
+    \item \(A\) es el \textbf{dominio};
+    \item \(B\) es el \textbf{codominio};
+    \item la \textbf{imagen} o rango de \(f\) es
+    \[
+    \operatorname{Im}(f)
+    =
+    \{f(x):x\in A\}.
+    \]
+\end{itemize}
+
+Siempre se cumple
+\[
+\operatorname{Im}(f)\subseteq B.
+\]
+
+Es fundamental distinguir entre \emph{imagen} y \emph{codominio}.
+
+\begin{ejemplo}
+Considérese
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad
+f(x)=x^2.
+\]
+
+El dominio es
+\[
+\mathbb{R},
+\]
+el codominio declarado es
+\[
+\mathbb{R},
+\]
+pero la imagen es
+\[
+\operatorname{Im}(f)=[0,\infty).
+\]
+
+Por tanto,
+\[
+\operatorname{Im}(f)\neq\mathbb{R}.
+\]
+\end{ejemplo}
+
+%=========================================================
+\subsection{Funciones inyectivas}
+%=========================================================
+
+\begin{definicion}
+Una función
+\[
+f:A\longrightarrow B
+\]
+es \textbf{inyectiva} si elementos diferentes del dominio tienen
+imágenes diferentes.
+\end{definicion}
+
+Formalmente,
+\[
+\boxed{
+x_1\neq x_2
+\quad\Longrightarrow\quad
+f(x_1)\neq f(x_2)
+}
+\]
+
+Una formulación equivalente, y generalmente más útil para demostrar
+inyectividad, es
+
+\[
+\boxed{
+f(x_1)=f(x_2)
+\quad\Longrightarrow\quad
+x_1=x_2.
+}
+\]
+
+Esta segunda expresión corresponde a la contrapositiva de la primera.
+
+%---------------------------------------------------------
+\subsubsection{Interpretación}
+%---------------------------------------------------------
+
+Una función inyectiva no ``repite'' imágenes.
+
+Es decir, no pueden existir
+\[
+x_1\neq x_2
+\]
+tales que
+\[
+f(x_1)=f(x_2).
+\]
+
+%---------------------------------------------------------
+\subsubsection{Ejemplo: una función lineal}
+%---------------------------------------------------------
+
+Consideremos
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad
+f(x)=3x-2.
+\]
+
+Para determinar si es inyectiva, supongamos que
+\[
+f(x_1)=f(x_2).
+\]
+
+Entonces
+\[
+3x_1-2=3x_2-2.
+\]
+
+Sumando \(2\) en ambos lados,
+\[
+3x_1=3x_2.
+\]
+
+Dividiendo entre \(3\),
+\[
+x_1=x_2.
+\]
+
+Por tanto,
+\[
+\boxed{f(x)=3x-2\text{ es inyectiva}.}
+\]
+
+%---------------------------------------------------------
+\subsubsection{Contraejemplo: la función cuadrática}
+%---------------------------------------------------------
+
+Consideremos
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad
+f(x)=x^2.
+\]
+
+Tenemos, por ejemplo,
+\[
+f(2)=4
+\]
+y
+\[
+f(-2)=4.
+\]
+
+Pero
+\[
+2\neq-2.
+\]
+
+Por tanto,
+\[
+\boxed{f(x)=x^2\text{ no es inyectiva en }\mathbb{R}.}
+\]
+
+%=========================================================
+\subsection{Criterio gráfico: prueba de la recta horizontal}
+%=========================================================
+
+Una función es inyectiva si toda recta horizontal
+\[
+y=c
+\]
+intersecta su gráfica \textbf{a lo más una vez}.
+
+Este criterio se conoce como la
+\textbf{prueba de la recta horizontal}.
+
+Por ejemplo, la gráfica de
+\[
+f(x)=x^3
+\]
+pasa la prueba de la recta horizontal.
+
+En cambio,
+\[
+f(x)=x^2
+\]
+no la pasa sobre todo \(\mathbb{R}\), porque para \(c>0\)
+la recta
+\[
+y=c
+\]
+intersecta la parábola en dos puntos.
+
+\begin{observacion}
+No debe confundirse la prueba de la recta horizontal con la prueba
+de la recta vertical.
+
+La prueba de la recta vertical permite determinar si una gráfica
+representa una función.
+
+La prueba de la recta horizontal permite estudiar si una función
+es inyectiva.
+\end{observacion}
+
+%=========================================================
+\subsection{Funciones suprayectivas}
+%=========================================================
+
+\begin{definicion}
+Una función
+\[
+f:A\longrightarrow B
+\]
+es \textbf{suprayectiva} si cada elemento del codominio \(B\)
+es imagen de por lo menos un elemento del dominio.
+\end{definicion}
+
+Formalmente,
+\[
+\boxed{
+\forall y\in B,\quad
+\exists x\in A
+\text{ tal que }
+f(x)=y.
+}
+\]
+
+Equivalentemente,
+\[
+\boxed{
+\operatorname{Im}(f)=B.
+}
+\]
+
+%---------------------------------------------------------
+\subsubsection{Ejemplo}
+%---------------------------------------------------------
+
+Sea
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad
+f(x)=2x+3.
+\]
+
+Tomemos un valor arbitrario
+\[
+y\in\mathbb{R}.
+\]
+
+Queremos determinar si existe \(x\in\mathbb{R}\) tal que
+\[
+y=2x+3.
+\]
+
+Despejando \(x\),
+\[
+2x=y-3,
+\]
+por lo que
+\[
+x=\frac{y-3}{2}.
+\]
+
+Como
+\[
+\frac{y-3}{2}\in\mathbb{R}
+\]
+para cualquier \(y\in\mathbb{R}\), todos los elementos del codominio
+son alcanzados.
+
+Por tanto,
+\[
+\boxed{f\text{ es suprayectiva}.}
+\]
+
+%---------------------------------------------------------
+\subsubsection{Importancia del codominio}
+%---------------------------------------------------------
+
+Consideremos nuevamente
+\[
+f(x)=x^2.
+\]
+
+Si declaramos
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\]
+la función no es suprayectiva porque ningún número negativo pertenece
+a su imagen.
+
+Pero si declaramos
+\[
+f:\mathbb{R}\longrightarrow[0,\infty),
+\]
+entonces sí es suprayectiva.
+
+Por tanto, la suprayectividad depende del codominio especificado.
+
+%=========================================================
+\subsection{Funciones biyectivas}
+%=========================================================
+
+\begin{definicion}
+Una función es \textbf{biyectiva} si es simultáneamente
+inyectiva y suprayectiva.
+\end{definicion}
+
+Es decir,
+
+\[
+\boxed{
+\text{biyectiva}
+=
+\text{inyectiva}
++
+\text{suprayectiva}.
+}
+\]
+
+En una función biyectiva:
+
+\begin{itemize}
+    \item ningún elemento del codominio recibe dos elementos diferentes
+    del dominio;
+    \item ningún elemento del codominio queda sin ser alcanzado.
+\end{itemize}
+
+Por tanto, cada elemento del codominio corresponde a
+\textbf{exactamente un} elemento del dominio.
+
+%---------------------------------------------------------
+\subsubsection{Ejemplo}
+%---------------------------------------------------------
+
+Sea
+\[
+f:\mathbb{R}\longrightarrow\mathbb{R},
+\qquad
+f(x)=5x-7.
+\]
+
+Primero estudiamos la inyectividad.
+
+Supongamos
+\[
+f(x_1)=f(x_2).
+\]
+
+Entonces
+\[
+5x_1-7=5x_2-7.
+\]
+
+De aquí,
+\[
+5x_1=5x_2
+\]
+y, por tanto,
+\[
+x_1=x_2.
+\]
+
+Luego \(f\) es inyectiva.
+
+Ahora estudiamos la suprayectividad.
+
+Sea
+\[
+y\in\mathbb{R}.
+\]
+
+De
+\[
+y=5x-7
+\]
+obtenemos
+\[
+x=\frac{y+7}{5}.
+\]
+
+Este valor pertenece a \(\mathbb{R}\) para todo \(y\in\mathbb{R}\).
+
+Por tanto, \(f\) es suprayectiva.
+
+Concluimos que
+\[
+\boxed{f(x)=5x-7\text{ es biyectiva}.}
+\]
+
+%=========================================================
+\subsection{¿Por qué la biyectividad es necesaria para una inversa?}
+%=========================================================
+
+Supongamos que
+\[
+f:A\longrightarrow B
+\]
+es biyectiva.
+
+Entonces para cada
+\[
+y\in B
+\]
+existe \textbf{exactamente un}
+\[
+x\in A
+\]
+tal que
+\[
+f(x)=y.
+\]
+
+Esto permite invertir la correspondencia y definir
+\[
+f^{-1}:B\longrightarrow A.
+\]
+
+Por tanto, una función biyectiva posee una función inversa.
+
+\begin{observacion}
+El símbolo
+\[
+f^{-1}(x)
+\]
+no significa
+\[
+\frac{1}{f(x)}.
+\]
+
+En general,
+\[
+\boxed{
+f^{-1}(x)\neq\frac{1}{f(x)}.
+}
+\]
+
+El símbolo \(f^{-1}\) representa la \textbf{función inversa}.
+\end{observacion}
+
+%=========================================================
+\subsection{Definición de función inversa}
+%=========================================================
+
+\begin{definicion}
+Sea
+\[
+f:A\longrightarrow B
+\]
+una función biyectiva.
+
+La \textbf{función inversa} de \(f\), denotada por
+\[
+f^{-1}:B\longrightarrow A,
+\]
+es la función que satisface
+\[
+f^{-1}(y)=x
+\quad\Longleftrightarrow\quad
+f(x)=y.
+\]
+\end{definicion}
+
+Las composiciones fundamentales son
+
+\[
+\boxed{
+f^{-1}\circ f=I_A
+}
+\]
+
+y
+
+\[
+\boxed{
+f\circ f^{-1}=I_B,
+}
+\]
+
+donde \(I_A\) e \(I_B\) son las funciones identidad.
+
+En términos de la variable \(x\),
+
+\[
+\boxed{
+f^{-1}(f(x))=x
+}
+\]
+
+para todo \(x\in A\), y
+
+\[
+\boxed{
+f(f^{-1}(x))=x
+}
+\]
+
+para todo \(x\in B\).
+
+%=========================================================
+\subsection{Procedimiento algebraico para encontrar la inversa}
+%=========================================================
+
+Para encontrar la función inversa de una función biyectiva podemos
+utilizar el siguiente procedimiento:
+
+\begin{enumerate}
+    \item Escribir
+    \[
+    y=f(x).
+    \]
+
+    \item Intercambiar \(x\) y \(y\).
+
+    \item Despejar \(y\).
+
+    \item Escribir el resultado como
+    \[
+    y=f^{-1}(x).
+    \]
+
+    \item Verificar, cuando sea conveniente, mediante composición.
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsubsection{Ejemplo detallado}
+%---------------------------------------------------------
+
+Sea
+\[
+f(x)=3x-5.
+\]
+
+Comenzamos escribiendo
+\[
+y=3x-5.
+\]
+
+Intercambiamos \(x\) y \(y\):
+\[
+x=3y-5.
+\]
+
+Ahora despejamos \(y\).
+
+Sumamos \(5\):
+\[
+x+5=3y.
+\]
+
+Dividimos entre \(3\):
+\[
+y=\frac{x+5}{3}.
+\]
+
+Por tanto,
+\[
+\boxed{
+f^{-1}(x)=\frac{x+5}{3}.
+}
+\]
+
+%=========================================================
+\subsection{Verificación mediante composición}
+%=========================================================
+
+Tenemos
+\[
+f(x)=3x-5
+\]
+y
+\[
+f^{-1}(x)=\frac{x+5}{3}.
+\]
+
+Verificamos primero
+\[
+f(f^{-1}(x)).
+\]
+
+Entonces
+\[
+\begin{aligned}
+f(f^{-1}(x))
+&=
+3\left(\frac{x+5}{3}\right)-5
+\\
+&=
+x+5-5
+\\
+&=
+x.
+\end{aligned}
+\]
+
+Ahora verificamos
+\[
+f^{-1}(f(x)).
+\]
+
+Tenemos
+\[
+\begin{aligned}
+f^{-1}(f(x))
+&=
+\frac{(3x-5)+5}{3}
+\\
+&=
+\frac{3x}{3}
+\\
+&=
+x.
+\end{aligned}
+\]
+
+Por tanto,
+\[
+\boxed{
+f(f^{-1}(x))
+=
+f^{-1}(f(x))
+=
+x.
+}
+\]
+
+%=========================================================
+\subsection{Interpretación gráfica de la función inversa}
+%=========================================================
+
+Si
+\[
+(a,b)
+\]
+pertenece a la gráfica de \(f\), entonces
+\[
+(b,a)
+\]
+pertenece a la gráfica de \(f^{-1}\).
+
+Por tanto, las gráficas de
+\[
+y=f(x)
+\]
+y
+\[
+y=f^{-1}(x)
+\]
+son simétricas respecto de la recta
+\[
+\boxed{y=x}.
+\]
+
+Esto se debe precisamente al intercambio de las coordenadas
+\[
+(x,y)\longleftrightarrow(y,x).
+\]
+
+%=========================================================
+\subsection{Restricción del dominio}
+%=========================================================
+
+No toda función posee inversa sobre su dominio original.
+
+El ejemplo fundamental es
+\[
+f(x)=x^2.
+\]
+
+Sobre
+\[
+\mathbb{R}
+\]
+no es inyectiva porque
+\[
+f(x)=f(-x).
+\]
+
+Por ejemplo,
+\[
+f(2)=f(-2)=4.
+\]
+
+Por ello no podemos definir una función inversa
+\[
+f^{-1}:\mathbb{R}\longrightarrow\mathbb{R}
+\]
+para \(f(x)=x^2\).
+
+Sin embargo, podemos restringir el dominio.
+
+Consideremos
+\[
+f:[0,\infty)\longrightarrow[0,\infty),
+\qquad
+f(x)=x^2.
+\]
+
+Sobre este dominio la función es estrictamente creciente y, por tanto,
+inyectiva.
+
+Además, su imagen es
+\[
+[0,\infty),
+\]
+por lo que es suprayectiva respecto del codominio declarado.
+
+Por tanto, es biyectiva.
+
+Para encontrar la inversa,
+\[
+y=x^2.
+\]
+
+Intercambiamos las variables:
+\[
+x=y^2.
+\]
+
+Como el dominio original exige
+\[
+y\geq0,
+\]
+obtenemos
+\[
+y=\sqrt{x}.
+\]
+
+Por tanto,
+\[
+\boxed{
+f^{-1}(x)=\sqrt{x}.
+}
+\]
+
+\begin{observacion}
+No escribimos
+\[
+f^{-1}(x)=\pm\sqrt{x}.
+\]
+
+Una función debe asignar un único valor a cada elemento de su dominio.
+La elección de la raíz positiva está determinada por la restricción
+original
+\[
+x\geq0.
+\]
+\end{observacion}
+
+%=========================================================
+\subsection{Otro ejemplo: restricción de una parábola trasladada}
+%=========================================================
+
+Considérese
+\[
+f(x)=(x-2)^2+1.
+\]
+
+Esta función no es inyectiva sobre todo \(\mathbb{R}\).
+
+Restringimos el dominio a
+\[
+[2,\infty).
+\]
+
+Entonces
+\[
+f:[2,\infty)\longrightarrow[1,\infty)
+\]
+es biyectiva.
+
+Partimos de
+\[
+y=(x-2)^2+1.
+\]
+
+Restamos \(1\):
+\[
+y-1=(x-2)^2.
+\]
+
+Como
+\[
+x\geq2,
+\]
+tenemos
+\[
+x-2\geq0.
+\]
+
+Por tanto,
+\[
+x-2=\sqrt{y-1}.
+\]
+
+Así,
+\[
+x=2+\sqrt{y-1}.
+\]
+
+Intercambiando variables obtenemos
+\[
+\boxed{
+f^{-1}(x)=2+\sqrt{x-1}.
+}
+\]
+
+%=========================================================
+\subsection{Relación entre monotonía e inyectividad}
+%=========================================================
+
+Una herramienta muy útil es la siguiente.
+
+Si una función es estrictamente creciente en un intervalo, entonces
+es inyectiva en ese intervalo.
+
+De manera análoga, si es estrictamente decreciente, también es
+inyectiva.
+
+Por tanto,
+
+\[
+\boxed{
+\text{estrictamente monótona}
+\quad\Longrightarrow\quad
+\text{inyectiva}.
+}
+\]
+
+Por ejemplo,
+\[
+f(x)=x^3
+\]
+es estrictamente creciente en \(\mathbb{R}\), por lo que es inyectiva.
+
+En cambio,
+\[
+f(x)=x^2
+\]
+decrece en
+\[
+(-\infty,0]
+\]
+y crece en
+\[
+[0,\infty),
+\]
+por lo que no es inyectiva sobre todo \(\mathbb{R}\), aunque sí lo es
+en cada uno de esos intervalos por separado.
+
+%=========================================================
+\subsection{Resumen conceptual}
+%=========================================================
+
+Para una función
+\[
+f:A\longrightarrow B:
+\]
+
+\[
+\boxed{
+\text{Inyectiva}
+\iff
+f(x_1)=f(x_2)\Rightarrow x_1=x_2
+}
+\]
+
+\[
+\boxed{
+\text{Suprayectiva}
+\iff
+\operatorname{Im}(f)=B
+}
+\]
+
+\[
+\boxed{
+\text{Biyectiva}
+\iff
+\text{inyectiva y suprayectiva}
+}
+\]
+
+y
+
+\[
+\boxed{
+f\text{ tiene inversa }B\to A
+\iff
+f\text{ es biyectiva}.
+}
+\]
+
+Además,
+
+\[
+\boxed{
+f^{-1}(f(x))=x
+}
+\qquad\text{y}\qquad
+\boxed{
+f(f^{-1}(x))=x.
+}
+\]
+
+%=========================================================
+\section{Banco de problemas: inyectividad, biyectividad e inversas}
+%=========================================================
+
+El siguiente banco está diseñado para permitir seleccionar ejercicios
+según el nivel y ritmo del grupo.
+
+%---------------------------------------------------------
+\subsection{Nivel I: reconocer inyectividad}
+%---------------------------------------------------------
+
+Determine si cada función es inyectiva en el dominio indicado.
+Justifique algebraicamente o mediante propiedades conocidas.
+
+\begin{enumerate}
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=2x+1.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=x^3.
+    \]
+
+    \item
+    \[
+    f:[0,\infty)\to\mathbb{R},
+    \qquad f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=|x|.
+    \]
+
+    \item
+    \[
+    f:[0,\infty)\to[0,\infty),
+    \qquad f(x)=\sqrt{x}.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to(0,\infty),
+    \qquad f(x)=e^x.
+    \]
+
+    \item
+    \[
+    f:(0,\infty)\to\mathbb{R},
+    \qquad f(x)=\ln x.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel II: inyectividad mediante definición}
+%---------------------------------------------------------
+
+Demuestre algebraicamente cuáles de las siguientes funciones son
+inyectivas.
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=4x-7.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{x+1}{2}.
+    \]
+
+    \item
+    \[
+    f(x)=x^3+1.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{1}{x},
+    \qquad x\neq0.
+    \]
+
+    \item
+    \[
+    f(x)=x^2+2.
+    \]
+
+    \item
+    \[
+    f(x)=(x-3)^2.
+    \]
+
+    \item
+    \[
+    f(x)=2^x.
+    \]
+
+    \item
+    \[
+    f(x)=\ln(x+2),
+    \qquad x>-2.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel III: suprayectividad y biyectividad}
+%---------------------------------------------------------
+
+Determine si cada función es inyectiva, suprayectiva, biyectiva o
+ninguna de ellas.
+
+\begin{enumerate}
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=x+4.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to[0,\infty),
+    \qquad f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f:[0,\infty)\to[0,\infty),
+    \qquad f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=x^3.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to(0,\infty),
+    \qquad f(x)=e^x.
+    \]
+
+    \item
+    \[
+    f:\mathbb{R}\to\mathbb{R},
+    \qquad f(x)=e^x.
+    \]
+
+    \item
+    \[
+    f:(0,\infty)\to\mathbb{R},
+    \qquad f(x)=\ln x.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel IV: encontrar funciones inversas}
+%---------------------------------------------------------
+
+Determine \(f^{-1}\) para cada función. Indique dominio y rango tanto
+de \(f\) como de \(f^{-1}\).
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=2x+5.
+    \]
+
+    \item
+    \[
+    f(x)=7-3x.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{x-1}{4}.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{2x+1}{3}.
+    \]
+
+    \item
+    \[
+    f(x)=x^3.
+    \]
+
+    \item
+    \[
+    f(x)=x^3-4.
+    \]
+
+    \item
+    \[
+    f(x)=\sqrt{x},
+    \qquad x\geq0.
+    \]
+
+    \item
+    \[
+    f(x)=e^x.
+    \]
+
+    \item
+    \[
+    f(x)=2^x.
+    \]
+
+    \item
+    \[
+    f(x)=\ln x.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel V: funciones racionales}
+%---------------------------------------------------------
+
+Encuentre la inversa, especificando las restricciones necesarias.
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=\frac{1}{x}.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{x+1}{x-2}.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{2x-3}{x+4}.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{3x+1}{2x-5}.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{x-2}{x+2}.
+    \]
+
+    \item
+    \[
+    f(x)=1+\frac{1}{x}.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel VI: restricción del dominio}
+%---------------------------------------------------------
+
+En cada caso:
+
+\begin{enumerate}
+    \item determine por qué la función no es inyectiva en
+    \(\mathbb{R}\);
+    \item proponga una restricción adecuada del dominio;
+    \item determine la función inversa correspondiente.
+\end{enumerate}
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=x^2.
+    \]
+
+    \item
+    \[
+    f(x)=(x-1)^2.
+    \]
+
+    \item
+    \[
+    f(x)=(x+3)^2-2.
+    \]
+
+    \item
+    \[
+    f(x)=x^4.
+    \]
+
+    \item
+    \[
+    f(x)=|x|.
+    \]
+
+    \item
+    \[
+    f(x)=\sqrt{x^2}.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel VII: composición y verificación}
+%---------------------------------------------------------
+
+Para cada función, encuentre \(f^{-1}\) y compruebe explícitamente que
+
+\[
+f(f^{-1}(x))=x
+\]
+y
+\[
+f^{-1}(f(x))=x.
+\]
+
+\begin{enumerate}
+    \item
+    \[
+    f(x)=4x+3.
+    \]
+
+    \item
+    \[
+    f(x)=\frac{x-5}{2}.
+    \]
+
+    \item
+    \[
+    f(x)=x^3+2.
+    \]
+
+    \item
+    \[
+    f(x)=e^{2x}.
+    \]
+
+    \item
+    \[
+    f(x)=3^x.
+    \]
+
+    \item
+    \[
+    f(x)=\ln(x+1),
+    \qquad x>-1.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Nivel VIII: problemas para discusión en clase}
+%---------------------------------------------------------
+
+\begin{enumerate}
+
+    \item
+    ¿Puede una función ser inyectiva pero no suprayectiva?
+    Proporcione un ejemplo.
+
+    \item
+    ¿Puede una función ser suprayectiva pero no inyectiva?
+    Proporcione un ejemplo.
+
+    \item
+    ¿Puede una función tener inversa si no es inyectiva?
+    Justifique.
+
+    \item
+    Explique por qué
+    \[
+    f(x)=x^2
+    \]
+    no posee una función inversa sobre todo \(\mathbb{R}\).
+
+    \item
+    Explique por qué restringir el dominio de
+    \[
+    f(x)=x^2
+    \]
+    a
+    \[
+    [0,\infty)
+    \]
+    permite definir una inversa.
+
+    \item
+    ¿Por qué
+    \[
+    f^{-1}(x)
+    \]
+    no significa
+    \[
+    \frac{1}{f(x)}?
+    \]
+
+    \item
+    Si
+    \[
+    f(a)=b,
+    \]
+    ¿qué debe cumplir \(f^{-1}\)?
+
+    \item
+    Si una función es estrictamente creciente,
+    ¿qué puede afirmarse acerca de su inyectividad?
+
+    \item
+    ¿Toda función inyectiva es estrictamente creciente?
+    Investigue o encuentre un contraejemplo.
+
+    \item
+    Explique geométricamente por qué las gráficas de
+    \(f\) y \(f^{-1}\) son simétricas respecto de
+    \[
+    y=x.
+    \]
+\end{enumerate}
+
+%---------------------------------------------------------
+\subsection{Selección sugerida para una clase}
+%---------------------------------------------------------
+
+Para una primera exposición pueden utilizarse, en este orden:
+
+\begin{enumerate}
+    \item \(f(x)=2x+1\), para introducir inyectividad;
+    \item \(f(x)=x^2\), como contraejemplo;
+    \item \(f(x)=x^3\), para aplicar la prueba horizontal;
+    \item \(f(x)=5x-7\), para introducir biyectividad;
+    \item \(f(x)=3x-5\), para construir una inversa;
+    \item \(f(x)=x^2\) restringida a \([0,\infty)\), para explicar
+    la restricción del dominio;
+    \item \(f(x)=(x-2)^2+1\), para un ejemplo de mayor dificultad;
+    \item \(f(x)=2^x\), para conectar posteriormente con
+    \[
+    f^{-1}(x)=\log_2 x.
+    \]
+\end{enumerate}
 % =========================================================
 \section*{Bibliografía básica}
 \addcontentsline{toc}{section}{Bibliografía básica}
