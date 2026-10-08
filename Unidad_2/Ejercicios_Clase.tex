@@ -1,0 +1,134 @@
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\documentclass[aspectratio=169,10pt]{beamer}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,array,multicol}
+\usepackage{xcolor,graphicx,tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\pgfplotsset{unbounded coords=jump}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\usetheme{Madrid}
+\usecolortheme{default}
+\definecolor{azul}{RGB}{25,70,125}
+\setbeamercolor{structure}{fg=azul}
+\setbeamercolor{frametitle}{bg=azul,fg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+  \begin{beamercolorbox}[wd=.28\paperwidth,ht=2.5ex,dp=1ex,leftskip=1ex]{author in head/foot}Carlos Ernesto Martínez Rodríguez\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.52\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}Cálculo Diferencial -- Unidad 2: Funciones\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.20\paperwidth,ht=2.5ex,dp=1ex,rightskip=1ex plus1fil]{date in head/foot}\insertframenumber/\inserttotalframenumber\end{beamercolorbox}}}
+  %<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\newtheorem{definicion}{Definición}
+\newtheorem{teorema}{Teorema}
+\newtheorem{proposicion}{Proposición}
+\newtheorem{corolario}{Corolario}
+\newtheorem{observacion}{Observación}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{nota}{Nota}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\id}{\operatorname{id}}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\title{Cálculo Diferencial\\Unidad 2: Funciones}
+\subtitle{Dominio, Imagen, Operación y composición de Funciones}
+\author{Carlos Ernesto Martínez Rodríguez}
+\institute{Tecnológico Nacional de México}
+\date{}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\begin{document}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+
+\begin{frame}{Composición de funciones}
+Determinar $f\circ g$, $g\circ f$, $f\circ f$ y $g\circ g$
+
+Para $f(x)=3-2x$; $g(x)=6-3x$, calcular
+\begin{itemize}
+\item $f(3a)$: $f(3a)= 3-2a$
+\item $f(\frac{3}{a})$: $f(\frac{3}{a})= 3-2(\frac{3}{a})$; 
+\item $f(\frac{1}{2})$: $f(\frac{1}{2})= 3-2(\frac{1}{2})$
+\item $f(\frac{1}{2}x)$: $f(\frac{1}{2}x)= 3-2(\frac{1}{2}x)=3-x$
+\item $f(-3x)$: $f(-3x)= 3-2(-3x)=3+6x$
+\item $f(6-3x)$: $f(6-3x)= 3-2(6-3x)=3-12+6x=-9+6x$
+\item  $f(g(x))$: $f(g(x))= f(6-3x)=3-2(6-3x)= -9+6x$
+\item  $f(f(x))$: $f(f(x))= f(3-2x)=3-2(3-2x)=3-6+4x=-3+4x$
+\end{itemize}
+
+$Dominio(f)=\mathbb{R}$
+
+$Dominio(f\circ g)=\mathbb{R}$
+
+$Dominio(f\circ f)=\mathbb{R}$
+\end{frame}
+
+\begin{frame}{Composición de funciones}
+Determinar $f\circ g$, $g\circ f$, $f\circ f$ y $g\circ g$
+
+Para $f(x)=3-2x$; $g(x)=6-3x$, calcular
+\begin{itemize}
+\item $g(3a)$: $g(3a)= 6-3(a)=6-3a$
+\item $g(\frac{3}{a})$: $g(\frac{3}{a})= 6-3(\frac{3}{a})=6-\frac{9}{a}$
+\item $g(\frac{1}{2})$: $g(\frac{1}{2})= 6-\frac{3}{2}=\frac{9}{2}$
+\item $g(\frac{1}{2}x)$: $g(\frac{1}{2}x)=6-3(\frac{1}{2}x)=6-\frac{3}{2}x$
+\item $g(-2x)$: $g(-2x)= 6-3(-2x)=6+6x$
+\item $g(3-2x)$: $g(3-2x)= 6-3(3-2x)=6-9+6x=-3+6x$
+\item  $g(f(x))$: $g(f(x))= g(3-2x)=6-3(3-2x)=6-9+6x=-3+6x$
+\item $g(-3x)=6-3(-3x)=6+9x$
+\item $g(6-3x)=6-3(6-3x)=6-18+9x=-12+9x=g(g(x))$
+\end{itemize}
+$Dominio(g)=\mathbb{R}$
+
+$Dominio(g\circ f)=\mathbb{R}$
+
+$Dominio(f\circ g)=\mathbb{R}$
+
+
+
+\end{frame}
+
+\begin{frame}{Composición de funciones}
+Determinar $f\circ g$, $g\circ f$, $f\circ f$ y $g\circ g$
+
+Para $f(x)=3-2x$; $g(x)=6-3x$, calcular
+
+$Dominio(f)=\mathbb{R}$
+
+$Dominio(f\circ g)=\mathbb{R}$
+
+$Dominio(f\circ f)=\mathbb{R}$
+
+$Dominio(g)=\mathbb{R}$
+
+$Dominio(g\circ f)=\mathbb{R}$
+
+$Dominio(f\circ g)=\mathbb{R}$
+
+\end{frame}
+
+\begin{frame}
+Defina las siguientes funciones y determine el dominio de las funciones
+resultantes: (a) $f(x^2)$; (b) $[f(x)]^2$; (c) $(f\circ f )(x)$; (d) $(f\circ f)(-x)$, para  $f(x) = \frac{1}{x-1}$
+
+\begin{itemize}
+
+\item $f(x^{2})=\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}$
+
+\item $[f(x)]^{2}=[\frac{1}{x-1}]^{2}$
+
+\item $f(f(x))=f(\frac{1}{x-1})=\frac{1}{\frac{1}{x-1}-1}=\frac{1}{\frac{1}{x-1}-\frac{1}{1}}=\frac{1}{\frac{1-(x-1)}{x-1}}=\frac{1}{\frac{1-x+1}{x-1}}=\frac{1}{\frac{2-x}{x-1}}=\frac{\frac{1}{1}}{\frac{2-x}{x-1}}=\frac{x-1}{2-x}$
+\end{itemize}
+
+$Dom(f)=\mathbb{R}-\left\{1\right\}$
+
+$Dom(f)=\mathbb{R}- \left\{-1,1\right\}$
+
+$Dom(f\circ f)=\mathbb{R}-\left\{2\right\}$
+\end{frame}
+
+\end{document}
