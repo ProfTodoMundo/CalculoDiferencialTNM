@@ -1,0 +1,723 @@
+%======================================================
+\documentclass[12pt]{article}
+%======================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry,enumitem,booktabs,array,xcolor,graphicx,hyperref,fancyhdr,microtype,longtable,multicol,tikz}
+%======================================================
+\geometry{letterpaper,top=2.4cm,bottom=2.35cm,left=2.45cm,right=2.45cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.52em}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+%======================================================
+\definecolor{azul}{RGB}{22,72,120}
+\hypersetup{colorlinks=true,linkcolor=azul,urlcolor=azul,pdftitle={Cálculo Diferencial - Unidad 4: Derivadas},pdfauthor={Carlos Ernesto Martinez}}
+%======================================================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Tecnológico Nacional de México}
+\rhead{\small Cálculo Diferencial}
+\lfoot{\footnotesize Carlos Ernesto Martínez}
+\cfoot{\footnotesize\thepage}
+\rfoot{\footnotesize mrdgzcarlose@gmail.com}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\newtheorem{definicion}{Definición}[section]
+\newtheorem{teorema}[definicion]{Teorema}
+\newtheorem{proposicion}[definicion]{Proposición}
+\newtheorem{corolario}[definicion]{Corolario}
+\theoremstyle{remark}
+\newtheorem{observacion}[definicion]{Observación}
+\newtheorem{ejemplo}[definicion]{Ejemplo}
+\newtheorem{Ejer}[definicion]{Ejercicio}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\idea}[1]{\begin{center}\fcolorbox{azul}{white}{\parbox{0.91\linewidth}{#1}}\end{center}}
+%======================================================
+\title{\textbf{Notas para el curso de Cálculo Diferencial}\\[0.35cm]
+\Large Unidad 4: Derivadas}
+\author{Carlos Ernesto Martínez\\Tecnológico Nacional de México}
+\date{Agosto--Diciembre 2026}
+%======================================================
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+%=======================================================
+\section*{Propósito y organización de la unidad}
+%=======================================================
+\textbf{Objetivo del temario.} Utilizar la definición de derivada para el análisis de funciones y el cálculo de derivadas.
+
+\textbf{Organización.} La Unidad 4 comprende concepto y cálculo por definición; interpretación geométrica y física; propiedades y teoremas; reglas de derivación; funciones compuestas; y derivación implícita. El temario prevé 16 horas efectivas de clase y una hora para examen. El material desarrolla los conceptos antes de introducir los algoritmos, para que las reglas no aparezcan como fórmulas aisladas.
+
+\section{De la razón de cambio promedio a la derivada}
+Una función $y=f(x)$ describe cómo depende una cantidad de otra. Si el argumento varía de $a$ a $a+h$, la variación en la función es
+\[
+\Delta y=f(a+h)-f(a),\qquad \Delta x=h.
+\]
+Siempre que $h\ne0$, la \emph{razón de cambio promedio} de $f$ entre $a$ y $a+h$ es
+\[
+\frac{\Delta y}{\Delta x}=\frac{f(a+h)-f(a)}{h}.
+\]
+La derivada se obtiene haciendo que el intervalo de observación sea cada vez más pequeño, siempre que la razón anterior tenga límite finito.
+
+\begin{definicion}[Derivada de una función en un punto]
+Sea $f$ una función definida en un entorno de $a$. Su derivada en $a$ es
+\[
+\boxed{f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},}
+\]
+si el límite existe y es finito. En ese caso decimos que $f$ es \emph{derivable} o \emph{diferenciable} en $a$.
+\end{definicion}
+
+\begin{observacion}
+La expresión $[f(a+h)-f(a)]/h$ se llama \emph{cociente incremental}. En su definición, $h\ne0$; escribir $h=0$ directamente produciría una división por cero. Debemos simplificar o transformar y luego calcular el límite.
+\end{observacion}
+
+\begin{ejemplo}[Derivada de $x^2$ en un punto]
+Para $f(x)=x^2$ y un número real fijo $a$,
+\begin{align*}
+f'(a)&=\lim_{h\to0}\frac{(a+h)^2-a^2}{h}\\
+&=\lim_{h\to0}\frac{2ah+h^2}{h}
+=\lim_{h\to0}(2a+h)=\boxed{2a}.
+\end{align*}
+En particular, $f'(3)=6$. El cálculo no se basa en recordar la regla de la potencia: la hemos obtenido directamente de la definición.
+\end{ejemplo}
+
+\begin{definicion}[Función derivada]
+Si la derivada existe en los puntos de un conjunto, definimos una nueva función $f'$ asignando a cada $x$ el valor
+\[
+\boxed{f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}.}
+\]
+También utilizamos $\displaystyle\frac{dy}{dx}$, $\displaystyle\frac{d}{dx}f(x)$ y $Df(x)$ para denotar la derivada respecto de $x$.
+\end{definicion}
+
+\begin{ejemplo}[Derivar un polinomio por definición]
+Sea $f(x)=3x^2-2x+1$. Entonces
+\begin{align*}
+f(x+h)-f(x)
+&=3(x+h)^2-2(x+h)+1-(3x^2-2x+1)\\
+&=6xh+3h^2-2h.
+\end{align*}
+Dividiendo entre $h$ y tomando el límite,
+\[
+f'(x)=\lim_{h\to0}(6x+3h-2)=\boxed{6x-2}.
+\]
+\end{ejemplo}
+
+\subsection*{Derivadas laterales y puntos no derivables}
+La derivada derecha se calcula con $h\to0^+$, y la izquierda con $h\to0^-$. Para que exista $f'(a)$ como derivada bilateral ambas deben existir como números finitos y coincidir.
+
+\begin{ejemplo}[Una esquina]
+Para $f(x)=|x|$ en $a=0$,
+\[
+\frac{f(0+h)-f(0)}h=\frac{|h|}{h}
+=\begin{cases}1,&h>0,\\-1,&h<0.\end{cases}
+\]
+La derivada derecha vale $1$, mientras que la izquierda vale $-1$. Por tanto, $\boxed{f'(0)\text{ no existe}}$. Sin embargo, $f$ sí es continua en $0$.
+\end{ejemplo}
+
+\begin{teorema}[Derivabilidad implica continuidad]
+Si $f$ es derivable en $a$, entonces $f$ es continua en $a$.
+\end{teorema}
+\begin{proof}
+Para $h\ne0$,
+\[
+f(a+h)-f(a)=h\,\frac{f(a+h)-f(a)}h.
+\]
+Como $f$ es derivable, el segundo factor tiende al número finito $f'(a)$ y el primero tiende a $0$. Por las leyes de límites, $f(a+h)-f(a)\to0$, es decir, $f(a+h)\to f(a)$. Esto es precisamente continuidad en $a$.
+\end{proof}
+
+\begin{observacion}
+La implicación inversa es falsa: $|x|$ es continua en $0$ y no derivable allí. Una discontinuidad impide la derivabilidad, pero la continuidad no la garantiza. También puede faltar derivabilidad en cúspides, esquinas o puntos de tangente vertical.
+\end{observacion}
+
+\section{Interpretación geométrica de la derivada}
+Para los puntos $P=(a,f(a))$ y $Q=(a+h,f(a+h))$ de la gráfica, la pendiente de la recta secante es
+\[
+m_{PQ}=\frac{f(a+h)-f(a)}h.
+\]
+Al acercar $Q$ a $P$, las pendientes de las secantes tienden, si existe el límite, a la pendiente de la tangente:
+\[
+\boxed{m_{\mathrm{tan}}=f'(a).}
+\]
+
+\begin{proposicion}[Recta tangente]
+Si $f$ es derivable en $a$, la ecuación de su recta tangente en $(a,f(a))$ es
+\[
+\boxed{y-f(a)=f'(a)(x-a).}
+\]
+Cuando $f'(a)\ne0$, la recta normal, perpendicular a la tangente, tiene pendiente $-1/f'(a)$.
+\end{proposicion}
+
+\begin{ejemplo}[Tangente a una parábola]
+Para $f(x)=x^2$ en $a=1$, conocemos $f(1)=1$ y $f'(1)=2$. Entonces
+\[
+y-1=2(x-1),\qquad\boxed{y=2x-1}.
+\]
+La tangente pasa por $(1,1)$ y tiene pendiente $2$. La normal tiene pendiente $-1/2$ y ecuación $y-1=-(x-1)/2$.
+\end{ejemplo}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+\draw[->] (-0.3,0)--(3.6,0) node[right] {$x$};
+\draw[->] (0,-1.1)--(0,4.5) node[above] {$y$};
+\draw[thick,azul,domain=-.2:2.05,samples=80] plot (\x,{\x*\x}) node[above] {$y=x^2$};
+\draw[thick,domain=.05:2.6] plot (\x,{2*\x-1});
+\fill (1,1) circle (2.5pt) node[above left] {$(1,1)$};
+\node[right] at (2.45,3.65) {$y=2x-1$};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Significado de la pendiente}
+Una derivada positiva indica que, localmente, pequeños incrementos positivos de $x$ producen incrementos de $f$ de primer orden positivos; una derivada negativa indica la variación contraria. Si $f'(a)=0$, la tangente es horizontal, pero ese hecho \emph{no} basta por sí solo para concluir que exista un máximo o un mínimo; esa aplicación se estudiará en la Unidad 5.
+
+\section{Interpretación física de la derivada}
+Si $s(t)$ expresa posición sobre una recta, su variación $s(t+h)-s(t)$ en el tiempo $h$ determina una velocidad media. El límite de estas velocidades medias es la velocidad instantánea:
+\[
+\boxed{v(t)=s'(t).}
+\]
+La aceleración instantánea es la razón de cambio de la velocidad:
+\[
+\boxed{a(t)=v'(t)=s''(t),}
+\]
+si ambas derivadas existen. Si $s$ está en metros y $t$ en segundos, $v$ se expresa en metros por segundo y $a$ en metros por segundo cuadrado.
+
+\begin{ejemplo}[Posición, velocidad y aceleración]
+Supongamos $s(t)=t^2+2t$ metros, para $t\ge0$. En un intervalo $[t,t+h]$, la velocidad media es
+\begin{align*}
+\frac{s(t+h)-s(t)}h
+&=\frac{(t+h)^2+2(t+h)-(t^2+2t)}h\\
+&=2t+h+2.
+\end{align*}
+Al tomar $h\to0$ obtenemos $v(t)=2t+2$ m/s. Derivando nuevamente, $a(t)=2$ m/s$^2$. En $t=3$ s, $v(3)=8$ m/s.
+\end{ejemplo}
+
+\begin{observacion}
+La velocidad puede ser negativa cuando el movimiento ocurre en la dirección elegida como negativa. La rapidez es $|v(t)|$ y nunca es negativa. El desplazamiento es $s(b)-s(a)$; no se identifica automáticamente con la distancia total recorrida.
+\end{observacion}
+
+\section{Propiedades y reglas básicas de derivación}
+Antes de memorizar reglas es conveniente justificar de dónde proceden. Las demostraciones siguientes se basan en el cociente incremental y las leyes de los límites vistas en la Unidad 3.
+
+\begin{proposicion}[Constante, suma y múltiplo escalar]
+Si $f$ y $g$ son derivables en $x$ y $c$ es constante, entonces
+\[
+\boxed{\frac{d}{dx}c=0,\qquad(f\pm g)'=f'\pm g',\qquad(cf)'=cf'.}
+\]
+\end{proposicion}
+\begin{proof}
+La función constante tiene incremento cero. Para la suma,
+\[
+\frac{(f+g)(x+h)-(f+g)(x)}h
+=\frac{f(x+h)-f(x)}h+\frac{g(x+h)-g(x)}h.
+\]
+El límite de la derecha es $f'(x)+g'(x)$. Para el múltiplo escalar basta sacar $c$ fuera del cociente y luego del límite; la resta se obtiene con $c=-1$.
+\end{proof}
+
+\begin{teorema}[Regla del producto]
+Si $f$ y $g$ son derivables,
+\[\boxed{(fg)'=f'g+fg'.}\]
+\end{teorema}
+\begin{proof}
+Sumamos y restamos el término $f(x)g(x+h)$ en el numerador:
+\begin{align*}
+&\frac{f(x+h)g(x+h)-f(x)g(x)}h\\
+&\quad=\frac{f(x+h)-f(x)}h\,g(x+h)
++f(x)\frac{g(x+h)-g(x)}h.
+\end{align*}
+Al pasar al límite, $g(x+h)\to g(x)$ por continuidad, y los dos cocientes incrementales tienden a $f'(x)$ y $g'(x)$. Concluimos la fórmula.
+\end{proof}
+
+\begin{ejemplo}
+Si $y=(x^2+1)(3x-2)$, aplicamos la regla del producto sin desarrollar previamente:
+\[
+y'=2x(3x-2)+(x^2+1)3.
+\]
+Simplificando, $\boxed{y'=9x^2-4x+3}$.
+\end{ejemplo}
+
+\begin{teorema}[Regla del cociente]
+Si $f$ y $g$ son derivables y $g(x)\ne0$, entonces
+\[
+\boxed{\left(\frac f g\right)'=\frac{f'g-fg'}{g^2}.}
+\]
+\end{teorema}
+\begin{proof}
+Primero calculamos la derivada del recíproco:
+\begin{align*}
+\frac{\frac1{g(x+h)}-\frac1{g(x)}}h
+&=\frac{g(x)-g(x+h)}{h\,g(x+h)g(x)}\\
+&\longrightarrow-\frac{g'(x)}{[g(x)]^2}.
+\end{align*}
+Usando la regla del producto para $f\cdot(1/g)$ se obtiene la identidad indicada.
+\end{proof}
+
+\begin{ejemplo}
+Para $y=(x^2+1)/(x-1)$, con $x\ne1$,
+\begin{align*}
+y'&=\frac{2x(x-1)-(x^2+1)}{(x-1)^2}\\
+&=\boxed{\frac{x^2-2x-1}{(x-1)^2}}.
+\end{align*}
+\end{ejemplo}
+
+\subsection*{Potencias y polinomios}
+\begin{teorema}[Regla de la potencia, exponentes enteros positivos]
+Para $n\in\mathbb{N}$, $n\ge1$,
+\[
+\boxed{\frac{d}{dx}x^n=nx^{n-1}.}
+\]
+\end{teorema}
+\begin{proof}
+El binomio de Newton permite escribir
+\[
+(x+h)^n-x^n=nx^{n-1}h+\binom n2x^{n-2}h^2+\cdots+h^n.
+\]
+Después de dividir entre $h$, todos los términos excepto $nx^{n-1}$ contienen una potencia positiva de $h$ y tienden a cero. Por tanto, el límite del cociente incremental es $nx^{n-1}$.
+\end{proof}
+
+\begin{corolario}
+Si $p(x)=a_nx^n+\cdots+a_1x+a_0$, entonces
+\[
+p'(x)=na_nx^{n-1}+\cdots+2a_2x+a_1.
+\]
+La regla de la potencia se extiende a exponentes enteros negativos en $x\ne0$ y, mediante composición y las propiedades de potencias, a exponentes racionales en sus dominios de derivabilidad.
+\end{corolario}
+
+\begin{ejemplo}
+\[
+\frac{d}{dx}\left(\frac{3}{x^2}-2\sqrt x+5x\right)
+=\frac{d}{dx}(3x^{-2}-2x^{1/2}+5x)
+=\boxed{-6x^{-3}-x^{-1/2}+5},\quad x>0.
+\]
+\end{ejemplo}
+
+\section{Derivadas de funciones elementales}
+Las derivadas de las funciones elementales se obtienen combinando límites fundamentales con las reglas anteriores. Cada identidad debe aplicarse únicamente donde la expresión esté definida y sea derivable.
+
+\subsection*{Funciones trigonométricas}
+Recordemos que los argumentos trigonométricos se expresan en radianes al aplicar estas fórmulas.
+
+\begin{ejemplo}[Derivada del seno a partir de límites]
+Por la identidad $\sin(x+h)=\sin x\cos h+\cos x\sin h$,
+\begin{align*}
+\frac{\sin(x+h)-\sin x}{h}
+&=\sin x\frac{\cos h-1}{h}+\cos x\frac{\sin h}{h}\\
+&\longrightarrow 0\cdot\sin x+1\cdot\cos x.
+\end{align*}
+Así, $\boxed{(\sin x)'=\cos x}$.
+\end{ejemplo}
+
+\begin{proposicion}[Derivadas trigonométricas]
+En los puntos donde las funciones están definidas,
+\begin{align*}
+(\sin x)'&=\cos x,&(\cos x)'&=-\sin x,\\
+(\tan x)'&=\sec^2x,&(\cot x)'&=-\csc^2x,\\
+(\sec x)'&=\sec x\tan x,&(\csc x)'&=-\csc x\cot x.
+\end{align*}
+\end{proposicion}
+
+\begin{proof}[Deducción de la derivada de la tangente]
+Como $\tan x=\sin x/\cos x$, y suponiendo $\cos x\ne0$,
+\begin{align*}
+(\tan x)'&=\frac{\cos x\cdot\cos x-\sin x(-\sin x)}{\cos^2x}\\
+&=\frac{\cos^2x+\sin^2x}{\cos^2x}=\boxed{\sec^2x}.
+\end{align*}
+\end{proof}
+
+\subsection*{Exponenciales y logaritmos}
+\begin{proposicion}
+Para $a>0$ con $a\ne1$ y para $x>0$ cuando se necesite,
+\[
+\boxed{(e^x)'=e^x,\quad(a^x)'=a^x\ln a,\quad(\ln x)'=\frac1x,\quad(\log_a x)'=\frac1{x\ln a}.}
+\]
+Las identidades pueden justificarse mediante los límites fundamentales de la exponencial y del logaritmo, o mediante la relación de función inversa.
+\end{proposicion}
+
+\begin{ejemplo}[Derivada del logaritmo por incremento]
+Para $x>0$ y $h$ suficientemente pequeño, usando $\ln(x+h)-\ln x=\ln(1+h/x)$,
+\begin{align*}
+\frac{\ln(x+h)-\ln x}h
+&=\frac1x\frac{\ln(1+h/x)}{h/x}\\
+&\longrightarrow\frac1x,
+\end{align*}
+porque $\lim_{u\to0}\ln(1+u)/u=1$.
+\end{ejemplo}
+
+\begin{observacion}
+Para $x<0$, la expresión $\ln x$ no es real. Sin embargo, $\ln|x|$ está definida para todo $x\ne0$ y satisface $\frac{d}{dx}\ln|x|=1/x$. Es importante distinguir entre dominio de definición y fórmula formal.
+\end{observacion}
+
+\section{Derivación de funciones compuestas: regla de la cadena}
+Las funciones compuestas son frecuentes: primero calculamos $u=g(x)$ y, después, evaluamos $f(u)$. La regla de la cadena expresa cómo se combinan ambas razones de cambio.
+
+\begin{teorema}[Regla de la cadena]
+Si $g$ es derivable en $x$ y $f$ es derivable en $g(x)$, entonces $f\circ g$ es derivable en $x$ y
+\[
+\boxed{\frac{d}{dx}f(g(x))=f'(g(x))g'(x).}
+\]
+En notación $y=f(u)$, $u=g(x)$, también escribimos $\displaystyle\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}$, entendiendo estas expresiones como derivadas relacionadas, no como una cancelación formal indiscriminada.
+\end{teorema}
+
+\begin{proof}[Justificación mediante incrementos]
+La derivabilidad de $f$ en $u_0=g(x)$ significa que podemos escribir
+\[
+f(u_0+k)-f(u_0)=f'(u_0)k+r(k)k,
+\]
+donde $r(k)\to0$ cuando $k\to0$; definimos $r(0)=0$ para admitir también $k=0$. Tomemos $k=g(x+h)-g(x)$. Por continuidad de $g$, $k\to0$. Entonces
+\begin{align*}
+\frac{f(g(x+h))-f(g(x))}h
+&=\bigl(f'(g(x))+r(k)\bigr)\frac{g(x+h)-g(x)}h.
+\end{align*}
+Al tomar $h\to0$ obtenemos $f'(g(x))g'(x)$. Esta demostración es válida incluso si algunos incrementos satisfacen $k=0$.
+\end{proof}
+
+\begin{ejemplo}[Potencia de un polinomio]
+Para $y=(3x^2-1)^5$ identificamos la función interior $u=3x^2-1$ y la exterior $y=u^5$. Así,
+\[
+\frac{dy}{du}=5u^4,\qquad\frac{du}{dx}=6x,
+\]
+de modo que
+\[
+\boxed{y'=30x(3x^2-1)^4.}
+\]
+No es necesario desarrollar la quinta potencia.
+\end{ejemplo}
+
+\begin{ejemplo}[Composición trigonométrica]
+Si $y=\sin(x^2+1)$, la función exterior es seno y la interior es $x^2+1$. Por tanto,
+\[\boxed{y'=\cos(x^2+1)\,(2x).}\]
+Si $y=\sin^3x$, interpretamos $(\sin x)^3$ y obtenemos $\boxed{y'=3\sin^2x\cos x}$.
+\end{ejemplo}
+
+\begin{ejemplo}[Composición logarítmica y exponencial]
+En el intervalo donde $2x+1>0$,
+\[
+\frac{d}{dx}\ln(2x+1)=\frac{2}{2x+1}.
+\]
+Para todo real $x$,
+\[
+\frac{d}{dx}e^{x^2-3x}=e^{x^2-3x}(2x-3).
+\]
+El factor derivado de la función interior es indispensable.
+\end{ejemplo}
+
+\subsection*{Tabla de reglas para composiciones}
+Si $u=u(x)$ es derivable y las expresiones están definidas,
+\begin{align*}
+(u^r)'&=ru^{r-1}u',&(\sqrt{u})'&=\frac{u'}{2\sqrt u},\\
+(\sin u)'&=\cos u\,u',&(\cos u)'&=-\sin u\,u',\\
+(\tan u)'&=\sec^2u\,u',&(e^u)'&=e^u u',\\
+(a^u)'&=a^u\ln(a)\,u',&(\ln|u|)'&=\frac{u'}u\quad(u\ne0).
+\end{align*}
+Para exponentes reales $r$, la fórmula $u^r$ se aplica cuando $u>0$; otras extensiones requieren examinar su dominio.
+
+\subsection*{Funciones trigonométricas inversas}
+\begin{proposicion}
+Para los valores de $x$ en los intervalos donde existen estas derivadas,
+\[
+\boxed{(\arcsin x)'=\frac1{\sqrt{1-x^2}},\quad
+(\arccos x)'=-\frac1{\sqrt{1-x^2}},\quad
+(\arctan x)'=\frac1{1+x^2}.}
+\]
+Las dos primeras fórmulas son válidas para $-1<x<1$, y la última para todo $x\in\R$.
+\end{proposicion}
+
+\begin{proof}[Deducción para $\arctan x$]
+Sea $y=\arctan x$, de manera que $\tan y=x$ con $y\in(-\pi/2,\pi/2)$. Derivando la igualdad respecto de $x$ obtenemos $\sec^2y\,y'=1$. Como $\sec^2y=1+\tan^2y=1+x^2$,
+\[\boxed{y'=\frac1{1+x^2}.}\]
+\end{proof}
+
+\section{Derivación implícita}
+En una ecuación como $x^2+y^2=25$, la variable $y$ no aparece aislada. Sin embargo, cerca de ciertos puntos podemos describir $y$ como una función de $x$ y calcular su derivada sin despejarla explícitamente.
+
+\begin{observacion}
+Al derivar una expresión que contiene $y$, debemos tratar $y$ como $y(x)$. Por ejemplo,
+\[
+\frac{d}{dx}(y^2)=2y\,y',\qquad
+\frac{d}{dx}(xy)=y+xy'.
+\]
+La primera igualdad usa la regla de la cadena; la segunda combina producto y cadena.
+\end{observacion}
+
+\begin{ejemplo}[Circunferencia]
+Para $x^2+y^2=25$, derivamos a ambos lados:
+\[
+2x+2y\,y'=0.
+\]
+Despejamos la derivada:
+\[
+\boxed{\frac{dy}{dx}=-\frac{x}{y},\qquad y\ne0.}
+\]
+En el punto $(3,4)$ la pendiente es $-3/4$ y la recta tangente es
+\[
+y-4=-\frac34(x-3).
+\]
+En $(5,0)$ no podemos utilizar esta fórmula, porque la circunferencia tiene allí tangente vertical y no define localmente a $y$ como función derivable de $x$.
+\end{ejemplo}
+
+\begin{ejemplo}[Producto y potencia en una relación implícita]
+Dada la relación $xy+y^2=6$, derivamos:
+\[
+\underbrace{y+xy'}_{(xy)'}+\underbrace{2yy'}_{(y^2)'}=0.
+\]
+Agrupando los términos que contienen $y'$,
+\[
+(x+2y)y'=-y,
+\]
+de donde
+\[
+\boxed{y'=-\frac{y}{x+2y}},\qquad x+2y\ne0.
+\]
+\end{ejemplo}
+
+\begin{ejemplo}[Exponencial en derivación implícita]
+Sea $e^y+xy=2$. Entonces
+\[
+e^y y'+y+xy'=0.
+\]
+Factorizamos $y'$ y despejamos:
+\[
+(e^y+x)y'=-y,\qquad
+\boxed{y'=-\frac{y}{e^y+x}},\quad e^y+x\ne0.
+\]
+\end{ejemplo}
+
+\begin{proposicion}[Fórmula implícita y sus condiciones]
+Si $F(x,y)=0$ describe localmente una función derivable $y=y(x)$ y $F$ posee derivadas parciales continuas cerca del punto, con $F_y\ne0$, entonces
+\[
+\boxed{y'=-\frac{F_x}{F_y}.}
+\]
+La condición $F_y\ne0$ es una condición suficiente local para poder despejar diferenciablemente $y$ en función de $x$; si falla, la fórmula no se puede aplicar directamente.
+\end{proposicion}
+
+\begin{observacion}
+Esta fórmula resume el procedimiento anterior, pero en este curso conviene practicar primero la derivación término a término. El método muestra de manera explícita dónde se utilizan las reglas del producto y de la cadena.
+\end{observacion}
+
+%=======================================================
+\section{Ejemplos complementarios y comprobaciones}
+%=======================================================
+\subsection*{Dos formas equivalentes de escribir la derivada}
+Cuando $x$ se aproxima a $a$, el incremento $h=x-a$ tiende a cero. Por sustitución de variables, la definición también puede escribirse
+\[
+\boxed{f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}},
+\]
+si existe el límite finito. La segunda forma puede resultar más cómoda cuando ya conocemos $f(x)$ y queremos estudiar un punto concreto; la primera es especialmente útil para desarrollar expresiones como $f(a+h)$.
+
+\begin{ejemplo}[Derivada de la raíz cuadrada por definición]
+Para $f(x)=\sqrt{x}$ y $a>0$,
+\begin{align*}
+f'(a)&=\lim_{h\to0}\frac{\sqrt{a+h}-\sqrt a}{h}\\
+&=\lim_{h\to0}\frac{(\sqrt{a+h}-\sqrt a)(\sqrt{a+h}+\sqrt a)}{h(\sqrt{a+h}+\sqrt a)}\\
+&=\lim_{h\to0}\frac{1}{\sqrt{a+h}+\sqrt a}
+=\boxed{\frac1{2\sqrt a}}.
+\end{align*}
+La racionalización transforma la indeterminación $0/0$ en un cociente cuyo límite se obtiene directamente. Se trata de la misma técnica que estudiamos en la Unidad 3.
+\end{ejemplo}
+
+\subsection*{Continuidad, esquinas y tangentes verticales}
+\begin{ejemplo}
+Consideremos $f(x)=x^{1/3}$, continua en todo $\R$. En $x=0$ el cociente incremental es
+\[
+\frac{f(h)-f(0)}h=\frac{h^{1/3}}h=\frac1{|h|^{2/3}},\qquad h\ne0.
+\]
+Al tomar $h\to0$ el cociente crece hacia $+\infty$; no existe una derivada finita en el origen. Geométricamente, la curva presenta una tangente vertical. Este comportamiento es distinto de la esquina de $|x|$, donde las pendientes laterales son finitas pero diferentes.
+\end{ejemplo}
+
+\begin{ejemplo}
+Para $g(x)=x^{2/3}$ tenemos
+\[
+\frac{g(h)-g(0)}h=\frac{|h|^{2/3}}h=
+\begin{cases}|h|^{-1/3},&h>0,\\-|h|^{-1/3},&h<0.\end{cases}
+\]
+La pendiente del lado derecho tiende a $+\infty$, mientras que la del lado izquierdo tiende a $-\infty$. Hay una cúspide y tampoco existe derivada finita. Aunque ambos ejemplos son continuos, ninguno es derivable en el origen.
+\end{ejemplo}
+
+\subsection*{Derivada del coseno a partir de identidades trigonométricas}
+Por la identidad $\cos(x+h)=\cos x\cos h-\sin x\sin h$,
+\begin{align*}
+\frac{\cos(x+h)-\cos x}{h}
+&=\cos x\frac{\cos h-1}{h}-\sin x\frac{\sin h}{h}\\
+&\longrightarrow \cos x\cdot0-\sin x\cdot1=-\sin x.
+\end{align*}
+De esta forma, $\boxed{(\cos x)'=-\sin x}$ se deduce de los mismos dos límites trigonométricos empleados para derivar el seno.
+
+\subsection*{Deducción de la derivada de $\arcsin x$}
+Sea $y=\arcsin x$, con $-1<x<1$ y $y\in[-\pi/2,\pi/2]$. La identidad $\sin y=x$ implica, después de derivar,
+\[
+\cos y\,y'=1,\qquad y'=\frac1{\cos y}.
+\]
+En el intervalo principal del arcoseno, $\cos y\ge0$. Como $\cos^2y=1-\sin^2y=1-x^2$, resulta
+\[
+\boxed{\frac{d}{dx}\arcsin x=\frac1{\sqrt{1-x^2}}},\qquad -1<x<1.
+\]
+En los extremos $x=\pm1$ el denominador se anula y no existe una derivada bilateral finita.
+
+\subsection*{Elección de una técnica sin operaciones innecesarias}
+\begin{ejemplo}
+Para $y=(x^2+1)^3$, desarrollar la potencia produciría un polinomio de grado seis. La regla de la cadena permite conservar la estructura:
+\[
+y'=3(x^2+1)^2(2x)=\boxed{6x(x^2+1)^2}.
+\]
+En cambio, si $y=(x+1)(x-1)$, desarrollar primero produce $x^2-1$, cuya derivada es $2x$. En este caso ambas técnicas son breves. La elección adecuada depende de la expresión y del objetivo del ejercicio.
+\end{ejemplo}
+
+\subsection*{Derivación implícita y verificación mediante despeje}
+\begin{ejemplo}
+Dada la curva $xy=6$ y suponiendo $x\ne0$, podemos despejar $y=6/x$, cuya derivada es $y'=-6/x^2$. Por derivación implícita, en cambio,
+\[
+xy'= -y,\qquad y'=-\frac{y}{x}.
+\]
+Al sustituir $y=6/x$ recuperamos $y'=-6/x^2$. Las dos expresiones coinciden. En el punto $(2,3)$ la pendiente es $-3/2$ y la recta tangente es
+\[
+\boxed{y-3=-\frac32(x-2).}
+\]
+La comprobación es útil para fijar la regla del producto y el tratamiento de $y$ como función de $x$.
+\end{ejemplo}
+
+\section{Síntesis de métodos y comprobaciones}
+Para derivar una expresión es aconsejable: identificar primero su dominio; distinguir si es suma, producto, cociente o composición; aplicar las reglas sólo después de reconocer esa estructura; realizar simplificaciones razonables al final; y comprobar un resultado sencillo mediante la definición, un desarrollo algebraico o una derivación alternativa cuando sea posible. En derivación implícita es indispensable colocar el factor $y'$ al derivar cada término que depende de $y$.
+
+%=======================================================
+\section{Banco de ejercicios de la Unidad 4}
+%=======================================================
+Los reactivos se organizan de manera gradual. Los primeros bloques requieren explícitamente la definición; los siguientes practican reglas, composiciones y derivación implícita. Se recomienda presentar el procedimiento y no sólo la expresión final. La numeración permanece continua entre bloques sin agregar prefijos a los números de los reactivos.
+
+\begin{Ejer}\textbf{Concepto de derivada y cálculo mediante la definición}
+\begin{enumerate}[series=banco]
+\item Utilice la definición para calcular $f'(x)$ si $f(x)=3x+2$.
+\item Utilice la definición para calcular $f'(x)$ si $f(x)=x^2$.
+\item Calcule $f'(2)$ mediante el cociente incremental si $f(x)=x^2+1$.
+\item Mediante la definición, derive $f(x)=2x^2-x$.
+\item Mediante la definición, derive $f(x)=x^3$.
+\item Mediante la definición, calcule $f'(1)$ si $f(x)=1/x$, $x\ne0$.
+\item Utilice la definición para obtener $f'(x)$ si $f(x)=1/x$, $x\ne0$.
+\item Utilice la definición para calcular $f'(x)$ si $f(x)=\sqrt{x}$, $x>0$.
+\item Determine la derivada de $f(x)=|x|$ en $x=0$ mediante límites laterales.
+\item Determine si $f(x)=\begin{cases}x^2,&x\le1,\\2x-1,&x>1\end{cases}$ es derivable en $1$.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Tangentes, normales y razones de cambio}
+\begin{enumerate}[resume=banco]
+\item Encuentre la recta tangente a $y=x^2$ en $x=2$.
+\item Encuentre la recta tangente a $y=3x-1$ en $x=1$.
+\item Encuentre la recta tangente a $y=x^3$ en $x=-1$.
+\item Encuentre la recta normal a $y=x^2+1$ en el punto $(1,2)$.
+\item Determine la pendiente de la secante de $y=x^2$ entre $x=1$ y $x=1+h$ y calcule su límite.
+\item Si $s(t)=t^2+3t$ metros, obtenga la velocidad media en $[1,1+h]$ y la instantánea en $t=1$.
+\item Para $s(t)=2t^2-t+1$, encuentre $v(t)$ y $a(t)$.
+\item Si $s(t)=t^3-3t$ para $t\ge0$, calcule la velocidad instantánea en $t=2$.
+\item Explique en qué se distinguen velocidad y rapidez cuando $v(t)<0$.
+\item Determine la recta tangente a $f(x)=1/x$ en $x=1$ y verifique su pendiente a partir de la definición.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Reglas básicas, productos y cocientes}
+\begin{enumerate}[resume=banco]
+\item Derive $f(x)=5x^4-3x^2+7$.
+\item Derive $f(x)=2x^5-x^3+4x-1$.
+\item Derive $f(x)=3/x^2+2/x$ e indique el dominio.
+\item Derive $f(x)=\sqrt x+x^3$, $x>0$.
+\item Derive $f(x)=(x+1)(x^2-2)$ utilizando la regla del producto.
+\item Derive $f(x)=(2x-1)(x^3+1)$ utilizando la regla del producto.
+\item Derive $f(x)=(x^2+1)/(x+1)$ e indique el dominio.
+\item Derive $f(x)=(3x-2)/(x^2+1)$.
+\item Derive $f(x)=x^2/(x-2)$.
+\item Derive $f(x)=(x^2-1)/(x^2+1)$.
+\item Compruebe mediante desarrollo algebraico que la derivada de $(x+2)(x-3)$ coincide con la obtenida usando el producto.
+\item Justifique por qué no es correcta, en general, la identidad $(fg)'=f'g'$; proporcione un contraejemplo.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Derivadas trigonométricas, exponenciales y logarítmicas}
+\begin{enumerate}[resume=banco]
+\item Derive $f(x)=3\sin x-2\cos x$.
+\item Derive $f(x)=\tan x+\sec x$.
+\item Derive $f(x)=x\sin x$.
+\item Derive $f(x)=\sin x/\cos x$ usando la regla del cociente.
+\item Derive $f(x)=e^x+3^x$.
+\item Derive $f(x)=xe^x$.
+\item Derive $f(x)=\ln x+x^2$, $x>0$.
+\item Derive $f(x)=(\ln x)/x$, $x>0$.
+\item Derive $f(x)=\arctan x+x$, indicando el dominio de la derivada.
+\item Derive $f(x)=\arcsin x$ e indique en qué puntos existe una derivada finita.
+\item Derive $f(x)=\sec x\tan x$ donde ambas funciones estén definidas.
+\item Derive $f(x)=\ln|x|$ por separado en $x>0$ y $x<0$.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Regla de la cadena: composición de funciones}
+\begin{enumerate}[resume=banco]
+\item Derive $f(x)=(2x+1)^5$.
+\item Derive $f(x)=(x^2+3)^4$.
+\item Derive $f(x)=\sqrt{x^2+1}$.
+\item Derive $f(x)=\sin(3x)$.
+\item Derive $f(x)=\cos(x^2)$.
+\item Derive $f(x)=\tan(2x-1)$.
+\item Derive $f(x)=e^{x^2+1}$.
+\item Derive $f(x)=\ln(1+x^2)$.
+\item Derive $f(x)=\sin^3x$.
+\item Derive $f(x)=(\sin x+1)^4$.
+\item Derive $f(x)=\ln|x^2-4|$ en los puntos donde está definida.
+\item Derive $f(x)=\sqrt{1+\sin x}$ en los puntos donde la raíz sea positiva.
+\item Derive $f(x)=e^{\sin(x^2)}$.
+\item Derive $f(x)=\arctan(2x+1)$.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Productos, cocientes y composiciones combinadas}
+\begin{enumerate}[resume=banco]
+\item Derive $f(x)=x^2\sin(3x)$.
+\item Derive $f(x)=(x+1)e^{2x}$.
+\item Derive $f(x)=(x^2+1)\cos(x^2)$.
+\item Derive $f(x)=\ln(1+x)/x$, $x>0$.
+\item Derive $f(x)=e^x/(x^2+1)$.
+\item Derive $f(x)=\sqrt{x^2+1}/(x+1)$, $x\ne-1$.
+\item Derive $f(x)=x\ln(x^2+1)$.
+\item Derive $f(x)=\sin x/(1+\cos x)$ en los puntos de su dominio.
+\item Derive $f(x)=(x^2-1)^3/(x+2)$.
+\item Derive $f(x)=e^{2x}\cos(3x)$.
+\item Derive $f(x)=(\ln x)^2$, $x>0$.
+\item Derive $f(x)=\sin(\sqrt{x})$, $x>0$.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Derivación implícita y rectas tangentes}
+\begin{enumerate}[resume=banco]
+\item Derive implícitamente $x^2+y^2=9$ y despeje $y'$ donde sea posible.
+\item Derive implícitamente $xy=4$ y obtenga $y'$.
+\item Derive implícitamente $x^2+xy+y^2=7$.
+\item Derive implícitamente $xy+y^2=3$.
+\item Derive implícitamente $y^3+x^2y=4$.
+\item Derive implícitamente $\sin y+x=1$.
+\item Derive implícitamente $e^y+x^2=3$.
+\item Derive implícitamente $\ln y+xy=2$, suponiendo $y>0$.
+\item Para $x^2+y^2=25$, encuentre la recta tangente en $(3,4)$.
+\item Para $xy=6$, encuentre la recta tangente en $(2,3)$.
+\item Derive implícitamente $\sin(x+y)=x$.
+\item Derive implícitamente $e^{xy}+y=2$.
+\end{enumerate}
+\end{Ejer}
+
+\begin{Ejer}\textbf{Integradores: interpretación y elección de técnica}
+\begin{enumerate}[resume=banco]
+\item Decida si $f(x)=|x-2|$ es continua y derivable en $x=2$; justifique mediante límites.
+\item Encuentre $f'(1)$ por definición si $f(x)=x^2+2x$ y compare con las reglas.
+\item Calcule la derivada de $y=(x^2+1)^3\sin x$ indicando dónde usa producto y dónde cadena.
+\item Determine la recta tangente a $y=\ln x$ en $x=1$.
+\item Si $s(t)=t^3-6t^2+9t$ metros, determine $v(1)$ y $a(1)$ con unidades.
+\item Para $x^2+xy+y^2=12$, obtenga la pendiente de la curva en $(2,2)$.
+\item Compruebe que las dos expresiones de $d(\tan x)/dx$ obtenidas por cociente y por regla directa coinciden.
+\item Explique por qué la fórmula $(f\circ g)'=f'\circ g$ es, en general, falsa; utilice $f(u)=u^2$, $g(x)=3x$.
+\item Derive $f(x)=\ln(\sqrt{1+x^2})$ utilizando primero logaritmos y después la cadena; compare.
+\item Investigue a partir de la definición por qué $f(x)=x^{2/3}$ no es derivable en $0$ aunque es continua allí.
+\end{enumerate}
+\end{Ejer}
+
+\end{document}
