@@ -1,0 +1,3732 @@
+%===============================================================
+% Versión Beamer Madrid de la versión preliminar proporcionada
+% Conversión de formato: conserva el contenido matemático del original
+%===============================================================
+\documentclass[12pt,aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,graphicx,tikz,adjustbox}
+\usepackage{microtype}
+\definecolor{azul}{RGB}{22,72,120}
+\setbeamercolor{structure}{fg=azul}
+\setbeamercolor{frametitle}{bg=white,fg=azul}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{headline}{fg=white,bg=azul}
+\setbeamercolor{footline}{fg=white,bg=azul}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{items}[default]
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{normal text}{size=\normalsize}
+\setbeamersize{text margin left=.76cm,text margin right=.76cm}
+\setbeamertemplate{headline}{%
+\leavevmode\hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=2.1ex,dp=.75ex,leftskip=.8cm]{headline}\scriptsize\insertsectionhead\end{beamercolorbox}}}
+\setbeamertemplate{footline}{%
+ \leavevmode\hbox{%
+ \begin{beamercolorbox}[wd=.45\paperwidth,ht=2.6ex,dp=1ex,leftskip=.7cm]{footline}\scriptsize Carlos Ernesto Martínez\end{beamercolorbox}%
+ \begin{beamercolorbox}[wd=.42\paperwidth,ht=2.6ex,dp=1ex,center]{footline}\scriptsize Tecnológico Nacional de México\end{beamercolorbox}%
+ \begin{beamercolorbox}[wd=.13\paperwidth,ht=2.6ex,dp=1ex,rightskip=.6cm plus1fil]{footline}\scriptsize\insertframenumber\end{beamercolorbox}%
+ }}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\idea}[1]{\par\smallskip{\color{azul}\bfseries #1}\par\smallskip}
+\title{Cálculo Diferencial}
+\subtitle{Unidad 3: Límites y continuidad}
+\author{Carlos Ernesto Martínez}
+\institute{Tecnológico Nacional de México}
+\date{Agosto--Diciembre 2026}
+\begin{document}
+\begin{frame}[plain]
+\centering\vspace{1.1cm}
+{\Huge\bfseries\color{azul} Cálculo Diferencial}\par\vspace{.5cm}
+{\LARGE Unidad 3: Límites y continuidad}\par\vspace{.65cm}
+{\large Carlos Ernesto Martínez}\par\medskip
+Tecnológico Nacional de México\par\vspace{.4cm}
+{\small Agosto--Diciembre 2026}\par
+\end{frame}
+\begin{frame}[t]{Contenido (I)}
+\tableofcontents[sections={1-5},hideallsubsections]
+\end{frame}
+\begin{frame}[t]{Contenido (II)}
+\tableofcontents[sections={6-10},hideallsubsections]
+\end{frame}
+\begin{frame}[t]{Contenido (III)}
+\tableofcontents[sections={11-14},hideallsubsections]
+\end{frame}
+\section{Presentación}
+
+\begin{frame}[t]{Presentación}
+\centering\vfill{\Large\bfseries\color{azul} Presentación}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Presentación}
+%=======================================================
+El Objetivo de esta unidad es utilizar la definición de límite de funciones para determinar analíticamente la continuidad de una función en un punto o en un intervalo, y mostrar gráficamente diferentes tipos de discontinuidad.
+
+En esta unidad estudiaremos sucesivamente el concepto de límite, su interpretación gráfica, la definición formal para funciones lineales y cuadráticas, las leyes de los límites, el comportamiento local y en el infinito, la continuidad y la clasificación gráfica de discontinuidades. El temario prevé 12 horas efectivas de clase y una hora de evaluación. Las explicaciones y ejercicios adicionales sirven también como material de consulta y trabajo autónomo.
+
+%=======================================================
+\end{frame}
+
+
+\section{Dos problemas que conducen al límite}
+
+\begin{frame}[t]{Dos problemas que conducen al límite}
+\centering\vfill{\Large\bfseries\color{azul} Dos problemas que conducen al límite}\vfill
+\end{frame}
+
+
+\subsection{El problema de la recta tangente}
+
+\begin{frame}[t,allowframebreaks]{El problema de la recta tangente}
+Con una recta que pasa por los puntos $P=(x_1,y_1)$ y $Q=(x_2,y_2)$ podemos calcular su pendiente mediante
+\[
+ m_{PQ}=\frac{y_2-y_1}{x_2-x_1},\qquad x_2\ne x_1.
+\]
+La dificultad aparece cuando queremos la pendiente de una recta tangente a una curva en \emph{un solo punto}: la fórmula anterior requiere dos puntos diferentes. La idea consiste en aproximar la tangente por rectas secantes que pasan por el punto fijo y otro punto cada vez más cercano.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 1. Secantes a una parábola}\par\medskip
+
+Sea $f(x)=x^2$ y fijemos $P=(1,1)$. Para $Q=(x,x^2)$, con $x\ne1$, la pendiente de la secante es
+\[
+ m_{PQ}=\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}=x+1.
+\]
+Investigamos valores de $x$ a ambos lados de $1$:
+\[
+\begin{array}{c|rrrrrr}
+ x&0.9&0.99&0.999&1.001&1.01&1.1\\\hline
+ m_{PQ}&1.9&1.99&1.999&2.001&2.01&2.1
+\end{array}
+\]
+Las pendientes se aproximan al número $2$. La conjetura para la pendiente de la tangente es, por tanto,
+\[
+ m=\lim_{x\to1}\frac{x^2-1}{x-1}=2.
+\]
+Con la ecuación punto--pendiente obtenemos la recta tangente $y-1=2(x-1)$, es decir, $\boxed{y=2x-1}$. Aún no hemos utilizado reglas de derivación: hemos llegado a la respuesta por un límite de pendientes.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=0.9,>=stealth]
+ \draw[->] (-0.25,0)--(4.05,0) node[right] {$x$};
+ \draw[->] (0,-0.55)--(0,4.6) node[above] {$y$};
+ \draw[very thick,azul,domain=0:2.07,samples=80] plot (\x,{\x*\x}) node[above] {$y=x^2$};
+ \draw[thick,gray!70!black,domain=0.24:2.32] plot (\x,{2.5*\x-1.5});
+ \draw[thick,gray!60,domain=0.24:2.5] plot (\x,{2.1*\x-1.1});
+ \draw[thick,red!75!black,domain=0.32:2.25] plot (\x,{2*\x-1});
+ \fill (1,1) circle (2.5pt) node[below right] {$P$};
+ \fill[gray!70!black] (1.5,2.25) circle (2.3pt) node[above left] {$Q$};
+ \draw[dashed] (1,0) node[below] {$1$} -- (1,1);
+ \node[red!75!black] at (3.02,3.15) {tangente};
+ \node[gray!70!black] at (3.0,4.0) {secante};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{El problema de la recta tangente}
+La figura muestra dos secantes y la tangente límite. Una secante no tiene que cortar la curva en exactamente dos puntos: lo importante es que pasa por dos puntos de la gráfica.
+\end{frame}
+
+
+\subsection{El problema de la velocidad instantánea}
+
+\begin{frame}[t,allowframebreaks]{El problema de la velocidad instantánea}
+Si $s(t)$ es la posición de un móvil, su velocidad promedio en el intervalo $[t_0,t_0+h]$ es
+\[
+ v_{\mathrm{prom}}=\frac{s(t_0+h)-s(t_0)}{h},\qquad h\ne0.
+\]
+El modelo describe desplazamiento por unidad de tiempo. Para estimar la velocidad en el instante $t_0$ debemos hacer cada vez menor la duración $|h|$ del intervalo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 2. Movimiento con una posición cuadrática}\par\medskip
+
+Supongamos que $s(t)=5t^2$ metros y $t$ se mide en segundos. En $t_0=2$, la velocidad promedio es
+\begin{align*}
+ v_{\mathrm{prom}}&=\frac{5(2+h)^2-5(2)^2}{h}\\
+ &=\frac{5(4+4h+h^2)-20}{h}\\
+ &=\frac{20h+5h^2}{h}=20+5h,\quad h\ne0.
+\end{align*}
+\[
+\begin{array}{c|rrrrrr}
+ h&-0.1&-0.01&-0.001&0.001&0.01&0.1\\\hline
+ v_{\mathrm{prom}}&19.5&19.95&19.995&20.005&20.05&20.5
+\end{array}
+\]
+Al acercarse $h$ a cero, la velocidad promedio tiende a $20\,\mathrm{m/s}$. Escribimos
+\[
+\boxed{v_{\mathrm{inst}}=\lim_{h\to0}\frac{s(2+h)-s(2)}{h}=20\,\mathrm{m/s}.}
+\]
+La tangente y la velocidad instantánea conducen al mismo tipo de expresión: \emph{un cociente calculado para dos puntos distintos cuyo límite se toma cuando los puntos se acercan}.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 1.}\par\medskip
+
+Los números de una tabla sirven para formular una \emph{conjetura}, pero no prueban por sí solos que exista un límite. También es posible que una tabla o una calculadora nos engañe; más adelante justificaremos los resultados algebraicamente.
+\end{frame}
+
+
+\section{Aproximación al concepto de límite}
+
+\begin{frame}[t]{Aproximación al concepto de límite}
+\centering\vfill{\Large\bfseries\color{azul} Aproximación al concepto de límite}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Aproximación al concepto de límite}
+%=======================================================
+Consideremos una función $f$ definida en un conjunto $D\subseteq\R$. Preguntar por $\lim_{x\to a}f(x)$ significa investigar a qué número se aproximan los valores de $f(x)$ cuando $x$ se acerca a $a$ por puntos de $D$ distintos de $a$. No estamos preguntando, necesariamente, por el valor de $f(a)$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 3. Un punto que falta}\par\medskip
+
+Sea
+\[
+f(x)=\frac{x^2-1}{x-1},\qquad x\ne 1.
+\]
+Para los valores permitidos de $x$,
+\[
+f(x)=\frac{(x-1)(x+1)}{x-1}=x+1.
+\]
+Aunque $f(1)$ no está definida, al aproximarnos a $1$ obtenemos $f(x)\to2$. Por ello escribimos
+\[\boxed{\lim_{x\to1}\frac{x^2-1}{x-1}=2.}\]
+\emph{Advertencia:} la cancelación sólo se permite para $x\ne1$; no hemos definido artificialmente un valor en el punto eliminado.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 1. Punto de acumulación}\par\medskip
+
+Decimos que $a$ es un punto de acumulación de $D$ si todo intervalo abierto centrado en $a$ contiene algún punto de $D$ diferente de $a$. Esta condición permite aproximarnos a $a$ sin necesidad de evaluar $f(a)$.
+\end{frame}
+
+
+\subsection{Aproximación por ambos lados}
+
+\begin{frame}[t,allowframebreaks]{Aproximación por ambos lados}
+%=======================================================
+Para un límite bilateral en $a$ debemos observar el comportamiento de la función tanto por la izquierda como por la derecha. Cuando sólo es posible o interesa acercarse por uno de esos lados, utilizamos límites laterales.
+\[
+\lim_{x\to a^-} f(x)=L_-,\qquad
+\lim_{x\to a^+} f(x)=L_+.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 1. Criterio de los límites laterales}\par\medskip
+
+Si $a$ es punto de acumulación del dominio por ambos lados, existe el límite bilateral $\lim_{x\to a}f(x)=L$ si y sólo si existen ambos límites laterales y coinciden con $L$:
+\[
+\boxed{\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=L.}
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 4. Límites distintos}\par\medskip
+
+Sea
+\[
+f(x)=\begin{cases}
+ 2x+1,&x<1,\\
+ x-1,&x\ge1.
+\end{cases}
+\]
+Por la izquierda, $f(x)=2x+1\to3$; por la derecha, $f(x)=x-1\to0$. Como $3\ne0$, el límite bilateral no existe, aunque $f(1)=0$ está perfectamente definido.
+\end{frame}
+
+
+\subsection{Interpretación gráfica}
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+%=======================================================
+En la gráfica interesa la altura hacia la que tiende la curva cuando sus puntos se acercan horizontalmente a $x=a$. Un círculo vacío representa un punto no incluido; un punto sólido representa un valor efectivo de la función. Ninguno de estos símbolos, por sí solo, determina el límite: es el comportamiento cercano lo que importa.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=0.82,>=stealth]
+\draw[->] (-0.2,0)--(5.4,0) node[right] {$x$};
+\draw[->] (0,-0.2)--(0,4.6) node[above] {$y$};
+\draw[thick,azul,domain=0.2:4.6,samples=60] plot (\x,{0.48*(\x-2.5)*(\x-2.5)+1.7});
+\fill[white] (2.5,1.7) circle (3.1pt);
+\draw[azul,thick] (2.5,1.7) circle (3.1pt);
+\fill (2.5,3.6) circle (3pt) node[right] {$f(a)$};
+\draw[dashed] (2.5,0) node[below] {$a$} --(2.5,1.7)--(0,1.7) node[left] {$L$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+En este esquema, la curva se aproxima a $L$ por ambos lados, pero el valor asignado $f(a)$ es otro. En consecuencia, existe el límite y no hay continuidad en $a$.
+
+%=======================================================
+\end{frame}
+
+
+\subsection{Introducción gráfica a los límites: controlar la cercanía}
+
+\begin{frame}[t,allowframebreaks]{Introducción gráfica a los límites: controlar la cercanía}
+%=======================================================
+
+Supongamos que la variable independiente $x$ se aproxima a $a$ y queremos que la respuesta $f(x)$ se aproxime a un número $L$. En lugar de preguntar únicamente qué valor parece tomar $f(x)$, planteamos una pregunta más precisa: \emph{¿qué tan cerca debe estar $x$ de $a$ para garantizar que $f(x)$ esté a una distancia prefijada de $L$?}
+
+La distancia entre dos números reales $u$ y $v$ es $|u-v|$. Por tanto, una cercanía horizontal y otra vertical se describen por
+\[
+ 0<|x-a|<\delta,\qquad |f(x)-L|<\varepsilon.
+\]
+La condición $0<|x-a|$ excluye el punto $x=a$; la condición $|x-a|<\delta$ selecciona una vecindad horizontal. El parámetro $\varepsilon$ fija la tolerancia vertical y $\delta$ es la cercanía horizontal que debemos encontrar.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 5. Una función lineal y una tolerancia dada}\par\medskip
+
+Consideremos $f(x)=2x+1$ cuando $x$ se aproxima a $3$. Nos interesa que $f(x)$ diste menos de $0.2$ de $7$. Es decir, pedimos
+\[
+ |f(x)-7|<0.2.
+\]
+Como $|f(x)-7|=|2x+1-7|=2|x-3|$, basta exigir
+\[
+ 2|x-3|<0.2\quad\Longleftrightarrow\quad |x-3|<0.1.
+\]
+Así, elegir $\varepsilon=0.2$ y $\delta=0.1$ garantiza que
+\[
+ 0<|x-3|<\delta\quad\Longrightarrow\quad |f(x)-7|<\varepsilon.
+\]
+La elección de $\delta$ no es una coincidencia: proviene de despejar una desigualdad.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[>=stealth,x=1.15cm,y=0.90cm]
+ \fill[blue!9] (-1,-2.25) rectangle (1,2.25);
+ \fill[red!10] (-2.75,-1) rectangle (2.75,1);
+ \draw[->] (-2.75,-2.3)--(2.85,-2.3) node[right] {$x$};
+ \draw[->] (-2.75,-2.3)--(-2.75,2.5) node[above] {$y$};
+ \draw[thick,azul] (-2.18,-2.18)--(2.18,2.18);
+ \draw[dashed,blue!65!black] (-1,-2.3)--(-1,2.25);
+ \draw[dashed,blue!65!black] (1,-2.3)--(1,2.25);
+ \draw[dashed,red!65!black] (-2.75,-1)--(2.75,-1);
+ \draw[dashed,red!65!black] (-2.75,1)--(2.75,1);
+ \fill (0,0) circle (2pt);
+ \node[below,font=\scriptsize] at (-1,-2.3) {$2.9$};
+ \node[below,font=\scriptsize] at (0,-2.3) {$3$};
+ \node[below,font=\scriptsize] at (1,-2.3) {$3.1$};
+ \node[left,font=\scriptsize] at (-2.75,-1) {$6.8$};
+ \node[left,font=\scriptsize] at (-2.75,0) {$7$};
+ \node[left,font=\scriptsize] at (-2.75,1) {$7.2$};
+ \node[azul,above] at (1.45,1.7) {$y=2x+1$};
+ \node[below right,font=\scriptsize] at (0,0) {$(3,7)$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Introducción gráfica a los límites: controlar la cercanía}
+La gráfica está ampliada alrededor de $(3,7)$: la franja vertical corresponde exactamente a $2.9<x<3.1$ y la horizontal a $6.8<y<7.2$. Así se aprecia que la parte de la recta dentro de la franja vertical queda también dentro de la horizontal.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 6. Controlar una función cuadrática}\par\medskip
+
+Probaremos que cuando $x$ se acerca a $2$, $x^2$ se aproxima a $4$. Partimos del error vertical:
+\[
+ |x^2-4|=|x-2|\,|x+2|.
+\]
+No basta controlar $|x-2|$: también debemos acotar $|x+2|$. Si imponemos primero $|x-2|<1$, se sigue que $1<x<3$, y por tanto $3<x+2<5$. Así,
+\[
+ |x^2-4|<5|x-2|.
+\]
+Para conseguir $|x^2-4|<\varepsilon$ es suficiente imponer $|x-2|<\varepsilon/5$ y la condición auxiliar $|x-2|<1$. Ambas se logran mediante
+\[
+ \boxed{\delta=\min\left\{1,\frac{\varepsilon}{5}\right\}.}
+\]
+Si $0<|x-2|<\delta$, entonces $|x^2-4|<5\delta\le\varepsilon$ (con desigualdad estricta por $|x-2|<\delta$). Este razonamiento es la base de una prueba formal.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 2.}\par\medskip
+
+La elección de $\delta$ \emph{no tiene que ser la más grande posible}. Basta construir alguna $\delta>0$ que garantice la desigualdad. Cuando aparece un factor variable, una restricción auxiliar como $\delta\le 1$ suele permitir acotarlo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 7. Un agujero y un valor aislado}\par\medskip
+
+Sea
+\[
+ g(x)=\begin{cases}\dfrac{x^2-9}{x-3},&x\ne3,\\ -2,&x=3.\end{cases}
+\]
+Para $x\ne3$ tenemos $g(x)=x+3$. Por tanto, $\lim_{x\to3}g(x)=6$, aunque $g(3)=-2$. Modificar el valor de $g$ únicamente en $x=3$ no altera el límite. En la gráfica aparecería un círculo abierto en $(3,6)$ y un punto lleno en $(3,-2)$.
+\end{frame}
+
+
+\section{Definición formal de límite y primeras demostraciones}
+
+\begin{frame}[t]{Definición formal de límite y primeras demostraciones}
+\centering\vfill{\Large\bfseries\color{azul} Definición formal de límite y primeras demostraciones}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición formal de límite y primeras demostraciones}
+%=======================================================
+La frase ``$f(x)$ se aproxima a $L$'' debe traducirse en una afirmación cuantitativa. Dado un error permitido $\varepsilon>0$ para los valores de la función, buscamos una distancia $\delta>0$ al punto $a$ que garantice ese error. La palabra \emph{cualquier} es esencial: no basta verificar la afirmación para algunos valores elegidos de $x$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 2. Punto de acumulación}\par\medskip
+
+Un número $a$ es punto de acumulación del dominio $D$ si cada intervalo abierto centrado en $a$ contiene al menos un punto de $D$ distinto de $a$. Exigimos esta condición para evitar hablar de límites sin puntos del dominio que se aproximen a $a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 3. Límite finito de una función}\par\medskip
+
+Sea $a$ un punto de acumulación del dominio de $f$. Escribimos
+\[
+ \lim_{x\to a}f(x)=L
+\]
+si para todo $\varepsilon>0$ existe $\delta>0$ tal que, para cualquier $x$ del dominio de $f$,
+\[
+ \boxed{0<|x-a|<\delta\quad\Longrightarrow\quad |f(x)-L|<\varepsilon.}
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición formal de límite y primeras demostraciones}
+La expresión se lee en el orden lógico correcto: \emph{el adversario elige $\varepsilon>0$; nosotros debemos proporcionar una $\delta>0$, que puede depender de $\varepsilon$ pero no de $x$}. El límite sólo examina los puntos del dominio próximos a $a$ y diferentes de $a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 3.}\par\medskip
+
+El orden lógico es esencial: se elige primero $\varepsilon>0$, arbitrario; después podemos elegir $\delta$ en función de ese $\varepsilon$. No es necesario que $\delta$ sea único, sólo que funcione para todos los $x$ del entorno perforado.
+\end{frame}
+
+
+\subsection{Cómo se redacta una demostración $\varepsilon$--$\delta$}
+
+\begin{frame}[t,allowframebreaks]{Cómo se redacta una demostración $\varepsilon$--$\delta$}
+Al explorar el problema es útil trabajar \emph{hacia atrás}: transformar $|f(x)-L|<\varepsilon$ hasta descubrir una condición suficiente sobre $|x-a|$. La demostración definitiva se escribe \emph{hacia delante}: fijamos $\varepsilon$, definimos $\delta$ y verificamos la implicación.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 8. Demostración completa para una función lineal}\par\medskip
+
+Demostremos $\lim_{x\to4}(3x-2)=10$. Sea $\varepsilon>0$ arbitrario. Elegimos $\delta=\varepsilon/3$. Si $0<|x-4|<\delta$, entonces
+\[
+ |(3x-2)-10|=|3x-12|=3|x-4|<3\delta=\varepsilon.
+\]
+Por la definición de límite,
+\[
+ \boxed{\lim_{x\to4}(3x-2)=10.}
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 9. Un cuadrado con una cota auxiliar}\par\medskip
+
+Demostremos $\lim_{x\to1}(x^2+2x)=3$. Sea $\varepsilon>0$. Factorizando,
+\[
+ |x^2+2x-3|=|x-1|\,|x+3|.
+\]
+Si $|x-1|<1$, entonces $0<x<2$ y $|x+3|<5$. Definimos $\delta=\min\{1,\varepsilon/5\}$. Para $0<|x-1|<\delta$ resulta
+\[
+ |x^2+2x-3|<5|x-1|<5\delta\le\varepsilon.
+\]
+La implicación se cumple y el límite es $3$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 10. Cociente con control del denominador}\par\medskip
+
+Queremos justificar $\lim_{x\to2}\dfrac1{x+1}=\dfrac13$. Para $x\ne-1$,
+\[
+ \left|\frac1{x+1}-\frac13\right|=\frac{|x-2|}{3|x+1|}.
+\]
+Si $|x-2|<1$, tenemos $1<x<3$ y $|x+1|>2$. Entonces
+\[
+ \left|\frac1{x+1}-\frac13\right|<\frac{|x-2|}{6}.
+\]
+Dado $\varepsilon>0$, elegimos $\delta=\min\{1,6\varepsilon\}$. Así, si $0<|x-2|<\delta$, la diferencia es menor que $\delta/6\le\varepsilon$. Queda probado el límite.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 2. Unicidad del límite}\par\medskip
+
+Si $\lim_{x\to a}f(x)=L$ y también $\lim_{x\to a}f(x)=M$, entonces $L=M$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Si $L\ne M$, sea $\varepsilon=|L-M|/3$. Por las dos hipótesis existen $\delta_L,\delta_M>0$. Tomemos un punto del dominio con $0<|x-a|<\min(\delta_L,\delta_M)$, que existe porque $a$ es punto de acumulación. Por la desigualdad triangular,
+\[
+ |L-M|\le|L-f(x)|+|f(x)-M|<2\varepsilon=\frac23|L-M|,
+\]
+contradicción. Por tanto, $L=M$.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Cómo se redacta una demostración $\varepsilon$--$\delta$}
+Para límites sencillos conviene seguir una estrategia de dos momentos. En un \emph{trabajo preliminar}, partimos de $|f(x)-L|$ y buscamos una condición sobre $|x-a|$ que lo haga menor que $\varepsilon$. Después escribimos la \emph{demostración formal}: dado $\varepsilon>0$ elegimos $\delta$, comprobamos la implicación y concluimos.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 11. Demostración para una función lineal}\par\medskip
+
+Demostremos que $\lim_{x\to3}(2x+1)=7$. El error es
+\[
+ |(2x+1)-7|=|2x-6|=2|x-3|.
+\]
+Para que sea menor que $\varepsilon$, basta tomar $|x-3|<\varepsilon/2$. Sea $\varepsilon>0$ y elijamos $\delta=\varepsilon/2$. Si $0<|x-3|<\delta$, entonces
+\[
+ |(2x+1)-7|=2|x-3|<2\delta=\varepsilon.
+\]
+Por la definición, $\boxed{\lim_{x\to3}(2x+1)=7}$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 12. Demostración para un polinomio cuadrático}\par\medskip
+
+Demostremos que $\lim_{x\to2}x^2=4$. Escribimos
+\[
+ |x^2-4|=|x-2|\,|x+2|.
+\]
+El factor $|x+2|$ no es constante. Si primero imponemos $|x-2|<1$, entonces $1<x<3$ y se tiene $|x+2|<5$. Así,
+\[
+ |x^2-4|<5|x-2|.
+\]
+Dado $\varepsilon>0$, elegimos
+\[
+ \boxed{\delta=\min\left\{1,\frac{\varepsilon}{5}\right\}.}
+\]
+Si $0<|x-2|<\delta$, entonces $|x^2-4|<5|x-2|<5\delta\le\varepsilon$. Se ha demostrado el límite. El número $1$ no es especial: se usa para \emph{controlar el segundo factor} por una constante sencilla.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 13. Un límite racional: cómo controlar el denominador}\par\medskip
+
+Queremos demostrar que $\lim_{x\to2}1/x=1/2$. Observamos
+\[
+ \left|\frac1x-\frac12\right|=\frac{|x-2|}{2|x|}.
+\]
+Si $|x-2|<1$, entonces $1<x<3$, de modo que $1/(2|x|)<1/2$. Por tanto
+\[
+ \left|\frac1x-\frac12\right|<\frac{|x-2|}{2}.
+\]
+Dado $\varepsilon>0$, elijamos $\delta=\min\{1,2\varepsilon\}$. Si $0<|x-2|<\delta$, se sigue
+\[
+ \left|\frac1x-\frac12\right|<\frac{\delta}{2}\le\varepsilon.
+\]
+Esto completa la demostración. La idea reutilizable es \emph{separar del cero el denominador} mediante una cota local.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 14. Valor absoluto}\par\medskip
+
+Por la desigualdad triangular inversa $\bigl||x|-|a|\bigr|\le|x-a|$. En particular, para $a=-2$,
+\[
+ \bigl||x|-2\bigr|\le|x+2|.
+\]
+Si tomamos $\delta=\varepsilon$, entonces $0<|x+2|<\delta$ implica $\bigl||x|-2\bigr|<\varepsilon$. Por tanto,
+\[
+ \boxed{\lim_{x\to-2}|x|=2}.
+\]
+Esta demostración evita separar innecesariamente los casos $x<0$ y $x\ge0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 3. Unicidad del límite}\par\medskip
+
+Si $\lim_{x\to a}f(x)$ existe y es finito, su valor es único.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Supongamos que dos números $L\ne M$ satisfacen la definición. Elijamos $\varepsilon=|L-M|/3$. Como $a$ es punto de acumulación, existe un mismo $x\ne a$ suficientemente próximo a $a$ para aplicar ambas condiciones. La desigualdad triangular da
+\[
+ |L-M|\le|L-f(x)|+|f(x)-M|<2\varepsilon=\frac23|L-M|,
+\]
+lo cual es imposible. En consecuencia $L=M$.
+
+\hfill $\square$
+\end{frame}
+
+
+\subsection{Definición rigurosa de los límites laterales}
+
+\begin{frame}[t,allowframebreaks]{Definición rigurosa de los límites laterales}
+Para $\lim_{x\to a^+}f(x)=L$ exigimos que, para todo $\varepsilon>0$, exista $\delta>0$ tal que, para todo $x$ del dominio,
+\[
+ a<x<a+\delta\quad\Longrightarrow\quad|f(x)-L|<\varepsilon.
+\]
+Para el límite izquierdo sustituimos la primera condición por $a-\delta<x<a$. En las demostraciones se mantiene el mismo orden lógico de los cuantificadores.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 4.}\par\medskip
+
+La definición formal no obliga a elegir un $\delta$ \emph{óptimo} ni exactamente igual a una expresión calculada: cualquier elección positiva que garantice la implicación es válida. También explica por qué una gráfica puede sugerir un límite pero no sustituye una demostración.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 5.}\par\medskip
+
+Las expresiones $\lim_{x\to a}f(x)=L$ y $f(a)=L$ no son equivalentes. La primera habla del comportamiento próximo al punto; la segunda es una evaluación puntual. Cuando más adelante exijamos ambas, obtendremos la continuidad.
+\end{frame}
+
+
+\section{Límite de una función: de la exploración a la definición}
+
+\begin{frame}[t]{Límite de una función: de la exploración a la definición}
+\centering\vfill{\Large\bfseries\color{azul} Límite de una función: de la exploración a la definición}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límite de una función: de la exploración a la definición}
+%=======================================================
+Consideremos una función $f$ y un número $a$. Nos interesa averiguar si los valores $f(x)$ se aproximan a un mismo número $L$ cuando $x$ se aproxima a $a$, sin exigir que $x=a$. Es esencial distinguir el \emph{valor en el punto} del \emph{comportamiento cerca del punto}.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 4. Interpretación intuitiva del límite}\par\medskip
+
+Escribimos
+\[
+ \lim_{x\to a}f(x)=L
+\]
+cuando los valores de $f(x)$ pueden acercarse tanto como queramos a $L$ tomando $x$ suficientemente próximo a $a$, con $x\ne a$ y $x$ en el dominio de $f$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 15. El límite no necesita el valor en el punto}\par\medskip
+
+Para $x\ne3$,
+\[
+ f(x)=\frac{x^2-9}{x-3}=\frac{(x-3)(x+3)}{x-3}=x+3.
+\]
+Aunque $f(3)$ no existe, se puede hacer que $f(x)$ esté tan próximo a $6$ como se desee eligiendo $x$ cercano a $3$:
+\[
+ \boxed{\lim_{x\to3}\frac{x^2-9}{x-3}=6.}
+\]
+No estamos cancelando $x-3$ en $x=3$; lo cancelamos solamente para valores $x\ne3$, que son exactamente los que intervienen en el límite.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 16. El valor en el punto puede ser distinto del límite}\par\medskip
+
+Definamos
+\[
+ g(x)=\begin{cases}x+3,&x\ne3,\\-4,&x=3.\end{cases}
+\]
+Se tiene $g(3)=-4$, pero $\lim_{x\to3}g(x)=6$. El límite y el valor de una función son preguntas diferentes.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=0.9,>=stealth]
+ \draw[->] (-0.1,0)--(5.7,0) node[right] {$x$};
+ \draw[->] (0,-1.05)--(0,3.75) node[above] {$y$};
+ \draw[very thick,azul,domain=0.3:5.2,samples=100] plot (\x,{0.15*(\x-3)^2+1.5});
+ \draw[fill=white,line width=1.2pt,azul] (3,1.5) circle (3pt);
+ \fill[black] (3,-0.4) circle (3pt) node[below right] {$f(a)$};
+ \draw[dashed] (3,0) node[above left] {$a$} -- (3,1.5) --(0,1.5) node[left] {$L$};
+ \node at (4.25,3.0) {$\lim_{x\to a}f(x)=L$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\subsection{Límites laterales}
+
+\begin{frame}[t,allowframebreaks]{Límites laterales}
+La aproximación puede hacerse por la izquierda ($x<a$) o por la derecha ($x>a$). Las notaciones son
+\[
+ \lim_{x\to a^-}f(x)\quad\text{y}\quad \lim_{x\to a^+}f(x).
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 4. Criterio de existencia del límite bilateral}\par\medskip
+
+Cuando el dominio permite aproximarse a $a$ por ambos lados,
+\[
+ \boxed{\lim_{x\to a}f(x)=L\quad\Longleftrightarrow\quad
+ \lim_{x\to a^-}f(x)=L=\lim_{x\to a^+}f(x).}
+\]
+Si los dos límites laterales existen pero son distintos, el límite bilateral no existe.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 17. Un salto}\par\medskip
+
+Sea
+\[
+ f(x)=\begin{cases}x+2,&x<1,\\ 2x-1,&x\ge1.\end{cases}
+\]
+Por la izquierda, $\lim_{x\to1^-}f(x)=3$; por la derecha, $\lim_{x\to1^+}f(x)=1$. En consecuencia $\lim_{x\to1}f(x)$ no existe, aunque $f(1)=1$ sí está definida.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=0.86,>=stealth]
+ \draw[->] (-1.55,0)--(3.1,0) node[right] {$x$};
+ \draw[->] (0,-0.6)--(0,4.15) node[above] {$y$};
+ \draw[thick,azul,domain=-1.3:0.999] plot (\x,{\x+2});
+ \draw[thick,red!75!black,domain=1:2.45] plot (\x,{2*\x-1});
+ \draw[fill=white,azul,very thick] (1,3) circle (3pt);
+ \fill[red!75!black] (1,1) circle (3pt);
+ \draw[dashed] (1,0) node[below] {$a=1$} --(1,3);
+ \node[azul] at (-0.8,3.5) {izquierda};
+ \node[red!75!black] at (2.0,0.65) {derecha};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\subsection{Funciones oscilatorias: una advertencia numérica}
+
+\begin{frame}[t,allowframebreaks]{Funciones oscilatorias: una advertencia numérica}
+No todos los comportamientos se reducen a un salto. Consideremos $f(x)=\sin(1/x)$, para $x\ne0$. Una tabla con unos pocos valores de $x$ podría sugerir una tendencia, pero no existe un límite al acercarnos a $0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 18. Demostración de que un límite no existe}\par\medskip
+
+Tomemos dos sucesiones positivas que tienden a cero:
+\[
+ x_n=\frac{1}{\frac\pi2+2\pi n},\qquad
+ y_n=\frac{1}{\frac{3\pi}2+2\pi n}.
+\]
+Entonces
+\[
+ \lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n=0,
+ \qquad \sin(1/x_n)=1,\quad \sin(1/y_n)=-1.
+\]
+Si existiera un límite único para $x\to0$, tendría que coincidir tanto con $1$ como con $-1$, lo cual es imposible. Por tanto, $\boxed{\lim_{x\to0}\sin(1/x)\text{ no existe}.}$
+\end{frame}
+
+
+\subsection{Los límites se investigan en el dominio}
+
+\begin{frame}[t,allowframebreaks]{Los límites se investigan en el dominio}
+Si $f(x)=\sqrt{x}$, $a=0$ es un extremo del dominio real $[0,\infty)$: podemos calcular $\lim_{x\to0^+}\sqrt{x}=0$, pero no un límite izquierdo real. Distinguiremos siempre un límite lateral de un límite bilateral que exige aproximaciones por ambos lados.
+
+%=======================================================
+\end{frame}
+
+
+\section{Teoremas de límites y cálculo algebraico}
+
+\begin{frame}[t]{Teoremas de límites y cálculo algebraico}
+\centering\vfill{\Large\bfseries\color{azul} Teoremas de límites y cálculo algebraico}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teoremas de límites y cálculo algebraico}
+%=======================================================
+Los teoremas permiten transformar cálculos complicados en límites de expresiones sencillas. Su uso requiere comprobar las hipótesis, especialmente que los límites involucrados existan y que el denominador no tienda a cero.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 5. Constante, identidad y función lineal}\par\medskip
+
+Si $a,c,m,b\in\R$, se cumple
+\[
+ \lim_{x\to a}c=c,\qquad \lim_{x\to a}x=a,\qquad
+ \lim_{x\to a}(mx+b)=ma+b.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Para una constante, $|c-c|=0<\varepsilon$ para cualquier $\delta>0$. Para la identidad, $|x-a|<\varepsilon$ se cumple tomando $\delta=\varepsilon$. Para $m\ne0$ en la función lineal,
+\[
+ |(mx+b)-(ma+b)|=|m|\,|x-a|,
+\]
+por lo que basta elegir $\delta=\varepsilon/|m|$. Si $m=0$ la función es constante.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 6. Operaciones con límites}\par\medskip
+
+Sean $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$, y $c\in\R$. Entonces
+\begin{align*}
+ \lim_{x\to a}(f+g)(x)&=L+M,\\
+ \lim_{x\to a}cf(x)&=cL,\\
+ \lim_{x\to a}(fg)(x)&=LM,\\
+ \lim_{x\to a}\frac{f(x)}{g(x)}&=\frac LM\quad\text{si }M\ne0.
+\end{align*}
+Se deducen también la regla para potencias naturales, polinomios y funciones racionales cuando el denominador no se anula en el punto.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Dado $\varepsilon>0$, tomemos $\delta_f$ correspondiente a la tolerancia $\varepsilon/2$ para $f$ y $\delta_g$ correspondiente a la misma tolerancia para $g$. Para $0<|x-a|<\delta=\min\{\delta_f,\delta_g\}$,
+\begin{align*}
+ |(f(x)+g(x))-(L+M)|&\le|f(x)-L|+|g(x)-M|\\
+ &<\frac\varepsilon2+\frac\varepsilon2=\varepsilon.
+\end{align*}
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Escribimos
+\[
+ fg-LM=f(g-M)+M(f-L).
+\]
+Como $f(x)\to L$, existe una vecindad donde $|f(x)-L|<1$; allí $|f(x)|\le |L|+1=:K$. Dado $\varepsilon>0$, exigimos además
+\[
+ |g(x)-M|<\frac{\varepsilon}{2K},\qquad
+ |f(x)-L|<\frac{\varepsilon}{2(|M|+1)}.
+\]
+Tomamos el mínimo de las tres distancias $\delta$ que proporcionan estas condiciones. Entonces
+\[
+ |f(x)g(x)-LM|\le K|g(x)-M|+|M|\,|f(x)-L|<\varepsilon.
+\]
+El mismo esquema de control, con una cota inferior para $|g(x)|$, demuestra la regla del cociente cuando $M\ne0$.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 19. Aplicación directa de los teoremas}\par\medskip
+
+\[
+ \lim_{x\to-1}\bigl(2x^3-3x+4\bigr)=2(-1)^3-3(-1)+4=\boxed5.
+\]
+Aquí la sustitución está justificada porque cada polinomio es continuo y sus límites se obtienen con las reglas algebraicas.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 20. Una indeterminación $0/0$ que requiere factorizar}\par\medskip
+
+\[
+ \lim_{x\to5}\frac{x^2-25}{x-5}
+ =\lim_{x\to5}\frac{(x-5)(x+5)}{x-5}
+ =\lim_{x\to5}(x+5)=\boxed{10}.
+\]
+La igualdad entre los cocientes es válida únicamente para $x\ne5$, y eso basta porque los límites excluyen el punto de aproximación.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 21. Factor común y simplificación}\par\medskip
+
+Calculamos
+\[
+ \lim_{h\to0}\frac{(3+h)^2-9}{h}=
+ \lim_{h\to0}\frac{6h+h^2}{h}
+ =\lim_{h\to0}(6+h)=\boxed6.
+\]
+No se puede evaluar el cociente original en $h=0$, pero sí transformar la expresión para $h\ne0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 22. Racionalización}\par\medskip
+
+Al sustituir $x=4$ en el siguiente cociente se obtiene $0/0$:
+\begin{align*}
+ \lim_{x\to4}\frac{\sqrt{x+5}-3}{x-4}
+ &=\lim_{x\to4}\frac{(\sqrt{x+5}-3)(\sqrt{x+5}+3)}{(x-4)(\sqrt{x+5}+3)}\\
+ &=\lim_{x\to4}\frac{x+5-9}{(x-4)(\sqrt{x+5}+3)}\\
+ &=\lim_{x\to4}\frac1{\sqrt{x+5}+3}=\boxed{\frac16}.
+\end{align*}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 23. La forma $0/0$ no garantiza un límite finito}\par\medskip
+
+\[
+ \lim_{x\to2}\frac{x^2-4}{(x-2)^2}
+ =\lim_{x\to2}\frac{x+2}{x-2}.
+\]
+Cuando $x\to2^+$ el cociente crece hacia $+\infty$, mientras que cuando $x\to2^-$ decrece hacia $-\infty$. Por tanto no existe un límite bilateral finito. La simplificación debe ir acompañada de un análisis de signo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Proposición}
+{\color{azul}\bfseries Proposición 1. Polinomios y funciones racionales}\par\medskip
+
+Para todo polinomio $p$ y todo $a\in\R$, $\lim_{x\to a}p(x)=p(a)$. Para $f(x)=p(x)/q(x)$, si $q(a)\ne0$, $\lim_{x\to a}f(x)=p(a)/q(a)$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 24. Sustitución directa}\par\medskip
+
+\[
+ \lim_{x\to-2}(3x^2-x+1)=3(4)-(-2)+1=\boxed{15}.
+\]
+No hay ninguna indeterminación. Aplicar métodos más largos no mejora el razonamiento.
+\end{frame}
+
+
+\subsection{La indeterminación $0/0$ no es un resultado}
+
+\begin{frame}[t,allowframebreaks]{La indeterminación $0/0$ no es un resultado}
+Si al sustituir obtenemos $0/0$, no hemos encontrado el límite: la sustitución no permite concluir nada. Puede suceder que el límite exista, sea infinito o no exista; debemos transformar la expresión para $x\ne a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 25. Factor común}\par\medskip
+
+\begin{align*}
+ \lim_{x\to2}\frac{x^2-4}{x-2}
+ &=\lim_{x\to2}\frac{(x-2)(x+2)}{x-2}\\
+ &=\lim_{x\to2}(x+2)=\boxed{4}.
+\end{align*}
+La igualdad intermedia es cierta sólo cuando $x\ne2$, lo cual basta para calcular el límite.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 26. Un cociente de polinomios}\par\medskip
+
+\begin{align*}
+\lim_{x\to3}\frac{x^2-5x+6}{x^2-9}
+ &=\lim_{x\to3}\frac{(x-2)(x-3)}{(x-3)(x+3)}\\
+ &=\lim_{x\to3}\frac{x-2}{x+3}=\boxed{\frac16}.
+\end{align*}
+Después de simplificar se vuelve a aplicar sustitución directa; no se cancela indiscriminadamente sin factorizar.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 27. Una indeterminación que esconde un límite infinito}\par\medskip
+
+En $x\to0$,
+\[
+ \frac{x^2}{x^4}=\frac1{x^2},\qquad x\ne0.
+\]
+La sustitución original da $0/0$, pero la forma reducida muestra que $\lim_{x\to0}x^2/x^4=+\infty$. Por eso $0/0$ no determina el comportamiento final.
+\end{frame}
+
+
+\subsection{Racionalización}
+
+\begin{frame}[t,allowframebreaks]{Racionalización}
+Cuando intervienen raíces cuadradas y una diferencia que tiende a cero, multiplicamos por el \emph{conjugado}, aprovechando $ (a-b)(a+b)=a^2-b^2$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 28. Racionalizar el numerador}\par\medskip
+
+\begin{align*}
+\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}
+ &=\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}\cdot\frac{\sqrt{x}+2}{\sqrt{x}+2}\\
+ &=\lim_{x\to4}\frac{x-4}{(x-4)(\sqrt{x}+2)}\\
+ &=\lim_{x\to4}\frac1{\sqrt{x}+2}=\boxed{\frac14}.
+\end{align*}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 29. Racionalización con cambio de variable pequeño}\par\medskip
+
+\begin{align*}
+\lim_{h\to0}\frac{\sqrt{9+h^2}-3}{h^2}
+ &=\lim_{h\to0}\frac{(9+h^2)-9}{h^2(\sqrt{9+h^2}+3)}\\
+ &=\lim_{h\to0}\frac1{\sqrt{9+h^2}+3}=\boxed{\frac16}.
+\end{align*}
+El numerador original resta dos cantidades muy cercanas. En cálculos de punto flotante, esa resta puede perder dígitos significativos; la expresión racionalizada resulta más estable para valores pequeños de $h$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 7. Continuidad de raíces y composiciones simples}\par\medskip
+
+Si $\lim_{x\to a}f(x)=L$ y $L>0$, entonces
+\[
+ \lim_{x\to a}\sqrt{f(x)}=\sqrt L.
+\]
+La misma conclusión vale para $L=0$ cuando $f(x)\ge0$ cerca de $a$, considerando sólo puntos de su dominio. En general, las funciones polinomiales y racionales son continuas en todos los puntos de su dominio.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Para $L>0$, racionalizar da
+\[
+ |\sqrt{f(x)}-\sqrt L|=\frac{|f(x)-L|}{\sqrt{f(x)}+\sqrt L}\le\frac{|f(x)-L|}{\sqrt L}.
+\]
+Por tanto, al hacer $|f(x)-L|<\varepsilon\sqrt L$ se consigue la desigualdad requerida. Para $L=0$, basta usar $|\sqrt{f(x)}|=\sqrt{|f(x)|}$ y solicitar $|f(x)|<\varepsilon^2$.
+
+\hfill $\square$
+\end{frame}
+
+
+\section{Límites laterales y funciones definidas por partes}
+
+\begin{frame}[t]{Límites laterales y funciones definidas por partes}
+\centering\vfill{\Large\bfseries\color{azul} Límites laterales y funciones definidas por partes}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límites laterales y funciones definidas por partes}
+%=======================================================
+En un límite bilateral interesa la aproximación a $a$ por ambos lados. En muchas funciones, especialmente las definidas por partes, las aproximaciones izquierda y derecha producen comportamientos diferentes.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 5. Límites laterales}\par\medskip
+
+Decimos que $\lim_{x\to a^-}f(x)=L$ si para todo $\varepsilon>0$ existe $\delta>0$ tal que
+\[
+ a-\delta<x<a\quad\Longrightarrow\quad |f(x)-L|<\varepsilon,
+\]
+para puntos $x$ del dominio. Se define $\lim_{x\to a^+}f(x)=L$ cambiando la condición por $a<x<a+\delta$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 8. Existencia del límite bilateral}\par\medskip
+
+Cuando existen puntos del dominio arbitrariamente próximos a $a$ por ambos lados,
+\[
+ \boxed{\lim_{x\to a}f(x)=L\quad\Longleftrightarrow\quad
+ \lim_{x\to a^-}f(x)=L=\lim_{x\to a^+}f(x).}
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Si existe el límite bilateral, la misma $\delta$ de su definición funciona al restringir $x$ a cada semirrecta. Recíprocamente, si ambos límites laterales son $L$, para una tolerancia $\varepsilon$ tomamos el mínimo de sus respectivas distancias $\delta_-$ y $\delta_+$. Cualquier $x$ próximo a $a$ cae a uno u otro lado y satisface la misma desigualdad vertical.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 30. Límite de un valor absoluto dividido entre la variable}\par\medskip
+
+Sea $f(x)=|x|/x$ para $x\ne0$. Si $x>0$, $f(x)=1$; si $x<0$, $f(x)=-1$. En consecuencia,
+\[
+ \lim_{x\to0^-}\frac{|x|}{x}=-1,\qquad
+ \lim_{x\to0^+}\frac{|x|}{x}=1.
+\]
+Como los valores laterales son distintos, $\lim_{x\to0}|x|/x$ no existe.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[>=stealth,x=0.95cm,y=0.7cm]
+\draw[->] (-3.2,0)--(3.2,0) node[right] {$x$};
+\draw[->] (0,-1.85)--(0,1.95) node[above] {$y$};
+\draw[very thick,azul] (-3, -1)--(0,-1);
+\draw[very thick,azul] (0,1)--(3,1);
+\draw[fill=white,azul,thick] (0,-1) circle (3pt);
+\draw[fill=white,azul,thick] (0,1) circle (3pt);
+\node[right] at (2.3,1.34) {$f(x)=1$};
+\node[left] at (-1.9,-1.3) {$f(x)=-1$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 31. Función por partes: ajustar un parámetro}\par\medskip
+
+Considere
+\[
+ f(x)=\begin{cases}2x+k,&x<1,\\x^2+3,&x\ge1.\end{cases}
+\]
+Para que el límite exista en $1$ es necesario y suficiente que los límites laterales coincidan:
+\[
+ \lim_{x\to1^-}f(x)=2+k,\qquad
+ \lim_{x\to1^+}f(x)=4.
+\]
+Por tanto $2+k=4$, es decir, $\boxed{k=2}$. Además, $f(1)=4$, de manera que con esa elección la función será continua en $1$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 32. Límite lateral sin límite bilateral}\par\medskip
+
+Para $f(x)=\sqrt{x-2}$, el dominio real es $[2,\infty)$. En el extremo $x=2$ tiene sentido el límite derecho
+\[
+ \lim_{x\to2^+}\sqrt{x-2}=0,
+\]
+pero no existe un límite izquierdo real dentro del dominio. En un curso elemental, el límite bilateral en ese extremo no se considera existente; la continuidad en $[2,\infty)$ se estudiará por la derecha.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 6.}\par\medskip
+
+Antes de calcular límites laterales hay que mirar el \emph{dominio} y la fórmula que corresponde a cada lado. No está permitido usar una rama de una función por partes fuera del intervalo que la define.
+\end{frame}
+
+
+\section{Límites infinitos y asíntotas verticales}
+
+\begin{frame}[t]{Límites infinitos y asíntotas verticales}
+\centering\vfill{\Large\bfseries\color{azul} Límites infinitos y asíntotas verticales}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límites infinitos y asíntotas verticales}
+%=======================================================
+Un límite infinito describe un crecimiento o decrecimiento sin cota. No se trata de un límite real, pues $+\infty$ y $-\infty$ no son números reales.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 6. Crecimiento sin cota}\par\medskip
+
+La notación $\lim_{x\to a}f(x)=+\infty$ significa que para cada número $M>0$ existe $\delta>0$ tal que
+\[
+ 0<|x-a|<\delta\quad\Longrightarrow\quad f(x)>M,
+\]
+para puntos $x$ del dominio. Escribimos $\lim_{x\to a}f(x)=-\infty$ si se puede garantizar $f(x)<-M$ para cualquier $M>0$. Existen versiones laterales con $a-\delta<x<a$ o $a<x<a+\delta$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 33. Demostración de un límite infinito}\par\medskip
+
+Demostremos que $\lim_{x\to0}1/x^2=+\infty$. Dado $M>0$, elegimos
+\[
+ \delta=\frac1{\sqrt M}.
+\]
+Si $0<|x|<\delta$, entonces $x^2<1/M$, y por tanto
+\[
+ \frac1{x^2}>M.
+\]
+La definición queda satisfecha. Nótese que aquí la elección de $\delta$ depende de $M$, \emph{no} de $\varepsilon$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 34. Signos opuestos a cada lado}\par\medskip
+
+Analicemos $f(x)=3/(x-2)$. Cerca de $2$ el numerador es positivo y constante, mientras que el denominador cambia de signo:
+\[
+ \lim_{x\to2^-}\frac3{x-2}=-\infty,\qquad
+ \lim_{x\to2^+}\frac3{x-2}=+\infty.
+\]
+La recta $x=2$ es asíntota vertical. El límite bilateral no es $+\infty$ ni $-\infty$, porque los dos lados se comportan de manera distinta.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 35. Factorización para identificar la singularidad}\par\medskip
+
+Sea
+\[
+ f(x)=\frac{x+1}{x^2-4}=\frac{x+1}{(x-2)(x+2)}.
+\]
+Al aproximarnos a $2$, los factores $x+1$ y $x+2$ son positivos; el signo depende de $x-2$. Por consiguiente,
+\[
+ \lim_{x\to2^-}f(x)=-\infty,\qquad \lim_{x\to2^+}f(x)=+\infty.
+\]
+La factorización revela más información que la simple observación del denominador nulo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 7. Asíntota vertical}\par\medskip
+
+La recta $x=a$ es una asíntota vertical de la gráfica $y=f(x)$ si por lo menos uno de los límites laterales de $f$ en $a$ es $+\infty$ o $-\infty$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 36. Un cero en el denominador que no es asíntota}\par\medskip
+
+La función $h(x)=(x^2-1)/(x-1)$ no está definida en $x=1$, pero allí coincide con $x+1$ para $x\ne1$. En consecuencia,
+\[
+ \lim_{x\to1}h(x)=2,
+\]
+y $x=1$ no es asíntota vertical. El denominador nulo es sólo una pista: para decidir debe analizarse el límite.
+\end{frame}
+
+
+\subsection{Teorema de comparación o del sándwich}
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 9. Teorema del sándwich}\par\medskip
+
+Supongamos que $g(x)\le f(x)\le h(x)$ para $x$ suficientemente cercano a $a$, quizá excepto en $a$. Si
+\[
+ \lim_{x\to a}g(x)=L=\lim_{x\to a}h(x),
+\]
+entonces $\lim_{x\to a}f(x)=L$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Dado $\varepsilon>0$, la hipótesis sobre $g$ y $h$ permite elegir un mismo $\delta>0$ tal que, si $0<|x-a|<\delta$, entonces $L-\varepsilon<g(x)$ y $h(x)<L+\varepsilon$. Como $g(x)\le f(x)\le h(x)$, también $L-\varepsilon<f(x)<L+\varepsilon$. Así $|f(x)-L|<\varepsilon$, que es la definición de límite.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 37. Oscilación multiplicada por un factor pequeño}\par\medskip
+
+Como $-1\le\sin(1/x)\le1$ para $x\ne0$, se tiene
+\[
+ -x^2\le x^2\sin(1/x)\le x^2.
+\]
+Los extremos tienden a cero, de modo que
+\[
+ \boxed{\lim_{x\to0}x^2\sin(1/x)=0.}
+\]
+A pesar de que $\sin(1/x)$ no tiene límite en cero, el producto sí lo tiene.
+\end{frame}
+
+
+\subsection{Límites trigonométricos fundamentales}
+
+\begin{frame}[t,allowframebreaks]{Límites trigonométricos fundamentales}
+El límite
+\[
+ \boxed{\lim_{x\to0}\frac{\sin x}{x}=1}
+\]
+es válido con el argumento medido en \emph{radianes}. A partir de él se deducen otros límites sin utilizar derivadas.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Proposición}
+{\color{azul}\bfseries Proposición 2. Justificación geométrica de $\sin x/x$}\par\medskip
+
+Para $0<x<\pi/2$, la comparación de áreas dentro del círculo unitario conduce a
+\[
+ \sin x<x<\tan x.
+\]
+Al dividir la primera desigualdad por $x>0$ y reorganizar la segunda,
+\[
+ \cos x<\frac{\sin x}{x}<1.
+\]
+Como $\lim_{x\to0^+}\cos x=1$, el teorema del sándwich demuestra que $\lim_{x\to0^+}\sin x/x=1$. La función $\sin x/x$ es par, porque $\sin(-x)/(-x)=\sin x/x$; por ello el mismo límite se obtiene desde la izquierda.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=1.35,>=stealth]
+ \def\ang{32}
+ \draw[->] (-0.1,0)--(1.6,0) node[right] {$x$};
+ \draw[->] (0,-0.1)--(0,1.3) node[above] {$y$};
+ \draw[thick,azul] (1,0) arc[start angle=0,end angle=90,radius=1];
+ \draw[thick] (0,0)--(1,0);
+ \draw[thick] (0,0)--({cos(\ang)},{sin(\ang)});
+ \draw[red!75!black,thick] (1,0)--(1,{tan(\ang)})--(0,0);
+ \draw[blue!70!black,thick] ({cos(\ang)},0)--({cos(\ang)},{sin(\ang)});
+ \draw (0.28,0) arc[start angle=0,end angle=\ang,radius=0.28];
+ \node at (0.37,0.14) {$x$};
+ \node[below] at (1,0) {$1$};
+ \node[above right] at ({cos(\ang)},{sin(\ang)}) {$P$};
+ \node[right] at (1,{tan(\ang)}) {$T$};
+ \node[below left] at (0,0) {$O$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límites trigonométricos fundamentales}
+El esquema representa un radio, la cuerda y la tangente en $(1,0)$ para un ángulo pequeño y positivo. La comparación de sus regiones fundamenta la desigualdad utilizada.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 38. Composición lineal}\par\medskip
+
+\[
+ \lim_{x\to0}\frac{\sin(5x)}{x}=
+ 5\lim_{x\to0}\frac{\sin(5x)}{5x}=\boxed{5}.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 39. Cociente de senos}\par\medskip
+
+\begin{align*}
+\lim_{x\to0}\frac{\sin(3x)}{\sin(2x)}
+ &=\lim_{x\to0}\left(\frac{\sin(3x)}{3x}\right)
+ \left(\frac{2x}{\sin(2x)}\right)\frac32\\
+ &=1\cdot1\cdot\boxed{\frac32}.
+\end{align*}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 40. El límite de $(1-\cos x)/x^2$}\par\medskip
+
+Usando $1-\cos x=2\sin^2(x/2)$,
+\begin{align*}
+ \lim_{x\to0}\frac{1-\cos x}{x^2}
+ &=\lim_{x\to0}\frac{2\sin^2(x/2)}{x^2}\\
+ &=\frac12\lim_{x\to0}\left(\frac{\sin(x/2)}{x/2}\right)^2
+ =\boxed{\frac12}.
+\end{align*}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 7.}\par\medskip
+
+Hasta aquí no hemos empleado la regla de L'Hôpital ni derivadas. Éstas no son necesarias para los límites básicos de esta unidad y se estudiarán más adelante, cuando las hipótesis que las justifican estén disponibles.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límites trigonométricos fundamentales}
+%=======================================================
+%\section{Límites infinitos y asíntotas verticales}
+%=======================================================
+A veces $f(x)$ no se aproxima a un número real, sino que sus valores crecen sin cota o decrecen sin cota. Ésta es una forma precisa de describir la gráfica cerca de una asíntota vertical.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 8. Tendencia a infinito}\par\medskip
+
+Escribimos $\lim_{x\to a}f(x)=+\infty$ si para todo $M>0$ existe $\delta>0$ de modo que $0<|x-a|<\delta$ implica $f(x)>M$. Se define $\lim_{x\to a}f(x)=-\infty$ cuando, para todo $M>0$, la función satisface $f(x)<-M$ suficientemente cerca de $a$. Existen versiones laterales reemplazando $0<|x-a|<\delta$ por $a<x<a+\delta$ o $a-\delta<x<a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 8.}\par\medskip
+
+El símbolo $\infty$ no representa un número real. Decir que una función tiende a $+\infty$ no significa que tenga un límite \emph{finito}: describe crecimiento ilimitado.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 41. El signo del denominador determina la dirección}\par\medskip
+
+Estudiemos $f(x)=1/(x-2)$. Si $x>2$, el denominador es positivo y puede hacerse tan pequeño como se desee; por tanto
+\[
+ \boxed{\lim_{x\to2^+}\frac1{x-2}=+\infty.}
+\]
+Si $x<2$, el denominador es negativo y cercano a cero, así que
+\[
+ \boxed{\lim_{x\to2^-}\frac1{x-2}=-\infty.}
+\]
+Los comportamientos laterales no coinciden; por tanto no existe límite bilateral (ni finito ni con un signo infinito común).
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 42. Un mismo comportamiento a ambos lados}\par\medskip
+
+Para $x\ne-1$ tenemos $(x+1)^2>0$. Cuando $x\to-1$, ese cuadrado tiende a cero desde valores positivos. En consecuencia,
+\[
+ \boxed{\lim_{x\to-1}\frac{3}{(x+1)^2}=+\infty.}
+\]
+El signo positivo es el mismo en ambos lados; por eso no hace falta separar el cálculo en dos casos al comunicar el comportamiento bilateral.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 9. Asíntota vertical}\par\medskip
+
+La recta $x=a$ es una asíntota vertical de $y=f(x)$ si al menos uno de los límites laterales de $f(x)$ cuando $x\to a$ es $+\infty$ o $-\infty$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 43. Análisis de factores}\par\medskip
+
+Para
+\[
+ f(x)=\frac{x+3}{(x-1)(x+2)},
+\]
+el numerador es positivo cerca de $x=1$. El factor $x+2$ también es positivo, mientras que $x-1$ cambia de signo. Así,
+\[
+ \lim_{x\to1^-}f(x)=-\infty,\qquad
+ \lim_{x\to1^+}f(x)=+\infty.
+\]
+También hay una posible asíntota en $x=-2$, que se estudia separadamente; no debemos asumir que todo cero de un denominador produce una asíntota sin comprobar si hay factores cancelables.
+\end{frame}
+
+
+\section{Continuidad en un número y tipos de discontinuidad}
+
+\begin{frame}[t]{Continuidad en un número y tipos de discontinuidad}
+\centering\vfill{\Large\bfseries\color{azul} Continuidad en un número y tipos de discontinuidad}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 10. Continuidad en un punto}\par\medskip
+
+Una función $f$ es continua en $a$ cuando se cumplen simultáneamente:
+\begin{enumerate}
+ \item $f(a)$ está definida;
+ \item existe el límite $\lim_{x\to a}f(x)$;
+ \item $\displaystyle\lim_{x\to a}f(x)=f(a)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 44. Una discontinuidad removible}\par\medskip
+
+Definamos
+\[
+ f(x)=\begin{cases}\dfrac{x^2-16}{x-4},&x\ne4,\\0,&x=4.\end{cases}
+\]
+El límite existe porque para $x\ne4$ se tiene $f(x)=x+4$. Entonces
+\[
+ \lim_{x\to4}f(x)=8,\qquad f(4)=0.
+\]
+Como no coinciden, $f$ no es continua en $4$. Para corregir esta discontinuidad basta reemplazar la definición puntual por $f(4)=8$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 45. Discontinuidad de salto}\par\medskip
+
+La función
+\[
+ g(x)=\begin{cases}x+2,&x<1,\\x-1,&x\ge1\end{cases}
+\]
+satisface $\lim_{x\to1^-}g(x)=3$ y $\lim_{x\to1^+}g(x)=0$. Los dos límites laterales son finitos y diferentes; se trata de una discontinuidad de salto que no puede eliminarse cambiando únicamente $g(1)$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Continuidad en un número y tipos de discontinuidad}
+Cuando una función no cumple la condición de continuidad en un punto, debemos determinar \emph{qué} falla. La clasificación ayuda a interpretar la gráfica y evita considerar equivalentes todas las discontinuidades.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 11. Discontinuidad removible}\par\medskip
+
+Ocurre cuando $\lim_{x\to a}f(x)=L$ existe y es finito, pero $f(a)$ no existe o $f(a)\ne L$. Se puede corregir redefiniendo únicamente $f(a)=L$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 12. Discontinuidad de salto}\par\medskip
+
+Si existen límites laterales finitos pero $\lim_{x\to a^-}f(x)\ne\lim_{x\to a^+}f(x)$, la función tiene un salto en $a$. No basta modificar el valor $f(a)$ para hacerla continua.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 13. Discontinuidad infinita y oscilatoria}\par\medskip
+
+Una discontinuidad es \emph{infinita} si al menos uno de los límites laterales es infinito. Es \emph{oscilatoria} cuando cerca del punto hay oscilación persistente que impide la existencia de alguno de los límites laterales, sin que se trate simplemente de un salto o de una divergencia a $\pm\infty$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 46. Clasificación mediante límites}\par\medskip
+
+\begin{enumerate}
+\item $f(x)=(x^2-1)/(x-1)$, $x\ne1$: removible en $1$, pues el límite vale $2$.
+\item $g(x)=\begin{cases}-1,&x<0,\\1,&x\ge0,\end{cases}$: salto en $0$, pues los límites laterales son $-1$ y $1$.
+\item $h(x)=1/x^2$: infinita en $0$, pues ambos límites laterales son $+\infty$.
+\item $q(x)=\sin(1/x)$, $x\ne0$: oscilatoria en $0$, pues sus valores siguen alternando entre $-1$ y $1$ arbitrariamente cerca del origen.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=.78,>=stealth]
+\draw[->] (-3,0)--(4,0) node[right] {$x$}; \draw[->] (0,-2.0)--(0,3.2) node[above] {$y$};
+\draw[thick,azul] (-2.5,-1)--(0,-1); \draw[azul,fill=white,thick] (0,-1) circle (3pt);
+\draw[thick,azul] (0,1)--(3.2,1); \fill[azul] (0,1) circle (3pt);
+\node[below left] at (0,0) {$0$}; \node[above right] at (1.3,1.3) {salto};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 9.}\par\medskip
+
+Para clasificar una discontinuidad de forma ordenada, primero calcule los límites laterales; después compruebe la existencia y el valor de $f(a)$. Es un procedimiento más fiable que intentar clasificarla únicamente por su apariencia gráfica.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 47. Discontinuidad infinita y oscilatoria}\par\medskip
+
+La función $1/(x-2)^2$ presenta una discontinuidad infinita en $2$. En cambio, $\sin(1/x)$, para $x\ne0$, oscila infinitamente cerca de $0$ y carece de límite allí. Para verificar esto último, observamos que existen sucesiones que tienden a cero y cuyos valores de $\sin(1/x)$ son, respectivamente, $1$ y $-1$:
+\[
+ x_n=\frac1{\pi/2+2\pi n},\qquad
+ y_n=\frac1{3\pi/2+2\pi n}.
+\]
+Así $\sin(1/x_n)=1$ y $\sin(1/y_n)=-1$ para todo $n$. El criterio secuencial de límite (presentado aquí como complemento) excluye la existencia de un único valor límite.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 10. Continuidad de operaciones}\par\medskip
+
+Si $f$ y $g$ son continuas en $a$, entonces $f+g$, $fg$ y $cf$ son continuas en $a$. Si además $g(a)\ne0$, el cociente $f/g$ es continuo en $a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Por continuidad, los límites de $f$ y $g$ son $f(a)$ y $g(a)$. Aplicando las leyes de límites se obtiene, por ejemplo,
+\[
+ \lim_{x\to a}(fg)(x)=f(a)g(a)=(fg)(a).
+\]
+Las demás afirmaciones se demuestran de la misma manera, comprobando en el cociente que el valor de $g(a)$ no es cero.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 48. Determinar una constante para garantizar continuidad}\par\medskip
+
+Se define
+\[
+ f(x)=\begin{cases}\dfrac{x^2-1}{x-1},&x\ne1,\\k,&x=1.\end{cases}
+\]
+Para $x\ne1$ resulta $f(x)=x+1$, de modo que $\lim_{x\to1}f(x)=2$. La condición de continuidad exige $k=\boxed2$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 49. Función polinomial}\par\medskip
+
+Sea $f(x)=x^2-3x+2$. Como los polinomios satisfacen la ley de sustitución directa,
+\[
+ \lim_{x\to2}f(x)=2^2-3(2)+2=0=f(2).
+\]
+Por tanto $f$ es continua en $2$. De hecho, el mismo argumento muestra que todo polinomio es continuo en todo número real.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 11. Operaciones que conservan la continuidad}\par\medskip
+
+Si $f$ y $g$ son continuas en $a$, lo son $f\pm g$, $cf$, $fg$ y $f/g$ cuando $g(a)\ne0$. Si $g$ es continua en $a$ y $f$ es continua en $g(a)$, la composición $f\circ g$ es continua en $a$. En particular, las funciones racionales son continuas donde su denominador no se anula.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 50. Continuidad de una composición}\par\medskip
+
+La función $f(x)=\sqrt{1+x^2}$ es continua en todo $x\in\R$: el polinomio $1+x^2$ es continuo y estrictamente positivo; la raíz cuadrada es continua en valores no negativos. No es necesario calcular un límite nuevo en cada punto.
+\end{frame}
+
+
+\subsection{Continuidad desde un solo lado y en intervalos}
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 14. Continuidad en extremos}\par\medskip
+
+Una función definida en $[a,b]$ es continua en ese intervalo si es continua en cada punto de $(a,b)$, además de satisfacer
+\[
+ \lim_{x\to a^+}f(x)=f(a),\qquad
+ \lim_{x\to b^-}f(x)=f(b).
+\]
+De forma análoga se define la continuidad en intervalos abiertos y semiabiertos, atendiendo a los puntos que pertenecen al dominio.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 51. Extremo de dominio}\par\medskip
+
+$f(x)=\sqrt{x-1}$ está definida en $[1,\infty)$. En $x=1$ tenemos $f(1)=0$ y
+\[
+ \lim_{x\to1^+}\sqrt{x-1}=0=f(1).
+\]
+Por tanto, la función es continua en su dominio, incluido el extremo $1$ en el sentido de continuidad por la derecha.
+\end{frame}
+
+
+\subsection{Clasificación de discontinuidades}
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 15. Discontinuidad removible}\par\medskip
+
+En $a$ hay una discontinuidad \emph{removible} si existe el límite finito $L=\lim_{x\to a}f(x)$, pero $f(a)$ no existe o $f(a)\ne L$. Basta asignar el valor $f(a)=L$ para obtener continuidad en ese punto.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 16. Discontinuidad de salto}\par\medskip
+
+En $a$ hay una discontinuidad de \emph{salto} si existen los dos límites laterales finitos pero son distintos. Cambiar sólo $f(a)$ no puede eliminar el salto.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 17. Discontinuidades infinita y oscilatoria}\par\medskip
+
+Una discontinuidad es \emph{infinita} si algún límite lateral es $+\infty$ o $-\infty$. Es \emph{oscilatoria} cuando la función no se acerca a un número ni presenta únicamente un crecimiento sin cota, sino que oscila persistentemente cerca del punto (por ejemplo, $\sin(1/x)$ en $0$).
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=0.85,>=stealth]
+ \begin{scope}[shift={(0,0)}]
+  \draw[->] (-1.6,0)--(1.7,0);\draw[->] (0,-0.5)--(0,2.4);
+  \draw[very thick,azul,domain=-1.3:1.3] plot (\x,{0.3*\x*\x+1});
+  \draw[fill=white,azul,very thick] (0,1) circle (2.8pt);
+  \fill (0,1.8) circle (2.5pt);
+  \node at (0,-0.9) {Removible};
+ \end{scope}
+ \begin{scope}[shift={(5,0)}]
+  \draw[->] (-1.6,0)--(1.7,0);\draw[->] (0,-0.5)--(0,2.4);
+  \draw[very thick,azul] (-1.45,1.8)--(0,1.8);
+  \draw[fill=white,azul,very thick] (0,1.8) circle (2.8pt);
+  \draw[very thick,red!75!black] (0,0.75)--(1.45,0.75);
+  \fill[red!75!black] (0,0.75) circle (2.8pt);
+  \node at (0,-0.9) {Salto};
+ \end{scope}
+ \begin{scope}[shift={(10,0)}]
+  \draw[->] (-1.6,0)--(1.7,0);\draw[->] (0,-0.5)--(0,2.4);
+  \draw[dashed] (0,-0.4)--(0,2.5);
+  \draw[very thick,azul,domain=-1.5:-0.7,samples=80] plot (\x,{-0.9/\x+0.1});
+  \draw[very thick,azul,domain=0.7:1.5,samples=80] plot (\x,{0.9/\x+0.1});
+  \node at (0,-0.9) {Infinita};
+ \end{scope}
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 52. Corregir una discontinuidad removible}\par\medskip
+
+Sea
+\[
+ f(x)=\begin{cases}\dfrac{x^2-4}{x-2},&x\ne2,\\k,&x=2.\end{cases}
+\]
+Para $x\ne2$, $f(x)=x+2$, luego $\lim_{x\to2}f(x)=4$. La condición de continuidad es $k=4$; el punto faltante se rellena con $\boxed{f(2)=4}$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 53. Determinar un parámetro en una función por partes}\par\medskip
+
+Sea
+\[
+ f(x)=\begin{cases}x^2+1,&x<1,\\kx+1,&x\ge1.\end{cases}
+\]
+El límite izquierdo es $2$ y el derecho es $k+1$. Como $f(1)=k+1$, la continuidad exige $2=k+1$, es decir, $\boxed{k=1}$. Es conveniente verificar al final que ambos límites laterales y el valor coincidan.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 12. Teorema del valor intermedio}\par\medskip
+
+Si $f$ es continua en $[a,b]$ y $N$ está comprendido entre $f(a)$ y $f(b)$, existe al menos un $c\in[a,b]$ para el cual $f(c)=N$. Si $f(a)f(b)<0$, existe una raíz en $(a,b)$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 54. Garantizar una raíz sin calcularla}\par\medskip
+
+Sea $f(x)=x^3+x-3$. Es continua en $[1,2]$ por ser polinomial y
+\[
+ f(1)=-1<0,\qquad f(2)=7>0.
+\]
+El teorema del valor intermedio garantiza que existe $c\in(1,2)$ tal que $f(c)=0$. \emph{No indica el valor exacto de $c$ ni asegura por sí solo que la raíz sea única}.
+\end{frame}
+
+
+\section{Continuidad de composiciones y en intervalos}
+
+\begin{frame}[t]{Continuidad de composiciones y en intervalos}
+\centering\vfill{\Large\bfseries\color{azul} Continuidad de composiciones y en intervalos}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Continuidad de composiciones y en intervalos}
+%=======================================================
+La continuidad no se limita a un punto interior del dominio. Si una función se define en un intervalo con extremos, hay que adaptar el concepto a las aproximaciones que realmente pertenecen al intervalo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 18. Continuidad lateral y en un intervalo}\par\medskip
+
+Una función es continua por la derecha en $a$ si $\lim_{x\to a^+}f(x)=f(a)$, y por la izquierda en $b$ si $\lim_{x\to b^-}f(x)=f(b)$. Decimos que es continua en $[a,b]$ si es continua en $(a,b)$ y además continua por la derecha en $a$ y por la izquierda en $b$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 55. Continuidad en el dominio natural de una raíz}\par\medskip
+
+La función $f(x)=\sqrt{4-x^2}$ tiene dominio $[-2,2]$. En el interior es continua por composición de funciones continuas. En los extremos
+\[
+ \lim_{x\to-2^+}\sqrt{4-x^2}=0=f(-2),\quad
+ \lim_{x\to2^-}\sqrt{4-x^2}=0=f(2).
+\]
+Por tanto $f$ es continua en $[-2,2]$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 13. Límite de una composición}\par\medskip
+
+Si $\lim_{x\to a}g(x)=b$ y $f$ es continua en $b$, y $f(g(x))$ está definida cerca de $a$, entonces
+\[
+ \lim_{x\to a}f(g(x))=f(b).
+\]
+Como consecuencia, la composición de funciones continuas es continua donde esté definida.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Para un $\varepsilon>0$, la continuidad de $f$ en $b$ proporciona un $\eta>0$ tal que $|y-b|<\eta$ implica $|f(y)-f(b)|<\varepsilon$, para $y$ del dominio. Como $g(x)\to b$, existe $\delta>0$ que asegura $|g(x)-b|<\eta$ cuando $0<|x-a|<\delta$. Sustituir $y=g(x)$ concluye la prueba.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 56. Funciones compuestas}\par\medskip
+
+Analicemos $h(x)=\sqrt{5-2x}$. La función interna $g(x)=5-2x$ es continua en todos los reales; la función externa $f(t)=\sqrt t$ es continua para $t\ge0$. Por tanto $h$ es continua en el dominio $(-\infty,5/2]$ y en $x=5/2$ por la izquierda.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 14. Teorema del valor intermedio}\par\medskip
+
+Si $f$ es continua en $[a,b]$ y $N$ es cualquier número comprendido entre $f(a)$ y $f(b)$, entonces existe por lo menos un $c\in[a,b]$ tal que $f(c)=N$. Si $N$ está estrictamente entre los valores extremos, puede elegirse $c\in(a,b)$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 10.}\par\medskip
+
+La demostración formal puede desarrollarse con el axioma del supremo de los números reales. Para el curso es importante dominar primero el contenido lógico del teorema: garantiza \emph{existencia}, pero no necesariamente unicidad ni una fórmula explícita para $c$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 57. Extensión continua de una función}\par\medskip
+
+Consideremos
+\[
+f(x)=\begin{cases}
+\dfrac{x^2-9}{x-3},&x\ne3,\\
+k,&x=3.
+\end{cases}
+\]
+Para $x\ne3$ la expresión se simplifica a $x+3$. El límite vale $6$. Para que $f$ sea continua en $3$ debemos asignar precisamente $\boxed{k=6}$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 58. Igualación de límites laterales}\par\medskip
+
+Sea
+\[
+f(x)=\begin{cases}
+2x+1,&x<1,\\kx+2,&x\ge1.
+\end{cases}
+\]
+El límite por la izquierda vale $3$; por la derecha vale $k+2$, que coincide con $f(1)$. La continuidad en $1$ requiere $k+2=3$, es decir, $\boxed{k=1}$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 59. Existencia de una raíz sin resolver una ecuación}\par\medskip
+
+Sea $p(x)=x^3+x-1$. Como es polinomial, es continua en $[0,1]$. Además,
+\[
+ p(0)=-1<0,\qquad p(1)=1>0.
+\]
+Por el teorema del valor intermedio existe $c\in(0,1)$ con $p(c)=0$. No hemos calculado la raíz, pero hemos demostrado que existe.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 60. Localizar una raíz en un intervalo más pequeño}\par\medskip
+
+Con $p(x)=x^3+x-1$, evaluamos
+\[
+ p(0.6)=0.216+0.6-1=-0.184,\qquad
+ p(0.7)=0.343+0.7-1=0.043.
+\]
+Por continuidad existe al menos una raíz en $(0.6,0.7)$. La comparación sólo requiere operaciones aritméticas sencillas.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[>=stealth,x=6cm,y=1.65cm]
+ \draw[->] (-0.05,0)--(1.12,0) node[right] {$x$};
+ \draw[->] (0,-1.18)--(0,1.28) node[above] {$y$};
+ \draw[very thick,azul,domain=0:1,samples=70] plot (\x,{\x*\x*\x+\x-1});
+ \fill (0,-1) circle (1.4pt) node[right,font=\scriptsize] {$p(0)=-1$};
+ \fill (1,1) circle (1.4pt) node[above left,font=\scriptsize] {$p(1)=1$};
+ \draw[densely dashed] (0.682,0)--(0.682,-0.8);
+ \node[below,font=\scriptsize] at (0.682,-0.8) {$c$};
+ \node[above,font=\scriptsize,azul] at (0.79,0.15) {$p(c)=0$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Continuidad de composiciones y en intervalos}
+El cruce de la gráfica por el eje horizontal ilustra la existencia de $c$: el teorema asegura que hay un punto de cruce, no su valor exacto.
+
+%=======================================================
+\end{frame}
+
+
+\section{Continuidad trigonométrica y teorema de restricción}
+
+\begin{frame}[t]{Continuidad trigonométrica y teorema de restricción}
+\centering\vfill{\Large\bfseries\color{azul} Continuidad trigonométrica y teorema de restricción}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Continuidad trigonométrica y teorema de restricción}
+%=======================================================
+Las funciones seno y coseno son continuas; para entender por qué los cocientes trigonométricos fundamentales tienen el límite que utilizamos en el curso, necesitamos una desigualdad geométrica y el teorema de restricción.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 15. Teorema de restricción o del sándwich}\par\medskip
+
+Si $f(x)\le g(x)\le h(x)$ en una vecindad perforada de $a$ y
+\[
+ \lim_{x\to a}f(x)=L=\lim_{x\to a}h(x),
+\]
+entonces $\lim_{x\to a}g(x)=L$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Dado $\varepsilon>0$, existen $\delta_f,\delta_h>0$ tales que $L-\varepsilon<f(x)$ y $h(x)<L+\varepsilon$ para $0<|x-a|<\delta=\min(\delta_f,\delta_h)$. Al combinar con $f\le g\le h$ se obtiene
+\[
+ L-\varepsilon<g(x)<L+\varepsilon,
+\]
+equivalente a $|g(x)-L|<\varepsilon$.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 61. Una oscilación atrapada}\par\medskip
+
+Como $-1\le\sin(1/x)\le1$ para $x\ne0$, tenemos
+\[
+ -x^2\le x^2\sin(1/x)\le x^2.
+\]
+Ambos extremos tienden a $0$ cuando $x\to0$. Por restricción,
+\[
+ \boxed{\lim_{x\to0}x^2\sin(1/x)=0.}
+\]
+El factor $x^2$ hace pequeña una expresión oscilatoria que por sí sola no tiene límite.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 16. Límite trigonométrico fundamental}\par\medskip
+
+Si los ángulos se expresan en radianes,
+\[
+ \boxed{\lim_{x\to0}\frac{\sen x}{x}=1.}
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+En la circunferencia unitaria, la comparación de áreas de un triángulo inscrito, un sector circular y un triángulo tangente conduce, para $0<t<\pi/2$, a
+\[
+ \sen t<t<\tan t.
+\]
+Dividiendo por $\sen t>0$ e invirtiendo las desigualdades se obtiene
+\[
+ \cos t<\frac{\sen t}{t}<1.
+\]
+Además, $\cos t\to1$ cuando $t\to0$: por la identidad $1-\cos t=2\sen^2(t/2)$ y la desigualdad $|\sen u|\le|u|$, se tiene
+\[
+ 0\le1-\cos t\le\frac{t^2}{2}\to0.
+\]
+El teorema de restricción da el límite $1$ por la derecha. Como $\sen(-t)/(-t)=\sen t/t$, también vale por la izquierda.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=2.4,>=stealth]
+ \fill[blue!12] (0,0)--(1,0) arc (0:35:1)--cycle;
+ \draw[thick,gray] (0,0) circle (1);
+ \draw[thick] (0,0)--(1,0)--(1,{tan(35)})--cycle;
+ \draw[thick,azul] (0,0)--({cos(35)},{sin(35)})--(1,0);
+ \fill (0,0) circle (.014) node[below left] {$O$};
+ \fill (1,0) circle (.014) node[below right] {$A$};
+ \fill ({cos(35)},{sin(35)}) circle (.014) node[above left] {$P$};
+ \fill (1,{tan(35)}) circle (.014) node[right] {$T$};
+ \draw (0.33,0) arc (0:35:.33);
+ \node at (.41,.12) {$t$};
+ \node[below,font=\scriptsize] at (.45,-.17) {radio $1$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Continuidad trigonométrica y teorema de restricción}
+En la circunferencia unitaria, el triángulo $OAP$ está dentro del sector $OAP$, y éste dentro del triángulo $OAT$. Sus áreas son, respectivamente, $\frac12\sen t$, $\frac12t$ y $\frac12\tan t$; esta comparación explica la desigualdad utilizada en la demostración.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 62. Cambio de escala}\par\medskip
+
+Calculamos
+\[
+ \lim_{x\to0}\frac{\sen(4x)}{3x}
+ =\frac43\lim_{x\to0}\frac{\sen(4x)}{4x}
+ =\boxed{\frac43}.
+\]
+El argumento de $\sen$ y el denominador se hacen coincidir antes de usar el límite fundamental.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 63. Cociente de senos}\par\medskip
+
+\[
+ \lim_{x\to0}\frac{\sen(5x)}{\sen(2x)}
+ =\lim_{x\to0}\left(\frac{\sen(5x)}{5x}\frac{2x}{\sen(2x)}\frac52\right)
+ =\boxed{\frac52}.
+\]
+Los dos cocientes fundamentales tienden a $1$ y sus denominadores son distintos de cero para $x\ne0$ suficientemente próximo a $0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 64. Coseno: la diferencia respecto a uno}\par\medskip
+
+Por $1-\cos x=2\sen^2(x/2)$,
+\[
+ \frac{1-\cos x}{x^2}
+ =\frac12\left(\frac{\sen(x/2)}{x/2}\right)^2.
+\]
+Por tanto
+\[
+ \boxed{\lim_{x\to0}\frac{1-\cos x}{x^2}=\frac12},\qquad
+ \boxed{\lim_{x\to0}\frac{\cos x-1}{x}=0}.
+\]
+La segunda expresión vale $-x(1-\cos x)/x^2$ para $x\ne0$ y el primer límite permite concluir.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 65. Un límite con tangente}\par\medskip
+
+En una vecindad de cero, $\cos x\ne0$. Así,
+\[
+ \lim_{x\to0}\frac{\tan(3x)}x
+ =3\lim_{x\to0}\frac{\sen(3x)}{3x}\frac1{\cos(3x)}=\boxed3.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 11.}\par\medskip
+
+La fórmula $\lim_{x\to0}\sen x/x=1$ requiere \emph{radianes}. Si el argumento se midiera en grados, el factor de conversión cambiaría el límite. Este punto debe explicitarse antes de usar fórmulas trigonométricas.
+\end{frame}
+
+
+\section{Límites en el infinito y asíntotas horizontales}
+
+\begin{frame}[t]{Límites en el infinito y asíntotas horizontales}
+\centering\vfill{\Large\bfseries\color{azul} Límites en el infinito y asíntotas horizontales}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Límites en el infinito y asíntotas horizontales}
+%=======================================================
+En los límites anteriores $x$ se acercaba a un punto fijo. Ahora investigamos qué ocurre cuando la variable toma valores positivos o negativos arbitrariamente grandes. El comportamiento cerca de un punto y el comportamiento \emph{a gran distancia} son preguntas distintas.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 19. Límite finito cuando $x\to+\infty$}\par\medskip
+
+Escribimos $\lim_{x\to+\infty}f(x)=L$ si para todo $\varepsilon>0$ existe $N>0$ tal que
+\[
+ x>N\quad\Longrightarrow\quad|f(x)-L|<\varepsilon
+\]
+para los puntos $x$ del dominio. Para $x\to-\infty$ reemplazamos $x>N$ por $x<-N$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 66. Una demostración con $\varepsilon$ y $N$}\par\medskip
+
+Queremos probar $\lim_{x\to+\infty}1/x=0$. Dado $\varepsilon>0$, elijamos $N=1/\varepsilon$. Si $x>N$, entonces
+\[
+ \left|\frac1x-0\right|=\frac1x<\frac1N=\varepsilon.
+\]
+Por definición, $\boxed{\lim_{x\to+\infty}1/x=0}$. El mismo resultado se cumple cuando $x\to-\infty$ porque $|1/x|=1/|x|$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 20. Asíntota horizontal}\par\medskip
+
+La recta $y=L$ es una asíntota horizontal de $f$ si $\lim_{x\to+\infty}f(x)=L$ o $\lim_{x\to-\infty}f(x)=L$. Es posible tener distintas asíntotas horizontales en cada extremo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 67. Dividir entre la mayor potencia}\par\medskip
+
+\begin{align*}
+\lim_{x\to+\infty}\frac{3x^2-x+1}{2x^2+4}
+ &=\lim_{x\to+\infty}\frac{3-1/x+1/x^2}{2+4/x^2}\\
+ &=\frac{3-0+0}{2+0}=\boxed{\frac32}.
+\end{align*}
+La misma cuenta funciona cuando $x\to-\infty$. La gráfica admite la asíntota horizontal $y=3/2$ en ambos extremos.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 68.}\par\medskip
+
+Como $-1\le\sin(1/x)\le1$, para $x\ne0$ tenemos
+\[
+-|x|\le x\sin(1/x)\le|x|.
+\]
+Ambos extremos tienden a $0$. Por compresión,
+\[
+\boxed{\lim_{x\to0}x\sin(1/x)=0.}
+\]
+Aunque $\sin(1/x)$ oscila sin límite, el factor $x$ obliga a que el producto tienda a cero.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Proposición}
+{\color{azul}\bfseries Proposición 3. Regla del grado para funciones racionales}\par\medskip
+
+Sean $p$ y $q$ polinomios no nulos y $q$ de grado $n$. Al estudiar $p(x)/q(x)$ cuando $x\to\pm\infty$:
+\begin{enumerate}
+\item si $\deg(p)<\deg(q)$, el límite es $0$;
+\item si $\deg(p)=\deg(q)$, el límite es la razón de los coeficientes principales;
+\item si $\deg(p)>\deg(q)$, en general no hay límite finito; los signos y el crecimiento se deducen de los términos principales (o de división polinomial).
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 69.}\par\medskip
+
+Calculemos $\lim_{x\to-1}(2x^3-3x+4)$. Las leyes de límites dan
+\[
+2(-1)^3-3(-1)+4=\boxed{5}.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 70. Indeterminación $0/0$ que se resuelve factorizando}\par\medskip
+
+\[
+\lim_{x\to3}\frac{x^2-9}{x-3}
+=\lim_{x\to3}\frac{(x-3)(x+3)}{x-3}
+=\lim_{x\to3}(x+3)=\boxed{6}.
+\]
+La expresión $0/0$ no es un resultado: indica que la sustitución no decide el límite y debemos simplificar o analizar la función de otro modo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 71. Fracciones algebraicas}\par\medskip
+
+\[
+\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}
+=\lim_{x\to2}\frac{(x-1)(x-2)}{(x-2)(x+2)}
+=\frac{2-1}{2+2}=\boxed{\frac14}.
+\]
+La igualdad entre las expresiones simplificadas sólo se afirma para $x\ne2$.
+\end{frame}
+
+
+\subsection{Racionalización}
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 72.}\par\medskip
+
+Para calcular $\displaystyle\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}$ multiplicamos por el conjugado:
+\begin{align*}
+\frac{\sqrt{x}-2}{x-4}
+&=\frac{(\sqrt{x}-2)(\sqrt{x}+2)}{(x-4)(\sqrt{x}+2)}\\
+&=\frac{x-4}{(x-4)(\sqrt{x}+2)}
+=\frac{1}{\sqrt{x}+2}\quad(x\ne4).
+\end{align*}
+Por tanto, el límite es $\boxed{1/4}$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 73. Un cociente que crece y depende del lado}\par\medskip
+
+\[
+ f(x)=\frac{x^3+2}{x^2+1}=x\frac{1+2/x^3}{1+1/x^2}.
+\]
+El segundo factor tiende a $1$, por lo que
+\[
+ \lim_{x\to+\infty}f(x)=+\infty,\qquad
+ \lim_{x\to-\infty}f(x)=-\infty.
+\]
+No hay asíntota horizontal. Al dividir polinomios obtenemos $f(x)=x+(-x+2)/(x^2+1)$, que permite reconocer una asíntota oblicua $y=x$ en ambos extremos.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 74. Cuidado con $\sqrt{x^2}$}\par\medskip
+
+Se sabe que $\sqrt{x^2}=|x|$, no siempre $x$. Por eso
+\[
+ \lim_{x\to+\infty}\frac{\sqrt{x^2+1}}{x}=1,
+ \qquad
+ \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{x}=-1.
+\]
+En efecto,
+\[
+ \frac{\sqrt{x^2+1}}{x}
+ =\frac{|x|}{x}\sqrt{1+\frac1{x^2}},
+\]
+y el factor $|x|/x$ vale $1$ a la derecha y $-1$ a la izquierda.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 75. Racionalización al infinito}\par\medskip
+
+Calculemos
+\[
+ \lim_{x\to+\infty}\bigl(\sqrt{x^2+4x}-x\bigr).
+\]
+La sustitución simbólica produciría una expresión del tipo $\infty-\infty$, que es indeterminada. Racionalizamos:
+\begin{align*}
+\sqrt{x^2+4x}-x
+ &=\frac{(x^2+4x)-x^2}{\sqrt{x^2+4x}+x}\\
+ &=\frac{4x}{\sqrt{x^2+4x}+x}\\
+ &=\frac4{\sqrt{1+4/x}+1},\quad x>0.
+\end{align*}
+Tomando el límite obtenemos $\boxed{2}$. El paso $\sqrt{x^2+4x}=x\sqrt{1+4/x}$ sólo se justifica aquí porque $x>0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 76. Un caso elemental con logaritmos}\par\medskip
+
+Sabemos que $\ln x$ decrece sin cota cuando $x\to0^+$ y crece sin cota cuando $x\to+\infty$. En particular,
+\[
+\lim_{x\to0^+}\ln x=-\infty,\qquad
+\lim_{x\to+\infty}\ln x=+\infty.
+\]
+La recta $x=0$ es una asíntota vertical de $y=\ln x$. No existe límite izquierdo real en cero: $\ln x$ no está definida para $x<0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 77.}\par\medskip
+
+\[
+\lim_{x\to0}\frac{\sin(3x)}{5x}
+=\frac35\lim_{x\to0}\frac{\sin(3x)}{3x}=\boxed{\frac35}.
+\]
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 78.}\par\medskip
+
+Multiplicando por el conjugado,
+\begin{align*}
+\lim_{x\to0}\frac{1-\cos x}{x^2}
+&=\lim_{x\to0}\frac{\sin^2x}{x^2(1+\cos x)}\\
+&=\left(\lim_{x\to0}\frac{\sin x}{x}\right)^2\frac1{1+\cos0}
+=\boxed{\frac12}.
+\end{align*}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 79. Análisis de signos cerca de una asíntota}\par\medskip
+
+Sea $f(x)=1/(x-2)$. Para $x>2$, el denominador es positivo y muy pequeño, por lo que
+\[\lim_{x\to2^+}\frac1{x-2}=+\infty.\]
+Para $x<2$, es negativo y muy pequeño:
+\[\lim_{x\to2^-}\frac1{x-2}=-\infty.\]
+No existe límite bilateral finito ni límite infinito bilateral con un único signo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 80. Cociente de polinomios}\par\medskip
+
+\begin{align*}
+\lim_{x\to\infty}\frac{3x^2-x+1}{2x^2+5}
+&=\lim_{x\to\infty}\frac{3-1/x+1/x^2}{2+5/x^2}\\
+&=\boxed{\frac32}.
+\end{align*}
+El procedimiento consiste en dividir numerador y denominador entre la potencia dominante $x^2$, válida cuando $x\ne0$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 12. Grado y comportamiento}\par\medskip
+
+Para $p(x)/q(x)$, con $p,q$ polinomios, si el grado de $p$ es menor que el de $q$ el límite en $\pm\infty$ es $0$; si los grados coinciden es el cociente de coeficientes principales; si el grado del numerador es mayor, es necesario analizar el signo de las potencias dominantes y, en general, no aparece un límite finito.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 21. Límite finito al infinito}\par\medskip
+
+La igualdad $\lim_{x\to+\infty}f(x)=L$ significa que para cada $\varepsilon>0$ existe $N\in\R$ tal que $x>N$ y $x$ en el dominio implican $|f(x)-L|<\varepsilon$. Para $x\to-\infty$ se exige $x<N$ para un cierto $N$ suficientemente negativo.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 81. Probar un límite al infinito}\par\medskip
+
+Para demostrar $\lim_{x\to+\infty}1/x=0$, dado $\varepsilon>0$ basta elegir $N=1/\varepsilon$. Si $x>N$, entonces $0<1/x<\varepsilon$. Por tanto, se cumple la definición.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 82. Dominio y grado dominante}\par\medskip
+
+\[
+ \lim_{x\to+\infty}\frac{2x^2+3x-1}{x^2+4}
+ =\lim_{x\to+\infty}\frac{2+3/x-1/x^2}{1+4/x^2}=\boxed2.
+\]
+La recta $y=2$ es una asíntota horizontal para $x\to+\infty$; por el mismo razonamiento lo es cuando $x\to-\infty$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 83. Signo de una raíz al infinito}\par\medskip
+
+Como $\sqrt{x^2}=|x|$,
+\[
+ \lim_{x\to-\infty}\frac{\sqrt{x^2+1}}x
+ =\lim_{x\to-\infty}\frac{|x|}{x}\sqrt{1+\frac1{x^2}}
+ =\boxed{-1}.
+\]
+Reemplazar $\sqrt{x^2}$ por $x$ sin examinar el signo sería incorrecto.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Racionalización}
+%=======================================================
+
+%=======================================================
+\end{frame}
+
+
+\section{Ejemplos}
+
+\begin{frame}[t]{Ejemplos}
+\centering\vfill{\Large\bfseries\color{azul} Ejemplos}\vfill
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 84.}\par\medskip
+
+El ejemplo $\lim_{x\to2}x^2=4$ puede generalizarse a cualquier $a\in\R$. Escribimos
+\[
+|x^2-a^2|=|x-a|\,|x+a|.
+\]
+Si exigimos $|x-a|<1$, entonces
+\[
+|x+a|=|(x-a)+2a|\le |x-a|+2|a|<1+2|a|.
+\]
+Así, para lograr $|x^2-a^2|<\varepsilon$ basta imponer
+\[
+|x-a|<\frac{\varepsilon}{1+2|a|}.
+\]
+Elegimos explícitamente
+\[
+\delta=\min\left\{1,\frac{\varepsilon}{1+2|a|}\right\}.
+\]
+Con esta elección, cualquier $x$ que satisfaga $0<|x-a|<\delta$ cumple
+\[
+|x^2-a^2|<\delta(1+2|a|)\le\varepsilon.
+\]
+Por tanto, $\lim_{x\to a}x^2=a^2$. Esta prueba ilustra un método general: \emph{controlar los factores que dependen de $x$ antes de escoger $\delta$}.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 85.}\par\medskip
+
+Consideremos $f(x)=|x|/x$ para $x\ne0$. Si $x<0$, entonces $|x|=-x$ y $f(x)=-1$; si $x>0$, entonces $|x|=x$ y $f(x)=1$. En consecuencia,
+\[
+\lim_{x\to0^-}f(x)=-1,\qquad\lim_{x\to0^+}f(x)=1.
+\]
+Los límites laterales son finitos pero distintos; no existe el límite bilateral. El problema no se resuelve dando a $f(0)$ algún valor, porque los lados seguirían siendo diferentes.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 86.}\par\medskip
+
+Para $f(x)=1/(x-1)^2$, el denominador siempre es positivo cuando $x\ne1$. Al aproximarse $x$ a $1$ por cualquiera de los dos lados, $(x-1)^2$ se acerca a $0$ por valores positivos, y la función crece sin cota:
+\[
+\lim_{x\to1^-}\frac1{(x-1)^2}
+=\lim_{x\to1^+}\frac1{(x-1)^2}=+\infty.
+\]
+La recta $x=1$ es una asíntota vertical. En cambio, la función $1/(x-1)$ cambia de signo a cada lado de $x=1$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Interpretación gráfica}
+\begin{center}
+\begin{adjustbox}{max totalsize={0.88\linewidth}{0.64\textheight},center}\begin{tikzpicture}[scale=.9,>=stealth]
+\draw[->] (-1.7,0)--(3.6,0) node[right] {$x$};
+\draw[->] (0,-.25)--(0,3.6) node[above] {$y$};
+\draw[dashed,thick] (1,-.1)--(1,3.6) node[above] {$x=1$};
+\begin{scope}
+\clip (-1.65,-.2) rectangle (3.35,3.5);
+\draw[azul,thick,domain=-1.6:.45,samples=80] plot (\x,{1/(\x-1)^2});
+\draw[azul,thick,domain=1.55:3.3,samples=80] plot (\x,{1/(\x-1)^2});
+\end{scope}
+\node[right] at (2,2.4) {$y=\dfrac1{(x-1)^2}$};
+\end{tikzpicture}\end{adjustbox}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 87.}\par\medskip
+
+Sea $f(x)=\sin(1/x)$ para $x\ne0$. Consideremos las sucesiones
+\[
+x_n=\frac{1}{\frac\pi2+2\pi n},\qquad
+y_n=\frac{1}{\frac{3\pi}2+2\pi n},\qquad n=1,2,\ldots.
+\]
+Ambas tienden a $0$ cuando $n\to\infty$. Sin embargo,
+\[
+f(x_n)=1,\qquad f(y_n)=-1.
+\]
+Si existiera un límite bilateral $L$ en $0$, los valores de $f$ sobre ambas sucesiones tendrían que acercarse al mismo $L$. Como esto no ocurre, el límite no existe. Nótese la diferencia con $g(x)=x\sin(1/x)$, cuyo límite en $0$ sí existe por compresión.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 88.}\par\medskip
+
+Sea
+\[
+f(x)=\begin{cases}
+ax+1,&x<2,\\
+x^2+b,&x\ge2.
+\end{cases}
+\]
+El límite por la izquierda es $2a+1$, mientras que el derecho es $4+b$ y coincide con $f(2)$. La continuidad exige
+\[
+2a+1=4+b,\qquad\text{o equivalentemente}\qquad\boxed{b=2a-3}.
+\]
+Aquí no aparece un único par de números, sino una familia de soluciones: cualquier $a\in\R$ determina el valor correspondiente de $b$. Este ejemplo enseña a distinguir entre una ecuación y un sistema de condiciones.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 89. Demostración para una función lineal}\par\medskip
+
+Demostremos directamente que
+\[\lim_{x\to2}(3x-1)=5.\]
+Sea $\varepsilon>0$. Necesitamos conseguir
+\[
+|(3x-1)-5|=3|x-2|<\varepsilon.
+\]
+Basta elegir $\delta=\varepsilon/3$. Si $0<|x-2|<\delta$, entonces
+\[
+|(3x-1)-5|=3|x-2|<3\delta=\varepsilon.
+\]
+Se cumplen exactamente los cuantificadores de la definición, por lo que el límite es $5$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Ejemplo}
+{\color{azul}\bfseries Ejemplo 90. Demostración para una función cuadrática}\par\medskip
+
+Demostremos que $\lim_{x\to2}x^2=4$. Tenemos
+\[
+|x^2-4|=|x-2|\,|x+2|.
+\]
+El factor $|x+2|$ depende de $x$. Para controlarlo imponemos inicialmente $|x-2|<1$; así $1<x<3$ y, por tanto, $|x+2|<5$. En estas condiciones,
+\[
+|x^2-4|<5|x-2|.
+\]
+Dado $\varepsilon>0$, elegimos
+\[
+\boxed{\delta=\min\left\{1,\frac{\varepsilon}{5}\right\}.}
+\]
+Si $0<|x-2|<\delta$, entonces $|x^2-4|<5\delta\le\varepsilon$. Hemos demostrado, sin sustituir $x=2$, que el límite buscado es $4$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Teorema}
+{\color{azul}\bfseries Teorema 17. Unicidad del límite}\par\medskip
+
+Una función no puede tener dos límites finitos diferentes en el mismo punto de acumulación.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Demostración}
+{\color{azul}\bfseries Demostración.}\par\smallskip
+
+Supongamos que el límite fuera $L$ y también $M$, con $L\ne M$. Tomemos $\varepsilon=|L-M|/3$. Por ambas definiciones existe un mismo $x\ne a$ suficientemente cercano a $a$ para el cual $|f(x)-L|<\varepsilon$ y $|f(x)-M|<\varepsilon$. Entonces, por la desigualdad triangular,
+\[
+|L-M|\le |L-f(x)|+|f(x)-M|<2\varepsilon=\tfrac23|L-M|,
+\]
+una contradicción. Luego $L=M$.
+
+\hfill $\square$
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Definición}
+{\color{azul}\bfseries Definición 22. Límites laterales mediante $\varepsilon$--$\delta$}\par\medskip
+
+El límite $\lim_{x\to a^+}f(x)=L$ significa que para todo $\varepsilon>0$ existe $\delta>0$ tal que $a<x<a+\delta$ (con $x$ en el dominio) implica $|f(x)-L|<\varepsilon$. Para el límite izquierdo reemplazamos la condición por $a-\delta<x<a$.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Observación}
+{\color{azul}\bfseries Observación 13.}\par\medskip
+
+Ante un límite, examine primero el dominio y los límites laterales cuando proceda. Intente sustitución directa únicamente si todas las operaciones involucradas son continuas en el punto. Si aparece $0/0$, busque factorización, racionalización o identidades trigonométricas. Si aparece una razón de polinomios cuando $x\to\pm\infty$, divida entre la potencia dominante. En funciones definidas por partes, estudie cada lado independientemente. Para continuidad, contraste el límite con el valor de la función. Para una demostración formal, construya explícitamente un $\delta$ en términos de $\varepsilon$.
+\end{frame}
+
+
+\section{Ejercicios}
+
+\begin{frame}[t,allowframebreaks]{Ejercicios}
+%=======================================================
+Para cada límite, especifique dónde está definida la expresión, qué transformación realiza y por qué está justificada. Las gráficas pueden elaborarse primero a mano y después verificarse con R o software de graficación.
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Gráfica y límites laterales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{0}
+\item Para $f(x)=x^2+1$, elabore una tabla de valores para $x=1.9,1.99,2.01,2.1$ e infiera el límite en $2$.
+\item Para $f(x)=(x^2-4)/(x-2)$, $x\ne2$, determine el límite en $2$ y explique qué ocurre con $f(2)$.
+\item Sea $f(x)=\begin{cases}x+2,&x<1,\\4-x,&x\ge1.\end{cases}$ Calcule ambos límites laterales en $1$.
+\item Sea $f(x)=\begin{cases}x^2,&x<0,\\x+1,&x\ge0.\end{cases}$ ¿Existe el límite en $0$? Justifique.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Gráfica y límites laterales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{4}
+\item Dibuje una función con $\lim_{x\to3}f(x)=2$ y $f(3)=5$.
+\item Dibuje una función para la que $\lim_{x\to0^-}f(x)=1$ y $\lim_{x\to0^+}f(x)=3$.
+\item Para $f(x)=|x|/x$, $x\ne0$, encuentre los límites laterales en $0$.
+\item ¿Puede existir $\lim_{x\to a}f(x)$ aunque $a$ no pertenezca al dominio? Responda con un ejemplo.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Gráfica y límites laterales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{8}
+\item Para $f(x)=|x-2|$, determine el límite en $2$ y explique el comportamiento de cada lado.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Definición $\varepsilon$--$\delta$ y demostraciones elementales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{9}
+\item A partir de la definición, demuestre $\lim_{x\to1}(2x+3)=5$.
+\item Demuestre $\lim_{x\to-1}(4x-2)=-6$ y proponga una elección explícita de $\delta$.
+\item Demuestre $\lim_{x\to3}7=7$ para la función constante.
+\item Demuestre $\lim_{x\to0}x^2=0$ tomando $\delta=\sqrt{\varepsilon}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Definición $\varepsilon$--$\delta$ y demostraciones elementales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{13}
+\item Demuestre $\lim_{x\to1}x^2=1$ usando primero $|x-1|<1$.
+\item Demuestre $\lim_{x\to-2}(x^2+1)=5$ mediante un control de $|x-2|$ o $|x+2|$, según corresponda.
+\item Demuestre $\lim_{x\to2}(x^2+x)=6$ sin invocar la sustitución directa.
+\item Si $|f(x)-3|\le2|x-1|$ cerca de $x=1$, pruebe que $\lim_{x\to1}f(x)=3$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Definición $\varepsilon$--$\delta$ y demostraciones elementales}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{17}
+\item Explique qué diferencia existe entre ``para todo $\varepsilon$ existe $\delta$'' y ``existe $\delta$ para todo $\varepsilon$''.
+\item A partir de la definición, demuestre que $\lim_{x\to a}(mx+b)=ma+b$ para cualesquiera $m,b\in\R$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución, factorización y funciones racionales.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{19}
+\item $\displaystyle\lim_{x\to2}(3x^2-2x+1)$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^2+2}{x+2}$.
+\item $\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}$.
+\item $\displaystyle\lim_{x\to-2}\frac{x^2+5x+6}{x+2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución, factorización y funciones racionales.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{23}
+\item $\displaystyle\lim_{x\to1}\frac{x^3-1}{x-1}$.
+\item $\displaystyle\lim_{x\to4}\frac{x^2-5x+4}{x-4}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^2-1}{x^2+3x+2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución, factorización y funciones racionales.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{27}
+\item $\displaystyle\lim_{x\to0}\frac{(x+1)^2-1}{x}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^3-8}{x-2}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^2-1}{x^2-3x+2}$.
+\item $\displaystyle\lim_{x\to-3}\frac{x^2+6x+9}{x+3}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización, límites trigonométricos y compresión.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{31}
+\item $\displaystyle\lim_{x\to9}\frac{\sqrt{x}-3}{x-9}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-1}{x}$.
+\item $\displaystyle\lim_{x\to4}\frac{x-4}{\sqrt{x}-2}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\sqrt{1-2x}}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización, límites trigonométricos y compresión.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{35}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(4x)}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin(2x)}{3x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización, límites trigonométricos y compresión.} Calcule los siguientes l\'imites\par\smallskip
+\begin{enumerate}\setcounter{enumi}{39}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(5x)}{\sin(2x)}$.
+\item $\displaystyle\lim_{x\to0}x^2\cos(1/x)$.
+\item $\displaystyle\lim_{x\to0}|x|\sin(1/x)$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos(3x)}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos, al infinito y asíntotas.} Encuentre y determine los siguientes l\'imites, identifique las as\'intotas correspondientes\par\smallskip
+\begin{enumerate}\setcounter{enumi}{43}
+\item $\lim_{x\to2^+}1/(x-2)$ y $\lim_{x\to2^-}1/(x-2)$.
+\item $\lim_{x\to3}1/(x-3)^2$.
+\item $\displaystyle\lim_{x\to\infty}\frac{2x+1}{x-3}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{3x^2+1}{x^2+4}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos, al infinito y asíntotas.} Encuentre y determine los siguientes l\'imites, identifique las as\'intotas correspondientes\par\smallskip
+\begin{enumerate}\setcounter{enumi}{47}
+\item $\displaystyle\lim_{x\to\infty}\frac{x+2}{x^2+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{x^3+1}{x^2+1}$
+\item Halle las asíntotas verticales y horizontales de $f(x)=2/(x-1)+3$.
+\item Analice $\displaystyle\lim_{x\to0^-}\frac{x}{x^2}$ y $\displaystyle\lim_{x\to0^+}\frac{x}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos, al infinito y asíntotas.} Encuentre y determine los siguientes l\'imites, identifique las as\'intotas correspondientes\par\smallskip
+\begin{enumerate}\setcounter{enumi}{51}
+\item Halle las asíntotas verticales y horizontales de $f(x)=(3x-1)/(x+2)$.
+\item Determine $\displaystyle\lim_{x\to\infty}\frac{4-2x^2}{1+x^2}$.
+\item Determine $\displaystyle\lim_{x\to-\infty}\frac{x^3}{x^2+1}$ y justifique el signo.
+\item Determine $\displaystyle\lim_{x\to0^+}\ln x$ e interprete el resultado.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad en puntos, intervalos y funciones por partes}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{55}
+\item Estudie la continuidad de $f(x)=x^2-3x$ en $a=2$.
+\item Estudie la continuidad de $f(x)=1/(x-2)$ en su dominio.
+\item Determine $k$ para que $f(x)=\begin{cases}(x^2-4)/(x-2),&x\ne2,\\k,&x=2\end{cases}$ sea continua en $2$.
+\item Determine $k$ para que $f(x)=\begin{cases}x+2,&x<1,\\kx,&x\ge1\end{cases}$ sea continua en $1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad en puntos, intervalos y funciones por partes}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{59}
+\item Estudie la continuidad de $f(x)=|x-3|$ en $x=3$.
+\item Encuentre los puntos de discontinuidad de $f(x)=(x+1)/(x^2-1)$ y clasifíquelos.
+\item Determine $a$ para que $f(x)=\begin{cases}x^2,&x\le2,\\ax,&x>2\end{cases}$ sea continua en $2$.
+\item Determine si $f(x)=\sqrt{x-1}$ es continua en su dominio e identifique el extremo donde hay continuidad lateral.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad en puntos, intervalos y funciones por partes}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{63}
+\item Determine $k$ para que $f(x)=\begin{cases}\sin x/x,&x\ne0,\\k,&x=0\end{cases}$ sea continua en $0$.
+\item Justifique que $f(x)=e^x+\cos x$ es continua para todo $x\in\R$.
+\item Explique por qué $f(x)=1/(x^2+1)$ es continua en $\R$.
+\item Utilice el teorema del valor intermedio para justificar que $x^3+x-2=0$ tiene una solución en $[0,2]$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Clasificación de discontinuidades y ejercicios integradores}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{67}
+\item Clasifique la discontinuidad de $f(x)=(x^2-1)/(x-1)$ en $1$; dibuje su gráfica con el punto faltante.
+\item Clasifique la discontinuidad de $g(x)=\begin{cases}-2,&x<0,\\3,&x\ge0\end{cases}$ en $0$ y represéntela.
+\item Clasifique la discontinuidad de $h(x)=1/(x-4)^2$ en $4$.
+\item Clasifique la discontinuidad de $q(x)=\sin(1/x)$ en $0$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Clasificación de discontinuidades y ejercicios integradores}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{71}
+\item Para $f(x)=\begin{cases}x+1,&x<2,\\5,&x=2,\\3x-3,&x>2\end{cases}$, calcule límites laterales, límite bilateral y continuidad.
+\item Para $g(x)=\begin{cases}x^2+a,&x<1,\\bx+1,&x\ge1\end{cases}$, determine la relación que deben satisfacer $a$ y $b$ para continuidad en $1$.
+\item Encuentre $\lim_{x\to0}\frac{\sqrt{1+x}-\cos x}{x}$, justificando cada paso sin utilizar derivadas.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Clasificación de discontinuidades y ejercicios integradores}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{74}
+\item Determine el dominio, las asíntotas y los puntos de discontinuidad de $f(x)=(x-1)/(x^2-4)$.
+\item Determine si existe el límite $\lim_{x\to0} x\,\operatorname{sgn}(x)$, donde $\operatorname{sgn}(x)=1$ para $x>0$ y $-1$ para $x<0$.
+\item Elija $k$ para que $f(x)=\begin{cases}\frac{\sin(2x)}{x},&x\ne0,\\k,&x=0\end{cases}$ sea continua en $0$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{0}
+\item Para $f(x)=x^2+2x$, construya una tabla con $x=0.9,\,0.99,\,1.01,\,1.1$ y conjeture $\lim_{x\to1}f(x)$.
+\item Para $f(x)=(x^2-4)/(x-2)$, calcule los valores para $x=1.9,\,1.99,\,2.01,\,2.1$. Explique por qué $f(2)$ no está definida.
+\item En la curva $y=x^2$, sea $P=(2,4)$. Calcule las pendientes de las secantes $PQ$ para $Q=(x,x^2)$ con $x=1.5,\,1.9,\,2.1,\,2.5$.
+\item Use el resultado anterior para conjeturar la pendiente de la tangente a $y=x^2$ en $P=(2,4)$ y escriba su ecuación.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{4}
+\item En $y=x^3$, sea $P=(1,1)$. Simplifique el cociente de las pendientes secantes $[x^3-1]/(x-1)$ y determine su límite en $x=1$.
+\item Una partícula sigue $s(t)=3t^2$ metros. Calcule su velocidad promedio en $[1,1+h]$ y simplifique antes de estudiar $h\to0$.
+\item Para $s(t)=t^2+2t$ determine la velocidad promedio en $[2,2.1]$ y en $[2,2.01]$. ¿A qué valor tienden?
+\item Sea $s(t)=4t-t^2$. Obtenga $[s(1+h)-s(1)]/h$ y conjeture la velocidad instantánea en $t=1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{8}
+\item Explique por qué dos tablas que usan solamente $x> a$ no permiten concluir por sí solas la existencia de un límite bilateral.
+\item Dé una función para la cual $\lim_{x\to1}f(x)=3$ y $f(1)=8$; explique su elección.
+\item Dé una función con $f(0)$ no definida, pero con $\lim_{x\to0}f(x)=2$.
+\item Explique por qué una evaluación numérica de $\sin(1/x)$ en unos pocos valores no prueba que tenga límite en cero.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{12}
+\item Para $f(x)=\begin{cases}x+1,&x<0,\\x^2+3,&x\ge0,\end{cases}$ calcule los dos límites laterales en cero y decida si existe el bilateral.
+\item Para $f(x)=\begin{cases}2x,&x<1,\\x+1,&x\ge1,\end{cases}$ determine $f(1)$, los límites laterales y el bilateral.
+\item Sea $f(x)=|x|/x$ para $x\ne0$. Halle los límites laterales en cero y justifique la conclusión.
+\item Para $g(x)=|x-2|/(x-2)$ estudie los límites laterales en $x=2$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{16}
+\item Para $f(x)=\begin{cases}x^2,&x<2,\\2x,&x\ge2,\end{cases}$ compruebe los límites laterales y la continuidad en $2$.
+\item Para $g(x)=\begin{cases}3-x,&x\le1,\\x^2,&x>1,\end{cases}$ estudie el límite bilateral en $1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{18}
+\item Determine $a$ para que $f(x)=\begin{cases}x+a,&x<1,\\3x-1,&x\ge1\end{cases}$ tenga límite bilateral en $1$.
+\item Determine $k$ para que $g(x)=\begin{cases}kx+2,&x<2,\\x^2,&x\ge2\end{cases}$ tenga límite bilateral en $2$.
+\item Describa con sus palabras qué indica $\lim_{x\to a^-}f(x)=4$ y por qué ello no determina $f(a)$.
+\item Construya un ejemplo con dos límites laterales iguales, pero con una discontinuidad en el punto.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{22}
+\item Determine el límite bilateral en $0$ de $f(x)=x/|x|$ para $x\ne0$; explique por qué no es una indeterminación $0/0$.
+\item Para $f(x)=\begin{cases}\sin x/x,&x<0,\\1+x,&x\ge0,\end{cases}$ calcule el límite cuando $x\to0$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{24}
+\item Calcule $\lim_{x\to3^+}1/(x-3)$ y $\lim_{x\to3^-}1/(x-3)$.
+\item Calcule $\lim_{x\to-2}4/(x+2)^2$.
+\item Estudie los límites laterales de $x/(x-1)$ cuando $x\to1$.
+\item Estudie los límites laterales de $(x+1)/(x-2)$ cuando $x\to2$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{28}
+\item Encuentre las asíntotas verticales de $f(x)=1/(x^2-4)$ y determine los signos laterales en cada una.
+\item Explique el comportamiento de $f(x)=1/(x-1)^3$ a ambos lados de $1$.
+\item Determine $\lim_{x\to0^-}1/x^3$ y $\lim_{x\to0^+}1/x^3$.
+\item Determine $\lim_{x\to0}1/x^4$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{32}
+\item Para $f(x)=(x-1)/(x^2-1)$, decida si $x=1$ es asíntota vertical o discontinuidad removible.
+\item Estudie si $x=-1$ es asíntota vertical de la función del reactivo anterior.
+\item Explique por qué $\lim_{x\to0}1/x$ no existe como límite bilateral, aunque cada límite lateral tiene un comportamiento infinito preciso.
+\item Determine las asíntotas verticales de $f(x)=(x+2)/(x^2-x-2)$ y clasifique cada punto donde el denominador se anula.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{36}
+\item $\displaystyle\lim_{x\to2}(3x+5)$.
+\item $\displaystyle\lim_{x\to-1}(x^2-3x+2)$.
+\item $\displaystyle\lim_{x\to4}\frac{x+1}{x-2}$.
+\item $\displaystyle\lim_{x\to3}\sqrt{x+6}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{40}
+\item $\displaystyle\lim_{x\to0}(1+2x)^3$.
+\item $\displaystyle\lim_{x\to1}\frac{x^2+2}{x+4}$.
+\item $\displaystyle\lim_{x\to-2}\frac{x^2+1}{x^2+3}$.
+\item $\displaystyle\lim_{x\to0}\cos(3x)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{44}
+\item $\displaystyle\lim_{x\to1}\sqrt{2x+7}$.
+\item $\displaystyle\lim_{x\to3}(x^3-2x^2+4)$.
+\item $\displaystyle\lim_{x\to0}(e^x+\cos x)$.
+\item $\displaystyle\lim_{x\to1}\ln(2x+1)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{48}
+\item $\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-x-2}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^3-1}{x-1}$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^2-1}{x+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{52}
+\item $\displaystyle\lim_{x\to4}\frac{x^2-5x+4}{x-4}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^3-8}{x-2}$.
+\item $\displaystyle\lim_{x\to-2}\frac{x^2+5x+6}{x+2}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^2-1}{x^2-3x+2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{56}
+\item $\displaystyle\lim_{x\to3}\frac{x^2-4x+3}{x^2-9}$.
+\item $\displaystyle\lim_{x\to0}\frac{(x+1)^3-1}{x}$.
+\item $\displaystyle\lim_{x\to-3}\frac{x^2+6x+9}{x+3}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^4-1}{x^2-1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{60}
+\item $\displaystyle\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^3+1}{x+1}$.
+\item $\displaystyle\lim_{x\to5}\frac{x^2-25}{2x-10}$.
+\item $\displaystyle\lim_{x\to0}\frac{x^3+2x^2}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{64}
+\item $\displaystyle\lim_{x\to9}\frac{\sqrt{x}-3}{x-9}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-1}{x}$.
+\item $\displaystyle\lim_{x\to4}\frac{x-4}{\sqrt{x}-2}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\sqrt{1-2x}}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{68}
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{4+x}-2}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{9+x^2}-3}{x^2}$.
+\item $\displaystyle\lim_{x\to3}\frac{\sqrt{x+1}-2}{x-3}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+3x}-1}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{72}
+\item $\displaystyle\lim_{x\to1}\frac{x-1}{\sqrt{x+3}-2}$.
+\item $\displaystyle\lim_{h\to0}\frac{\sqrt{16+h}-4}{h}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$.
+\item $\displaystyle\lim_{x\to2}\frac{\sqrt{x+2}-2}{x-2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{76}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(4x)}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin(2x)}{3x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{80}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(5x)}{\sin(2x)}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos(3x)}{x^2}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin^2(2x)}{x^2}$.
+\item $\displaystyle\lim_{x\to0}\frac{x}{\sin(3x)}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{84}
+\item $\displaystyle\lim_{x\to0}\frac{\tan(2x)}{\sin(5x)}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin x}{\tan x}$.
+\item $\displaystyle\lim_{x\to0}x^2\sin(1/x)$.
+\item $\displaystyle\lim_{x\to0}|x|\cos(1/x)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{88}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(3x)}{2x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\cos(2x)-1}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{90}
+\item Demuestre $\lim_{x\to1}(4x-1)=3$.
+\item Demuestre $\lim_{x\to-2}(3x+5)=-1$.
+\item Demuestre $\lim_{x\to0}5x=0$.
+\item Demuestre $\lim_{x\to1}x^2=1$ comenzando por $|x-1|<1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{94}
+\item Demuestre $\lim_{x\to3}x^2=9$ mediante una cota fija para $|x+3|$.
+\item Demuestre $\lim_{x\to-1}(x^2+2x)=-1$ factorizando la diferencia con el límite candidato.
+\item Demuestre $\lim_{x\to2}1/x=1/2$ separando el denominador del cero.
+\item Demuestre $\lim_{x\to-1}|x|=1$ con la desigualdad triangular inversa.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{98}
+\item Demuestre $\lim_{x\to2}(x^2+x)=6$ utilizando $|x-2|<1$ para acotar el factor variable.
+\item Demuestre que el límite de una función constante $f(x)=c$ es $c$ en cualquier punto de acumulación de su dominio.
+\item Escriba la definición formal de $\lim_{x\to a^+}f(x)=L$ y úsela para demostrar $\lim_{x\to0^+}\sqrt{x}=0$.
+\item Explique por qué un límite finito, si existe, no puede tener dos valores distintos; utilice la desigualdad triangular.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{102}
+\item Estudie la continuidad de $f(x)=x^2-3x$ en $x=2$.
+\item Determine si $f(x)=1/(x-2)$ es continua en todos los puntos de su dominio.
+\item Halle $k$ para que $f(x)=\begin{cases}(x^2-4)/(x-2),&x\ne2,\\k,&x=2\end{cases}$ sea continua en $x=2$.
+\item Halle $k$ para que $f(x)=\begin{cases}x+2,&x<1,\\kx,&x\ge1\end{cases}$ sea continua en $1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{106}
+\item Estudie la continuidad de $f(x)=|x-3|$ en $x=3$.
+\item Clasifique las discontinuidades de $f(x)=(x+1)/(x^2-1)$.
+\item Determine $a$ para que $f(x)=\begin{cases}x^2,&x\le2,\\ax,&x>2\end{cases}$ sea continua en $2$.
+\item Determine en qué intervalo es continua $f(x)=\sqrt{x-1}$, incluyendo sus extremos.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{110}
+\item Determine $k$ para que $f(x)=\begin{cases}\sin x/x,&x\ne0,\\k,&x=0\end{cases}$ sea continua en $0$.
+\item Justifique la continuidad de $f(x)=e^x+\cos x$ para todo $x\in\R$.
+\item Explique por qué $f(x)=1/(x^2+1)$ es continua en $\R$.
+\item Use el teorema del valor intermedio para justificar que $x^3+x-2=0$ tiene una solución en $[0,2]$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{114}
+\item Clasifique la discontinuidad de $f(x)=\sin(1/x)$ en $x=0$ (suponga que $f(0)=0$).
+\item Clasifique la discontinuidad de $f(x)=1/(x-4)^2$ en $x=4$.
+\item Determine la relación entre $a,b$ que hace continua en $1$ a $f(x)=\begin{cases}x^2+a,&x<1,\\bx+1,&x\ge1\end{cases}$.
+\item Utilice el teorema del valor intermedio para demostrar que $x^3-4x+1=0$ tiene al menos una solución en $(0,1)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{118}
+\item $\displaystyle\lim_{x\to\infty}\frac{2x+1}{x-3}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{3x^2+1}{x^2+4}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{x+2}{x^2+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{x^3+1}{x^2+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{122}
+\item $\displaystyle\lim_{x\to-\infty}\frac{4x^3+1}{2x^3-x}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{2x^2-x}{x^3+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{126}
+\item $\displaystyle\lim_{x\to\infty}(\sqrt{x^2+2x}-x)$.
+\item $\displaystyle\lim_{x\to\infty}\frac{5-3x^2}{1+x^2}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{x^3}{x^2+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{\sqrt{x^2+9}}{2x+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{130}
+\item Determine las asíntotas verticales y horizontales de $f(x)=(3x-1)/(x+2)$.
+\item Analice los límites cuando $x\to\pm\infty$ de $f(x)=\sqrt{x^2+1}-x$. ¿Son iguales?
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{132}
+\item Para $f(x)=\begin{cases}(x^2-1)/(x-1),&x\ne1,\\5,&x=1\end{cases}$, obtenga el límite, determine la discontinuidad y explique cómo eliminarla.
+\item Encuentre $\lim_{x\to0}(\sqrt{1+x}-\cos x)/x$ sin utilizar derivadas.
+\item Determine el dominio, todas las asíntotas y los puntos de discontinuidad de $f(x)=(x-1)/(x^2-4)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{135}
+\item Halle el valor de $k$ para que $f(x)=\begin{cases}\sin(2x)/x,&x\ne0,\\k,&x=0\end{cases}$ sea continua en cero.
+\item Determine si existe $\lim_{x\to0}x\,\operatorname{sgn}(x)$, donde $\operatorname{sgn}(x)=1$ para $x>0$ y $-1$ para $x<0$.
+\item Un vehículo se desplaza según $s(t)=t^2+4t$ metros. Determine la velocidad promedio en $[3,3+h]$ y su tendencia cuando $h\to0$.
+\item Pruebe que $\lim_{x\to0}x\sin(1/x)=0$, pero $\lim_{x\to0}\sin(1/x)$ no existe.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{139}
+\item Estudie la continuidad y los límites laterales en $2$ de $f(x)=\begin{cases}x+2,&x<2,\\1,&x=2,\\x^2,&x>2.\end{cases}$
+\item Demuestre directamente, con $\varepsilon$--$\delta$, que $\lim_{x\to1}(x^2+2x)=3$.
+\item Sea $f(x)=\begin{cases}x^2-1,&x\le1,\\ax+b,&x>1.\end{cases}$ Determine una relación entre $a$ y $b$ para que $f$ sea continua en $1$.
+\item Determine $\lim_{x\to+\infty}(\sqrt{x^2+6x}-x)$ racionalizando y justificando la extracción de $x$ de una raíz.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{143}
+\item Construya una función con discontinuidad removible en $x=1$, salto en $x=2$ y asíntota vertical en $x=3$. Justifique cada una mediante límites laterales.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{0}
+\item Para $f(x)=3x+1$ cerca de $a=2$, encuentre $L$ y una $\delta>0$ que garantice $|f(x)-L|<0.3$.
+\item Repita el ejercicio anterior con $\varepsilon=0.06$. Compare los valores de $\delta$.
+\item Para $f(x)=5-2x$, $a=1$ y $\varepsilon=0.1$, encuentre una $\delta$ suficiente.
+\item Explique por qué $0<|x-a|<\delta$ excluye el punto $x=a$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{4}
+\item Esboce las bandas horizontales $L-\varepsilon<y<L+\varepsilon$ y verticales $a-\delta<x<a+\delta$ para $f(x)=x+2$ en $a=1$.
+\item Sea $f(x)=x^2$, $a=3$. Justifique que $|x-3|<1$ implica $|x+3|<7$.
+\item Use la estimación anterior para construir una $\delta(\varepsilon)$ que pruebe $\lim_{x\to3}x^2=9$.
+\item Para $f(x)=x^2$ y $a=-1$, encuentre una cota del factor $|x-1|$ al exigir $|x+1|<1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{8}
+\item Construya una $\delta(\varepsilon)$ para justificar $\lim_{x\to-1}x^2=1$.
+\item Suponga $g(x)=x+4$ para $x\ne2$ y $g(2)=100$. Calcule el límite en $2$ y explique por qué el valor aislado no cambia la respuesta.
+\item Demuestre por definición $\lim_{x\to5}(2x-3)=7$.
+\item Demuestre por definición $\lim_{x\to-2}(-4x+1)=9$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{12}
+\item Demuestre $\lim_{x\to2}(x^2+x)=6$ utilizando una restricción auxiliar $|x-2|<1$.
+\item Demuestre $\lim_{x\to0}x^2=0$ eligiendo $\delta$ mediante una raíz cuadrada.
+\item Demuestre $\lim_{x\to1}(x^2-2x)= -1$ factorizando la diferencia respecto al límite.
+\item Demuestre $\lim_{x\to2}1/x=1/2$ controlando el denominador para $|x-2|<1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{16}
+\item Demuestre $\lim_{x\to1}1/(x+2)=1/3$.
+\item Explique con un ejemplo por qué una elección de $\delta$ puede depender de $\varepsilon$ pero no del punto $x$ seleccionado.
+\item Construya dos funciones con el mismo límite en $a=0$ y diferentes valores en $x=0$.
+\item Formule en palabras, sin símbolos, la afirmación $\lim_{x\to4}f(x)=7$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Interpretación gráfica y control de tolerancias al estilo Leithold.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{20}
+\item Escriba la definición formal de $\lim_{x\to2^-}f(x)=3$.
+\item Escriba la definición formal de $\lim_{x\to2^+}f(x)=3$.
+\item Demuestre, usando desigualdades, que $\lim_{x\to0}1/x^2=+\infty$.
+\item Para $f(x)=1/(x-1)^2$, dado $M=100$, encuentre una distancia $\delta$ que garantice $f(x)>M$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{24}
+\item Para $f(x)=x^2+2x$, construya una tabla con $x=0.9,\,0.99,\,1.01,\,1.1$ y conjeture $\lim_{x\to1}f(x)$.
+\item Para $f(x)=(x^2-4)/(x-2)$, calcule los valores para $x=1.9,\,1.99,\,2.01,\,2.1$. Explique por qué $f(2)$ no está definida.
+\item En la curva $y=x^2$, sea $P=(2,4)$. Calcule las pendientes de las secantes $PQ$ para $Q=(x,x^2)$ con $x=1.5,\,1.9,\,2.1,\,2.5$.
+\item Use el resultado anterior para conjeturar la pendiente de la tangente a $y=x^2$ en $P=(2,4)$ y escriba su ecuación.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{28}
+\item En $y=x^3$, sea $P=(1,1)$. Simplifique el cociente de las pendientes secantes $[x^3-1]/(x-1)$ y determine su límite en $x=1$.
+\item Una partícula sigue $s(t)=3t^2$ metros. Calcule su velocidad promedio en $[1,1+h]$ y simplifique antes de estudiar $h\to0$.
+\item Para $s(t)=t^2+2t$ determine la velocidad promedio en $[2,2.1]$ y en $[2,2.01]$. ¿A qué valor tienden?
+\item Sea $s(t)=4t-t^2$. Obtenga $[s(1+h)-s(1)]/h$ y conjeture la velocidad instantánea en $t=1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Exploración numérica, tangentes y velocidad promedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{32}
+\item Explique por qué dos tablas que usan solamente $x> a$ no permiten concluir por sí solas la existencia de un límite bilateral.
+\item Dé una función para la cual $\lim_{x\to1}f(x)=3$ y $f(1)=8$; explique su elección.
+\item Dé una función con $f(0)$ no definida, pero con $\lim_{x\to0}f(x)=2$.
+\item Explique por qué una evaluación numérica de $\sin(1/x)$ en unos pocos valores no prueba que tenga límite en cero.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{36}
+\item Para $f(x)=\begin{cases}x+1,&x<0,\\x^2+3,&x\ge0,\end{cases}$ calcule los dos límites laterales en cero y decida si existe el bilateral.
+\item Para $f(x)=\begin{cases}2x,&x<1,\\x+1,&x\ge1,\end{cases}$ determine $f(1)$, los límites laterales y el bilateral.
+\item Sea $f(x)=|x|/x$ para $x\ne0$. Halle los límites laterales en cero y justifique la conclusión.
+\item Para $g(x)=|x-2|/(x-2)$ estudie los límites laterales en $x=2$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{40}
+\item Para $f(x)=\begin{cases}x^2,&x<2,\\2x,&x\ge2,\end{cases}$ compruebe los límites laterales y la continuidad en $2$.
+\item Para $g(x)=\begin{cases}3-x,&x\le1,\\x^2,&x>1,\end{cases}$ estudie el límite bilateral en $1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{42}
+\item Determine $a$ para que $f(x)=\begin{cases}x+a,&x<1,\\3x-1,&x\ge1\end{cases}$ tenga límite bilateral en $1$.
+\item Determine $k$ para que $g(x)=\begin{cases}kx+2,&x<2,\\x^2,&x\ge2\end{cases}$ tenga límite bilateral en $2$.
+\item Describa con sus palabras qué indica $\lim_{x\to a^-}f(x)=4$ y por qué ello no determina $f(a)$.
+\item Construya un ejemplo con dos límites laterales iguales, pero con una discontinuidad en el punto.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites laterales y funciones definidas por partes.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{46}
+\item Determine el límite bilateral en $0$ de $f(x)=x/|x|$ para $x\ne0$; explique por qué no es una indeterminación $0/0$.
+\item Para $f(x)=\begin{cases}\sin x/x,&x<0,\\1+x,&x\ge0,\end{cases}$ calcule el límite cuando $x\to0$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{48}
+\item Calcule $\lim_{x\to3^+}1/(x-3)$ y $\lim_{x\to3^-}1/(x-3)$.
+\item Calcule $\lim_{x\to-2}4/(x+2)^2$.
+\item Estudie los límites laterales de $x/(x-1)$ cuando $x\to1$.
+\item Estudie los límites laterales de $(x+1)/(x-2)$ cuando $x\to2$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{52}
+\item Encuentre las asíntotas verticales de $f(x)=1/(x^2-4)$ y determine los signos laterales en cada una.
+\item Explique el comportamiento de $f(x)=1/(x-1)^3$ a ambos lados de $1$.
+\item Determine $\lim_{x\to0^-}1/x^3$ y $\lim_{x\to0^+}1/x^3$.
+\item Determine $\lim_{x\to0}1/x^4$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites infinitos y análisis de signos.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{56}
+\item Para $f(x)=(x-1)/(x^2-1)$, decida si $x=1$ es asíntota vertical o discontinuidad removible.
+\item Estudie si $x=-1$ es asíntota vertical de la función del reactivo anterior.
+\item Explique por qué $\lim_{x\to0}1/x$ no existe como límite bilateral, aunque cada límite lateral tiene un comportamiento infinito preciso.
+\item Determine las asíntotas verticales de $f(x)=(x+2)/(x^2-x-2)$ y clasifique cada punto donde el denominador se anula.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{60}
+\item $\displaystyle\lim_{x\to2}(3x+5)$.
+\item $\displaystyle\lim_{x\to-1}(x^2-3x+2)$.
+\item $\displaystyle\lim_{x\to4}\frac{x+1}{x-2}$.
+\item $\displaystyle\lim_{x\to3}\sqrt{x+6}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{64}
+\item $\displaystyle\lim_{x\to0}(1+2x)^3$.
+\item $\displaystyle\lim_{x\to1}\frac{x^2+2}{x+4}$.
+\item $\displaystyle\lim_{x\to-2}\frac{x^2+1}{x^2+3}$.
+\item $\displaystyle\lim_{x\to0}\cos(3x)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Sustitución directa y leyes algebraicas.} Calcule y justifique brevemente.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{68}
+\item $\displaystyle\lim_{x\to1}\sqrt{2x+7}$.
+\item $\displaystyle\lim_{x\to3}(x^3-2x^2+4)$.
+\item $\displaystyle\lim_{x\to0}(e^x+\cos x)$.
+\item $\displaystyle\lim_{x\to1}\ln(2x+1)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{72}
+\item $\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-x-2}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^3-1}{x-1}$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^2-1}{x+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{76}
+\item $\displaystyle\lim_{x\to4}\frac{x^2-5x+4}{x-4}$.
+\item $\displaystyle\lim_{x\to2}\frac{x^3-8}{x-2}$.
+\item $\displaystyle\lim_{x\to-2}\frac{x^2+5x+6}{x+2}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^2-1}{x^2-3x+2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{80}
+\item $\displaystyle\lim_{x\to3}\frac{x^2-4x+3}{x^2-9}$.
+\item $\displaystyle\lim_{x\to0}\frac{(x+1)^3-1}{x}$.
+\item $\displaystyle\lim_{x\to-3}\frac{x^2+6x+9}{x+3}$.
+\item $\displaystyle\lim_{x\to1}\frac{x^4-1}{x^2-1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Indeterminación $0/0$: factorización.} Calcule cada límite sin usar derivadas.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{84}
+\item $\displaystyle\lim_{x\to2}\frac{x^2-3x+2}{x^2-4}$.
+\item $\displaystyle\lim_{x\to-1}\frac{x^3+1}{x+1}$.
+\item $\displaystyle\lim_{x\to5}\frac{x^2-25}{2x-10}$.
+\item $\displaystyle\lim_{x\to0}\frac{x^3+2x^2}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{88}
+\item $\displaystyle\lim_{x\to9}\frac{\sqrt{x}-3}{x-9}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-1}{x}$.
+\item $\displaystyle\lim_{x\to4}\frac{x-4}{\sqrt{x}-2}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\sqrt{1-2x}}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{92}
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{4+x}-2}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{9+x^2}-3}{x^2}$.
+\item $\displaystyle\lim_{x\to3}\frac{\sqrt{x+1}-2}{x-3}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+3x}-1}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Racionalización.} Identifique el conjugado apropiado y justifique el paso final.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{96}
+\item $\displaystyle\lim_{x\to1}\frac{x-1}{\sqrt{x+3}-2}$.
+\item $\displaystyle\lim_{h\to0}\frac{\sqrt{16+h}-4}{h}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$.
+\item $\displaystyle\lim_{x\to2}\frac{\sqrt{x+2}-2}{x-2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{100}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(4x)}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin(2x)}{3x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{104}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(5x)}{\sin(2x)}$.
+\item $\displaystyle\lim_{x\to0}\frac{1-\cos(3x)}{x^2}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin^2(2x)}{x^2}$.
+\item $\displaystyle\lim_{x\to0}\frac{x}{\sin(3x)}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{108}
+\item $\displaystyle\lim_{x\to0}\frac{\tan(2x)}{\sin(5x)}$.
+\item $\displaystyle\lim_{x\to0}\frac{\sin x}{\tan x}$.
+\item $\displaystyle\lim_{x\to0}x^2\sin(1/x)$.
+\item $\displaystyle\lim_{x\to0}|x|\cos(1/x)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites trigonométricos y teorema del sándwich.} Suponga que los ángulos se miden en radianes.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{112}
+\item $\displaystyle\lim_{x\to0}\frac{\sin(3x)}{2x}$.
+\item $\displaystyle\lim_{x\to0}\frac{\cos(2x)-1}{x^2}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{114}
+\item Demuestre $\lim_{x\to1}(4x-1)=3$.
+\item Demuestre $\lim_{x\to-2}(3x+5)=-1$.
+\item Demuestre $\lim_{x\to0}5x=0$.
+\item Demuestre $\lim_{x\to1}x^2=1$ comenzando por $|x-1|<1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{118}
+\item Demuestre $\lim_{x\to3}x^2=9$ mediante una cota fija para $|x+3|$.
+\item Demuestre $\lim_{x\to-1}(x^2+2x)=-1$ factorizando la diferencia con el límite candidato.
+\item Demuestre $\lim_{x\to2}1/x=1/2$ separando el denominador del cero.
+\item Demuestre $\lim_{x\to-1}|x|=1$ con la desigualdad triangular inversa.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Demostraciones con la definición $\varepsilon$--$\delta$.} En cada reactivo indique \emph{explícitamente} la elección de $\delta$ y compruebe la implicación.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{122}
+\item Demuestre $\lim_{x\to2}(x^2+x)=6$ utilizando $|x-2|<1$ para acotar el factor variable.
+\item Demuestre que el límite de una función constante $f(x)=c$ es $c$ en cualquier punto de acumulación de su dominio.
+\item Escriba la definición formal de $\lim_{x\to a^+}f(x)=L$ y úsela para demostrar $\lim_{x\to0^+}\sqrt{x}=0$.
+\item Explique por qué un límite finito, si existe, no puede tener dos valores distintos; utilice la desigualdad triangular.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{126}
+\item Estudie la continuidad de $f(x)=x^2-3x$ en $x=2$.
+\item Determine si $f(x)=1/(x-2)$ es continua en todos los puntos de su dominio.
+\item Halle $k$ para que $f(x)=\begin{cases}(x^2-4)/(x-2),&x\ne2,\\k,&x=2\end{cases}$ sea continua en $x=2$.
+\item Halle $k$ para que $f(x)=\begin{cases}x+2,&x<1,\\kx,&x\ge1\end{cases}$ sea continua en $1$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{130}
+\item Estudie la continuidad de $f(x)=|x-3|$ en $x=3$.
+\item Clasifique las discontinuidades de $f(x)=(x+1)/(x^2-1)$.
+\item Determine $a$ para que $f(x)=\begin{cases}x^2,&x\le2,\\ax,&x>2\end{cases}$ sea continua en $2$.
+\item Determine en qué intervalo es continua $f(x)=\sqrt{x-1}$, incluyendo sus extremos.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{134}
+\item Determine $k$ para que $f(x)=\begin{cases}\sin x/x,&x\ne0,\\k,&x=0\end{cases}$ sea continua en $0$.
+\item Justifique la continuidad de $f(x)=e^x+\cos x$ para todo $x\in\R$.
+\item Explique por qué $f(x)=1/(x^2+1)$ es continua en $\R$.
+\item Use el teorema del valor intermedio para justificar que $x^3+x-2=0$ tiene una solución en $[0,2]$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Continuidad, parámetros y teorema del valor intermedio.}\par\smallskip
+\begin{enumerate}\setcounter{enumi}{138}
+\item Clasifique la discontinuidad de $f(x)=\sin(1/x)$ en $x=0$ (suponga que $f(0)=0$).
+\item Clasifique la discontinuidad de $f(x)=1/(x-4)^2$ en $x=4$.
+\item Determine la relación entre $a,b$ que hace continua en $1$ a $f(x)=\begin{cases}x^2+a,&x<1,\\bx+1,&x\ge1\end{cases}$.
+\item Utilice el teorema del valor intermedio para demostrar que $x^3-4x+1=0$ tiene al menos una solución en $(0,1)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{142}
+\item $\displaystyle\lim_{x\to\infty}\frac{2x+1}{x-3}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{3x^2+1}{x^2+4}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{x+2}{x^2+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{x^3+1}{x^2+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{146}
+\item $\displaystyle\lim_{x\to-\infty}\frac{4x^3+1}{2x^3-x}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{2x^2-x}{x^3+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{x}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{150}
+\item $\displaystyle\lim_{x\to\infty}(\sqrt{x^2+2x}-x)$.
+\item $\displaystyle\lim_{x\to\infty}\frac{5-3x^2}{1+x^2}$.
+\item $\displaystyle\lim_{x\to-\infty}\frac{x^3}{x^2+1}$.
+\item $\displaystyle\lim_{x\to\infty}\frac{\sqrt{x^2+9}}{2x+1}$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Límites al infinito y asíntotas horizontales.} Distinga las direcciones $+\infty$ y $-\infty$ cuando sea necesario.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{154}
+\item Determine las asíntotas verticales y horizontales de $f(x)=(3x-1)/(x+2)$.
+\item Analice los límites cuando $x\to\pm\infty$ de $f(x)=\sqrt{x^2+1}-x$. ¿Son iguales?
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{156}
+\item Para $f(x)=\begin{cases}(x^2-1)/(x-1),&x\ne1,\\5,&x=1\end{cases}$, obtenga el límite, determine la discontinuidad y explique cómo eliminarla.
+\item Encuentre $\lim_{x\to0}(\sqrt{1+x}-\cos x)/x$ sin utilizar derivadas.
+\item Determine el dominio, todas las asíntotas y los puntos de discontinuidad de $f(x)=(x-1)/(x^2-4)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{159}
+\item Halle el valor de $k$ para que $f(x)=\begin{cases}\sin(2x)/x,&x\ne0,\\k,&x=0\end{cases}$ sea continua en cero.
+\item Determine si existe $\lim_{x\to0}x\,\operatorname{sgn}(x)$, donde $\operatorname{sgn}(x)=1$ para $x>0$ y $-1$ para $x<0$.
+\item Un vehículo se desplaza según $s(t)=t^2+4t$ metros. Determine la velocidad promedio en $[3,3+h]$ y su tendencia cuando $h\to0$.
+\item Pruebe que $\lim_{x\to0}x\sin(1/x)=0$, pero $\lim_{x\to0}\sin(1/x)$ no existe.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{163}
+\item Estudie la continuidad y los límites laterales en $2$ de $f(x)=\begin{cases}x+2,&x<2,\\1,&x=2,\\x^2,&x>2.\end{cases}$
+\item Demuestre directamente, con $\varepsilon$--$\delta$, que $\lim_{x\to1}(x^2+2x)=3$.
+\item Sea $f(x)=\begin{cases}x^2-1,&x\le1,\\ax+b,&x>1.\end{cases}$ Determine una relación entre $a$ y $b$ para que $f$ sea continua en $1$.
+\item Determine $\lim_{x\to+\infty}(\sqrt{x^2+6x}-x)$ racionalizando y justificando la extracción de $x$ de una raíz.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[t,allowframebreaks]{Banco de ejercicios}
+\small
+\noindent \textbf{Problemas integradores.} Cada solución debe señalar la técnica utilizada y explicar por qué se aplica.\par\smallskip
+\begin{enumerate}\setcounter{enumi}{167}
+\item Construya una función con discontinuidad removible en $x=1$, salto en $x=2$ y asíntota vertical en $x=3$. Justifique cada una mediante límites laterales.
+\end{enumerate}
+\end{frame}
+
+\end{document}
