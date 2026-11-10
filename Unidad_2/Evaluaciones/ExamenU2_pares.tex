@@ -1,0 +1,343 @@
+\documentclass[12pt]{article}
+
+% ======================================================
+% Codificación e idioma
+% ======================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[spanish,es-nodecimaldot]{babel}
+
+% =====================================================
+% Matemáticas
+% =====================================================
+
+\usepackage{amsmath,amssymb,amsfonts}
+
+% =====================================================
+% Formato y utilidades
+% =====================================================
+
+\usepackage[letterpaper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+% =====================================================
+% Hipervínculos
+% =====================================================
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+% =====================================================
+% Formato de párrafos
+% =====================================================
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0.5em}
+
+% =====================================================
+% Datos editables del examen
+% =====================================================
+
+\newcommand{\institucion}{Tecnológico Nacional de México}
+\newcommand{\materia}{Cálculo Diferencial}
+\newcommand{\nombreexamen}{Segundo Examen Parcial}
+\newcommand{\unidad}{Unidad 2: Funciones (pares)}
+\newcommand{\docente}{Carlos Ernesto Martínez}
+%\newcommand{\fechaexamen}{}
+%\newcommand{\duracion}{60 minutos}
+%\newcommand{\puntajetotal}{100 puntos}
+
+% =====================================================
+% Encabezado y pie de página
+% =====================================================
+
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\institucion}
+\fancyhead[R]{\materia}
+
+\fancyfoot[L]{\docente}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+\fancyfoot[R]{\nombreexamen}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% =====================================================
+% Contador y ambiente para problemas
+% =====================================================
+
+\newcounter{problema}
+
+\newenvironment{problema}[1]
+{
+  \refstepcounter{problema}
+%  \par\medskip
+  \noindent
+  \textbf{Problema \theproblema.}
+  \textbf{[#1 puntos]}
+%  \par\smallskip
+}
+{
+%  \par\medskip
+}
+
+% =====================================================
+% Comando para espacio de respuesta
+% =====================================================
+
+
+% =====================================================
+% Documento
+% =====================================================
+
+\begin{document}
+
+% =====================================================
+% Encabezado principal
+% =====================================================
+
+\begin{center}
+    {\Large\textbf{\institucion}}\\[0.3em]
+    {\large\textbf{\materia}}\\[0.3em]
+    {\large\textbf{\nombreexamen}}\\[0.3em]
+    {\normalsize\unidad}
+\end{center}
+
+%\vspace{0.5em}
+
+% =====================================================
+% Datos del estudiante
+% =====================================================
+
+\begin{tabularx}{\textwidth}{>{\bfseries}l X >{\bfseries}l X}
+Nombre: & \hrulefill &
+No. de control: & \hrulefill \\[1.2em]
+
+Grupo: & \hrulefill &
+Fecha: & \hrulefill \\[1.2em]
+
+Calificación: & \hrulefill &
+
+\end{tabularx}
+
+%\vspace{1em}
+
+% =====================================================
+% Información general
+% =====================================================
+
+% =====================================================
+% Instrucciones
+% =====================================================
+
+\subsection*{Instrucciones}
+Lea cuidadosamente cada problema antes de responder. Muestre de manera clara y ordenada todo el procedimiento. Justifique sus resultados cuando se solicite. Las respuestas sin procedimiento no serán consideradas para la calificaci\'on. 
+%\medskip
+
+
+% =====================================================
+% REACTIVOS
+% =====================================================
+
+\begin{problema}{10}
+Determine si el conjunto es una función. Si es una función determine su dominio (Resolver a lo más dos de los tres)
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{3}
+\item $\{(x,y)\mid y=\sqrt{x+1}\}$
+\item $\{(x,y)\mid y=(x-1)^2+2\}$
+\item $\{(x,y)\mid x=(y-2)^2+1\}$
+
+\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{15}
+Dada $f(x)=2x^2+5x-3$, determine
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{3}
+\item $f(h+1)$;
+%\item $f(2x^2)$; \item $f(x^2-3)$; \item $f(x+h)$; 
+\item $f(x)+f(h)$;
+\item $\dfrac{f(x+h)-f(x)}{h}$, $h\ne0$.
+ \end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{15}
+Dada $f(x)=\dfrac{3}{x}$, calcule
+
+\begin{enumerate}[label=(\alph*)]
+\begin{multicols}{3}
+%\item $f(1)$; \item $f(-3)$; \item $f(6)$; \item 
+%$f\!\left(\dfrac13\right)$;
+\item $f\!\left(\dfrac3a\right)$; %\item $f\!\left(\dfrac3x\right)$;
+%\item $\dfrac{f(3)}{f(x)}$; \item $f(x-3)$;
+ \item $f(x)-f(3)$;
+\item $\dfrac{f(x+h)-f(x)}{h}$, $h\ne0$.
+\end{multicols}
+\end{enumerate}
+\end{problema}
+
+\begin{problema}{20}
+Dibuje a mano la gráfica de la función y determine su dominio y su imagen (Resolver a lo más dos de los tres).
+
+\begin{enumerate}[resume]
+\begin{multicols}{3}
+%\item $f(x)=3x-1$
+%\item $g(x)=4-x$
+%\item $F(x)=2x^2$
+%\item $G(x)=x^2+2$
+%\item $g(x)=5-x^2$
+\item $f(x)=(x-1)^2$
+%\item $G(x)=\sqrt{x-1}$
+%\item $F(x)=\sqrt{9-x}$
+%\item $f(x)=\sqrt{x^2-4}$
+%\item $g(x)=\sqrt{4-x^2}$
+%\item $g(x)=\sqrt{9-x^2}$
+%\item $f(x)=\sqrt{x^2-1}$
+\item $G(x)=\begin{cases}9-x^2,&x\ne-3,\\4,&x=-3.\end{cases}$
+\item $F(x)=\begin{cases}x^2-4,&x<3,\\2x-1,&3\le x.\end{cases}$
+\end{multicols}
+\end{enumerate}
+\end{problema}
+
+\begin{problema}{25}
+Dibuje la gráfica de la función escalón (o salto) unitario denotada por $U$ y definida por
+\[
+U(x)=\begin{cases}0,&x<0,\\1,&0\le x.\end{cases}
+\]
+Defina cada una de las siguientes funciones a trozos y dibuje sus gráficas:
+\begin{enumerate}
+\begin{multicols}{3}
+\item $U(x-1)$;  \item $U(x)-U(x-1)$. \item $(x+1)U(x+1)$; 
+\end{multicols}
+\end{enumerate}
+\end{problema}
+
+\begin{problema}{25}
+Dibuje la gráfica de la función signo denotada por $\operatorname{sgn}$ y definida por
+\[
+\operatorname{sgn}x=\begin{cases}-1,&x<0,\\0,&x=0,\\1,&0<x.\end{cases}
+\]
+$\operatorname{sgn}(x)$ se lee ``signo de $x$''. Defina cada una de las siguientes funciones a trozos y dibuje sus gráficas:
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x\,\operatorname{sgn}(x)$; \item $x-2\,\operatorname{sgn}(x)$.
+\item $\operatorname{sgn}(x+1)-\operatorname{sgn}(x-1)$.
+\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{20}
+defina las siguientes funciones y determine el dominio de la función resultante: (a) $f+g$; (b) $f-g$; (c) $f\cdot g$; (d) $f/g$; (e) $g/f$. (Resolver a lo más una de las dos)
+
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f(x)=\sqrt{x}$; $g(x)=4-x^2$
+\item $f(x)=x^2$; $g(x)=\dfrac1{\sqrt{x}}$\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{20}
+Defina las siguientes funciones y determine el dominio de la función compuesta: (a) $f\circ g$; (b) $g\circ f$; (c) $f\circ f$; (d) $g\circ g$. (Resolver a lo más uno de los dos)
+
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f(x)=3-2x$; $g(x)=6-3x$
+%\item $f(x)=x^2-1$; $g(x)=\dfrac1x$
+\item $f(x)=\sqrt{x^2-1}$; $g(x)=\sqrt{x-1}$
+\end{multicols}
+
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{15}
+Si $f$ y $g$ son dos funciones tales que $(f\circ g)(x)=x$ y $(g\circ f)(x)=x$, entonces se dice que $f$ y $g$ son inversas una de la otra. Demuestre que $f$ y $g$ son inversas una de la otra. (Resolver a lo más uno de los dos)
+
+\begin{enumerate}
+\begin{multicols}{2}
+
+\item $f(x)=\dfrac1{x+1}$ y $g(x)=\dfrac{1-x}{x}$
+\item $f(x)=x^2$, $x\le0$, y $g(x)=-\sqrt{x}$
+
+\end{multicols}
+\end{enumerate}
+\end{problema}
+
+\begin{problema}{15}
+
+Determine si cada función es inyectiva en el dominio indicado. (Resolver a lo más uno de los dos) Justifique.
+\begin{enumerate}
+\begin{multicols}{2}
+
+\item $f:\mathbb R\to\mathbb R$, $f(x)=x^2$.
+
+%\item $f:[0,\infty)\to\mathbb R$, $f(x)=x^2$.
+
+\item $f:[0,\infty)\to[0,\infty)$, $f(x)=\sqrt{x}$.
+
+
+\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{15}
+Encuentre la inversa, especificando las restricciones necesarias. (Resolver a lo más dos de los tres)
+\begin{enumerate}
+\begin{multicols}{3}
+
+\item $f(x)=\dfrac{x+1}{x-2}$.
+
+\item $f(x)=\dfrac{3x+1}{2x-5}$.
+
+\item $f(x)=1+\dfrac1x$.
+\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+\begin{problema}{15}
+Encuentre $f^{-1}$ y compruebe $f(f^{-1}(x))=x$ y $f^{-1}(f(x))=x$. (Resolver a lo más dos de los tres)
+\begin{enumerate}
+\begin{multicols}{3}
+\item $f(x)=\dfrac{x-5}{2}$.
+\item $f(x)=x^3+2$.
+\item $f(x)=e^{2x}$.
+\end{multicols}
+\end{enumerate}
+
+\end{problema}
+
+
+% =====================================================
+% Tabla de calificación
+% =====================================================
+\begin{center}
+\textbf{Calificación final:}\qquad
+\rule{3cm}{0.4pt}
+\end{center}
+
+
+\end{document}
